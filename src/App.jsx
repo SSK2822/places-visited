@@ -128,9 +128,17 @@ export default function App() {
 
   const stats = useMemo(() => {
     const rated = db.places.filter((p) => overall(p) !== null)
-    const byCuisine = {}
-    db.places.forEach((p) => (byCuisine[p.cuisine] = (byCuisine[p.cuisine] || 0) + 1))
-    const top = Object.entries(byCuisine).sort((a, b) => b[1] - a[1])[0]
+    // Top cuisine = highest average overall score, not most-visited.
+    const cuisineScores = {}
+    rated.forEach((p) => {
+      const c = cuisineScores[p.cuisine] || { sum: 0, count: 0 }
+      c.sum += overall(p)
+      c.count += 1
+      cuisineScores[p.cuisine] = c
+    })
+    const top = Object.entries(cuisineScores)
+      .map(([name, { sum, count }]) => [name, sum / count])
+      .sort((a, b) => b[1] - a[1])[0]
     return {
       total: db.places.length,
       rated: rated.length,
