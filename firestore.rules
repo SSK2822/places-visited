@@ -1,0 +1,17 @@
+rules_version = '2';
+
+// Paste these rules in: Firebase console → Firestore Database → Rules.
+// Anyone can read the list; only the two listed Google accounts can edit.
+// Keep this email list in sync with EDITOR_EMAILS in src/lib/firebase-config.js.
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /places/{placeId} {
+      allow read: if true;
+      allow write: if request.auth != null
+        && request.auth.token.email in [
+          'you@gmail.com',
+          'her@gmail.com'
+        ];
+    }
+  }
+}

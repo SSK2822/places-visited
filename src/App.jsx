@@ -7,10 +7,12 @@ import FilterBar from './components/FilterBar'
 import PlaceCard from './components/PlaceCard'
 import EditPlaceModal from './components/EditPlaceModal'
 import SettingsModal from './components/SettingsModal'
+import AccountModal from './components/AccountModal'
 import DirtyBar from './components/DirtyBar'
 import { CUISINES, LSK_DATA, LSK_THEME, DEFAULT_CITY } from './lib/constants'
 import { overall, fmt, slugify } from './lib/utils'
 import { loadCfg, publishPlaces } from './lib/github'
+import { cloudEnabled, initCloud, canEdit, savePlaceCloud, deletePlaceCloud } from './lib/cloud'
 
 const EMPTY_DB = { updated: '', places: [] }
 
@@ -29,6 +31,7 @@ export default function App() {
   const [editingPlace, setEditingPlace] = useState(null) // null = adding a new place
   const [showSettings, setShowSettings] = useState(false)
   const [toastMsg, setToastMsg] = useState('')
+  const [user, setUser] = useState(null)
   const [theme, setTheme] = useState(() => localStorage.getItem(LSK_THEME) || 'light')
 
   useEffect(() => {
@@ -40,6 +43,16 @@ export default function App() {
 
   /* ---------- data loading ---------- */
   useEffect(() => {
+    if (cloudEnabled) {
+      let cleanup
+      initCloud(
+        (places) => setDb({ updated: '', places }),
+        setUser,
+      ).then((fn) => {
+        cleanup = fn
+      })
+      return () => cleanup && cleanup()
+    }
     ;(async () => {
       let remote = null
       try {
@@ -127,12 +140,22 @@ export default function App() {
   }, [db.places])
 
   /* ---------- actions ---------- */
+  // In cloud mode, editing needs an approved Google account.
+  function requireEditor() {
+    if (!cloudEnabled || canEdit(user)) return true
+    setShowSettings(true)
+    toast(user ? "This account doesn't have edit access" : 'Sign in with Google to edit')
+    return false
+  }
+
   function openAdd() {
+    if (!requireEditor()) return
     setEditingPlace(null)
     setEditorOpen(true)
   }
 
   function openEdit(place) {
+    if (!requireEditor()) return
     setEditingPlace(place)
     setEditorOpen(true)
   }
@@ -147,7 +170,12 @@ export default function App() {
       ac: form.acNr ? null : form.ac,
       notes: form.notes.trim(),
     }
-    if (editingPlace) {
+    const wasEditing = Boolean(editingPlace)
+    if (cloudEnabled) {
+      savePlaceCloud(rec)
+        .then(() => toast(wasEditing ? 'Updated ✓' : 'Added ✓'))
+        .catch((e) => toast('Save failed: ' + e.message))
+    } else if (wasEditing) {
       updatePlaces(db.places.map((p) => (p.id === editingPlace.id ? rec : p)))
       toast('Updated ✓')
     } else {
@@ -159,7 +187,13 @@ export default function App() {
 
   function deletePlace(id) {
     if (!confirm('Delete this place?')) return
-    updatePlaces(db.places.filter((p) => p.id !== id))
+    if (cloudEnabled) {
+      deletePlaceCloud(id)
+        .then(() => toast('Deleted ✓'))
+        .catch((e) => toast('Delete failed: ' + e.message))
+    } else {
+      updatePlaces(db.places.filter((p) => p.id !== id))
+    }
     setEditorOpen(false)
   }
 
@@ -271,11 +305,21 @@ export default function App() {
         onClose={() => setEditorOpen(false)}
       />
 
-      <SettingsModal
-        show={showSettings}
-        onClose={() => setShowSettings(false)}
-        onSaved={() => toast('Settings saved')}
-      />
+      {cloudEnabled ? (
+        <AccountModal
+          show={showSettings}
+          onClose={() => setShowSettings(false)}
+          user={user}
+          places={db.places}
+          onToast={toast}
+        />
+      ) : (
+        <SettingsModal
+          show={showSettings}
+          onClose={() => setShowSettings(false)}
+          onSaved={() => toast('Settings saved')}
+        />
+      )}
 
       <ToastContainer position="bottom-center" className="position-fixed pb-5 mb-4">
         <Toast

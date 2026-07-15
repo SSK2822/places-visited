@@ -23,7 +23,7 @@ export default function AppNavbar({ onSurprise, onSettings, onAdd, theme, onTogg
       >
         {theme === 'light' ? '🌙' : '☀️'}
       </Button>
-      <Button variant="outline-secondary" size="sm" className="rounded-pill" onClick={onSettings} title="GitHub sync settings">
+      <Button variant="outline-secondary" size="sm" className="rounded-pill" onClick={onSettings} title="Account & sync settings">
         ⚙️
       </Button>
       <Button variant="primary" size="sm" className="rounded-pill px-3" onClick={onAdd}>

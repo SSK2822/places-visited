@@ -70,17 +70,31 @@ Push to `main` and GitHub Actions builds the app and deploys `dist/` to Pages
 
 ## Editing data from the site
 
-When you edit or add places, changes are first saved in your browser as local unpublished changes.
+The app has two sync modes, chosen automatically by `src/lib/firebase-config.js`:
 
-To publish from the site:
+### Cloud mode (Firebase) — recommended
 
-1. Create a fine-grained GitHub token with repo access (`Contents: Read and write`)
-2. Click `⚙️` in the app and save owner, repo, branch, and token
-3. Click `Publish to GitHub`
+When `firebaseConfig` is filled in, the app reads and writes a Firestore
+database with live sync. Anyone can browse; editing requires signing in with
+a Google account listed in `EDITOR_EMAILS` (and in `firestore.rules`).
+No tokens, works great on mobile.
 
-Publishing commits `public/places.json`, which triggers the deploy workflow and refreshes the site.
+One-time setup:
 
-If you do not want to use a token, click `Export JSON` and update `public/places.json` manually in GitHub.
+1. Create a free project at [console.firebase.google.com](https://console.firebase.google.com)
+2. Create a **Firestore Database** (production mode)
+3. Enable **Authentication → Sign-in method → Google**
+4. Add the Pages domain under **Authentication → Settings → Authorized domains**
+5. Register a **Web app** and paste its config into `src/lib/firebase-config.js`
+6. Paste `firestore.rules` (with your two emails) into **Firestore → Rules**
+7. Sign in on the site and use **⚙️ → Import places from places.json** to seed the data
+
+### Legacy mode (GitHub token)
+
+When `firebaseConfig` is `null`, edits are saved in your browser and can be
+published by committing `public/places.json` through the GitHub API — click
+`⚙️`, save a fine-grained token (`Contents: Read and write`), then
+`Publish to GitHub`. Or click `Export JSON` and update the file manually.
 
 ## Data format
 
