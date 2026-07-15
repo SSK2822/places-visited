@@ -26,6 +26,9 @@ export const firebaseConfig = {
   measurementId: 'G-X34JG1RZQD',
 }
 
-// Google account emails allowed to edit places.
-// Must match the list inside firestore.rules.
-export const EDITOR_EMAILS = ['shreyash.kawle@gmail.com', 'amandaychen1@gmail.com']
+// Google accounts allowed to edit places, and which rating/comment
+// field each one owns. Keep the email list in sync with firestore.rules.
+export const EDITORS = [
+  { email: 'shreyash.kawle@gmail.com', key: 'yk', label: 'YK', name: 'Yash' },
+  { email: 'amandaychen1@gmail.com', key: 'ac', label: 'Ac', name: 'Amanda' },
+]

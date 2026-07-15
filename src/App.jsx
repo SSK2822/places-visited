@@ -12,7 +12,8 @@ import DirtyBar from './components/DirtyBar'
 import { CUISINES, LSK_DATA, LSK_THEME, DEFAULT_CITY } from './lib/constants'
 import { overall, fmt, slugify } from './lib/utils'
 import { loadCfg, publishPlaces } from './lib/github'
-import { cloudEnabled, initCloud, canEdit, savePlaceCloud, deletePlaceCloud } from './lib/cloud'
+import { cloudEnabled, initCloud, canEdit, editorKeyFor, savePlaceCloud, deletePlaceCloud } from './lib/cloud'
+import { EDITORS } from './lib/firebase-config'
 
 const EMPTY_DB = { updated: '', places: [] }
 
@@ -32,6 +33,7 @@ export default function App() {
   const [showSettings, setShowSettings] = useState(false)
   const [toastMsg, setToastMsg] = useState('')
   const [user, setUser] = useState(null)
+  const myKey = useMemo(() => editorKeyFor(user), [user])
   const [theme, setTheme] = useState(() => localStorage.getItem(LSK_THEME) || 'light')
 
   useEffect(() => {
@@ -117,7 +119,8 @@ export default function App() {
       if (ratingFilter === 'unrated' && ov !== null) return false
       if (['2', '1', '0'].includes(ratingFilter) && (ov === null || ov < +ratingFilter)) return false
       if (ratingFilter === 'neg' && (ov === null || ov >= 0)) return false
-      if (q && !(p.name + ' ' + p.cuisine + ' ' + p.city + ' ' + (p.notes || '')).toLowerCase().includes(q)) return false
+      const commentText = EDITORS.map((e) => p[`${e.key}Comment`] || '').join(' ')
+      if (q && !(p.name + ' ' + p.cuisine + ' ' + p.city + ' ' + commentText).toLowerCase().includes(q)) return false
       return true
     })
     const key = { overall, yk: (p) => p.yk, ac: (p) => p.ac }[sort]
@@ -174,10 +177,15 @@ export default function App() {
       name: form.name.trim(),
       cuisine: form.cuisine,
       city: form.city.trim() || DEFAULT_CITY,
-      yk: form.ykNr ? null : form.yk,
-      ac: form.acNr ? null : form.ac,
-      notes: form.notes.trim(),
     }
+    const now = Date.now()
+    EDITORS.forEach((e) => {
+      rec[e.key] = form.notRated[e.key] ? null : form.ratings[e.key]
+      const text = (form.comments[e.key] || '').trim()
+      const prevText = (editingPlace?.[`${e.key}Comment`] ?? '').trim()
+      rec[`${e.key}Comment`] = text
+      rec[`${e.key}CommentAt`] = text !== prevText ? now : (editingPlace?.[`${e.key}CommentAt`] ?? null)
+    })
     const wasEditing = Boolean(editingPlace)
     if (cloudEnabled) {
       savePlaceCloud(rec)
@@ -308,6 +316,7 @@ export default function App() {
         defaultCuisine={cuisine || CUISINES[0]}
         cuisines={cuisineOptions}
         cities={cities}
+        myKey={myKey}
         onSave={savePlace}
         onDelete={deletePlace}
         onClose={() => setEditorOpen(false)}

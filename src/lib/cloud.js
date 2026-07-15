@@ -1,4 +1,4 @@
-import { firebaseConfig, EDITOR_EMAILS } from './firebase-config'
+import { firebaseConfig, EDITORS } from './firebase-config'
 
 // Cloud mode turns on as soon as firebaseConfig is filled in.
 // Firebase modules are imported lazily so the bundle stays lean
@@ -20,7 +20,11 @@ function fb() {
   return ready
 }
 
-export const canEdit = (user) => Boolean(user) && EDITOR_EMAILS.includes(user.email)
+export const canEdit = (user) => Boolean(user) && EDITORS.some((e) => e.email === user.email)
+
+// Which rating/comment field ('yk' | 'ac') the signed-in account owns,
+// or null when signed out or not an approved editor.
+export const editorKeyFor = (user) => EDITORS.find((e) => e.email === user?.email)?.key ?? null
 
 // Subscribes to the places collection and auth state.
 // Returns a cleanup function that unsubscribes from both.

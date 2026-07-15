@@ -1,10 +1,12 @@
 import { useState } from 'react'
 import Modal from 'react-bootstrap/Modal'
 import Button from 'react-bootstrap/Button'
-import { signInGoogle, signOutCloud, canEdit, seedPlaces } from '../lib/cloud'
+import { signInGoogle, signOutCloud, canEdit, editorKeyFor, seedPlaces } from '../lib/cloud'
+import { EDITORS } from '../lib/firebase-config'
 
 export default function AccountModal({ show, onClose, user, places, onToast }) {
   const [busy, setBusy] = useState(false)
+  const myEditor = EDITORS.find((e) => e.key === editorKeyFor(user))
 
   async function handleSignIn() {
     setBusy(true)
@@ -55,7 +57,8 @@ export default function AccountModal({ show, onClose, user, places, onToast }) {
             </p>
             {canEdit(user) ? (
               <p className="small text-body-secondary">
-                You can add, edit, and delete places. Changes sync live to everyone.
+                You can add places and set {myEditor?.name}'s ({myEditor?.label}) rating and
+                comment on each one. Changes sync live to everyone.
               </p>
             ) : (
               <p className="small text-body-secondary">

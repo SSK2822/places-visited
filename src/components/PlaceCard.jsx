@@ -1,4 +1,4 @@
-import { overall, fmt, ratingClass, mapsUrl, cuisineHue } from '../lib/utils'
+import { overall, fmt, ratingClass, mapsUrl, cuisineHue, latestComment } from '../lib/utils'
 import { DEFAULT_CITY } from '../lib/constants'
 
 function RatingPill({ label, value, emphasis }) {
@@ -12,6 +12,7 @@ function RatingPill({ label, value, emphasis }) {
 
 export default function PlaceCard({ place, onEdit }) {
   const ov = overall(place)
+  const comment = latestComment(place)
   return (
     <div
       className="card place-card h-100"
@@ -44,8 +45,10 @@ export default function PlaceCard({ place, onEdit }) {
             <span className="badge city-badge rounded-pill">{place.city}</span>
           )}
         </div>
-        {place.notes && (
-          <p className="text-body-secondary small fst-italic mb-0">{place.notes}</p>
+        {comment && (
+          <p className="text-body-secondary small fst-italic mb-0">
+            <span className="fw-semibold">{comment.name}:</span> {comment.text}
+          </p>
         )}
         <div className="d-flex gap-2 mt-auto pt-1">
           <RatingPill label="YK" value={place.yk} />

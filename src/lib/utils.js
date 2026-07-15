@@ -1,4 +1,5 @@
 import { CUISINE_HUES } from './constants'
+import { EDITORS } from './firebase-config'
 
 // Overall = average of whichever of the two ratings exist; null if neither does.
 export const overall = (p) => {
@@ -45,4 +46,17 @@ export function cuisineHue(name) {
   let h = 0
   for (const ch of name) h = (h * 31 + ch.codePointAt(0)) % 360
   return h
+}
+
+// The most recently written of the two per-editor comments, for the
+// card preview. Returns null when neither editor has left one.
+export function latestComment(place) {
+  const entries = EDITORS.map((e) => ({
+    name: e.name,
+    text: place[`${e.key}Comment`],
+    at: place[`${e.key}CommentAt`] || 0,
+  })).filter((c) => c.text)
+  if (!entries.length) return null
+  entries.sort((a, b) => b.at - a.at)
+  return entries[0]
 }
