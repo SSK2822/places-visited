@@ -52,8 +52,10 @@ export default function EditPlaceModal({
     setCity(place?.city ?? DEFAULT_CITY)
     setYk(place?.yk ?? 0)
     setAc(place?.ac ?? 0)
-    setYkNr(place ? place.yk === null : true)
-    setAcNr(place ? place.ac === null : true)
+    // Sliders start enabled so you can rate right away; "not rated yet"
+    // is now an explicit opt-out instead of something to uncheck first.
+    setYkNr(false)
+    setAcNr(false)
     setNotes(place?.notes ?? '')
   }, [show, place, defaultCuisine])
 
