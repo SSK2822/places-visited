@@ -6,8 +6,15 @@ export const overall = (p) => {
   return r.length ? r.reduce((a, b) => a + b, 0) / r.length : null
 }
 
-export const fmt = (v) =>
-  v === null ? '–' : (v > 0 ? '+' : '') + (Number.isInteger(v) ? v : v.toFixed(1))
+// Ratings step in quarters, so an overall average can land on eighths
+// (e.g. (1.25 + 1.5) / 2 = 1.375) — round to kill float noise, then
+// trim trailing zeros without forcing a fixed decimal count.
+export const fmt = (v) => {
+  if (v === null || v === undefined) return '–'
+  const rounded = Math.round(v * 1000) / 1000
+  const str = rounded.toFixed(3).replace(/\.?0+$/, '') || '0'
+  return (rounded > 0 ? '+' : '') + str
+}
 
 export const ratingClass = (v) => {
   if (v === null) return 'rating-zero'

@@ -135,7 +135,7 @@ export default function App() {
       total: db.places.length,
       rated: rated.length,
       avg: rated.length ? fmt(rated.reduce((a, p) => a + overall(p), 0) / rated.length) : '–',
-      topCuisine: top ? top[0].split(' ')[0] : '–',
+      topCuisine: top ? top[0].split(' ').slice(1).join(' ') : '–',
     }
   }, [db.places])
 

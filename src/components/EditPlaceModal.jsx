@@ -13,7 +13,7 @@ function RatingField({ label, value, notRated, onValue, onNotRated }) {
         <Form.Range
           min={-3}
           max={3}
-          step={1}
+          step={0.25}
           value={value}
           disabled={notRated}
           onChange={(e) => onValue(+e.target.value)}

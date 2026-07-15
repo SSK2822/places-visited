@@ -13,22 +13,30 @@ function RatingPill({ label, value, emphasis }) {
 export default function PlaceCard({ place, onEdit }) {
   const ov = overall(place)
   return (
-    <div className="card place-card h-100" style={{ '--hue': cuisineHue(place.cuisine) }}>
+    <div
+      className="card place-card h-100"
+      style={{ '--hue': cuisineHue(place.cuisine) }}
+      role="button"
+      tabIndex={0}
+      onClick={onEdit}
+      onKeyDown={(e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault()
+          onEdit()
+        }
+      }}
+    >
       <div className="card-body d-flex flex-column gap-2 position-relative">
-        <div className="position-absolute top-0 end-0 mt-2 me-2 d-flex gap-1">
-          <a
-            className="btn btn-sm btn-link text-decoration-none p-1"
-            href={mapsUrl(place)}
-            target="_blank"
-            rel="noopener noreferrer"
-            title="Open in Maps"
-          >
-            📍
-          </a>
-          <button className="btn btn-sm btn-link text-decoration-none p-1" onClick={onEdit} title="Edit">
-            ✏️
-          </button>
-        </div>
+        <a
+          className="btn btn-sm btn-link text-decoration-none p-1 position-absolute top-0 end-0 mt-2 me-2"
+          href={mapsUrl(place)}
+          target="_blank"
+          rel="noopener noreferrer"
+          title="Open in Maps"
+          onClick={(e) => e.stopPropagation()}
+        >
+          📍
+        </a>
         <h2 className="h6 fw-bold mb-0 pe-5">{place.name}</h2>
         <div className="d-flex flex-wrap gap-1">
           <span className="badge cuisine-badge rounded-pill">{place.cuisine}</span>
