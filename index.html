@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>❤️ Places Visited</title>
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>❤️</text></svg>">
-<style>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>❤️ Places Visited</title>
+    <link rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>❤️</text></svg>">
+    <style>
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap');
 
 :root{
@@ -120,107 +122,128 @@ footer{text-align:center;color:var(--muted);font-size:.74rem;padding:24px;line-h
   .btn{padding:9px 12px}
 }
 </style>
-</head>
-<body>
+  </head>
+  <body>
 
-<header>
-  <div class="hrow">
-    <h1>❤️ Places Visited<small id="subtitle">YK &amp; Ac's snack and supper command center</small></h1>
-    <button class="btn ghost" id="btnSurprise" title="Pick a random place">🎲 Surprise</button>
-    <button class="btn ghost" id="btnSettings" title="GitHub sync settings">⚙️</button>
-    <button class="btn primary" id="btnAdd">＋ Add place</button>
-  </div>
-  <div class="stats">
-    <div><b id="stTotal">–</b>places</div>
-    <div><b id="stRated">–</b>rated</div>
-    <div><b id="stAvg">–</b>avg overall</div>
-    <div><b id="stTop">–</b>top cuisine</div>
-  </div>
-  <div class="controls">
-    <div class="searchrow">
-      <input type="search" id="search" placeholder="Search places, cuisine, notes…">
-      <select id="cityFilter"><option value="">All cities</option></select>
-      <select id="ratingFilter">
-        <option value="">Any rating</option>
-        <option value="rated">Rated</option>
-        <option value="unrated">Unrated</option>
-        <option value="2">Overall ≥ +2</option>
-        <option value="1">Overall ≥ +1</option>
-        <option value="0">Overall ≥ 0</option>
-        <option value="neg">Overall &lt; 0</option>
-      </select>
-      <select id="sort">
-        <option value="name">Sort: Name</option>
-        <option value="overall">Sort: Overall ↓</option>
-        <option value="yk">Sort: YK ↓</option>
-        <option value="ac">Sort: Ac ↓</option>
-      </select>
-    </div>
-    <div class="chips" id="cuisineChips"></div>
-  </div>
-</header>
+    <header>
+      <div class="hrow">
+        <h1>❤️ Places Visited<small id="subtitle">YK &amp; Ac's snack and supper
+            command center</small></h1>
+        <button class="btn ghost" id="btnSurprise"
+          title="Pick a random place">🎲 Surprise</button>
+        <button class="btn ghost" id="btnSettings"
+          title="GitHub sync settings">⚙️</button>
+        <button class="btn primary" id="btnAdd">＋ Add place</button>
+      </div>
+      <div class="stats">
+        <div><b id="stTotal">–</b>places</div>
+        <div><b id="stRated">–</b>rated</div>
+        <div><b id="stAvg">–</b>avg overall</div>
+        <div><b id="stTop">–</b>top cuisine</div>
+      </div>
+      <div class="controls">
+        <div class="searchrow">
+          <input type="search" id="search"
+            placeholder="Search places, cuisine, notes…">
+          <select id="cityFilter"><option value>All cities</option></select>
+          <select id="ratingFilter">
+            <option value>Any rating</option>
+            <option value="rated">Rated</option>
+            <option value="unrated">Unrated</option>
+            <option value="2">Overall ≥ +2</option>
+            <option value="1">Overall ≥ +1</option>
+            <option value="0">Overall ≥ 0</option>
+            <option value="neg">Overall &lt; 0</option>
+          </select>
+          <select id="sort">
+            <option value="name">Sort: Name</option>
+            <option value="overall">Sort: Overall ↓</option>
+            <option value="yk">Sort: YK ↓</option>
+            <option value="ac">Sort: Ac ↓</option>
+          </select>
+        </div>
+        <div class="chips" id="cuisineChips"></div>
+      </div>
+    </header>
 
-<main>
-  <p class="count" id="count"></p>
-  <div class="grid" id="grid"></div>
-  <div class="empty" id="empty" style="display:none">Nothing matches. Try clearing a filter or two.</div>
-</main>
+    <main>
+      <p class="count" id="count"></p>
+      <div class="grid" id="grid"></div>
+      <div class="empty" id="empty" style="display:none">Nothing matches. Try
+        clearing a filter or two.</div>
+    </main>
 
-<footer>Ratings: -3 (never again) to +3 (bookmarked for repeat visits). Overall is the average of YK and Ac, aka the diplomatic score.</footer>
+    <footer>Ratings: -3 (never again) to +3 (bookmarked for repeat visits).
+      Overall is the average of YK and Ac, aka the diplomatic score.</footer>
 
-<div class="dirtybar" id="dirtybar"><div class="inner">
-  <span>⚠️ Unpublished changes (saved on this device only)</span>
-  <button class="btn" id="btnPublish">Publish to GitHub</button>
-  <button class="btn ghost" id="btnExport">Export JSON</button>
-  <button class="btn ghost" id="btnDiscard">Discard</button>
-</div></div>
+    <div class="dirtybar" id="dirtybar"><div class="inner">
+        <span>⚠️ Unpublished changes (saved on this device only)</span>
+        <button class="btn" id="btnPublish">Publish to GitHub</button>
+        <button class="btn ghost" id="btnExport">Export JSON</button>
+        <button class="btn ghost" id="btnDiscard">Discard</button>
+      </div></div>
 
-<!-- Add / Edit modal -->
-<div class="overlay" id="editOverlay"><div class="modal">
-  <h2 id="editTitle">Add place</h2>
-  <div class="field"><label>Name</label><input type="text" id="fName" placeholder="e.g. Joe's Steam Rice Roll"></div>
-  <div class="field"><label>Cuisine</label><select id="fCuisine"></select></div>
-  <div class="field"><label>City</label>
-    <input type="text" id="fCity" list="cityList" placeholder="New York"><datalist id="cityList"></datalist>
-  </div>
-  <div class="field"><label>YK rating</label>
-    <div class="slider-row"><input type="range" id="fYk" min="-3" max="3" step="1" value="0"><div class="slider-val" id="fYkVal">0</div></div>
-    <label class="nr"><input type="checkbox" id="fYkNr"> not rated yet</label>
-  </div>
-  <div class="field"><label>Ac rating</label>
-    <div class="slider-row"><input type="range" id="fAc" min="-3" max="3" step="1" value="0"><div class="slider-val" id="fAcVal">0</div></div>
-    <label class="nr"><input type="checkbox" id="fAcNr"> not rated yet</label>
-  </div>
-  <p class="overallprev" id="overallPrev"></p>
-  <div class="field"><label>Notes</label><textarea id="fNotes" placeholder="what to order, vibes…"></textarea></div>
-  <div class="modalbtns">
-    <button class="btn danger" id="btnDelete" style="display:none">Delete</button>
-    <button class="btn" id="btnCancel">Cancel</button>
-    <button class="btn primary" id="btnSave">Save</button>
-  </div>
-</div></div>
+    <!-- Add / Edit modal -->
+    <div class="overlay" id="editOverlay"><div class="modal">
+        <h2 id="editTitle">Add place</h2>
+        <div class="field"><label>Name</label><input type="text" id="fName"
+            placeholder="e.g. Joe's Steam Rice Roll"></div>
+        <div class="field"><label>Cuisine</label><select
+            id="fCuisine"></select></div>
+        <div class="field"><label>City</label>
+          <input type="text" id="fCity" list="cityList"
+            placeholder="New York"><datalist id="cityList"></datalist>
+        </div>
+        <div class="field"><label>YK rating</label>
+          <div class="slider-row"><input type="range" id="fYk" min="-3" max="3"
+              step="1" value="0"><div class="slider-val"
+              id="fYkVal">0</div></div>
+          <label class="nr"><input type="checkbox" id="fYkNr"> not rated
+            yet</label>
+        </div>
+        <div class="field"><label>Ac rating</label>
+          <div class="slider-row"><input type="range" id="fAc" min="-3" max="3"
+              step="1" value="0"><div class="slider-val"
+              id="fAcVal">0</div></div>
+          <label class="nr"><input type="checkbox" id="fAcNr"> not rated
+            yet</label>
+        </div>
+        <p class="overallprev" id="overallPrev"></p>
+        <div class="field"><label>Notes</label><textarea id="fNotes"
+            placeholder="what to order, vibes…"></textarea></div>
+        <div class="modalbtns">
+          <button class="btn danger" id="btnDelete"
+            style="display:none">Delete</button>
+          <button class="btn" id="btnCancel">Cancel</button>
+          <button class="btn primary" id="btnSave">Save</button>
+        </div>
+      </div></div>
 
-<!-- Settings modal -->
-<div class="overlay" id="setOverlay"><div class="modal">
-  <h2>⚙️ GitHub sync</h2>
-  <p style="font-size:.8rem;color:var(--muted);margin-bottom:14px">To publish edits from this site, create a fine-grained personal access token (repo → Contents: read &amp; write) and paste it here. It's stored only in this browser.</p>
-  <div class="field"><label>Owner / Repo / Branch</label>
-    <div style="display:flex;gap:6px">
-      <input type="text" id="gOwner" placeholder="owner" style="flex:1">
-      <input type="text" id="gRepo" placeholder="repo" style="flex:1">
-      <input type="text" id="gBranch" placeholder="main" style="flex:.6">
-    </div>
-  </div>
-  <div class="field"><label>Token</label><input type="password" id="gToken" placeholder="github_pat_…"></div>
-  <div class="modalbtns">
-    <button class="btn" id="btnSetCancel">Close</button>
-    <button class="btn primary" id="btnSetSave">Save settings</button>
-  </div>
-</div></div>
+    <!-- Settings modal -->
+    <div class="overlay" id="setOverlay"><div class="modal">
+        <h2>⚙️ GitHub sync</h2>
+        <p style="font-size:.8rem;color:var(--muted);margin-bottom:14px">To
+          publish edits from this site, create a fine-grained personal access
+          token (repo → Contents: read &amp; write) and paste it here. It's
+          stored only in this browser.</p>
+        <div class="field"><label>Owner / Repo / Branch</label>
+          <div style="display:flex;gap:6px">
+            <input type="text" id="gOwner" placeholder="owner" style="flex:1">
+            <input type="text" id="gRepo" placeholder="repo" style="flex:1">
+            <input type="text" id="gBranch" placeholder="main" style="flex:.6">
+          </div>
+        </div>
+        <div class="field"><label>Token</label><input type="password"
+            id="gToken" placeholder="github_pat_…"></div>
+        <div class="modalbtns">
+          <button class="btn" id="btnSetCancel">Close</button>
+          <button class="btn primary" id="btnSetSave">Save settings</button>
+        </div>
+      </div></div>
 
-<div class="toast" id="toast"></div>
+    <div class="toast" id="toast"></div>
 
-<script>
+    <script>
 "use strict";
 const $ = id => document.getElementById(id);
 const LSK_DATA = "pv_local_data", LSK_CFG = "pv_gh_cfg";
@@ -480,5 +503,5 @@ document.addEventListener("keydown", e => { if(e.key === "Escape") document.quer
 
 load();
 </script>
-</body>
+  </body>
 </html>
