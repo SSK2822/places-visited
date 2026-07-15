@@ -1,0 +1,2381 @@
+{
+  "updated": "2026-07-15",
+  "places": [
+    {
+      "id": "sugar-fish",
+      "name": "Sugar Fish",
+      "cuisine": "🍱 Korean & Japanese",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "obentoyasan",
+      "name": "Obentoyasan",
+      "cuisine": "🍱 Korean & Japanese",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "bb-q-chicken",
+      "name": "bb.q Chicken",
+      "cuisine": "🍱 Korean & Japanese",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "bcd-tofu-house",
+      "name": "BCD Tofu House",
+      "cuisine": "🍱 Korean & Japanese",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "barn-joo",
+      "name": "Barn Joo",
+      "cuisine": "🍱 Korean & Japanese",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "her-name-is-han",
+      "name": "Her Name is Han",
+      "cuisine": "🍱 Korean & Japanese",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "zabb-putawn",
+      "name": "Zabb PuTawn",
+      "cuisine": "🍜 Thai & SE Asian",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "big-brother-asian",
+      "name": "Big Brother Asian",
+      "cuisine": "🍜 Thai & SE Asian",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "jollibee",
+      "name": "Jollibee",
+      "cuisine": "🍜 Thai & SE Asian",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "nyonya",
+      "name": "Nyonya",
+      "cuisine": "🍜 Thai & SE Asian",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "new-belacan",
+      "name": "New Belacan",
+      "cuisine": "🍜 Thai & SE Asian",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "pho-hoai",
+      "name": "Phở Hoài",
+      "cuisine": "🍜 Thai & SE Asian",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "ba-xuyen",
+      "name": "Ba Xuyên",
+      "cuisine": "🍜 Thai & SE Asian",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "krob-kreung-krob-ros",
+      "name": "Krob Kreung Krob Ros",
+      "cuisine": "🍜 Thai & SE Asian",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "pranakhon",
+      "name": "Pranakhon",
+      "cuisine": "🍜 Thai & SE Asian",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "khaosan",
+      "name": "Khaosan",
+      "cuisine": "🍜 Thai & SE Asian",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "mitr-thai",
+      "name": "Mitr Thai",
+      "cuisine": "🍜 Thai & SE Asian",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "elephant-ear",
+      "name": "Elephant Ear",
+      "cuisine": "🍜 Thai & SE Asian",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "am-thai-bistro",
+      "name": "Am Thai Bistro",
+      "cuisine": "🍜 Thai & SE Asian",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "growl-growl",
+      "name": "Growl Growl",
+      "cuisine": "🥢 Chinese & Taiwanese",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "four-four-south-village",
+      "name": "Four Four South Village",
+      "cuisine": "🥢 Chinese & Taiwanese",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "yumpling",
+      "name": "Yumpling",
+      "cuisine": "🥢 Chinese & Taiwanese",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "red-sorgum",
+      "name": "Red Sorgum",
+      "cuisine": "🥢 Chinese & Taiwanese",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "mountain-house",
+      "name": "Mountain House",
+      "cuisine": "🥢 Chinese & Taiwanese",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "king-s-kitchen",
+      "name": "King's Kitchen",
+      "cuisine": "🥢 Chinese & Taiwanese",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "roast-28",
+      "name": "Roast 28",
+      "cuisine": "🥢 Chinese & Taiwanese",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "hainan-chicken-house",
+      "name": "Hainan Chicken House",
+      "cuisine": "🥢 Chinese & Taiwanese",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "wong-wong-noodle-soup",
+      "name": "Wong Wong Noodle Soup",
+      "cuisine": "🥢 Chinese & Taiwanese",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "fish-with-you",
+      "name": "Fish With You",
+      "cuisine": "🥢 Chinese & Taiwanese",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "young-fish",
+      "name": "Young Fish",
+      "cuisine": "🥢 Chinese & Taiwanese",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "xiang-hotpot",
+      "name": "Xiang Hotpot",
+      "cuisine": "🥢 Chinese & Taiwanese",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "fei-long-spicy-hot-pot",
+      "name": "Fei Long Spicy Hot Pot",
+      "cuisine": "🥢 Chinese & Taiwanese",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "wu-liang-yi",
+      "name": "Wu Liang Yi",
+      "cuisine": "🥢 Chinese & Taiwanese",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "peppercorn-station",
+      "name": "Peppercorn Station",
+      "cuisine": "🥢 Chinese & Taiwanese",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "lao-ma-spicy",
+      "name": "Lao Ma Spicy",
+      "cuisine": "🥢 Chinese & Taiwanese",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "chuan-tian-xia",
+      "name": "Chuan Tian Xia",
+      "cuisine": "🥢 Chinese & Taiwanese",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "mala-project",
+      "name": "MáLà Project",
+      "cuisine": "🥢 Chinese & Taiwanese",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "joe-s-steam-rice-roll",
+      "name": "Joe's Steam Rice Roll",
+      "cuisine": "🥢 Chinese & Taiwanese",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "white-bear",
+      "name": "White Bear",
+      "cuisine": "🥢 Chinese & Taiwanese",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "liu-liu-sheng-jian",
+      "name": "Liu Liu Sheng Jian",
+      "cuisine": "🥢 Chinese & Taiwanese",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "kai-feng-fu-dumpling-house",
+      "name": "Kai Feng Fu Dumpling House",
+      "cuisine": "🥢 Chinese & Taiwanese",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "nan-xiang-express",
+      "name": "Nan Xiang Express",
+      "cuisine": "🥢 Chinese & Taiwanese",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "pies-n-thighs",
+      "name": "Pies 'n Thighs",
+      "cuisine": "🍔 American",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "fluffies",
+      "name": "Fluffies",
+      "cuisine": "🍔 American",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "fields-good-chicken",
+      "name": "Fields Good Chicken",
+      "cuisine": "🍔 American",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "gjelina",
+      "name": "Gjelina",
+      "cuisine": "🍔 American",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "burger-club",
+      "name": "Burger Club",
+      "cuisine": "🍔 American",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "little-ruby-s",
+      "name": "Little Ruby's",
+      "cuisine": "🍔 American",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "big-john-s-diner",
+      "name": "Big John's Diner",
+      "cuisine": "🍔 American",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "crif-dogs",
+      "name": "Crif Dogs",
+      "cuisine": "🍔 American",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "mason-s-pickle",
+      "name": "Mason's Pickle",
+      "cuisine": "🍔 American",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "brown-bag-sandwich-co",
+      "name": "Brown Bag Sandwich Co.",
+      "cuisine": "🍔 American",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "black-iron-burger",
+      "name": "Black Iron Burger",
+      "cuisine": "🍔 American",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "little-collin-s",
+      "name": "Little Collin's",
+      "cuisine": "🍔 American",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "doggy-day-afternoon",
+      "name": "Doggy Day Afternoon",
+      "cuisine": "🍔 American",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "5-napkin-burger",
+      "name": "5 Napkin Burger",
+      "cuisine": "🍔 American",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "the-good-fork",
+      "name": "The Good Fork",
+      "cuisine": "🍔 American",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "vinegar-hill-house",
+      "name": "Vinegar Hill House",
+      "cuisine": "🍔 American",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "uncle-ray-s-chicken",
+      "name": "Uncle Ray's Chicken",
+      "cuisine": "🍔 American",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "hamburger-america",
+      "name": "Hamburger America",
+      "cuisine": "🍔 American",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "red-lobster",
+      "name": "Red Lobster",
+      "cuisine": "🍔 American",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "five-guys",
+      "name": "Five Guys",
+      "cuisine": "🍔 American",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "applebee-s",
+      "name": "Applebee's",
+      "cuisine": "🍔 American",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "crispy-burger",
+      "name": "Crispy Burger",
+      "cuisine": "🍔 American",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "raising-cane-s",
+      "name": "Raising Cane's",
+      "cuisine": "🍔 American",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "bobwhite-counter",
+      "name": "Bobwhite Counter",
+      "cuisine": "🍔 American",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "subway",
+      "name": "Subway",
+      "cuisine": "🍔 American",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "chick-fil-a",
+      "name": "Chick-fil-A",
+      "cuisine": "🍔 American",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "wingstop",
+      "name": "Wingstop",
+      "cuisine": "🍔 American",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "mcdonald-s",
+      "name": "McDonald's",
+      "cuisine": "🍔 American",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "wetzel-s-pretzels",
+      "name": "Wetzel's Pretzels",
+      "cuisine": "🍔 American",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "shake-shack",
+      "name": "Shake Shack",
+      "cuisine": "🍔 American",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "7th-st-burger",
+      "name": "7th St Burger",
+      "cuisine": "🍔 American",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "smasha",
+      "name": "Smasha",
+      "cuisine": "🍔 American",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "chicken-at-last",
+      "name": "Chicken at Last",
+      "cuisine": "🍔 American",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "panera-bread",
+      "name": "Panera Bread",
+      "cuisine": "🍔 American",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "sunset-park-diner",
+      "name": "Sunset Park Diner",
+      "cuisine": "🍔 American",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "chick-it-out-astoria",
+      "name": "Chick It Out (Astoria)",
+      "cuisine": "🍔 American",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "vernon-grill",
+      "name": "Vernon Grill",
+      "cuisine": "🍔 American",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "big-daddy-s-hawaiian-bbq",
+      "name": "Big Daddy's Hawaiian BBQ",
+      "cuisine": "🍔 American",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "campania",
+      "name": "Campania",
+      "cuisine": "🍕 Pizza & Italian",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "pizzarte",
+      "name": "Pizzarte",
+      "cuisine": "🍕 Pizza & Italian",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "olive-garden",
+      "name": "Olive Garden",
+      "cuisine": "🍕 Pizza & Italian",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "astarita",
+      "name": "Astarita",
+      "cuisine": "🍕 Pizza & Italian",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "vesta-trattoria",
+      "name": "Vesta Trattoria",
+      "cuisine": "🍕 Pizza & Italian",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "lil-frankie-s",
+      "name": "Lil Frankie's",
+      "cuisine": "🍕 Pizza & Italian",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "pasta-rullo",
+      "name": "Pasta Rullo",
+      "cuisine": "🍕 Pizza & Italian",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "forma-pasta-factory",
+      "name": "Forma Pasta Factory",
+      "cuisine": "🍕 Pizza & Italian",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "domino-s",
+      "name": "Domino's",
+      "cuisine": "🍕 Pizza & Italian",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "jax-pizza-joint",
+      "name": "Jax Pizza Joint",
+      "cuisine": "🍕 Pizza & Italian",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "freddy-pizza",
+      "name": "Freddy Pizza",
+      "cuisine": "🍕 Pizza & Italian",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "s-s-pizza",
+      "name": "S&S Pizza",
+      "cuisine": "🍕 Pizza & Italian",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "two-boots-pizzeria",
+      "name": "Two Boots Pizzeria",
+      "cuisine": "🍕 Pizza & Italian",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "rosario-s",
+      "name": "Rosario's",
+      "cuisine": "🍕 Pizza & Italian",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "gravesend-pizza",
+      "name": "Gravesend Pizza",
+      "cuisine": "🍕 Pizza & Italian",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "koronets-pizza",
+      "name": "Koronets Pizza",
+      "cuisine": "🍕 Pizza & Italian",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "andrew-bellucci",
+      "name": "Andrew Bellucci",
+      "cuisine": "🍕 Pizza & Italian",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "no-see-evil-pizza",
+      "name": "No See Evil Pizza",
+      "cuisine": "🍕 Pizza & Italian",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "milkflower",
+      "name": "Milkflower",
+      "cuisine": "🍕 Pizza & Italian",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "spunto-nyc-thin-crust-pizza",
+      "name": "Spunto NYC Thin Crust Pizza",
+      "cuisine": "🍕 Pizza & Italian",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "john-s-pizzeria-of-times-square",
+      "name": "John's Pizzeria of Times Square",
+      "cuisine": "🍕 Pizza & Italian",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "upside-pizza",
+      "name": "Upside Pizza",
+      "cuisine": "🍕 Pizza & Italian",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "prince-street-pizza",
+      "name": "Prince Street Pizza",
+      "cuisine": "🍕 Pizza & Italian",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "juliana-s",
+      "name": "Juliana's",
+      "cuisine": "🍕 Pizza & Italian",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "l-industrie",
+      "name": "L'industrie",
+      "cuisine": "🍕 Pizza & Italian",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "una-pizza-napoletana",
+      "name": "Una Pizza Napoletana",
+      "cuisine": "🍕 Pizza & Italian",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "the-gyro-project",
+      "name": "The Gyro Project",
+      "cuisine": "🥙 Mediterranean & Middle Eastern",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "svl",
+      "name": "SVL",
+      "cuisine": "🥙 Mediterranean & Middle Eastern",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "eat-it",
+      "name": "Eat It",
+      "cuisine": "🥙 Mediterranean & Middle Eastern",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "djerdan-burek",
+      "name": "Djerdan Burek",
+      "cuisine": "🥙 Mediterranean & Middle Eastern",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "shahadi",
+      "name": "Shahadi",
+      "cuisine": "🥙 Mediterranean & Middle Eastern",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "the-halal-city-food-truck",
+      "name": "The Halal City Food Truck",
+      "cuisine": "🥙 Mediterranean & Middle Eastern",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "adel-s",
+      "name": "Adel's",
+      "cuisine": "🥙 Mediterranean & Middle Eastern",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "jen-s-halal",
+      "name": "Jen's Halal",
+      "cuisine": "🥙 Mediterranean & Middle Eastern",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "samis-kebab-house",
+      "name": "Samis Kebab House",
+      "cuisine": "🥙 Mediterranean & Middle Eastern",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "bahari-estatorio",
+      "name": "Bahari Estatorio",
+      "cuisine": "🥙 Mediterranean & Middle Eastern",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "souvlaki-gr",
+      "name": "Souvlaki GR",
+      "cuisine": "🥙 Mediterranean & Middle Eastern",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "niko-s-souvlaki",
+      "name": "Niko's Souvlaki",
+      "cuisine": "🥙 Mediterranean & Middle Eastern",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "hummus-kitchen",
+      "name": "Hummus Kitchen",
+      "cuisine": "🥙 Mediterranean & Middle Eastern",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "ayat",
+      "name": "Ayat",
+      "cuisine": "🥙 Mediterranean & Middle Eastern",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "ibn-hamido",
+      "name": "IBN Hamido",
+      "cuisine": "🥙 Mediterranean & Middle Eastern",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "zizi",
+      "name": "Zizi",
+      "cuisine": "🥙 Mediterranean & Middle Eastern",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "jack-s-wife-freda",
+      "name": "Jack's Wife Freda",
+      "cuisine": "🥙 Mediterranean & Middle Eastern",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "black-iris",
+      "name": "Black Iris",
+      "cuisine": "🥙 Mediterranean & Middle Eastern",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "shuka",
+      "name": "Shuka",
+      "cuisine": "🥙 Mediterranean & Middle Eastern",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "brooklyn-kebab-house",
+      "name": "Brooklyn Kebab House",
+      "cuisine": "🥙 Mediterranean & Middle Eastern",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "baskin-robbins",
+      "name": "Baskin Robbins",
+      "cuisine": "🍦 Dessert",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "spot-dessert-bar",
+      "name": "Spot Dessert Bar",
+      "cuisine": "🍦 Dessert",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "max-brenner",
+      "name": "Max Brenner",
+      "cuisine": "🍦 Dessert",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "nai-snow",
+      "name": "Nai Snow",
+      "cuisine": "🍦 Dessert",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "sweet-moment",
+      "name": "Sweet Moment",
+      "cuisine": "🍦 Dessert",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "steve-s-key-lime-pie",
+      "name": "Steve's Key Lime Pie",
+      "cuisine": "🍦 Dessert",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "aida-s-parkside",
+      "name": "Aida's Parkside",
+      "cuisine": "🍦 Dessert",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "corona-ice-king",
+      "name": "Corona Ice King",
+      "cuisine": "🍦 Dessert",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "seoul-sweets",
+      "name": "Seoul Sweets",
+      "cuisine": "🍦 Dessert",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "salt-and-straw",
+      "name": "Salt and Straw",
+      "cuisine": "🍦 Dessert",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "venchi",
+      "name": "Venchi",
+      "cuisine": "🍦 Dessert",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "figo",
+      "name": "Figo",
+      "cuisine": "🍦 Dessert",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "milk-bar",
+      "name": "Milk Bar",
+      "cuisine": "🍦 Dessert",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "culture-an-american-yogurt-company",
+      "name": "Culture An American Yogurt Company",
+      "cuisine": "🍦 Dessert",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "ralph-s-italian-ice",
+      "name": "Ralph's Italian Ice",
+      "cuisine": "🍦 Dessert",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "gelateria-gentile",
+      "name": "Gelateria Gentile",
+      "cuisine": "🍦 Dessert",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "brooklyn-ice-cream-factory",
+      "name": "Brooklyn Ice Cream Factory",
+      "cuisine": "🍦 Dessert",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "grace-street",
+      "name": "Grace Street",
+      "cuisine": "🍦 Dessert",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "anita-gelato",
+      "name": "Anita Gelato",
+      "cuisine": "🍦 Dessert",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "ray-s-candy-store",
+      "name": "Ray's Candy Store",
+      "cuisine": "🍦 Dessert",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "mango-mango",
+      "name": "Mango Mango",
+      "cuisine": "🍦 Dessert",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "myaka",
+      "name": "Myaka",
+      "cuisine": "🍦 Dessert",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "saint-street-cakes",
+      "name": "Saint Street Cakes",
+      "cuisine": "🍦 Dessert",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "angelina-paris",
+      "name": "Angelina Paris",
+      "cuisine": "🍦 Dessert",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "sing-sing",
+      "name": "Sing Sing",
+      "cuisine": "🍸 Bars",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "fort-hamilton-distillery",
+      "name": "Fort Hamilton Distillery",
+      "cuisine": "🍸 Bars",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "the-shannon-pot",
+      "name": "The Shannon Pot",
+      "cuisine": "🍸 Bars",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "focal-point",
+      "name": "Focal Point",
+      "cuisine": "🍸 Bars",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "dutch-kills",
+      "name": "Dutch Kills",
+      "cuisine": "🍸 Bars",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "kelly-s-bar",
+      "name": "Kelly's Bar",
+      "cuisine": "🍸 Bars",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "kingston-hall",
+      "name": "Kingston Hall",
+      "cuisine": "🍸 Bars",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "talea",
+      "name": "Talea",
+      "cuisine": "🍸 Bars",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "half-pint",
+      "name": "Half Pint",
+      "cuisine": "🍸 Bars",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "garrett",
+      "name": "Garrett",
+      "cuisine": "🍸 Bars",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "amity-hall",
+      "name": "Amity Hall",
+      "cuisine": "🍸 Bars",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "sweet-polly",
+      "name": "Sweet Polly",
+      "cuisine": "🍸 Bars",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "katana-kitten",
+      "name": "Katana Kitten",
+      "cuisine": "🍸 Bars",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "wildflower",
+      "name": "Wildflower",
+      "cuisine": "🍸 Bars",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "double-chicken-please",
+      "name": "Double Chicken Please",
+      "cuisine": "🍸 Bars",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "cellar-dog",
+      "name": "Cellar Dog",
+      "cuisine": "🍸 Bars",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "jimmy-s-corner",
+      "name": "Jimmy's Corner",
+      "cuisine": "🍸 Bars",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "ripple-room",
+      "name": "Ripple Room",
+      "cuisine": "🍸 Bars",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "bull-mccabes",
+      "name": "Bull McCabes",
+      "cuisine": "🍸 Bars",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "barcade",
+      "name": "Barcade",
+      "cuisine": "🍸 Bars",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "the-ditty",
+      "name": "The Ditty",
+      "cuisine": "🍸 Bars",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "1020",
+      "name": "1020",
+      "cuisine": "🍸 Bars",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "conor-s-coat",
+      "name": "Conor's Coat",
+      "cuisine": "🍸 Bars",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "the-penny-farthing",
+      "name": "The Penny Farthing",
+      "cuisine": "🍸 Bars",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "double-down-saloon",
+      "name": "Double Down Saloon",
+      "cuisine": "🍸 Bars",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "212-east-hisae-s",
+      "name": "212 East Hisae's",
+      "cuisine": "🍸 Bars",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "mc-loughlin",
+      "name": "Mc Loughlin",
+      "cuisine": "🍸 Bars",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "honey-fitz",
+      "name": "Honey Fitz",
+      "cuisine": "🍸 Bars",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "swift-hibernian-lounge",
+      "name": "Swift Hibernian Lounge",
+      "cuisine": "🍸 Bars",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "blue-gold-tavern",
+      "name": "Blue & Gold Tavern",
+      "cuisine": "🍸 Bars",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "el-tenampa-deli-and-grocery",
+      "name": "El Tenampa Deli and Grocery",
+      "cuisine": "🌮 Mexican & Latin",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "savo",
+      "name": "Savo",
+      "cuisine": "🌮 Mexican & Latin",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "empanada-mama",
+      "name": "Empanada Mama",
+      "cuisine": "🌮 Mexican & Latin",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "sophie-s-cuban-cuisine",
+      "name": "Sophie's Cuban Cuisine",
+      "cuisine": "🌮 Mexican & Latin",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "taco-bell",
+      "name": "Taco Bell",
+      "cuisine": "🌮 Mexican & Latin",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "nene-s-taqueria",
+      "name": "Nene's Taqueria",
+      "cuisine": "🌮 Mexican & Latin",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "tacos-el-bronco",
+      "name": "Tacos El Bronco",
+      "cuisine": "🌮 Mexican & Latin",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "son-del-north",
+      "name": "Son Del North",
+      "cuisine": "🌮 Mexican & Latin",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "between-the-bagel",
+      "name": "Between the Bagel",
+      "cuisine": "🥐 Bakery",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "bagel-pub",
+      "name": "Bagel Pub",
+      "cuisine": "🥐 Bakery",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "pop-up-bagels",
+      "name": "Pop Up Bagels",
+      "cuisine": "🥐 Bakery",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "h-h-bagels",
+      "name": "H&H Bagels",
+      "cuisine": "🥐 Bakery",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "diljan-bakery",
+      "name": "Diljān Bakery",
+      "cuisine": "🥐 Bakery",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "little-flower",
+      "name": "Little Flower",
+      "cuisine": "🥐 Bakery",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "oneg-bakery",
+      "name": "Oneg Bakery",
+      "cuisine": "🥐 Bakery",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "martha-county-bakery",
+      "name": "Martha County Bakery",
+      "cuisine": "🥐 Bakery",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "schmackary-s",
+      "name": "Schmackary's",
+      "cuisine": "🥐 Bakery",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "bang-cookies",
+      "name": "Bang Cookies",
+      "cuisine": "🥐 Bakery",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "magnolia-bakery",
+      "name": "Magnolia Bakery",
+      "cuisine": "🥐 Bakery",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "the-bearded-baker",
+      "name": "The Bearded Baker",
+      "cuisine": "🥐 Bakery",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "breads-bakery",
+      "name": "Breads Bakery",
+      "cuisine": "🥐 Bakery",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "red-gate-bakery",
+      "name": "Red Gate Bakery",
+      "cuisine": "🥐 Bakery",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "peter-pan-donuts",
+      "name": "Peter Pan Donuts",
+      "cuisine": "🥐 Bakery",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "xin-fa-bakery",
+      "name": "Xin Fa Bakery",
+      "cuisine": "🥐 Bakery",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "ohayo-bread-house",
+      "name": "Ohayō Bread House",
+      "cuisine": "🥐 Bakery",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "from-lucie",
+      "name": "From Lucie",
+      "cuisine": "🥐 Bakery",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "chictea",
+      "name": "Chictea",
+      "cuisine": "🧋 Boba & Tea",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "cha-halo",
+      "name": "Cha Halo",
+      "cuisine": "🧋 Boba & Tea",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "chicha-san-chen",
+      "name": "Chicha San Chen",
+      "cuisine": "🧋 Boba & Tea",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "heytea-lab",
+      "name": "HEYTEA Lab",
+      "cuisine": "🧋 Boba & Tea",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "mixue",
+      "name": "Mixue",
+      "cuisine": "🧋 Boba & Tea",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "vivly-tea",
+      "name": "Vivly Tea",
+      "cuisine": "🧋 Boba & Tea",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "tea-tea",
+      "name": "? Tea? Tea",
+      "cuisine": "🧋 Boba & Tea",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "debutea",
+      "name": "Debutea",
+      "cuisine": "🧋 Boba & Tea",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "tanning-lemon-tea",
+      "name": "Tanning Lemon Tea",
+      "cuisine": "🧋 Boba & Tea",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "prince-tea-house",
+      "name": "Prince Tea House",
+      "cuisine": "🧋 Boba & Tea",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "tea-maker-s",
+      "name": "Tea Maker's",
+      "cuisine": "🧋 Boba & Tea",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "arteassan",
+      "name": "Arteassan",
+      "cuisine": "🧋 Boba & Tea",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "hong-cha",
+      "name": "Hong Cha",
+      "cuisine": "🧋 Boba & Tea",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "tp-tea",
+      "name": "TP Tea",
+      "cuisine": "🧋 Boba & Tea",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "n25-nitro-tea",
+      "name": "N25 Nitro Tea",
+      "cuisine": "🧋 Boba & Tea",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "auntea-jenny",
+      "name": "Auntea Jenny",
+      "cuisine": "🧋 Boba & Tea",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "nana-s-green-tea",
+      "name": "Nana's Green Tea",
+      "cuisine": "🧋 Boba & Tea",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "sweetea",
+      "name": "Sweetea",
+      "cuisine": "🧋 Boba & Tea",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "teapulse",
+      "name": "TeaPulse",
+      "cuisine": "🧋 Boba & Tea",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "sip-a-cup",
+      "name": "Sip a Cup",
+      "cuisine": "🧋 Boba & Tea",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "7-eleven",
+      "name": "7-Eleven",
+      "cuisine": "☕ Coffee",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "dunkin",
+      "name": "Dunkin",
+      "cuisine": "☕ Coffee",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "luckin-coffee",
+      "name": "Luckin Coffee",
+      "cuisine": "☕ Coffee",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "chipichape-cafe",
+      "name": "Chipichape Cafe",
+      "cuisine": "☕ Coffee",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "chateau-le-woof",
+      "name": "Chateau Le Woof",
+      "cuisine": "☕ Coffee",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "marvel",
+      "name": "Marvel",
+      "cuisine": "☕ Coffee",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "the-bean",
+      "name": "The Bean",
+      "cuisine": "☕ Coffee",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "sole-cafe",
+      "name": "Sole Cafe",
+      "cuisine": "☕ Coffee",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "square-coffee",
+      "name": "Square Coffee",
+      "cuisine": "☕ Coffee",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "caphe-en",
+      "name": "Càphê Đen",
+      "cuisine": "☕ Coffee",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "ariston-cafe",
+      "name": "Ariston Café",
+      "cuisine": "☕ Coffee",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "internet-coffee",
+      "name": "Internet & Coffee",
+      "cuisine": "☕ Coffee",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "culture-espresso",
+      "name": "Culture Espresso",
+      "cuisine": "☕ Coffee",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "phayul",
+      "name": "Phayul",
+      "cuisine": "🍛 Indian & Himalayan",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "tava",
+      "name": "Tava",
+      "cuisine": "🍛 Indian & Himalayan",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "nishaan",
+      "name": "Nishaan",
+      "cuisine": "🍛 Indian & Himalayan",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "divya-kitchen",
+      "name": "Divya Kitchen",
+      "cuisine": "🍛 Indian & Himalayan",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "dosa-royale",
+      "name": "Dosa Royale",
+      "cuisine": "🍛 Indian & Himalayan",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "semma",
+      "name": "Semma",
+      "cuisine": "🍛 Indian & Himalayan",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "baba-s-pierogies",
+      "name": "Baba's Pierogies",
+      "cuisine": "🍽️ Other",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": "Polish"
+    },
+    {
+      "id": "veselka",
+      "name": "Veselka",
+      "cuisine": "🍽️ Other",
+      "city": "New York",
+      "yk": null,
+      "ac": null,
+      "notes": "Ukrainian"
+    },
+    {
+      "id": "luke-s-lobster",
+      "name": "Luke's Lobster",
+      "cuisine": "🍽️ Other",
+      "city": "Boston",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "smoothie-quincy-market",
+      "name": "Smoothie Quincy Market",
+      "cuisine": "🍽️ Other",
+      "city": "Boston",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "the-friendly-toast",
+      "name": "The Friendly Toast",
+      "cuisine": "🍔 American",
+      "city": "Boston",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "the-hub-pub",
+      "name": "The Hub Pub",
+      "cuisine": "🍸 Bars",
+      "city": "Boston",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "black-rose",
+      "name": "Black Rose",
+      "cuisine": "🍸 Bars",
+      "city": "Boston",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "namastay-boston",
+      "name": "Namastay Boston",
+      "cuisine": "🍛 Indian & Himalayan",
+      "city": "Boston",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "union-oyster-house",
+      "name": "Union Oyster House",
+      "cuisine": "🍽️ Other",
+      "city": "Boston",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "galleria-umberto",
+      "name": "Galleria Umberto",
+      "cuisine": "🍕 Pizza & Italian",
+      "city": "Boston",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "kanes-donut",
+      "name": "Kanes Donut",
+      "cuisine": "🥐 Bakery",
+      "city": "Boston",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "mighty-squirrel",
+      "name": "Mighty Squirrel",
+      "cuisine": "🍸 Bars",
+      "city": "Boston",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "bell-in-hand",
+      "name": "Bell in Hand",
+      "cuisine": "🍸 Bars",
+      "city": "Boston",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "mike-s-pastry",
+      "name": "Mike's Pastry",
+      "cuisine": "🍦 Dessert",
+      "city": "Boston",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "saltie-girl",
+      "name": "Saltie Girl",
+      "cuisine": "🍽️ Other",
+      "city": "Boston",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "equal-measure",
+      "name": "Equal Measure",
+      "cuisine": "🍽️ Other",
+      "city": "Boston",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "libby-s-italian-pastry-shop",
+      "name": "Libby's Italian Pastry Shop",
+      "cuisine": "🍦 Dessert",
+      "city": "New Haven",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "sally-s-apizza",
+      "name": "Sally's Apizza",
+      "cuisine": "🍕 Pizza & Italian",
+      "city": "New Haven",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    },
+    {
+      "id": "frank-pepe-s-pizza",
+      "name": "Frank Pepe's Pizza",
+      "cuisine": "🍕 Pizza & Italian",
+      "city": "New Haven",
+      "yk": null,
+      "ac": null,
+      "notes": ""
+    }
+  ]
+}
