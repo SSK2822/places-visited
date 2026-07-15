@@ -1,39 +1,90 @@
 # ❤️ Places Visited
 
-A simple static site tracking every place YK & Ac have visited — with ratings, cuisine tags, filters, and in-browser editing. No build step, no framework: just `index.html` + `places.json`.
+Welcome to our running list of food spots, sweet treats, coffee runs, random cravings, and occasional "how did we find this place" moments.
 
-**Live:** https://ssk2822.github.io/places-visited/
+This is a lightweight static app powered by just:
 
-## Features
+1. `index.html`
+2. `places.json`
 
-Search, cuisine chips, city and rating filters, sorting, YK / Ac / Overall ratings on a −3…+3 scale (Overall = average of YK & Ac), notes, Google Maps links, a 🎲 random picker, and an Add/Edit form. Works on desktop and mobile.
+No framework. No build step. No drama.
 
-## Publish to GitHub Pages
+Live site: [https://ssk2822.github.io/places-visited/](https://ssk2822.github.io/places-visited/)
 
-```bash
-cd places-visited
-git remote add origin https://github.com/ssk2822/places-visited.git
-git push -u origin main
-```
+## What this app does
 
-Then on GitHub: **Settings → Pages → Source: GitHub Actions** and save. This repo includes a workflow that deploys the site on every push to `main`.
+1. Tracks places with YK and Ac ratings from `-3` to `+3`
+2. Calculates an overall score automatically
+3. Supports search, cuisine chips, city filter, rating filter, and sorting
+4. Adds Google Maps quick links for each place
+5. Includes a random picker for indecisive food nights
+6. Lets you add and edit entries directly in the browser
+7. Works on desktop and mobile
 
-The site appears at `https://ssk2822.github.io/places-visited/` after a minute.
+## Deploying to GitHub Pages
 
-## Editing from the site
+This repo is configured to deploy using GitHub Actions.
 
-Add/Edit changes are saved in your browser first (an "Unpublished changes" bar appears). To push them back to the repo directly from the site:
+1. Push changes to `main`
+2. In GitHub, open **Settings > Pages**
+3. Set **Source** to **GitHub Actions**
+4. Wait about a minute and refresh the site
 
-1. Create a **fine-grained personal access token** at github.com → Settings → Developer settings → Fine-grained tokens, scoped to this repo with **Contents: Read and write**.
-2. On the site, tap **⚙️**, paste the token, save.
-3. Tap **Publish to GitHub** — it commits `places.json` and Pages redeploys automatically.
+Workflow file:
 
-No token? Use **Export JSON** and paste the file into GitHub's web editor instead.
+1. `.github/workflows/blank.yml`
+
+## Editing data from the site
+
+When you edit or add places, changes are first saved in your browser as local unpublished changes.
+
+To publish from the site:
+
+1. Create a fine-grained GitHub token with repo access (`Contents: Read and write`)
+2. Click `⚙️` in the app and save owner, repo, branch, and token
+3. Click `Publish to GitHub`
+
+If you do not want to use a token, click `Export JSON` and update `places.json` manually in GitHub.
 
 ## Data format
 
-`places.json` → `{ "places": [{ "id", "name", "cuisine", "city", "yk", "ac", "notes" }] }` — `yk`/`ac` are integers −3…3 or `null` (unrated).
+`places.json` uses this shape:
+
+```json
+{
+  "updated": "2026-07-15",
+  "places": [
+    {
+      "id": "unique-id",
+      "name": "Place name",
+      "cuisine": "Cuisine",
+      "city": "City",
+      "yk": 2,
+      "ac": 1,
+      "notes": "Optional notes"
+    }
+  ]
+}
+```
+
+`yk` and `ac` can be `null` when not rated yet.
 
 ## Local preview
 
-`fetch()` needs http, so: `python3 -m http.server` in this folder, then open http://localhost:8000.
+Because this app fetches `places.json`, run a small local server:
+
+```bash
+python3 -m http.server
+```
+
+Then open [http://localhost:8000](http://localhost:8000).
+
+## Tiny FAQ
+
+Q: Why does the root URL show something else?
+
+A: This is a project site, so use `/places-visited/` in the URL.
+
+Q: Why is dinner planning still hard?
+
+A: The random button is trying its best.
