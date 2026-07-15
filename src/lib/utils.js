@@ -1,4 +1,3 @@
-import { CUISINE_HUES } from './constants'
 import { EDITORS } from './firebase-config'
 
 // Overall = average of whichever of the two ratings exist; null if neither does.
@@ -17,11 +16,13 @@ export const fmt = (v) => {
   return (rounded > 0 ? '+' : '') + str
 }
 
+// The design system colours a score by sign: accent-2 for positive, a warm
+// red for negative, muted neutral for zero and unrated.
 export const ratingClass = (v) => {
-  if (v === null) return 'rating-zero'
-  if (v > 0) return 'rating-pos'
-  if (v < 0) return 'rating-neg'
-  return 'rating-zero'
+  if (v === null || v === undefined) return 'zero'
+  if (v > 0) return 'pos'
+  if (v < 0) return 'neg'
+  return 'zero'
 }
 
 export function slugify(name, places, editingId = null) {
@@ -41,15 +42,8 @@ export function slugify(name, places, editingId = null) {
 export const mapsUrl = (p) =>
   `https://www.google.com/maps/search/${encodeURIComponent(p.name + ' ' + p.city)}`
 
-export function cuisineHue(name) {
-  if (name in CUISINE_HUES) return CUISINE_HUES[name]
-  let h = 0
-  for (const ch of name) h = (h * 31 + ch.codePointAt(0)) % 360
-  return h
-}
-
 // The most recently written of the two per-editor comments, for the
-// card preview. Returns null when neither editor has left one.
+// ledger row's note line. Returns null when neither editor has left one.
 export function latestComment(place) {
   const entries = EDITORS.map((e) => ({
     name: e.name,

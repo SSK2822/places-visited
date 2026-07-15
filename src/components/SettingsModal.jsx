@@ -1,7 +1,5 @@
 import { useEffect, useState } from 'react'
-import Modal from 'react-bootstrap/Modal'
-import Button from 'react-bootstrap/Button'
-import Form from 'react-bootstrap/Form'
+import Dialog from './Dialog'
 import { loadCfg, saveCfg } from '../lib/github'
 
 export default function SettingsModal({ show, onClose, onSaved }) {
@@ -24,39 +22,35 @@ export default function SettingsModal({ show, onClose, onSaved }) {
     onSaved()
   }
 
+  const actions = (
+    <>
+      <button className="btn btn-secondary" onClick={onClose}>
+        Close
+      </button>
+      <button className="btn btn-primary" onClick={save}>
+        Save settings
+      </button>
+    </>
+  )
+
   return (
-    <Modal show={show} onHide={onClose} centered>
-      <Modal.Header closeButton>
-        <Modal.Title className="h5">⚙️ GitHub sync</Modal.Title>
-      </Modal.Header>
-      <Modal.Body>
-        <p className="small text-body-secondary">
-          To publish edits from this site, create a fine-grained personal access token
-          (repo → Contents: read &amp; write) and paste it here. It's stored only in this browser.
-        </p>
-        <Form.Group className="mb-3">
-          <Form.Label className="small fw-bold text-body-secondary text-uppercase">
-            Owner / Repo / Branch
-          </Form.Label>
-          <div className="d-flex gap-2">
-            <Form.Control type="text" placeholder="owner" value={cfg.owner} onChange={set('owner')} />
-            <Form.Control type="text" placeholder="repo" value={cfg.repo} onChange={set('repo')} />
-            <Form.Control type="text" placeholder="main" value={cfg.branch} onChange={set('branch')} style={{ flex: '.6' }} />
-          </div>
-        </Form.Group>
-        <Form.Group>
-          <Form.Label className="small fw-bold text-body-secondary text-uppercase">Token</Form.Label>
-          <Form.Control type="password" placeholder="github_pat_…" value={cfg.token} onChange={set('token')} />
-        </Form.Group>
-      </Modal.Body>
-      <Modal.Footer>
-        <Button variant="secondary" onClick={onClose}>
-          Close
-        </Button>
-        <Button variant="primary" onClick={save}>
-          Save settings
-        </Button>
-      </Modal.Footer>
-    </Modal>
+    <Dialog show={show} title="GitHub sync" onClose={onClose} actions={actions}>
+      <p className="text-muted">
+        To publish edits from this site, create a fine-grained personal access token
+        (repo → Contents: read &amp; write) and paste it here. It’s stored only in this browser.
+      </p>
+      <div className="field">
+        <label htmlFor="cfg-owner">Owner / Repo / Branch</label>
+        <div style={{ display: 'flex', gap: 'var(--space-2)' }}>
+          <input className="input" id="cfg-owner" placeholder="owner" value={cfg.owner} onChange={set('owner')} />
+          <input className="input" placeholder="repo" value={cfg.repo} onChange={set('repo')} aria-label="Repo" />
+          <input className="input" placeholder="main" value={cfg.branch} onChange={set('branch')} aria-label="Branch" style={{ flex: '.6' }} />
+        </div>
+      </div>
+      <div className="field">
+        <label htmlFor="cfg-token">Token</label>
+        <input className="input" id="cfg-token" type="password" placeholder="github_pat_…" value={cfg.token} onChange={set('token')} />
+      </div>
+    </Dialog>
   )
 }

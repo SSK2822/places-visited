@@ -1,6 +1,5 @@
 import { useState } from 'react'
-import Modal from 'react-bootstrap/Modal'
-import Button from 'react-bootstrap/Button'
+import Dialog from './Dialog'
 import { signInGoogle, signOutCloud, canEdit, editorKeyFor, seedPlaces } from '../lib/cloud'
 import { EDITORS } from '../lib/firebase-config'
 
@@ -44,54 +43,52 @@ export default function AccountModal({ show, onClose, user, places, onToast }) {
     a.click()
   }
 
+  const actions = (
+    <>
+      <button className="btn btn-ghost" style={{ marginRight: 'auto' }} onClick={exportJson}>
+        Download backup
+      </button>
+      {user ? (
+        <button className="btn btn-secondary" onClick={() => signOutCloud().then(onClose)}>
+          Sign out
+        </button>
+      ) : (
+        <button className="btn btn-primary" disabled={busy} onClick={handleSignIn}>
+          {busy ? 'Signing in…' : 'Sign in with Google'}
+        </button>
+      )}
+    </>
+  )
+
   return (
-    <Modal show={show} onHide={onClose} centered>
-      <Modal.Header closeButton>
-        <Modal.Title className="h5">👤 Account</Modal.Title>
-      </Modal.Header>
-      <Modal.Body>
-        {user ? (
-          <>
-            <p className="small mb-2">
-              Signed in as <b>{user.email}</b>
-            </p>
-            {canEdit(user) ? (
-              <p className="small text-body-secondary">
-                You can add places and set {myEditor?.name}'s ({myEditor?.label}) rating and
-                comment on each one. Changes sync live to everyone.
-              </p>
-            ) : (
-              <p className="small text-body-secondary">
-                This Google account doesn't have edit access — the list is read-only for you.
-              </p>
-            )}
-            {canEdit(user) && places.length === 0 && (
-              <Button variant="warning" size="sm" className="me-2" disabled={busy} onClick={handleSeed}>
-                {busy ? 'Importing…' : 'Import places from places.json'}
-              </Button>
-            )}
-          </>
-        ) : (
-          <p className="small text-body-secondary">
-            Anyone can browse the list. To add or edit places, sign in with an approved
-            Google account.
+    <Dialog show={show} title="Account" onClose={onClose} actions={actions}>
+      {user ? (
+        <>
+          <p>
+            Signed in as <b>{user.email}</b>
           </p>
-        )}
-      </Modal.Body>
-      <Modal.Footer>
-        <Button variant="outline-secondary" size="sm" className="me-auto" onClick={exportJson}>
-          Download backup
-        </Button>
-        {user ? (
-          <Button variant="secondary" onClick={() => signOutCloud().then(onClose)}>
-            Sign out
-          </Button>
-        ) : (
-          <Button variant="primary" disabled={busy} onClick={handleSignIn}>
-            {busy ? 'Signing in…' : 'Sign in with Google'}
-          </Button>
-        )}
-      </Modal.Footer>
-    </Modal>
+          {canEdit(user) ? (
+            <p className="text-muted">
+              You can add places and set {myEditor?.name}’s ({myEditor?.label}) rating and
+              comment on each one. Changes sync live to everyone.
+            </p>
+          ) : (
+            <p className="text-muted">
+              This Google account doesn’t have edit access — the ledger is read-only for you.
+            </p>
+          )}
+          {canEdit(user) && places.length === 0 && (
+            <button className="btn btn-primary btn-block" disabled={busy} onClick={handleSeed}>
+              {busy ? 'Importing…' : 'Import places from places.json'}
+            </button>
+          )}
+        </>
+      ) : (
+        <p className="text-muted">
+          Anyone can browse the ledger. To add or edit places, sign in with an approved
+          Google account.
+        </p>
+      )}
+    </Dialog>
   )
 }

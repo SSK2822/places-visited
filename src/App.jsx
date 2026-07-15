@@ -1,15 +1,16 @@
-import { useEffect, useMemo, useState } from 'react'
-import Toast from 'react-bootstrap/Toast'
-import ToastContainer from 'react-bootstrap/ToastContainer'
-import AppNavbar from './components/AppNavbar'
-import StatsBar from './components/StatsBar'
-import FilterBar from './components/FilterBar'
-import PlaceCard from './components/PlaceCard'
-import EditPlaceModal from './components/EditPlaceModal'
+import { useCallback, useEffect, useMemo, useState } from 'react'
+import Masthead from './components/Masthead'
+import StatsLedger from './components/StatsLedger'
+import LedgerControls from './components/LedgerControls'
+import LedgerList from './components/LedgerList'
+import PlaceDetail from './components/PlaceDetail'
+import PlaceForm from './components/PlaceForm'
+import SurpriseOverlay from './components/SurpriseOverlay'
 import SettingsModal from './components/SettingsModal'
 import AccountModal from './components/AccountModal'
 import DirtyBar from './components/DirtyBar'
-import { CUISINES, LSK_DATA, LSK_THEME, DEFAULT_CITY } from './lib/constants'
+import Toast from './components/Toast'
+import { CUISINES, LSK_DATA, DEFAULT_CITY } from './lib/constants'
 import { overall, fmt, slugify } from './lib/utils'
 import { loadCfg, publishPlaces } from './lib/github'
 import { cloudEnabled, initCloud, canEdit, editorKeyFor, savePlaceCloud, deletePlaceCloud } from './lib/cloud'
@@ -17,31 +18,33 @@ import { EDITORS } from './lib/firebase-config'
 
 const EMPTY_DB = { updated: '', places: [] }
 
+// Ranked = rated places, best first; the ledger's spine.
+const byRank = (a, b) => (overall(b) - overall(a)) || a.name.localeCompare(b.name)
+
 export default function App() {
   const [db, setDb] = useState(EMPTY_DB)
   const [dirty, setDirty] = useState(false)
   const [publishing, setPublishing] = useState(false)
 
   const [query, setQuery] = useState('')
-  const [city, setCity] = useState('')
-  const [ratingFilter, setRatingFilter] = useState('')
-  const [sort, setSort] = useState('name')
   const [cuisine, setCuisine] = useState('')
+  const [mode, setMode] = useState('ranked')
 
-  const [editorOpen, setEditorOpen] = useState(false)
+  const [view, setView] = useState('browse')
+  const [selectedId, setSelectedId] = useState(null)
   const [editingPlace, setEditingPlace] = useState(null) // null = adding a new place
+  const [surprising, setSurprising] = useState(false)
   const [showSettings, setShowSettings] = useState(false)
   const [toastMsg, setToastMsg] = useState('')
   const [user, setUser] = useState(null)
   const myKey = useMemo(() => editorKeyFor(user), [user])
-  const [theme, setTheme] = useState(() => localStorage.getItem(LSK_THEME) || 'light')
-
-  useEffect(() => {
-    document.documentElement.setAttribute('data-bs-theme', theme)
-    localStorage.setItem(LSK_THEME, theme)
-  }, [theme])
 
   const toast = (msg) => setToastMsg(msg)
+  const clearToast = useCallback(() => setToastMsg(''), [])
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [view, selectedId])
 
   /* ---------- data loading ---------- */
   useEffect(() => {
@@ -109,25 +112,26 @@ export default function App() {
     [cuisineChips],
   )
 
+  // The full ranking, unfiltered — the detail view's "No. N" and the Surprise
+  // pool both mean position in the whole ledger, not within a search.
+  const rankedAll = useMemo(
+    () => db.places.filter((p) => overall(p) !== null).sort(byRank),
+    [db.places],
+  )
+
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase()
     const list = db.places.filter((p) => {
       if (cuisine && p.cuisine !== cuisine) return false
-      if (city && p.city !== city) return false
-      const ov = overall(p)
-      if (ratingFilter === 'rated' && ov === null) return false
-      if (ratingFilter === 'unrated' && ov !== null) return false
-      if (['2', '1', '0'].includes(ratingFilter) && (ov === null || ov < +ratingFilter)) return false
-      if (ratingFilter === 'neg' && (ov === null || ov >= 0)) return false
+      const rated = overall(p) !== null
+      if (mode === 'ranked' && !rated) return false
+      if (mode === 'pending' && rated) return false
       const commentText = EDITORS.map((e) => p[`${e.key}Comment`] || '').join(' ')
       if (q && !(p.name + ' ' + p.cuisine + ' ' + p.city + ' ' + commentText).toLowerCase().includes(q)) return false
       return true
     })
-    const key = { overall, yk: (p) => p.yk, ac: (p) => p.ac }[sort]
-    if (key) list.sort((a, b) => ((key(b) ?? -99) - (key(a) ?? -99)) || a.name.localeCompare(b.name))
-    else list.sort((a, b) => a.name.localeCompare(b.name))
-    return list
-  }, [db.places, query, city, ratingFilter, sort, cuisine])
+    return list.sort(mode === 'ranked' ? byRank : (a, b) => a.name.localeCompare(b.name))
+  }, [db.places, query, cuisine, mode])
 
   const stats = useMemo(() => {
     const rated = db.places.filter((p) => overall(p) !== null)
@@ -145,10 +149,18 @@ export default function App() {
     return {
       total: db.places.length,
       rated: rated.length,
-      avg: rated.length ? fmt(rated.reduce((a, p) => a + overall(p), 0) / rated.length) : '–',
+      unrated: db.places.length - rated.length,
+      // Strip the leading emoji — the ledger sets this in Cormorant.
       topCuisine: top ? top[0].split(' ').slice(1).join(' ') : '–',
     }
   }, [db.places])
+
+  // Re-looked-up each render so a live Firestore edit shows through, and a
+  // place deleted from another device drops us back to the ledger.
+  const selected = db.places.find((p) => p.id === selectedId) || null
+  useEffect(() => {
+    if (view === 'detail' && !selected) setView('browse')
+  }, [view, selected])
 
   /* ---------- actions ---------- */
   // In cloud mode, editing needs an approved Google account.
@@ -159,16 +171,21 @@ export default function App() {
     return false
   }
 
+  function openDetail(place) {
+    setSelectedId(place.id)
+    setView('detail')
+  }
+
   function openAdd() {
     if (!requireEditor()) return
     setEditingPlace(null)
-    setEditorOpen(true)
+    setView('add')
   }
 
   function openEdit(place) {
     if (!requireEditor()) return
     setEditingPlace(place)
-    setEditorOpen(true)
+    setView('add')
   }
 
   function savePlace(form) {
@@ -198,7 +215,9 @@ export default function App() {
       updatePlaces([...db.places, rec])
       toast('Added ✓ — publish when ready')
     }
-    setEditorOpen(false)
+    // Land the viewer where the place now lives.
+    setMode(overall(rec) === null ? 'pending' : 'ranked')
+    setView('browse')
   }
 
   function deletePlace(id) {
@@ -210,14 +229,13 @@ export default function App() {
     } else {
       updatePlaces(db.places.filter((p) => p.id !== id))
     }
-    setEditorOpen(false)
+    setSelectedId(null)
+    setView('browse')
   }
 
   function surprise() {
-    if (!filtered.length) return toast('No places match your filters')
-    const p = filtered[Math.floor(Math.random() * filtered.length)]
-    const ov = overall(p)
-    toast(`🎲 ${p.name} — ${p.cuisine}${ov !== null ? ` (${fmt(ov)})` : ''}`)
+    if (!rankedAll.length) return toast('Nothing rated yet — no pick to make')
+    setSurprising(true)
   }
 
   async function handlePublish() {
@@ -256,51 +274,67 @@ export default function App() {
   /* ---------- render ---------- */
   return (
     <>
-      <header className="app-header sticky-top border-bottom pb-3">
-        <AppNavbar
-          onSurprise={surprise}
-          onSettings={() => setShowSettings(true)}
-          onAdd={openAdd}
-          theme={theme}
-          onToggleTheme={() => setTheme(theme === 'light' ? 'dark' : 'light')}
-        />
-        <div className="container-xl">
-          <StatsBar stats={stats} />
-          <FilterBar
-            query={query} setQuery={setQuery}
-            city={city} setCity={setCity} cities={cities}
-            ratingFilter={ratingFilter} setRatingFilter={setRatingFilter}
-            sort={sort} setSort={setSort}
-            cuisine={cuisine} setCuisine={setCuisine}
-            chips={cuisineChips}
-          />
-        </div>
-      </header>
+      <div className="flavour" aria-hidden="true">
+        <span className="b1" />
+        <span className="b2" />
+        <span className="b3" />
+      </div>
 
-      <main className="container-xl py-4 pb-5 mb-5">
-        <p className="text-body-secondary small">
-          {filtered.length} of {db.places.length} places
-        </p>
-        {filtered.length ? (
-          <div className="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xxl-4 g-3">
-            {filtered.map((p) => (
-              <div className="col" key={p.id}>
-                <PlaceCard place={p} onEdit={() => openEdit(p)} />
-              </div>
-            ))}
-          </div>
-        ) : (
-          <p className="text-center text-body-secondary py-5">
-            Nothing matches. Try clearing a filter or two.
-          </p>
+      <div className="wrap">
+        {view === 'browse' && (
+          <section className="view">
+            <Masthead onAccount={() => setShowSettings(true)} />
+            <StatsLedger stats={stats} />
+            <LedgerControls
+              query={query} setQuery={setQuery}
+              cuisine={cuisine} setCuisine={setCuisine} chips={cuisineChips}
+              mode={mode} setMode={setMode}
+              onSurprise={surprise}
+              onAdd={openAdd}
+            />
+            <p className="count-line">
+              {filtered.length} of {db.places.length} places
+            </p>
+            <LedgerList
+              places={filtered}
+              mode={mode}
+              onOpen={openDetail}
+              onRate={openEdit}
+            />
+            <p className="pending-note" style={{ marginTop: 'var(--space-8)' }}>
+              Ratings run −3 (never again) to +3 (bookmarked for repeat visits). Overall is the
+              average of {EDITORS.map((e) => e.label).join(' and ')} — the diplomatic score.
+              {db.updated && ` Last updated ${db.updated}.`}
+            </p>
+          </section>
         )}
-        <footer className="text-center text-body-secondary small pt-5 lh-base">
-          Ratings: -3 (never again) to +3 (bookmarked for repeat visits).
-          <br />
-          Overall is the average of YK and Ac, aka the diplomatic score.
-          {db.updated && <> Last updated {db.updated}.</>}
-        </footer>
-      </main>
+
+        {view === 'detail' && selected && (
+          <PlaceDetail
+            place={selected}
+            rank={rankedAll.findIndex((p) => p.id === selected.id)}
+            onBack={() => setView('browse')}
+            onEdit={openEdit}
+          />
+        )}
+
+        {view === 'add' && (
+          <PlaceForm
+            place={editingPlace}
+            defaultCuisine={cuisine || CUISINES[0]}
+            cuisines={cuisineOptions}
+            cities={cities}
+            myKey={myKey}
+            onSave={savePlace}
+            onDelete={deletePlace}
+            onCancel={() => setView('browse')}
+          />
+        )}
+      </div>
+
+      {surprising && (
+        <SurpriseOverlay places={rankedAll} onClose={() => setSurprising(false)} />
+      )}
 
       <DirtyBar
         show={dirty}
@@ -308,18 +342,6 @@ export default function App() {
         onPublish={handlePublish}
         onExport={exportJson}
         onDiscard={discard}
-      />
-
-      <EditPlaceModal
-        show={editorOpen}
-        place={editingPlace}
-        defaultCuisine={cuisine || CUISINES[0]}
-        cuisines={cuisineOptions}
-        cities={cities}
-        myKey={myKey}
-        onSave={savePlace}
-        onDelete={deletePlace}
-        onClose={() => setEditorOpen(false)}
       />
 
       {cloudEnabled ? (
@@ -338,17 +360,7 @@ export default function App() {
         />
       )}
 
-      <ToastContainer position="bottom-center" className="position-fixed pb-5 mb-4">
-        <Toast
-          show={!!toastMsg}
-          onClose={() => setToastMsg('')}
-          delay={3200}
-          autohide
-          className="text-center"
-        >
-          <Toast.Body>{toastMsg}</Toast.Body>
-        </Toast>
-      </ToastContainer>
+      <Toast message={toastMsg} onDone={clearToast} />
     </>
   )
 }

@@ -2,48 +2,62 @@
 
 Welcome to our running list of food spots, sweet treats, coffee runs, random cravings, and occasional "how did we find this place" moments.
 
-Now a proper web app built with **React + Vite + Bootstrap 5**, deployed to GitHub Pages.
+Now a proper web app built with **React + Vite**, styled as an editorial ledger with the
+**Classical** design system, and deployed to GitHub Pages.
 
 Live site: [https://ssk2822.github.io/places-visited/](https://ssk2822.github.io/places-visited/)
 
 ## What this app does
 
-1. Tracks places with YK and Ac ratings from `-3` to `+3`
-2. Calculates an overall score automatically
-3. Supports search, cuisine chips, city filter, rating filter, and sorting
-4. Adds Google Maps quick links for each place
-5. Includes a random picker for indecisive food nights
-6. Lets you add and edit entries directly in the browser
-7. Works on desktop and mobile
+1. Tracks places with YK and Ac ratings from `-3` to `+3`, in quarter steps
+2. Calculates an overall score automatically, and ranks the ledger by it
+3. Splits the list into **Ranked** (scored) and **To rate** (been there, verdict pending)
+4. Supports search and cuisine chips
+5. Adds Google Maps quick links for each place
+6. Includes a "Surprise us" slot machine for indecisive food nights
+7. Lets you add and edit entries directly in the browser
+8. Works on desktop and mobile
 
 ## Tech stack
 
 - [Vite](https://vitejs.dev/) — dev server and build tool
 - [React 18](https://react.dev/) — UI components
-- [Bootstrap 5](https://getbootstrap.com/) + [react-bootstrap](https://react-bootstrap.netlify.app/) — styling and modals
+- Classical design system — a vendored token sheet (`src/styles/classical.css`);
+  no UI framework, every colour/font/space comes from its `var(--*)` tokens
 - GitHub Actions + GitHub Pages — CI and hosting
 
 ## Project structure
 
 ```text
 index.html                  Vite entry page
-public/places.json          The data (committed to the repo)
+public/places.json          The data (seed / legacy-mode store)
 src/
-  main.jsx                  App bootstrap (imports Bootstrap + theme)
-  App.jsx                   State, filtering, and layout
+  main.jsx                  App bootstrap (imports the two stylesheets)
+  App.jsx                   State, filtering, and browse/detail/add routing
   components/
-    AppNavbar.jsx           Title + Surprise / Settings / Add buttons
-    StatsBar.jsx            The four stat tiles
-    FilterBar.jsx           Search, selects, cuisine chips
-    PlaceCard.jsx           One place card with rating pills
-    EditPlaceModal.jsx      Add/edit form with rating sliders
+    Masthead.jsx            Kicker, title, ornament rule, Account link
+    StatsLedger.jsx         The four ruled stat columns
+    LedgerControls.jsx      Search, cuisine chips, actions, Ranked/To-rate
+    LedgerList.jsx          The ranked + pending ledger rows
+    PlaceDetail.jsx         One place: scores and "Table talk"
+    PlaceForm.jsx           Add/edit form
+    RatingDial.jsx          The drag/keyboard -3..+3 rating dial
+    SurpriseOverlay.jsx     The "Surprise us" slot machine
+    CountUp.jsx             A score that counts up once revealed
+    Dialog.jsx              Modal built on the system's .dialog
+    Toast.jsx               Bottom status message
+    AccountModal.jsx        Google sign-in / backup / seed
     SettingsModal.jsx       GitHub sync settings
     DirtyBar.jsx            "Unpublished changes" bottom bar
+  hooks/useInView.js        Staggered scroll reveal
   lib/
     constants.js            Cuisine list, defaults, storage keys
     utils.js                Rating math, formatting, slugs
+    cloud.js                Firestore + Google auth
     github.js               Publish places.json via the GitHub API
-  styles/theme.css          Custom dark theme on top of Bootstrap
+  styles/
+    classical.css           Vendored design-system tokens + components
+    app.css                 App styling, built from those tokens
 ```
 
 ## Local development
@@ -76,7 +90,7 @@ The app has two sync modes, chosen automatically by `src/lib/firebase-config.js`
 
 When `firebaseConfig` is filled in, the app reads and writes a Firestore
 database with live sync. Anyone can browse; editing requires signing in with
-a Google account listed in `EDITOR_EMAILS` (and in `firestore.rules`).
+a Google account listed in `EDITORS` (and in `firestore.rules`).
 No tokens, works great on mobile.
 
 One-time setup:
@@ -87,13 +101,13 @@ One-time setup:
 4. Add the Pages domain under **Authentication → Settings → Authorized domains**
 5. Register a **Web app** and paste its config into `src/lib/firebase-config.js`
 6. Paste `firestore.rules` (with your two emails) into **Firestore → Rules**
-7. Sign in on the site and use **⚙️ → Import places from places.json** to seed the data
+7. Sign in on the site and use **Account → Import places from places.json** to seed the data
 
 ### Legacy mode (GitHub token)
 
 When `firebaseConfig` is `null`, edits are saved in your browser and can be
 published by committing `public/places.json` through the GitHub API — click
-`⚙️`, save a fine-grained token (`Contents: Read and write`), then
+`Account`, save a fine-grained token (`Contents: Read and write`), then
 `Publish to GitHub`. Or click `Export JSON` and update the file manually.
 
 ## Data format
