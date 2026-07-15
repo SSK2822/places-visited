@@ -1,3 +1,5 @@
+import { CUISINE_HUES } from './constants'
+
 // Overall = average of whichever of the two ratings exist; null if neither does.
 export const overall = (p) => {
   const r = [p.yk, p.ac].filter((v) => v !== null && v !== undefined)
@@ -30,3 +32,10 @@ export function slugify(name, places, editingId = null) {
 
 export const mapsUrl = (p) =>
   `https://www.google.com/maps/search/${encodeURIComponent(p.name + ' ' + p.city)}`
+
+export function cuisineHue(name) {
+  if (name in CUISINE_HUES) return CUISINE_HUES[name]
+  let h = 0
+  for (const ch of name) h = (h * 31 + ch.codePointAt(0)) % 360
+  return h
+}

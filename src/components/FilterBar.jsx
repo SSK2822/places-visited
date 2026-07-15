@@ -1,4 +1,5 @@
 import Form from 'react-bootstrap/Form'
+import { cuisineHue } from '../lib/utils'
 
 export default function FilterBar({
   query, setQuery,
@@ -16,7 +17,7 @@ export default function FilterBar({
           placeholder="Search places, cuisine, notes…"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          className="flex-grow-1"
+          className="flex-grow-1 rounded-pill px-3"
           style={{ minWidth: '180px', flexBasis: '200px' }}
         />
         <Form.Select value={city} onChange={(e) => setCity(e.target.value)} className="w-auto">
@@ -44,7 +45,8 @@ export default function FilterBar({
 
       <div className="cuisine-chips">
         <button
-          className={`btn btn-sm rounded-pill ${cuisine === '' ? 'btn-primary' : 'btn-outline-secondary'}`}
+          style={{ '--hue': 16 }}
+          className={`chip btn btn-sm rounded-pill ${cuisine === '' ? 'chip-on' : ''}`}
           onClick={() => setCuisine('')}
         >
           All
@@ -52,10 +54,11 @@ export default function FilterBar({
         {chips.map((c) => (
           <button
             key={c.name}
-            className={`btn btn-sm rounded-pill text-nowrap ${cuisine === c.name ? 'btn-primary' : 'btn-outline-secondary'}`}
+            style={{ '--hue': cuisineHue(c.name) }}
+            className={`chip btn btn-sm rounded-pill text-nowrap ${cuisine === c.name ? 'chip-on' : ''}`}
             onClick={() => setCuisine(cuisine === c.name ? '' : c.name)}
           >
-            {c.name} {c.count}
+            {c.name} <span className="chip-count">{c.count}</span>
           </button>
         ))}
       </div>

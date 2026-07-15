@@ -8,7 +8,7 @@ import PlaceCard from './components/PlaceCard'
 import EditPlaceModal from './components/EditPlaceModal'
 import SettingsModal from './components/SettingsModal'
 import DirtyBar from './components/DirtyBar'
-import { CUISINES, LSK_DATA, DEFAULT_CITY } from './lib/constants'
+import { CUISINES, LSK_DATA, LSK_THEME, DEFAULT_CITY } from './lib/constants'
 import { overall, fmt, slugify } from './lib/utils'
 import { loadCfg, publishPlaces } from './lib/github'
 
@@ -29,6 +29,12 @@ export default function App() {
   const [editingPlace, setEditingPlace] = useState(null) // null = adding a new place
   const [showSettings, setShowSettings] = useState(false)
   const [toastMsg, setToastMsg] = useState('')
+  const [theme, setTheme] = useState(() => localStorage.getItem(LSK_THEME) || 'light')
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-bs-theme', theme)
+    localStorage.setItem(LSK_THEME, theme)
+  }, [theme])
 
   const toast = (msg) => setToastMsg(msg)
 
@@ -201,7 +207,13 @@ export default function App() {
   return (
     <>
       <header className="app-header sticky-top border-bottom pb-3">
-        <AppNavbar onSurprise={surprise} onSettings={() => setShowSettings(true)} onAdd={openAdd} />
+        <AppNavbar
+          onSurprise={surprise}
+          onSettings={() => setShowSettings(true)}
+          onAdd={openAdd}
+          theme={theme}
+          onToggleTheme={() => setTheme(theme === 'light' ? 'dark' : 'light')}
+        />
         <div className="container-xl">
           <StatsBar stats={stats} />
           <FilterBar

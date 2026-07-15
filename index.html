@@ -1,7 +1,14 @@
 <!DOCTYPE html>
-<html lang="en" data-bs-theme="dark">
+<html lang="en" data-bs-theme="light">
   <head>
     <meta charset="UTF-8" />
+    <script>
+      // set theme before first paint to avoid a flash of the wrong mode
+      document.documentElement.setAttribute(
+        'data-bs-theme',
+        localStorage.getItem('pv_theme') || 'light',
+      )
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <title>❤️ Places Visited</title>
     <link rel="icon"

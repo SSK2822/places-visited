@@ -1,11 +1,11 @@
-import { overall, fmt, ratingClass, mapsUrl } from '../lib/utils'
+import { overall, fmt, ratingClass, mapsUrl, cuisineHue } from '../lib/utils'
 import { DEFAULT_CITY } from '../lib/constants'
 
 function RatingPill({ label, value, emphasis }) {
   return (
-    <div className={`rating-pill flex-fill text-center border rounded-2 py-1 ${emphasis ? 'rating-pill-overall' : ''}`}>
-      <div className="text-body-secondary text-uppercase rating-pill-label">{label}</div>
-      <div className={`fw-bolder ${ratingClass(value)}`}>{fmt(value)}</div>
+    <div className={`rating-pill flex-fill text-center rounded-3 py-1 ${ratingClass(value)} ${emphasis ? 'rating-pill-overall' : ''}`}>
+      <div className="text-uppercase rating-pill-label">{label}</div>
+      <div className="fw-bolder">{fmt(value)}</div>
     </div>
   )
 }
@@ -13,7 +13,7 @@ function RatingPill({ label, value, emphasis }) {
 export default function PlaceCard({ place, onEdit }) {
   const ov = overall(place)
   return (
-    <div className="card place-card h-100">
+    <div className="card place-card h-100" style={{ '--hue': cuisineHue(place.cuisine) }}>
       <div className="card-body d-flex flex-column gap-2 position-relative">
         <div className="position-absolute top-0 end-0 mt-2 me-2 d-flex gap-1">
           <a
@@ -31,9 +31,9 @@ export default function PlaceCard({ place, onEdit }) {
         </div>
         <h2 className="h6 fw-bold mb-0 pe-5">{place.name}</h2>
         <div className="d-flex flex-wrap gap-1">
-          <span className="badge text-bg-secondary fw-semibold">{place.cuisine}</span>
+          <span className="badge cuisine-badge rounded-pill">{place.cuisine}</span>
           {place.city !== DEFAULT_CITY && (
-            <span className="badge text-bg-warning fw-semibold">{place.city}</span>
+            <span className="badge city-badge rounded-pill">{place.city}</span>
           )}
         </div>
         {place.notes && (
