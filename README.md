@@ -16,7 +16,9 @@ git remote add origin https://github.com/ssk2822/places-visited.git
 git push -u origin main
 ```
 
-Then on GitHub: **Settings → Pages → Source: Deploy from a branch → main / (root) → Save.** The site appears at `https://ssk2822.github.io/places-visited/` after a minute.
+Then on GitHub: **Settings → Pages → Source: GitHub Actions** and save. This repo includes a workflow that deploys the site on every push to `main`.
+
+The site appears at `https://ssk2822.github.io/places-visited/` after a minute.
 
 ## Editing from the site
 
