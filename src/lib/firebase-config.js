@@ -16,11 +16,16 @@
 // This config is safe to commit — it is not a secret. Write access is
 // enforced by Firestore security rules (see firestore.rules), not by
 // hiding the config.
-export const firebaseConfig = null
+export const firebaseConfig = {
+  apiKey: 'AIzaSyDay9FjzIX-E8gyDC_sIM1m1cUV2WebPvI',
+  authDomain: 'places-visited-5d5d2.firebaseapp.com',
+  projectId: 'places-visited-5d5d2',
+  storageBucket: 'places-visited-5d5d2.firebasestorage.app',
+  messagingSenderId: '317004130946',
+  appId: '1:317004130946:web:b7ebdeaa75a35cac63a29b',
+  measurementId: 'G-X34JG1RZQD',
+}
 
 // Google account emails allowed to edit places.
 // Must match the list inside firestore.rules.
-export const EDITOR_EMAILS = [
-  // 'you@gmail.com',
-  // 'her@gmail.com',
-]
+export const EDITOR_EMAILS = ['shreyash.kawle@gmail.com', 'amandaychen1@gmail.com']
