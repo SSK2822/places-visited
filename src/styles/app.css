@@ -33,6 +33,32 @@ body { margin: 0; background: #f5ead8; overflow-x: hidden; }
 .rule-orn::before, .rule-orn::after { content: ""; height: 1px; width: 90px; background: var(--color-divider); }
 .rule-orn i { font-style: normal; font-size: 12px; letter-spacing: 0.3em; }
 
+/* Surprise, set as the masthead's ornament rather than a button in the action
+   row. Small-caps heading face between two fleurons; the whole rule is the
+   target, and the fleurons drift apart on hover so it reads as live. */
+.surprise-orn {
+  display: inline-flex; align-items: center; gap: 12px;
+  background: none; border: 0; cursor: pointer;
+  font-family: var(--font-heading); font-weight: var(--font-heading-weight);
+  font-size: 15px; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--color-accent-700);
+  padding: 6px 14px; border-radius: var(--radius-md);
+  transition: color .25s ease;
+}
+.surprise-orn i {
+  /* letter-spacing from .rule-orn i would push the single fleuron off-centre */
+  font-size: 12px; letter-spacing: normal; color: var(--color-accent);
+  transition: transform .35s cubic-bezier(.2, .8, .2, 1);
+}
+.surprise-orn:hover { color: var(--color-accent); }
+.surprise-orn:hover i:first-of-type { transform: translateX(-5px) rotate(-14deg); }
+.surprise-orn:hover i:last-of-type { transform: translateX(5px) rotate(14deg); }
+.surprise-orn:active { background: color-mix(in srgb, var(--color-accent) 12%, transparent); }
+@media (prefers-reduced-motion: reduce) {
+  .surprise-orn i { transition: none; }
+  .surprise-orn:hover i:first-of-type, .surprise-orn:hover i:last-of-type { transform: none; }
+}
+
 /* The masthead's utility rail — account / settings sit as quiet ghost links
    so they never compete with the two real actions below the stats. */
 .mast-rail { display: flex; justify-content: flex-end; gap: var(--space-2); margin-bottom: var(--space-2); }
@@ -159,7 +185,7 @@ body { margin: 0; background: #f5ead8; overflow-x: hidden; }
 @keyframes pop { 0% { transform: scale(.8); opacity: .4; } 100% { transform: scale(1); opacity: 1; } }
 
 /* ---------- toast ---------- */
-.toast { position: fixed; left: 50%; bottom: var(--space-6); transform: translate(-50%, 12px); z-index: 60;
+.toast { position: fixed; left: 50%; bottom: var(--space-6); transform: translate(-50%, 12px); z-index: 80;
   background: var(--color-surface); border: 1px solid var(--color-divider); border-radius: var(--radius-md);
   box-shadow: var(--shadow-md); padding: var(--space-3) var(--space-4); font-size: 14px; max-width: min(520px, calc(100vw - 32px));
   text-align: center; opacity: 0; transition: opacity .25s ease, transform .25s cubic-bezier(.2,.8,.2,1); pointer-events: none; }
@@ -173,6 +199,12 @@ body { margin: 0; background: #f5ead8; overflow-x: hidden; }
 .dirty-inner .msg { margin-right: auto; font-size: 13px; font-style: italic; }
 
 /* ---------- dialog additions ---------- */
+/* The system's .dialog-backdrop ships without a z-index, so it lands at auto
+   while .wrap holds a stacking context at z-index 1 — the dialog painted
+   *behind* the ledger, with the chips drawing over the card. Layer everything
+   fixed on one scale: flavour 0 · wrap 1 · dirty-bar 40 · surprise 50 ·
+   dialog 70 · toast 80 (a toast must stay legible over an open dialog). */
+.dialog-backdrop { z-index: 70; }
 .dialog-close { margin-left: auto; }
 .dialog-head { display: flex; align-items: center; gap: var(--space-2); }
 .dialog p { font-size: 14px; }

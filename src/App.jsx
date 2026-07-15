@@ -283,13 +283,12 @@ export default function App() {
       <div className="wrap">
         {view === 'browse' && (
           <section className="view">
-            <Masthead onAccount={() => setShowSettings(true)} />
+            <Masthead onAccount={() => setShowSettings(true)} onSurprise={surprise} />
             <StatsLedger stats={stats} />
             <LedgerControls
               query={query} setQuery={setQuery}
               cuisine={cuisine} setCuisine={setCuisine} chips={cuisineChips}
               mode={mode} setMode={setMode}
-              onSurprise={surprise}
               onAdd={openAdd}
             />
             <p className="count-line">

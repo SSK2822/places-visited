@@ -2,7 +2,7 @@ export default function LedgerControls({
   query, setQuery,
   cuisine, setCuisine, chips,
   mode, setMode,
-  onSurprise, onAdd,
+  onAdd,
 }) {
   return (
     <>
@@ -40,9 +40,6 @@ export default function LedgerControls({
         </div>
 
         <div className="actions">
-          <button className="btn btn-secondary" onClick={onSurprise}>
-            Surprise us
-          </button>
           <button className="btn btn-primary" onClick={onAdd}>
             Add a place
           </button>
