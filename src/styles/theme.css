@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap');
+
+:root {
+  --pv-accent: #ff7f50;
+  --pv-accent-hover: #ff9068;
+  --pv-pos: #52d196;
+  --pv-neg: #ff7a7a;
+  --pv-zero: #97a9bd;
+}
+
+body {
+  font-family: 'Outfit', 'Segoe UI', sans-serif;
+  background:
+    radial-gradient(80rem 50rem at -10% -20%, rgba(255, 127, 80, 0.12), transparent 55%),
+    radial-gradient(80rem 50rem at 110% -10%, rgba(73, 184, 166, 0.14), transparent 58%),
+    linear-gradient(180deg, #0a121a 0%, #0c1621 45%, #0a1118 100%);
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+.app-title {
+  font-family: 'Fraunces', serif;
+}
+
+.app-subtitle {
+  font-size: 0.72rem;
+  letter-spacing: 0.03em;
+}
+
+.app-header {
+  background: rgba(10, 18, 26, 0.82);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+/* Coral primary instead of Bootstrap blue */
+.btn-primary {
+  --bs-btn-bg: var(--pv-accent);
+  --bs-btn-border-color: var(--pv-accent);
+  --bs-btn-hover-bg: var(--pv-accent-hover);
+  --bs-btn-hover-border-color: var(--pv-accent-hover);
+  --bs-btn-active-bg: #e56a3d;
+  --bs-btn-active-border-color: #e56a3d;
+  --bs-btn-disabled-bg: var(--pv-accent);
+  --bs-btn-disabled-border-color: var(--pv-accent);
+}
+
+.stat-card {
+  background: rgba(21, 35, 49, 0.72);
+}
+
+.cuisine-chips {
+  display: flex;
+  gap: 0.4rem;
+  overflow-x: auto;
+  padding-bottom: 0.4rem;
+  scrollbar-width: thin;
+  -webkit-overflow-scrolling: touch;
+}
+
+.place-card {
+  transition: transform 0.18s ease, border-color 0.18s ease;
+}
+
+.place-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(255, 127, 80, 0.5);
+}
+
+.rating-pos {
+  color: var(--pv-pos) !important;
+}
+
+.rating-neg {
+  color: var(--pv-neg) !important;
+}
+
+.rating-zero {
+  color: var(--pv-zero) !important;
+}
+
+.rating-pill-label {
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.rating-pill-overall {
+  border-width: 2px !important;
+}
+
+.rating-badge {
+  min-width: 48px;
+  padding: 0.25rem 0;
+  font-size: 1.05rem;
+}
+
+.dirty-bar {
+  background: #35280f;
+  border-color: #735726 !important;
+  color: #ffd97a;
+  z-index: 1040;
+}

@@ -2,12 +2,7 @@
 
 Welcome to our running list of food spots, sweet treats, coffee runs, random cravings, and occasional "how did we find this place" moments.
 
-This is a lightweight static app powered by just:
-
-1. `index.html`
-2. `places.json`
-
-No framework. No build step. No drama.
+Now a proper web app built with **React + Vite + Bootstrap 5**, deployed to GitHub Pages.
 
 Live site: [https://ssk2822.github.io/places-visited/](https://ssk2822.github.io/places-visited/)
 
@@ -21,18 +16,57 @@ Live site: [https://ssk2822.github.io/places-visited/](https://ssk2822.github.io
 6. Lets you add and edit entries directly in the browser
 7. Works on desktop and mobile
 
+## Tech stack
+
+- [Vite](https://vitejs.dev/) — dev server and build tool
+- [React 18](https://react.dev/) — UI components
+- [Bootstrap 5](https://getbootstrap.com/) + [react-bootstrap](https://react-bootstrap.netlify.app/) — styling and modals
+- GitHub Actions + GitHub Pages — CI and hosting
+
+## Project structure
+
+```text
+index.html                  Vite entry page
+public/places.json          The data (committed to the repo)
+src/
+  main.jsx                  App bootstrap (imports Bootstrap + theme)
+  App.jsx                   State, filtering, and layout
+  components/
+    AppNavbar.jsx           Title + Surprise / Settings / Add buttons
+    StatsBar.jsx            The four stat tiles
+    FilterBar.jsx           Search, selects, cuisine chips
+    PlaceCard.jsx           One place card with rating pills
+    EditPlaceModal.jsx      Add/edit form with rating sliders
+    SettingsModal.jsx       GitHub sync settings
+    DirtyBar.jsx            "Unpublished changes" bottom bar
+  lib/
+    constants.js            Cuisine list, defaults, storage keys
+    utils.js                Rating math, formatting, slugs
+    github.js               Publish places.json via the GitHub API
+  styles/theme.css          Custom dark theme on top of Bootstrap
+```
+
+## Local development
+
+```bash
+npm install
+npm run dev
+```
+
+Then open the URL Vite prints (it serves under `/places-visited/`).
+
+Other commands:
+
+```bash
+npm run build     # production build into dist/
+npm run preview   # serve the production build locally
+```
+
 ## Deploying to GitHub Pages
 
-This repo is configured to deploy using GitHub Actions.
-
-1. Push changes to `main`
-2. In GitHub, open **Settings > Pages**
-3. Set **Source** to **GitHub Actions**
-4. Wait about a minute and refresh the site
-
-Workflow file:
-
-1. `.github/workflows/blank.yml`
+Push to `main` and GitHub Actions builds the app and deploys `dist/` to Pages
+(`.github/workflows/deploy.yml`). In GitHub, **Settings > Pages > Source** must be set to
+**GitHub Actions**.
 
 ## Editing data from the site
 
@@ -44,11 +78,13 @@ To publish from the site:
 2. Click `⚙️` in the app and save owner, repo, branch, and token
 3. Click `Publish to GitHub`
 
-If you do not want to use a token, click `Export JSON` and update `places.json` manually in GitHub.
+Publishing commits `public/places.json`, which triggers the deploy workflow and refreshes the site.
+
+If you do not want to use a token, click `Export JSON` and update `public/places.json` manually in GitHub.
 
 ## Data format
 
-`places.json` uses this shape:
+`public/places.json` uses this shape:
 
 ```json
 {
@@ -68,16 +104,6 @@ If you do not want to use a token, click `Export JSON` and update `places.json` 
 ```
 
 `yk` and `ac` can be `null` when not rated yet.
-
-## Local preview
-
-Because this app fetches `places.json`, run a small local server:
-
-```bash
-python3 -m http.server
-```
-
-Then open [http://localhost:8000](http://localhost:8000).
 
 ## Tiny FAQ
 
