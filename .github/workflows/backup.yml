@@ -45,13 +45,17 @@ jobs:
 
       - name: Commit if changed
         run: |
-          if git diff --quiet -- backups/places.latest.json; then
+          # Stage first, then compare the index against HEAD. `git diff` alone
+          # only looks at tracked files, so on the very first run — when the
+          # snapshot is still untracked — it reports "no change" and we'd skip
+          # the commit forever, never creating the backup we exist to create.
+          git add backups/places.latest.json
+          if git diff --cached --quiet -- backups/places.latest.json; then
             echo "No change since the last snapshot."
             exit 0
           fi
           summary=$(node -e "const s=require('./backups/places.latest.json');console.log(\`\${s.count} places, \${s.rated} rated\`)")
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add backups/places.latest.json
           git commit -m "Snapshot places: $summary"
           git push
