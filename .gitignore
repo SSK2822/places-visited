@@ -2,3 +2,10 @@ node_modules/
 dist/
 .DS_Store
 *.local
+
+# Firebase service-account keys. These bypass firestore.rules entirely and this
+# repo is public — the key belongs in the FIREBASE_SERVICE_ACCOUNT GitHub secret
+# and nowhere else. Named for what the Firebase console actually downloads.
+*firebase-adminsdk*.json
+*service-account*.json
+*serviceaccount*.json
