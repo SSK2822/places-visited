@@ -6,6 +6,7 @@ import LedgerList from './components/LedgerList'
 import PlaceDetail from './components/PlaceDetail'
 import PlaceForm from './components/PlaceForm'
 import SurpriseOverlay from './components/SurpriseOverlay'
+import CloudError from './components/CloudError'
 import SettingsModal from './components/SettingsModal'
 import AccountModal from './components/AccountModal'
 import DirtyBar from './components/DirtyBar'
@@ -25,6 +26,13 @@ export default function App() {
   const [db, setDb] = useState(EMPTY_DB)
   const [dirty, setDirty] = useState(false)
   const [publishing, setPublishing] = useState(false)
+  // A Firestore read/write that failed. Non-null blocks the whole UI: with the
+  // data in an unknown state, every destructive control must be unreachable.
+  const [cloudFault, setCloudFault] = useState(null)
+  // True only once a snapshot has actually arrived. `db.places.length === 0`
+  // cannot tell "empty database" from "hasn't loaded" or "read failed", and
+  // conflating those is what let the seed import run over 252 real places.
+  const [loaded, setLoaded] = useState(!cloudEnabled)
 
   const [query, setQuery] = useState('')
   const [cuisine, setCuisine] = useState('')
@@ -51,11 +59,18 @@ export default function App() {
     if (cloudEnabled) {
       let cleanup
       initCloud(
-        (places) => setDb({ updated: '', places }),
+        (places) => {
+          setDb({ updated: '', places })
+          setLoaded(true)
+          setCloudFault(null)
+        },
         setUser,
-      ).then((fn) => {
-        cleanup = fn
-      })
+        (err) => setCloudFault({ error: err, what: 'read' }),
+      )
+        .then((fn) => {
+          cleanup = fn
+        })
+        .catch((err) => setCloudFault({ error: err, what: 'read' }))
       return () => cleanup && cleanup()
     }
     ;(async () => {
@@ -207,7 +222,10 @@ export default function App() {
     if (cloudEnabled) {
       savePlaceCloud(rec)
         .then(() => toast(wasEditing ? 'Updated ✓' : 'Added ✓'))
-        .catch((e) => toast('Save failed: ' + e.message))
+        .catch((e) => {
+          console.error('[places] save failed:', e)
+          setCloudFault({ error: e, what: 'write' })
+        })
     } else if (wasEditing) {
       updatePlaces(db.places.map((p) => (p.id === editingPlace.id ? rec : p)))
       toast('Updated ✓')
@@ -225,7 +243,10 @@ export default function App() {
     if (cloudEnabled) {
       deletePlaceCloud(id)
         .then(() => toast('Deleted ✓'))
-        .catch((e) => toast('Delete failed: ' + e.message))
+        .catch((e) => {
+          console.error('[places] delete failed:', e)
+          setCloudFault({ error: e, what: 'write' })
+        })
     } else {
       updatePlaces(db.places.filter((p) => p.id !== id))
     }
@@ -272,6 +293,23 @@ export default function App() {
   }
 
   /* ---------- render ---------- */
+  // A failed read or write means the data is in an unknown state, so we stop
+  // here and render nothing else — no ledger, no Add, and crucially no Import.
+  if (cloudFault) {
+    return (
+      <>
+        <div className="flavour" aria-hidden="true">
+          <span className="b1" />
+          <span className="b2" />
+          <span className="b3" />
+        </div>
+        <div className="wrap">
+          <CloudError error={cloudFault.error} what={cloudFault.what} />
+        </div>
+      </>
+    )
+  }
+
   return (
     <>
       <div className="flavour" aria-hidden="true">
@@ -349,6 +387,9 @@ export default function App() {
           onClose={() => setShowSettings(false)}
           user={user}
           places={db.places}
+          // Seeding is offered only when a snapshot has actually arrived and
+          // come back empty — never on "not loaded yet" or a failed read.
+          canSeed={loaded && db.places.length === 0}
           onToast={toast}
         />
       ) : (

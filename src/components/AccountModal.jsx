@@ -3,8 +3,9 @@ import Dialog from './Dialog'
 import { signInGoogle, signOutCloud, canEdit, editorKeyFor, seedPlaces } from '../lib/cloud'
 import { EDITORS } from '../lib/firebase-config'
 
-export default function AccountModal({ show, onClose, user, places, onToast }) {
+export default function AccountModal({ show, onClose, user, places, canSeed, onToast }) {
   const [busy, setBusy] = useState(false)
+  const [seedError, setSeedError] = useState(null)
   const myEditor = EDITORS.find((e) => e.key === editorKeyFor(user))
 
   async function handleSignIn() {
@@ -20,16 +21,27 @@ export default function AccountModal({ show, onClose, user, places, onToast }) {
   }
 
   async function handleSeed() {
-    if (!confirm('Import all places from places.json into the cloud database?')) return
+    if (
+      !confirm(
+        'Import places.json into the cloud database?\n\n' +
+          'This is only for a first-time, empty database. places.json has no ratings, ' +
+          'so importing over existing places would reset every rating and comment to blank. ' +
+          'The import re-checks the database and will refuse if it is not empty.',
+      )
+    ) {
+      return
+    }
     setBusy(true)
     try {
       const r = await fetch(`${import.meta.env.BASE_URL}places.json?cb=${Date.now()}`)
+      if (!r.ok) throw new Error(`places.json returned ${r.status}`)
       const j = await r.json()
       await seedPlaces(j.places)
       onToast(`Imported ${j.places.length} places ✓`)
       onClose()
     } catch (e) {
-      onToast('Import failed: ' + e.message)
+      console.error('[places] import failed:', e)
+      setSeedError(e.message)
     } finally {
       setBusy(false)
     }
@@ -77,11 +89,17 @@ export default function AccountModal({ show, onClose, user, places, onToast }) {
               This Google account doesn’t have edit access — the ledger is read-only for you.
             </p>
           )}
-          {canEdit(user) && places.length === 0 && (
-            <button className="btn btn-primary btn-block" disabled={busy} onClick={handleSeed}>
-              {busy ? 'Importing…' : 'Import places from places.json'}
-            </button>
+          {canEdit(user) && canSeed && (
+            <>
+              <button className="btn btn-primary btn-block" disabled={busy} onClick={handleSeed}>
+                {busy ? 'Importing…' : 'Import places from places.json'}
+              </button>
+              <p className="seed-warn">
+                Only for a first-time, empty database — places.json carries no ratings.
+              </p>
+            </>
           )}
+          {seedError && <p className="seed-error">Import stopped: {seedError}</p>}
         </>
       ) : (
         <p className="text-muted">
