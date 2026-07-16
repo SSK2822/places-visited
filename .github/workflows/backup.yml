@@ -1,0 +1,57 @@
+name: Backup Firestore
+
+# Snapshots the live database into backups/places.latest.json and commits it
+# when anything changed. Git history is then the recovery log: `git log -p
+# backups/places.latest.json` shows every rating and place that came or went,
+# and any past version can be fed back through Account → "Restore from a
+# backup". Firestore's own backups are Blaze-only, so this is the safety net.
+#
+# Needs a FIREBASE_SERVICE_ACCOUNT repo secret — see README, "Automatic backups".
+
+on:
+  schedule:
+    # Every 6 hours. Cheap on the Spark read quota (~264 reads a run).
+    - cron: "0 */6 * * *"
+  workflow_dispatch:
+
+# Never run two snapshots at once — they'd race on the same commit.
+concurrency:
+  group: backup
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Take snapshot
+        env:
+          FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+        run: node scripts/snapshot.mjs
+
+      - name: Commit if changed
+        run: |
+          if git diff --quiet -- backups/places.latest.json; then
+            echo "No change since the last snapshot."
+            exit 0
+          fi
+          summary=$(node -e "const s=require('./backups/places.latest.json');console.log(\`\${s.count} places, \${s.rated} rated\`)")
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add backups/places.latest.json
+          git commit -m "Snapshot places: $summary"
+          git push

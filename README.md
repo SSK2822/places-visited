@@ -110,6 +110,56 @@ published by committing `public/places.json` through the GitHub API — click
 `Account`, save a fine-grained token (`Contents: Read and write`), then
 `Publish to GitHub`. Or click `Export JSON` and update the file manually.
 
+## Backups and restore
+
+Firestore on the **Spark (free) plan has no point-in-time recovery and no
+scheduled backups**, so if the database is overwritten there is nothing on
+Google's side to roll back to. The repo is the safety net instead.
+
+### Automatic backups (the recovery log)
+
+`.github/workflows/backup.yml` snapshots the live database into
+`backups/places.latest.json` every 6 hours (and on demand via **Actions → Backup
+Firestore → Run workflow**), committing only when something changed. Git history
+is therefore the log:
+
+```bash
+git log -p backups/places.latest.json     # every rating and place that came or went
+```
+
+Any past version can be restored (see below). The script is read-only and
+refuses to write a snapshot if the collection comes back empty — an empty read is
+far more likely to be a broken listener than a genuinely empty database, and
+committing it would overwrite a good backup with a useless one.
+
+One-time setup — the workflow needs admin credentials, which bypass the security
+rules, so they live in a GitHub secret and never in the browser:
+
+1. Firebase console → **Project settings → Service accounts → Generate new private key**
+2. GitHub → **Settings → Secrets and variables → Actions → New repository secret**
+3. Name it `FIREBASE_SERVICE_ACCOUNT`, paste the whole JSON file as the value
+
+Keep that key out of the repo — anything holding it can read and write the
+database.
+
+### Restoring
+
+**Account → Restore from a backup**, signed in as an editor. Pick any backup
+file: `backups/places.latest.json`, a `Download backup` export, or an old
+snapshot pulled out of git history.
+
+It shows what it would change before writing anything, and it **only fills
+blanks** — it never overwrites a field that already holds a value. So an old
+export can't undo newer edits, and running the same restore twice does nothing
+the second time. It reads both the current schema and the pre-Firestore exports
+(whose shared `notes` field is attributed to Yash's comment).
+
+That is deliberately the opposite of **Import places from places.json**, which
+writes whole documents from a seed file with no ratings in it. The import is for
+a first-time, empty database only; it re-checks the server and refuses if the
+collection is not empty. If you ever see an empty ledger, **do not import** —
+reach for a restore.
+
 ## Data format
 
 `public/places.json` uses this shape:

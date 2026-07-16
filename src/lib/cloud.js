@@ -76,6 +76,60 @@ export async function deletePlaceCloud(id) {
   await fs.deleteDoc(fs.doc(db, 'places', id))
 }
 
+// Restore from a backup file.
+//
+// The defining rule: a restore only ever *fills blanks*. It never overwrites a
+// field that already holds a value, so an old export can't clobber a newer
+// rating, and running the same restore twice is a no-op. That is the opposite
+// of seedPlaces — which is why this, not the import, is the way back from a bad
+// write. Nothing is committed until the caller has seen the plan.
+export async function planRestore(entries) {
+  const { fs, db } = await fb()
+  const snap = await fs.getDocsFromServer(fs.collection(db, 'places'))
+  const current = new Map(snap.docs.map((d) => [d.id, d.data()]))
+
+  const fills = []
+  const skipped = { noSuchPlace: [], alreadyHasValue: [] }
+
+  for (const e of entries) {
+    const cur = current.get(e.id)
+    if (!cur) {
+      if (e.yk !== null || e.ac !== null || e.ykComment || e.acComment) skipped.noSuchPlace.push(e.id)
+      continue
+    }
+    const patch = {}
+    let blocked = false
+    for (const k of ['yk', 'ac']) {
+      if (e[k] === null || e[k] === undefined) continue
+      if (cur[k] === null || cur[k] === undefined) patch[k] = e[k]
+      else blocked = true
+    }
+    for (const k of ['ykComment', 'acComment']) {
+      if (!e[k]) continue
+      if (!cur[k]) patch[k] = e[k]
+      else blocked = true
+    }
+    if (Object.keys(patch).length) fills.push({ id: e.id, name: e.name, patch })
+    else if (blocked) skipped.alreadyHasValue.push(e.id)
+  }
+  return { fills, skipped, serverCount: snap.size }
+}
+
+// Commits a plan from planRestore. Merge writes, so fields outside the patch
+// (name, cuisine, city, the other editor's rating) are left exactly as they are.
+export async function applyRestore(fills) {
+  const { fs, db } = await fb()
+  const CHUNK = 400 // batches cap at 500 writes
+  for (let i = 0; i < fills.length; i += CHUNK) {
+    const batch = fs.writeBatch(db)
+    for (const { id, patch } of fills.slice(i, i + CHUNK)) {
+      batch.set(fs.doc(db, 'places', id), patch, { merge: true })
+    }
+    await batch.commit()
+  }
+  return fills.length
+}
+
 // One-time import of public/places.json into Firestore (max 500 per batch).
 //
 // This is the most destructive call in the app: every write is a whole-document
