@@ -1,7 +1,7 @@
 {
-  "takenAt": "2026-07-19T02:41:43.912Z",
-  "count": 269,
-  "rated": 39,
+  "takenAt": "2026-07-19T08:17:55.686Z",
+  "count": 268,
+  "rated": 86,
   "places": [
     {
       "ac": null,
@@ -33,15 +33,6 @@
     {
       "ac": null,
       "city": "New York",
-      "cuisine": "☕ Coffee",
-      "id": "7-eleven",
-      "name": "7-Eleven",
-      "notes": "",
-      "yk": 0
-    },
-    {
-      "ac": null,
-      "city": "New York",
       "cuisine": "🍔 American",
       "id": "7th-st-burger",
       "name": "7th St Burger",
@@ -68,14 +59,16 @@
       "yk": 0.75
     },
     {
-      "ac": null,
+      "ac": 1.25,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍜 Thai & SE Asian",
       "id": "am-thai-bistro",
       "name": "Am Thai Bistro",
-      "notes": "",
       "yk": 1.5,
-      "ykComment": "take out was pretty good"
+      "ykComment": "take out was pretty good",
+      "ykCommentAt": null
     },
     {
       "ac": null,
@@ -137,24 +130,28 @@
       "yk": 0
     },
     {
-      "ac": null,
+      "ac": -1,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "☕ Coffee",
       "id": "ariston-cafe",
       "name": "Ariston Café",
-      "notes": "",
       "yk": -0.25,
-      "ykComment": "pretty but nothing tasted good lol"
+      "ykComment": "pretty but nothing tasted good lol",
+      "ykCommentAt": null
     },
     {
-      "ac": null,
+      "ac": 2,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🧋 Boba & Tea",
       "id": "arteassan",
       "name": "Arteassan",
-      "notes": "",
       "yk": 2.25,
-      "ykComment": "yesssss"
+      "ykComment": "yesssss",
+      "ykCommentAt": null
     },
     {
       "ac": null,
@@ -184,24 +181,28 @@
       "yk": null
     },
     {
-      "ac": null,
+      "ac": 1.25,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍜 Thai & SE Asian",
       "id": "ba-xuyen",
       "name": "Ba Xuyên",
-      "notes": "",
       "yk": 1,
-      "ykComment": "First date spot banh mi"
+      "ykComment": "First date spot banh mi",
+      "ykCommentAt": null
     },
     {
-      "ac": null,
+      "ac": 1.5,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍽️ Other",
       "id": "baba-s-pierogies",
       "name": "Baba's Pierogies",
-      "notes": "Polish",
       "yk": null,
-      "ykComment": "Polish"
+      "ykComment": "Polish",
+      "ykCommentAt": null
     },
     {
       "ac": null,
@@ -303,13 +304,16 @@
       "yk": null
     },
     {
-      "ac": null,
+      "ac": 0.25,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍜 Thai & SE Asian",
       "id": "big-brother-asian",
       "name": "Big Brother Asian",
-      "notes": "",
-      "yk": 0.5
+      "yk": 0.5,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
@@ -438,13 +442,16 @@
       "yk": null
     },
     {
-      "ac": null,
+      "ac": 2,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "☕ Coffee",
       "id": "caphe-en",
       "name": "Càphê Đen",
-      "notes": "",
-      "yk": null
+      "yk": null,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
@@ -465,13 +472,16 @@
       "yk": null
     },
     {
-      "ac": null,
+      "ac": 2,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "☕ Coffee",
       "id": "chateau-le-woof",
       "name": "Chateau Le Woof",
-      "notes": "",
-      "yk": null
+      "yk": null,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
@@ -519,22 +529,28 @@
       "yk": null
     },
     {
-      "ac": null,
+      "ac": 1.25,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "☕ Coffee",
       "id": "chipichape-cafe",
       "name": "Chipichape Cafe",
-      "notes": "",
-      "yk": null
+      "yk": null,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
-      "ac": null,
+      "ac": 1.5,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🥢 Chinese & Taiwanese",
       "id": "chuan-tian-xia",
       "name": "Chuan Tian Xia",
-      "notes": "",
-      "yk": null
+      "yk": null,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
@@ -582,13 +598,16 @@
       "yk": null
     },
     {
-      "ac": null,
+      "ac": 1.75,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "☕ Coffee",
       "id": "culture-espresso",
       "name": "Culture Espresso",
-      "notes": "",
-      "yk": null
+      "yk": null,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": 1.25,
@@ -621,13 +640,16 @@
       "yk": null
     },
     {
-      "ac": null,
+      "ac": 1.5,
+      "acComment": "Vegetable lasgna",
+      "acCommentAt": 1784439264249,
       "city": "New York",
       "cuisine": "🍛 Indian & Himalayan",
       "id": "divya-kitchen",
       "name": "Divya Kitchen",
-      "notes": "",
-      "yk": null
+      "yk": null,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
@@ -657,13 +679,16 @@
       "yk": null
     },
     {
-      "ac": null,
+      "ac": 1.75,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍛 Indian & Himalayan",
       "id": "dosa-royale",
       "name": "Dosa Royale",
-      "notes": "",
-      "yk": null
+      "yk": null,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
@@ -680,15 +705,6 @@
       "cuisine": "🍸 Bars",
       "id": "double-down-saloon",
       "name": "Double Down Saloon",
-      "notes": "",
-      "yk": null
-    },
-    {
-      "ac": null,
-      "city": "New York",
-      "cuisine": "☕ Coffee",
-      "id": "dunkin",
-      "name": "Dunkin",
       "notes": "",
       "yk": null
     },
@@ -720,13 +736,16 @@
       "yk": null
     },
     {
-      "ac": null,
+      "ac": 1.75,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍜 Thai & SE Asian",
       "id": "elephant-ear",
       "name": "Elephant Ear",
-      "notes": "",
-      "yk": 2
+      "yk": 2,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
@@ -738,22 +757,28 @@
       "yk": null
     },
     {
-      "ac": null,
+      "ac": 1.25,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "Boston",
       "cuisine": "🍽️ Other",
       "id": "equal-measure",
       "name": "Equal Measure",
-      "notes": "",
-      "yk": null
+      "yk": null,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
-      "ac": null,
+      "ac": 1.25,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🥢 Chinese & Taiwanese",
       "id": "fei-long-spicy-hot-pot",
       "name": "Fei Long Spicy Hot Pot",
-      "notes": "",
-      "yk": null
+      "yk": null,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
@@ -774,13 +799,16 @@
       "yk": null
     },
     {
-      "ac": null,
+      "ac": 1.25,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🥢 Chinese & Taiwanese",
       "id": "fish-with-you",
       "name": "Fish With You",
-      "notes": "",
-      "yk": null
+      "yk": null,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
@@ -828,13 +856,16 @@
       "yk": null
     },
     {
-      "ac": null,
+      "ac": -1,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🥢 Chinese & Taiwanese",
       "id": "four-four-south-village",
       "name": "Four Four South Village",
-      "notes": "",
-      "yk": null
+      "yk": null,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
@@ -918,13 +949,16 @@
       "yk": null
     },
     {
-      "ac": null,
+      "ac": 1.5,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🥢 Chinese & Taiwanese",
       "id": "growl-growl",
       "name": "Growl Growl",
-      "notes": "",
-      "yk": null
+      "yk": null,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
@@ -936,13 +970,16 @@
       "yk": null
     },
     {
-      "ac": null,
+      "ac": -0.5,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🥢 Chinese & Taiwanese",
       "id": "hainan-chicken-house",
       "name": "Hainan Chicken House",
-      "notes": "",
-      "yk": null
+      "yk": null,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
@@ -1020,13 +1057,16 @@
       "yk": null
     },
     {
-      "ac": null,
+      "ac": 1.5,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "☕ Coffee",
       "id": "internet-coffee",
       "name": "Internet & Coffee",
-      "notes": "",
-      "yk": null
+      "yk": null,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
@@ -1065,13 +1105,16 @@
       "yk": null
     },
     {
-      "ac": null,
+      "ac": 1,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🥢 Chinese & Taiwanese",
       "id": "joe-s-steam-rice-roll",
       "name": "Joe's Steam Rice Roll",
-      "notes": "",
-      "yk": null
+      "yk": null,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
@@ -1083,13 +1126,16 @@
       "yk": null
     },
     {
-      "ac": null,
+      "ac": 0.75,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍜 Thai & SE Asian",
       "id": "jollibee",
       "name": "Jollibee",
-      "notes": "",
-      "yk": 0.5
+      "yk": 0.5,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
@@ -1101,13 +1147,16 @@
       "yk": null
     },
     {
-      "ac": null,
+      "ac": -0.5,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🥢 Chinese & Taiwanese",
       "id": "kai-feng-fu-dumpling-house",
       "name": "Kai Feng Fu Dumpling House",
-      "notes": "",
-      "yk": null
+      "yk": null,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
@@ -1149,13 +1198,16 @@
       "ykCommentAt": null
     },
     {
-      "ac": null,
+      "ac": 2.25,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🥢 Chinese & Taiwanese",
       "id": "king-s-kitchen",
       "name": "King's Kitchen",
-      "notes": "",
-      "yk": null
+      "yk": null,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
@@ -1188,13 +1240,16 @@
       "yk": null
     },
     {
-      "ac": null,
+      "ac": 1.75,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍜 Thai & SE Asian",
       "id": "krob-kreung-krob-ros",
       "name": "Krob Kreung Krob Ros",
-      "notes": "",
-      "yk": 2
+      "yk": 2,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
@@ -1206,13 +1261,16 @@
       "yk": null
     },
     {
-      "ac": null,
+      "ac": 1.5,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🥢 Chinese & Taiwanese",
       "id": "lao-ma-spicy",
       "name": "Lao Ma Spicy",
-      "notes": "",
-      "yk": null
+      "yk": null,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": 0.75,
@@ -1284,31 +1342,40 @@
       "yk": null
     },
     {
-      "ac": null,
+      "ac": 2.25,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🥢 Chinese & Taiwanese",
       "id": "liu-liu-sheng-jian",
       "name": "Liu Liu Sheng Jian",
-      "notes": "",
-      "yk": null
+      "yk": null,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
-      "ac": null,
+      "ac": 1.25,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "☕ Coffee",
       "id": "luckin-coffee",
       "name": "Luckin Coffee",
-      "notes": "",
-      "yk": null
+      "yk": null,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
-      "ac": null,
+      "ac": 1.5,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "Boston",
       "cuisine": "🍽️ Other",
       "id": "luke-s-lobster",
       "name": "Luke's Lobster",
-      "notes": "",
-      "yk": null
+      "yk": null,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
@@ -1320,13 +1387,16 @@
       "yk": null
     },
     {
-      "ac": null,
+      "ac": 2,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🥢 Chinese & Taiwanese",
       "id": "mala-project",
       "name": "MáLà Project",
-      "notes": "",
-      "yk": null
+      "yk": null,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
@@ -1347,13 +1417,16 @@
       "yk": null
     },
     {
-      "ac": null,
+      "ac": 1.75,
+      "acComment": "Rating only for pineapple ice cream",
+      "acCommentAt": 1784439393068,
       "city": "New York",
-      "cuisine": "☕ Coffee",
+      "cuisine": "🍦 Dessert",
       "id": "marvel",
       "name": "Marvel",
-      "notes": "",
-      "yk": null
+      "yk": null,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
@@ -1428,14 +1501,16 @@
       "yk": null
     },
     {
-      "ac": null,
+      "ac": 1.75,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍜 Thai & SE Asian",
       "id": "mitr-thai",
       "name": "Mitr Thai",
-      "notes": "",
       "yk": 1.5,
-      "ykComment": "Mean host"
+      "ykComment": "Mean host",
+      "ykCommentAt": null
     },
     {
       "ac": null,
@@ -1447,13 +1522,16 @@
       "yk": null
     },
     {
-      "ac": null,
+      "ac": 1.75,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🥢 Chinese & Taiwanese",
       "id": "mountain-house",
       "name": "Mountain House",
-      "notes": "",
-      "yk": null
+      "yk": null,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
@@ -1483,22 +1561,28 @@
       "yk": null
     },
     {
-      "ac": null,
+      "ac": 1.25,
+      "acComment": "Best pani puri",
+      "acCommentAt": 1784439281251,
       "city": "Boston",
       "cuisine": "🍛 Indian & Himalayan",
       "id": "namastay-boston",
       "name": "Namastay Boston",
-      "notes": "",
-      "yk": null
+      "yk": null,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
-      "ac": null,
+      "ac": 1.25,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🥢 Chinese & Taiwanese",
       "id": "nan-xiang-express",
       "name": "Nan Xiang Express",
-      "notes": "",
-      "yk": null
+      "yk": null,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
@@ -1519,13 +1603,16 @@
       "yk": null
     },
     {
-      "ac": null,
+      "ac": 1,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍜 Thai & SE Asian",
       "id": "new-belacan",
       "name": "New Belacan",
-      "notes": "",
-      "yk": 0.5
+      "yk": 0.5,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
@@ -1537,13 +1624,16 @@
       "yk": null
     },
     {
-      "ac": null,
+      "ac": 1,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍛 Indian & Himalayan",
       "id": "nishaan",
       "name": "Nishaan",
-      "notes": "",
-      "yk": null
+      "yk": null,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
@@ -1555,13 +1645,16 @@
       "yk": null
     },
     {
-      "ac": null,
+      "ac": 2,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍜 Thai & SE Asian",
       "id": "nyonya",
       "name": "Nyonya",
-      "notes": "",
-      "yk": 1.5
+      "yk": 1.5,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": 1.25,
@@ -1621,13 +1714,16 @@
       "yk": null
     },
     {
-      "ac": null,
+      "ac": 1.75,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🥢 Chinese & Taiwanese",
       "id": "peppercorn-station",
       "name": "Peppercorn Station",
-      "notes": "",
-      "yk": null
+      "yk": null,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
@@ -1639,23 +1735,28 @@
       "yk": null
     },
     {
-      "ac": null,
+      "ac": 1.25,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍛 Indian & Himalayan",
       "id": "phayul",
       "name": "Phayul",
-      "notes": "",
-      "yk": null
+      "yk": null,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
-      "ac": null,
+      "ac": 1.5,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍜 Thai & SE Asian",
       "id": "pho-hoai",
       "name": "Phở Hoài",
-      "notes": "",
       "yk": 1.75,
-      "ykComment": "Bay ridge spot"
+      "ykComment": "Bay ridge spot",
+      "ykCommentAt": null
     },
     {
       "ac": null,
@@ -1733,6 +1834,18 @@
       "yk": null
     },
     {
+      "ac": 2.25,
+      "acComment": "",
+      "acCommentAt": null,
+      "city": "New York",
+      "cuisine": "🥙 Mediterranean & Middle Eastern",
+      "id": "ravagh-persian-grill",
+      "name": "Ravagh Persian Grill",
+      "yk": null,
+      "ykComment": "",
+      "ykCommentAt": null
+    },
+    {
       "ac": null,
       "city": "New York",
       "cuisine": "🍦 Dessert",
@@ -1760,13 +1873,16 @@
       "yk": null
     },
     {
-      "ac": null,
+      "ac": 1.5,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🥢 Chinese & Taiwanese",
       "id": "red-sorgum",
       "name": "Red Sorgum",
-      "notes": "",
-      "yk": null
+      "yk": null,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
@@ -1778,13 +1894,16 @@
       "yk": null
     },
     {
-      "ac": null,
+      "ac": 1.25,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🥢 Chinese & Taiwanese",
       "id": "roast-28",
       "name": "Roast 28",
-      "notes": "",
-      "yk": null
+      "yk": null,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
@@ -1832,13 +1951,16 @@
       "yk": null
     },
     {
-      "ac": null,
+      "ac": 2,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "Boston",
       "cuisine": "🍽️ Other",
       "id": "saltie-girl",
       "name": "Saltie Girl",
-      "notes": "",
-      "yk": null
+      "yk": null,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
@@ -1868,13 +1990,16 @@
       "yk": null
     },
     {
-      "ac": null,
+      "ac": 2.25,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍛 Indian & Himalayan",
       "id": "semma",
       "name": "Semma",
-      "notes": "",
-      "yk": null
+      "yk": null,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
@@ -1940,22 +2065,28 @@
       "yk": null
     },
     {
-      "ac": null,
+      "ac": 0.75,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "Boston",
       "cuisine": "🍽️ Other",
       "id": "smoothie-quincy-market",
       "name": "Smoothie Quincy Market",
-      "notes": "",
-      "yk": null
+      "yk": null,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
-      "ac": null,
+      "ac": 1,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "☕ Coffee",
       "id": "sole-cafe",
       "name": "Sole Cafe",
-      "notes": "",
-      "yk": null
+      "yk": null,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
@@ -2003,13 +2134,16 @@
       "yk": null
     },
     {
-      "ac": null,
+      "ac": -0.25,
+      "acComment": "Fucking mean",
+      "acCommentAt": 1784439541507,
       "city": "New York",
       "cuisine": "☕ Coffee",
       "id": "square-coffee",
       "name": "Square Coffee",
-      "notes": "",
-      "yk": null
+      "yk": null,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
@@ -2132,13 +2266,16 @@
       "yk": null
     },
     {
-      "ac": null,
+      "ac": 1.25,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍛 Indian & Himalayan",
       "id": "tava",
       "name": "Tava",
-      "notes": "",
-      "yk": null
+      "yk": null,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
@@ -2150,14 +2287,16 @@
       "yk": null
     },
     {
-      "ac": null,
+      "ac": 2.5,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🧋 Boba & Tea",
       "id": "tea-tea",
       "name": "? Tea? Tea",
-      "notes": "",
       "yk": 2.25,
-      "ykComment": "Ex Molly Tea"
+      "ykComment": "Ex Molly Tea",
+      "ykCommentAt": null
     },
     {
       "ac": null,
@@ -2169,13 +2308,16 @@
       "yk": null
     },
     {
-      "ac": null,
+      "ac": 0.5,
+      "acComment": "New year’s 🫡",
+      "acCommentAt": 1784439366485,
       "city": "New York",
       "cuisine": "☕ Coffee",
       "id": "the-bean",
       "name": "The Bean",
-      "notes": "",
-      "yk": null
+      "yk": null,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
@@ -2295,13 +2437,16 @@
       "yk": null
     },
     {
-      "ac": null,
+      "ac": 1.5,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "Boston",
       "cuisine": "🍽️ Other",
       "id": "union-oyster-house",
       "name": "Union Oyster House",
-      "notes": "",
-      "yk": null
+      "yk": null,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
@@ -2331,14 +2476,16 @@
       "yk": null
     },
     {
-      "ac": null,
+      "ac": 1,
+      "acComment": "Don’t know why Yash doesn’t like this place…",
+      "acCommentAt": 1784439108557,
       "city": "New York",
       "cuisine": "🍽️ Other",
       "id": "veselka",
       "name": "Veselka",
-      "notes": "Ukrainian",
       "yk": null,
-      "ykComment": "Ukrainian"
+      "ykComment": "Ukrainian",
+      "ykCommentAt": null
     },
     {
       "ac": null,
@@ -2377,13 +2524,16 @@
       "yk": null
     },
     {
-      "ac": null,
+      "ac": -2,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🥢 Chinese & Taiwanese",
       "id": "white-bear",
       "name": "White Bear",
-      "notes": "",
-      "yk": null
+      "yk": null,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
@@ -2404,31 +2554,40 @@
       "yk": null
     },
     {
-      "ac": null,
+      "ac": 0.75,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🥢 Chinese & Taiwanese",
       "id": "wong-wong-noodle-soup",
       "name": "Wong Wong Noodle Soup",
-      "notes": "",
-      "yk": null
+      "yk": null,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
-      "ac": null,
+      "ac": 1.25,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🥢 Chinese & Taiwanese",
       "id": "wu-liang-yi",
       "name": "Wu Liang Yi",
-      "notes": "",
-      "yk": null
+      "yk": null,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
-      "ac": null,
+      "ac": 1.25,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🥢 Chinese & Taiwanese",
       "id": "xiang-hotpot",
       "name": "Xiang Hotpot",
-      "notes": "",
-      "yk": null
+      "yk": null,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
@@ -2440,32 +2599,40 @@
       "yk": null
     },
     {
-      "ac": null,
+      "ac": 1.25,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🥢 Chinese & Taiwanese",
       "id": "young-fish",
       "name": "Young Fish",
-      "notes": "",
-      "yk": null
+      "yk": null,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
-      "ac": null,
+      "ac": 1.25,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🥢 Chinese & Taiwanese",
       "id": "yumpling",
       "name": "Yumpling",
-      "notes": "",
-      "yk": null
+      "yk": null,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
-      "ac": null,
+      "ac": 1,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍜 Thai & SE Asian",
       "id": "zabb-putawn",
       "name": "Zabb PuTawn",
-      "notes": "",
       "yk": 1.25,
-      "ykComment": "Overpriced for qty"
+      "ykComment": "Overpriced for qty",
+      "ykCommentAt": null
     },
     {
       "ac": null,
