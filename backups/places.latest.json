@@ -1,7 +1,7 @@
 {
-  "takenAt": "2026-07-18T19:03:05.722Z",
-  "count": 265,
-  "rated": 35,
+  "takenAt": "2026-07-19T02:41:43.912Z",
+  "count": 269,
+  "rated": 39,
   "places": [
     {
       "ac": null,
@@ -116,6 +116,18 @@
       "yk": 2.5
     },
     {
+      "ac": 1.5,
+      "acComment": "Why does Yash like the tomato bagel?",
+      "acCommentAt": 1784428501030,
+      "city": "New York",
+      "cuisine": "🍔 American",
+      "id": "apollo-bagel",
+      "name": "Apollo Bagel",
+      "yk": null,
+      "ykComment": "",
+      "ykCommentAt": null
+    },
+    {
       "ac": null,
       "city": "New York",
       "cuisine": "🍔 American",
@@ -228,13 +240,16 @@
       "yk": null
     },
     {
-      "ac": null,
+      "ac": 1,
+      "acComment": "First official date but it was okay",
+      "acCommentAt": 1784428693598,
       "city": "New York",
       "cuisine": "🍱 Korean & Japanese",
       "id": "barn-joo",
       "name": "Barn Joo",
-      "notes": "",
-      "yk": 1
+      "yk": 1,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
@@ -246,22 +261,28 @@
       "yk": null
     },
     {
-      "ac": null,
+      "ac": 1,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍱 Korean & Japanese",
       "id": "bb-q-chicken",
       "name": "bb.q Chicken",
-      "notes": "",
-      "yk": 0.5
+      "yk": 0.5,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
-      "ac": null,
+      "ac": 1.5,
+      "acComment": "Gas.",
+      "acCommentAt": 1784428707874,
       "city": "New York",
       "cuisine": "🍱 Korean & Japanese",
       "id": "bcd-tofu-house",
       "name": "BCD Tofu House",
-      "notes": "",
-      "yk": 1
+      "yk": 1,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
@@ -568,6 +589,18 @@
       "name": "Culture Espresso",
       "notes": "",
       "yk": null
+    },
+    {
+      "ac": 1.25,
+      "acComment": "Happy that I didn’t get chili momos",
+      "acCommentAt": 1784428609599,
+      "city": "New York",
+      "cuisine": "🍛 Indian & Himalayan",
+      "id": "darjeeling-kitchen-and-cafe",
+      "name": "Darjeeling Kitchen and Cafe",
+      "yk": null,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
@@ -930,14 +963,16 @@
       "yk": null
     },
     {
-      "ac": null,
+      "ac": 1.75,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍱 Korean & Japanese",
       "id": "her-name-is-han",
       "name": "Her Name is Han",
-      "notes": "",
       "yk": 1.5,
-      "ykComment": "First time tried clams and stuff"
+      "ykComment": "First time tried clams and stuff",
+      "ykCommentAt": null
     },
     {
       "ac": null,
@@ -1102,13 +1137,16 @@
       "yk": null
     },
     {
-      "ac": null,
+      "ac": 2,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍜 Thai & SE Asian",
       "id": "khaosan",
       "name": "Khaosan",
-      "notes": "",
-      "yk": 2.25
+      "yk": 2.25,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
@@ -1127,6 +1165,18 @@
       "name": "Kingston Hall",
       "notes": "",
       "yk": null
+    },
+    {
+      "ac": 1.5,
+      "acComment": "Loved the flan",
+      "acCommentAt": 1784428441906,
+      "city": "New York",
+      "cuisine": "🥐 Bakery",
+      "id": "kora",
+      "name": "Kora",
+      "yk": null,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
@@ -1193,6 +1243,18 @@
       "name": "Lil Frankie's",
       "notes": "",
       "yk": null
+    },
+    {
+      "ac": 0.5,
+      "acComment": "Mid but the Negroni was good",
+      "acCommentAt": 1784428541248,
+      "city": "New York",
+      "cuisine": "🍸 Bars",
+      "id": "limo-bar",
+      "name": "Limo Bar",
+      "yk": null,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
@@ -1502,14 +1564,16 @@
       "yk": 1.5
     },
     {
-      "ac": null,
+      "ac": 1.25,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍱 Korean & Japanese",
       "id": "obentoyasan",
       "name": "Obentoyasan",
-      "notes": "",
       "yk": 1.25,
-      "ykComment": "Industry city stuff"
+      "ykComment": "Industry city stuff",
+      "ykCommentAt": null
     },
     {
       "ac": null,
@@ -1621,14 +1685,16 @@
       "yk": null
     },
     {
-      "ac": null,
+      "ac": 2.25,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍜 Thai & SE Asian",
       "id": "pranakhon",
       "name": "Pranakhon",
-      "notes": "",
       "yk": 2.25,
-      "ykComment": "James double date"
+      "ykComment": "James double date",
+      "ykCommentAt": null
     },
     {
       "ac": null,
@@ -1964,13 +2030,16 @@
       "yk": null
     },
     {
-      "ac": null,
+      "ac": 2,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍱 Korean & Japanese",
       "id": "sugar-fish",
       "name": "Sugar Fish",
-      "notes": "",
-      "yk": 1.75
+      "yk": 1.75,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
