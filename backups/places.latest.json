@@ -1,7 +1,7 @@
 {
-  "takenAt": "2026-07-19T19:05:40.184Z",
-  "count": 268,
-  "rated": 86,
+  "takenAt": "2026-07-20T03:23:56.396Z",
+  "count": 269,
+  "rated": 98,
   "places": [
     {
       "ac": null,
@@ -163,13 +163,16 @@
       "yk": null
     },
     {
-      "ac": null,
+      "ac": 1.25,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🧋 Boba & Tea",
       "id": "auntea-jenny",
       "name": "Auntea Jenny",
-      "notes": "",
-      "yk": null
+      "yk": null,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
@@ -463,13 +466,16 @@
       "yk": null
     },
     {
-      "ac": null,
+      "ac": 1.25,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🧋 Boba & Tea",
       "id": "cha-halo",
       "name": "Cha Halo",
-      "notes": "",
-      "yk": null
+      "yk": null,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": 2,
@@ -484,13 +490,16 @@
       "ykCommentAt": null
     },
     {
-      "ac": null,
+      "ac": 2.5,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🧋 Boba & Tea",
       "id": "chicha-san-chen",
       "name": "Chicha San Chen",
-      "notes": "",
-      "yk": null
+      "yk": null,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
@@ -520,13 +529,16 @@
       "yk": null
     },
     {
-      "ac": null,
+      "ac": 1.5,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🧋 Boba & Tea",
       "id": "chictea",
       "name": "Chictea",
-      "notes": "",
-      "yk": null
+      "yk": null,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": 1.25,
@@ -622,13 +634,16 @@
       "ykCommentAt": null
     },
     {
-      "ac": null,
+      "ac": 1.25,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🧋 Boba & Tea",
       "id": "debutea",
       "name": "Debutea",
-      "notes": "",
-      "yk": null
+      "yk": null,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
@@ -1012,13 +1027,16 @@
       "ykCommentAt": null
     },
     {
-      "ac": null,
+      "ac": 2,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🧋 Boba & Tea",
       "id": "heytea-lab",
       "name": "HEYTEA Lab",
-      "notes": "",
-      "yk": null
+      "yk": null,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
@@ -1030,13 +1048,16 @@
       "yk": null
     },
     {
-      "ac": null,
+      "ac": 1.5,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🧋 Boba & Tea",
       "id": "hong-cha",
       "name": "Hong Cha",
-      "notes": "",
-      "yk": null
+      "yk": null,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
@@ -1513,13 +1534,16 @@
       "ykCommentAt": null
     },
     {
-      "ac": null,
+      "ac": 1,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🧋 Boba & Tea",
       "id": "mixue",
       "name": "Mixue",
-      "notes": "",
-      "yk": null
+      "yk": null,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": 1.75,
@@ -1543,13 +1567,16 @@
       "yk": null
     },
     {
-      "ac": null,
+      "ac": 1.25,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🧋 Boba & Tea",
       "id": "n25-nitro-tea",
       "name": "N25 Nitro Tea",
-      "notes": "",
-      "yk": null
+      "yk": null,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
@@ -1585,13 +1612,16 @@
       "ykCommentAt": null
     },
     {
-      "ac": null,
+      "ac": 1,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🧋 Boba & Tea",
       "id": "nana-s-green-tea",
       "name": "Nana's Green Tea",
-      "notes": "",
-      "yk": null
+      "yk": null,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
@@ -1807,13 +1837,16 @@
       "yk": null
     },
     {
-      "ac": null,
+      "ac": 2,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🧋 Boba & Tea",
       "id": "prince-tea-house",
       "name": "Prince Tea House",
-      "notes": "",
-      "yk": null
+      "yk": null,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
@@ -2045,6 +2078,18 @@
       "name": "Sing Sing",
       "notes": "",
       "yk": null
+    },
+    {
+      "ac": 1.75,
+      "acComment": "",
+      "acCommentAt": null,
+      "city": "New York",
+      "cuisine": "🍜 Thai & SE Asian",
+      "id": "singapore-social",
+      "name": "Singapore Social",
+      "yk": null,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
