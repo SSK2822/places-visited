@@ -122,7 +122,7 @@ Google's side to roll back to. The repo is the safety net instead.
 ### Automatic backups (the recovery log)
 
 `.github/workflows/backup.yml` snapshots the live database into
-`backups/places.latest.json` every 6 hours (and on demand via **Actions → Backup
+`backups/places.latest.json` once a day (and on demand via **Actions → Backup
 Firestore → Run workflow**), committing only when something changed. Git history
 is therefore the log:
 

@@ -10,8 +10,8 @@ name: Backup Firestore
 
 on:
   schedule:
-    # Every 6 hours. Cheap on the Spark read quota (~264 reads a run).
-    - cron: "0 */6 * * *"
+    # Once a day, 07:00 UTC. Cheap on the Spark read quota (~264 reads a run).
+    - cron: "0 7 * * *"
   workflow_dispatch:
 
 # Never run two snapshots at once — they'd race on the same commit.
