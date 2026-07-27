@@ -1,7 +1,13 @@
+const TABS = [
+  ['top', 'Top 10'],
+  ['all', 'All visited'],
+  ['torate', 'To rate'],
+]
+
 export default function LedgerControls({
   query, setQuery,
   cuisine, setCuisine, chips,
-  mode, setMode,
+  tab, setTab,
   onAdd,
 }) {
   return (
@@ -48,26 +54,18 @@ export default function LedgerControls({
 
       <div className="mode">
         <div className="seg">
-          <label className="seg-opt">
-            <input
-              type="radio"
-              name="mode"
-              value="ranked"
-              checked={mode === 'ranked'}
-              onChange={() => setMode('ranked')}
-            />
-            Ranked
-          </label>
-          <label className="seg-opt">
-            <input
-              type="radio"
-              name="mode"
-              value="pending"
-              checked={mode === 'pending'}
-              onChange={() => setMode('pending')}
-            />
-            To rate
-          </label>
+          {TABS.map(([value, label]) => (
+            <label className="seg-opt" key={value}>
+              <input
+                type="radio"
+                name="tab"
+                value={value}
+                checked={tab === value}
+                onChange={() => setTab(value)}
+              />
+              {label}
+            </label>
+          ))}
         </div>
       </div>
     </>

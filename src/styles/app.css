@@ -33,30 +33,47 @@ body { margin: 0; background: #f5ead8; overflow-x: hidden; }
 .rule-orn::before, .rule-orn::after { content: ""; height: 1px; width: 90px; background: var(--color-divider); }
 .rule-orn i { font-style: normal; font-size: 12px; letter-spacing: 0.3em; }
 
-/* Surprise, set as the masthead's ornament rather than a button in the action
-   row. Small-caps heading face between two fleurons; the whole rule is the
-   target, and the fleurons drift apart on hover so it reads as live. */
-.surprise-orn {
-  display: inline-flex; align-items: center; gap: 12px;
-  background: none; border: 0; cursor: pointer;
-  font-family: var(--font-heading); font-weight: var(--font-heading-weight);
-  font-size: 15px; letter-spacing: 0.2em; text-transform: uppercase;
-  color: var(--color-accent-700);
-  padding: 6px 14px; border-radius: var(--radius-md);
-  transition: color .25s ease;
+/* Surprise, as its own feature card: a bordered box that lifts on hover so the
+   one playful moment reads as a thing you do, not a header. Drawn with stroke
+   and a whisper of elevation, per the system — no solid accent fill. */
+.surprise-card {
+  display: flex; align-items: center; gap: var(--space-4); width: 100%; text-align: left;
+  margin: 0 0 var(--space-6); padding: var(--space-4) var(--space-4);
+  background: var(--color-bg); cursor: pointer;
+  border: 1px solid var(--color-accent); border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow .25s ease, transform .25s cubic-bezier(.2, .8, .2, 1),
+    background .25s ease;
 }
-.surprise-orn i {
-  /* letter-spacing from .rule-orn i would push the single fleuron off-centre */
-  font-size: 12px; letter-spacing: normal; color: var(--color-accent);
+.surprise-card:hover {
+  background: color-mix(in srgb, var(--color-accent) 6%, var(--color-bg));
+  box-shadow: var(--shadow-md); transform: translateY(-2px);
+}
+.surprise-card:active { transform: translateY(0); box-shadow: var(--shadow-sm); }
+.surprise-card-orn {
+  flex: none; font-size: 26px; line-height: 1; color: var(--color-accent);
   transition: transform .35s cubic-bezier(.2, .8, .2, 1);
 }
-.surprise-orn:hover { color: var(--color-accent); }
-.surprise-orn:hover i:first-of-type { transform: translateX(-5px) rotate(-14deg); }
-.surprise-orn:hover i:last-of-type { transform: translateX(5px) rotate(14deg); }
-.surprise-orn:active { background: color-mix(in srgb, var(--color-accent) 12%, transparent); }
+.surprise-card:hover .surprise-card-orn { transform: rotate(14deg) scale(1.08); }
+.surprise-card-text { display: flex; flex-direction: column; gap: 3px; flex: 1; }
+.surprise-card-title {
+  font-family: var(--font-heading); font-weight: var(--font-heading-weight);
+  font-size: 22px; line-height: 1.1; color: var(--color-text);
+}
+.surprise-card-sub {
+  font-size: 13px; font-style: italic;
+  color: color-mix(in srgb, var(--color-text) 60%, transparent);
+}
+.surprise-card-arrow {
+  flex: none; font-size: 20px; color: var(--color-accent-700);
+  transition: transform .25s cubic-bezier(.2, .8, .2, 1);
+}
+.surprise-card:hover .surprise-card-arrow { transform: translateX(4px); }
 @media (prefers-reduced-motion: reduce) {
-  .surprise-orn i { transition: none; }
-  .surprise-orn:hover i:first-of-type, .surprise-orn:hover i:last-of-type { transform: none; }
+  .surprise-card, .surprise-card-orn, .surprise-card-arrow { transition: none; }
+  .surprise-card:hover { transform: none; }
+  .surprise-card:hover .surprise-card-orn { transform: none; }
+  .surprise-card:hover .surprise-card-arrow { transform: none; }
 }
 
 /* The masthead's utility rail — account / settings sit as quiet ghost links
@@ -243,6 +260,10 @@ body { margin: 0; background: #f5ead8; overflow-x: hidden; }
 @media (max-width: 560px) {
   .wrap { padding: var(--space-6) var(--space-4); }
   .row { grid-template-columns: 40px 1fr; }
+  /* Pending rows keep a third column for the Rate button — without it the
+     button falls out of the 2-col grid onto a clipped implicit row. */
+  .row.pending { grid-template-columns: 40px 1fr auto; column-gap: var(--space-3); }
+  .rate-link { padding: 8px 12px; }
   .rank { font-size: 24px; }
   .row:not(.pending) .scores { grid-column: 1 / -1; justify-content: flex-start; gap: var(--space-6); margin-top: 6px; padding-left: 56px; }
   .stat { min-width: 50%; flex-basis: 50%; }

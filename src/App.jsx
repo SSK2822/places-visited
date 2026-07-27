@@ -5,6 +5,7 @@ import LedgerControls from './components/LedgerControls'
 import LedgerList from './components/LedgerList'
 import PlaceDetail from './components/PlaceDetail'
 import PlaceForm from './components/PlaceForm'
+import SurpriseCard from './components/SurpriseCard'
 import SurpriseOverlay from './components/SurpriseOverlay'
 import CloudError from './components/CloudError'
 import SettingsModal from './components/SettingsModal'
@@ -36,7 +37,9 @@ export default function App() {
 
   const [query, setQuery] = useState('')
   const [cuisine, setCuisine] = useState('')
-  const [mode, setMode] = useState('ranked')
+  // Three views of the same list: 'top' (best 10), 'all' (everything, filtered),
+  // 'torate' (been there, not yet scored).
+  const [tab, setTab] = useState('top')
 
   const [view, setView] = useState('browse')
   const [selectedId, setSelectedId] = useState(null)
@@ -134,19 +137,31 @@ export default function App() {
     [db.places],
   )
 
-  const filtered = useMemo(() => {
+  // Cuisine + search filter, applied once; each tab is a slice of this.
+  const base = useMemo(() => {
     const q = query.trim().toLowerCase()
-    const list = db.places.filter((p) => {
+    return db.places.filter((p) => {
       if (cuisine && p.cuisine !== cuisine) return false
-      const rated = overall(p) !== null
-      if (mode === 'ranked' && !rated) return false
-      if (mode === 'pending' && rated) return false
       const commentText = EDITORS.map((e) => p[`${e.key}Comment`] || '').join(' ')
       if (q && !(p.name + ' ' + p.cuisine + ' ' + p.city + ' ' + commentText).toLowerCase().includes(q)) return false
       return true
     })
-    return list.sort(mode === 'ranked' ? byRank : (a, b) => a.name.localeCompare(b.name))
-  }, [db.places, query, cuisine, mode])
+  }, [db.places, query, cuisine])
+
+  // Rated (best first) and unrated (A–Z) partitions of the filtered set.
+  const rankedFiltered = useMemo(
+    () => base.filter((p) => overall(p) !== null).sort(byRank),
+    [base],
+  )
+  const unratedFiltered = useMemo(
+    () => base.filter((p) => overall(p) === null).sort((a, b) => a.name.localeCompare(b.name)),
+    [base],
+  )
+  const visibleCount = tab === 'top'
+    ? Math.min(10, rankedFiltered.length)
+    : tab === 'torate'
+      ? unratedFiltered.length
+      : rankedFiltered.length + unratedFiltered.length
 
   const stats = useMemo(() => {
     const rated = db.places.filter((p) => overall(p) !== null)
@@ -233,8 +248,10 @@ export default function App() {
       updatePlaces([...db.places, rec])
       toast('Added ✓ — publish when ready')
     }
-    // Land the viewer where the place now lives.
-    setMode(overall(rec) === null ? 'pending' : 'ranked')
+    // Editing (e.g. rating from the To-rate queue) returns you to the same tab,
+    // so you can keep working down the list; a rated place simply drops off it.
+    // A brand-new place lands on "All", where anything is visible.
+    if (!wasEditing) setTab('all')
     setView('browse')
   }
 
@@ -321,20 +338,24 @@ export default function App() {
       <div className="wrap">
         {view === 'browse' && (
           <section className="view">
-            <Masthead onAccount={() => setShowSettings(true)} onSurprise={surprise} />
+            <Masthead onAccount={() => setShowSettings(true)} />
             <StatsLedger stats={stats} />
+            <SurpriseCard onSurprise={surprise} />
             <LedgerControls
               query={query} setQuery={setQuery}
               cuisine={cuisine} setCuisine={setCuisine} chips={cuisineChips}
-              mode={mode} setMode={setMode}
+              tab={tab} setTab={setTab}
               onAdd={openAdd}
             />
             <p className="count-line">
-              {filtered.length} of {db.places.length} places
+              {tab === 'top'
+                ? `Top ${visibleCount}${cuisine || query ? ' — filtered' : ''}`
+                : `${visibleCount} of ${db.places.length} places`}
             </p>
             <LedgerList
-              places={filtered}
-              mode={mode}
+              tab={tab}
+              ranked={rankedFiltered}
+              unrated={unratedFiltered}
               onOpen={openDetail}
               onRate={openEdit}
             />

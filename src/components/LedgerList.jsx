@@ -19,7 +19,9 @@ function onActivate(fn) {
   }
 }
 
-function RankedRow({ place, index, onOpen }) {
+// `rank` is the position label (a number, or null → em-dash for an unrated
+// place shown in the "All" list); `index` drives only the reveal stagger.
+function RankedRow({ place, rank, index, onOpen }) {
   const [ref, inView] = useInView({ delay: revealDelay(index, 60) })
   const ov = overall(place)
   const comment = latestComment(place)
@@ -33,7 +35,7 @@ function RankedRow({ place, index, onOpen }) {
       onClick={() => onOpen(place)}
       onKeyDown={onActivate(() => onOpen(place))}
     >
-      <div className="rank">{index + 1}</div>
+      <div className="rank">{rank == null ? '–' : rank}</div>
       <div>
         <h3 className="r-name">{place.name}</h3>
         <div className="r-meta">
@@ -93,16 +95,16 @@ function PendingRow({ place, index, onOpen, onRate }) {
   )
 }
 
-export default function LedgerList({ places, mode, onOpen, onRate }) {
-  if (mode === 'pending') {
+export default function LedgerList({ tab, ranked, unrated, onOpen, onRate }) {
+  if (tab === 'torate') {
     return (
       <>
         <p className="pending-note">
           Been here, verdict still pending — give it a score when you’re ready.
         </p>
-        {places.length ? (
+        {unrated.length ? (
           <ol className="list">
-            {places.map((p, i) => (
+            {unrated.map((p, i) => (
               <PendingRow key={p.id} place={p} index={i} onOpen={onOpen} onRate={onRate} />
             ))}
           </ol>
@@ -113,12 +115,29 @@ export default function LedgerList({ places, mode, onOpen, onRate }) {
     )
   }
 
-  if (!places.length) return <p className="pending-note">Nothing matches — try another cuisine.</p>
+  if (tab === 'top') {
+    const top = ranked.slice(0, 10)
+    if (!top.length) return <p className="pending-note">No rated places yet — start scoring.</p>
+    return (
+      <ol className="list">
+        {top.map((p, i) => (
+          <RankedRow key={p.id} place={p} rank={i + 1} index={i} onOpen={onOpen} />
+        ))}
+      </ol>
+    )
+  }
 
+  // 'all' — the whole filtered ledger: rated first (numbered), then unrated.
+  if (!ranked.length && !unrated.length) {
+    return <p className="pending-note">Nothing matches — try another cuisine.</p>
+  }
   return (
     <ol className="list">
-      {places.map((p, i) => (
-        <RankedRow key={p.id} place={p} index={i} onOpen={onOpen} />
+      {ranked.map((p, i) => (
+        <RankedRow key={p.id} place={p} rank={i + 1} index={i} onOpen={onOpen} />
+      ))}
+      {unrated.map((p, i) => (
+        <RankedRow key={p.id} place={p} rank={null} index={ranked.length + i} onOpen={onOpen} />
       ))}
     </ol>
   )
