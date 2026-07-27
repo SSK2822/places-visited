@@ -1,7 +1,7 @@
 {
-  "takenAt": "2026-07-27T02:53:43.194Z",
-  "count": 269,
-  "rated": 99,
+  "takenAt": "2026-07-27T09:00:04.189Z",
+  "count": 268,
+  "rated": 122,
   "places": [
     {
       "ac": null,
@@ -116,7 +116,7 @@
       "cuisine": "🍔 American",
       "id": "apollo-bagel",
       "name": "Apollo Bagel",
-      "yk": null,
+      "yk": 2.5,
       "ykComment": "",
       "ykCommentAt": null
     },
@@ -173,18 +173,21 @@
       "cuisine": "🧋 Boba & Tea",
       "id": "auntea-jenny",
       "name": "Auntea Jenny",
-      "yk": null,
+      "yk": 1.75,
       "ykComment": "",
       "ykCommentAt": null
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🥙 Mediterranean & Middle Eastern",
       "id": "ayat",
       "name": "Ayat",
-      "notes": "",
-      "yk": null
+      "yk": 1.75,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": 1.25,
@@ -206,45 +209,57 @@
       "cuisine": "🍽️ Other",
       "id": "baba-s-pierogies",
       "name": "Baba's Pierogies",
-      "yk": null,
+      "yk": 1.25,
       "ykComment": "Polish",
       "ykCommentAt": null
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🥐 Bakery",
       "id": "bagel-pub",
       "name": "Bagel Pub",
-      "notes": "",
-      "yk": null
+      "yk": 2.5,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🥙 Mediterranean & Middle Eastern",
       "id": "bahari-estatorio",
       "name": "Bahari Estatorio",
-      "notes": "",
-      "yk": null
+      "yk": 1.25,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🥐 Bakery",
       "id": "bang-cookies",
       "name": "Bang Cookies",
-      "notes": "",
-      "yk": null
+      "yk": 1.25,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍸 Bars",
       "id": "barcade",
       "name": "Barcade",
-      "notes": "",
-      "yk": null
+      "yk": 0.5,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": 1,
@@ -257,15 +272,6 @@
       "yk": 1,
       "ykComment": "",
       "ykCommentAt": null
-    },
-    {
-      "ac": null,
-      "city": "New York",
-      "cuisine": "🍦 Dessert",
-      "id": "baskin-robbins",
-      "name": "Baskin Robbins",
-      "notes": "",
-      "yk": null
     },
     {
       "ac": 1,
@@ -293,21 +299,27 @@
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "Boston",
       "cuisine": "🍸 Bars",
       "id": "bell-in-hand",
       "name": "Bell in Hand",
-      "notes": "",
-      "yk": null
+      "yk": 1.5,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🥐 Bakery",
       "id": "between-the-bagel",
       "name": "Between the Bagel",
-      "notes": "",
-      "yk": null
+      "yk": 2,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": 0.25,
@@ -323,129 +335,171 @@
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍔 American",
       "id": "big-daddy-s-hawaiian-bbq",
       "name": "Big Daddy's Hawaiian BBQ",
-      "notes": "",
-      "yk": null
+      "yk": -0.75,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍔 American",
       "id": "big-john-s-diner",
       "name": "Big John's Diner",
-      "notes": "",
-      "yk": null
+      "yk": 1.25,
+      "ykComment": "Great guy Alex",
+      "ykCommentAt": 1785123688168
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🥙 Mediterranean & Middle Eastern",
       "id": "black-iris",
       "name": "Black Iris",
-      "notes": "",
-      "yk": null
+      "yk": 1.25,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍔 American",
       "id": "black-iron-burger",
       "name": "Black Iron Burger",
-      "notes": "",
-      "yk": null
+      "yk": 1.75,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "Boston",
       "cuisine": "🍸 Bars",
       "id": "black-rose",
       "name": "Black Rose",
-      "notes": "",
-      "yk": null
+      "yk": 1.25,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍸 Bars",
       "id": "blue-gold-tavern",
       "name": "Blue & Gold Tavern",
-      "notes": "",
-      "yk": null
+      "yk": 3,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍔 American",
       "id": "bobwhite-counter",
       "name": "Bobwhite Counter",
-      "notes": "",
-      "yk": null
+      "yk": 1.75,
+      "ykComment": "Chicken was very good",
+      "ykCommentAt": 1785139880212
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🥐 Bakery",
       "id": "breads-bakery",
       "name": "Breads Bakery",
-      "notes": "",
-      "yk": null
+      "yk": 2.75,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍦 Dessert",
       "id": "brooklyn-ice-cream-factory",
       "name": "Brooklyn Ice Cream Factory",
-      "notes": "",
-      "yk": null
+      "yk": 1.75,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🥙 Mediterranean & Middle Eastern",
       "id": "brooklyn-kebab-house",
       "name": "Brooklyn Kebab House",
-      "notes": "",
-      "yk": null
+      "yk": 1,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍔 American",
       "id": "brown-bag-sandwich-co",
       "name": "Brown Bag Sandwich Co.",
-      "notes": "",
-      "yk": null
+      "yk": -0.75,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍸 Bars",
       "id": "bull-mccabes",
       "name": "Bull McCabes",
-      "notes": "",
-      "yk": null
+      "yk": 0,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍔 American",
       "id": "burger-club",
       "name": "Burger Club",
-      "notes": "",
-      "yk": null
+      "yk": 2.75,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍕 Pizza & Italian",
       "id": "campania",
       "name": "Campania",
-      "notes": "",
-      "yk": null
+      "yk": 2,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": 2,
@@ -455,18 +509,21 @@
       "cuisine": "☕ Coffee",
       "id": "caphe-en",
       "name": "Càphê Đen",
-      "yk": null,
-      "ykComment": "",
-      "ykCommentAt": null
+      "yk": 2.25,
+      "ykComment": "Really nice coffee with unique foam",
+      "ykCommentAt": 1785139985524
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍸 Bars",
       "id": "cellar-dog",
       "name": "Cellar Dog",
-      "notes": "",
-      "yk": null
+      "yk": 0.75,
+      "ykComment": "Pool",
+      "ykCommentAt": 1785140003674
     },
     {
       "ac": 1.25,
@@ -476,7 +533,7 @@
       "cuisine": "🧋 Boba & Tea",
       "id": "cha-halo",
       "name": "Cha Halo",
-      "yk": null,
+      "yk": 1.25,
       "ykComment": "",
       "ykCommentAt": null
     },
@@ -488,7 +545,7 @@
       "cuisine": "☕ Coffee",
       "id": "chateau-le-woof",
       "name": "Chateau Le Woof",
-      "yk": null,
+      "yk": 2,
       "ykComment": "",
       "ykCommentAt": null
     },
@@ -500,7 +557,7 @@
       "cuisine": "🧋 Boba & Tea",
       "id": "chicha-san-chen",
       "name": "Chicha San Chen",
-      "yk": null,
+      "yk": 2.5,
       "ykComment": "",
       "ykCommentAt": null
     },
@@ -515,12 +572,15 @@
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍔 American",
       "id": "chick-it-out-astoria",
       "name": "Chick It Out (Astoria)",
-      "notes": "",
-      "yk": null
+      "yk": 1.5,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
