@@ -1,12 +1,12 @@
-import { overall, fmt, ratingClass, mapsUrl } from '../lib/utils'
+import { overall, fmt, ratingClass, mapsUrl, fullyRated, scoreHidden } from '../lib/utils'
 import { EDITORS } from '../lib/firebase-config'
 
-export default function PlaceDetail({ place, rank, onBack, onEdit }) {
+export default function PlaceDetail({ place, rank, myKey, onBack, onEdit }) {
   const ov = overall(place)
-  const scores = [
-    ...EDITORS.map((e) => ({ label: e.label, value: place[e.key], overall: false })),
-    { label: 'Overall', value: ov, overall: true },
-  ]
+  const complete = fullyRated(place)
+  // Someone's rated, you haven't — the reveal is one tap away.
+  const hiddenEditor = EDITORS.find((e) => scoreHidden(place, e.key, myKey))
+  const iHaventRated = myKey && (place[myKey] === null || place[myKey] === undefined)
 
   return (
     <section className="view">
@@ -26,22 +26,46 @@ export default function PlaceDetail({ place, rank, onBack, onEdit }) {
       </div>
 
       <div className="d-scores">
-        {scores.map((s) => (
-          <div className={`d-score ${s.overall ? 'overall' : ''}`} key={s.label}>
-            <div className="d-score-lab">{s.label}</div>
-            <div className={`d-score-fig ${ratingClass(s.value)}`}>{fmt(s.value)}</div>
+        {EDITORS.map((e) => {
+          const hidden = scoreHidden(place, e.key, myKey)
+          return (
+            <div className="d-score" key={e.key}>
+              <div className="d-score-lab">{e.label}</div>
+              {hidden ? (
+                <div className="d-score-fig hidden-score">🙈</div>
+              ) : (
+                <div className={`d-score-fig ${ratingClass(place[e.key])}`}>{fmt(place[e.key])}</div>
+              )}
+            </div>
+          )
+        })}
+        <div className="d-score overall">
+          <div className="d-score-lab">Overall</div>
+          <div className={`d-score-fig ${complete ? ratingClass(ov) : 'zero'}`}>
+            {complete ? fmt(ov) : '–'}
           </div>
-        ))}
+        </div>
       </div>
+
+      {hiddenEditor && (
+        <p className="reveal-hint">
+          🙈 {hiddenEditor.name} has already rated — score it yourself to reveal the verdict.
+        </p>
+      )}
 
       <div className="section-head">Table talk</div>
       <ul className="talk">
         {EDITORS.map((e) => {
           const text = place[`${e.key}Comment`]
+          const hidden = scoreHidden(place, e.key, myKey)
           return (
             <li key={e.key}>
               <div className="who">{e.label}</div>
-              <div className={`what ${text ? '' : 'empty'}`}>{text || 'No note yet.'}</div>
+              {hidden ? (
+                <div className="what empty">🙈 Hidden until you rate.</div>
+              ) : (
+                <div className={`what ${text ? '' : 'empty'}`}>{text || 'No note yet.'}</div>
+              )}
             </li>
           )
         })}
@@ -49,7 +73,7 @@ export default function PlaceDetail({ place, rank, onBack, onEdit }) {
 
       <div className="form-actions">
         <button className="btn btn-primary" onClick={() => onEdit(place)}>
-          Edit ratings
+          {iHaventRated ? 'Rate it →' : 'Edit ratings'}
         </button>
       </div>
     </section>

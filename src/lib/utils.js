@@ -17,6 +17,36 @@ export const fullyRated = (p) =>
 export const pendingEditors = (p) =>
   EDITORS.filter((e) => p[e.key] === null || p[e.key] === undefined)
 
+// The blind-rating game: a partner's score stays concealed until you've rated
+// too. You always see your own; both reveal to everyone once the pair is
+// complete. NOTE: this is cosmetic — Firestore reads are public, so it hides
+// the number in the UI, it doesn't cryptographically keep it secret.
+export function scoreHidden(place, key, myKey) {
+  if (fullyRated(place)) return false // both in — revealed
+  if (key === myKey) return false // always your own
+  return place[key] !== null && place[key] !== undefined // partner's, and they've weighed in
+}
+
+// The playful verdict shown at the reveal, from how the two scores compare.
+export function verdict(yk, ac) {
+  const d = Math.abs(yk - ac)
+  const bothNeg = yk < 0 && ac < 0
+  const oppose = (yk > 0 && ac < 0) || (yk < 0 && ac > 0)
+  if (d === 0) {
+    if (yk > 0) return { title: 'Twin flames 🔥', line: 'Identical scores — you both loved it exactly this much.' }
+    if (yk < 0) return { title: 'United in regret 🫠', line: 'Same score, same disappointment. Never again — together.' }
+    return { title: 'Perfectly mid 😐', line: 'You both landed on a shrug. Iconic.' }
+  }
+  if (oppose && d >= 2) return { title: 'Far opps fr 🧨', line: 'One of you would go back tomorrow, the other filed a complaint.' }
+  if (d <= 0.5) {
+    if (bothNeg) return { title: 'Agreed: avoid 🚫', line: 'A hair apart, and united in “no”.' }
+    return { title: 'Soulmates 💫', line: 'Barely a hair apart — same wavelength.' }
+  }
+  if (d <= 1.25) return { title: 'In sync 🤝', line: 'Pretty much on the same page.' }
+  if (d <= 2.5) return { title: 'A little spicy 🌶️', line: 'Some healthy disagreement never hurt anyone.' }
+  return { title: 'Different planets 🪐', line: 'How do you two even eat at the same table?' }
+}
+
 // Ratings step in quarters, so an overall average can land on eighths
 // (e.g. (1.25 + 1.5) / 2 = 1.375) — round to kill float noise, then
 // trim trailing zeros without forcing a fixed decimal count.

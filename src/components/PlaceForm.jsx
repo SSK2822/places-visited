@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import RatingDial from './RatingDial'
-import { fmt } from '../lib/utils'
+import { fmt, scoreHidden } from '../lib/utils'
 import { DEFAULT_CITY } from '../lib/constants'
 import { EDITORS } from '../lib/firebase-config'
 
@@ -40,6 +40,12 @@ export default function PlaceForm({
   const preview = previewValues.length
     ? previewValues.reduce((a, b) => a + b, 0) / previewValues.length
     : null
+
+  // A partner who's rated but is still hidden from you — their dial and note are
+  // sealed. When one exists, the overall preview must stay hidden too, or you
+  // could back-calculate their score from the average.
+  const isSealed = (e) => myKey !== null && myKey !== e.key && place && scoreHidden(place, e.key, myKey)
+  const anySealed = EDITORS.some(isSealed)
 
   function save() {
     if (!name.trim()) return
@@ -108,6 +114,19 @@ export default function PlaceForm({
 
       {EDITORS.map((e) => {
         const locked = myKey !== null && myKey !== e.key
+        if (isSealed(e)) {
+          return (
+            <div className="dial dial-sealed" key={e.key}>
+              <div className="dial-head">
+                <div className="dial-who">{e.label}</div>
+                <div className="dial-read">🙈</div>
+              </div>
+              <div className="sealed-box">
+                {e.name} has already rated — <b>hidden until you lock yours in.</b> No peeking!
+              </div>
+            </div>
+          )
+        }
         return (
           <RatingDial
             key={e.key}
@@ -123,7 +142,11 @@ export default function PlaceForm({
       })}
 
       <p className="overall-preview">
-        {preview === null ? 'Overall: unrated' : `Overall: ${fmt(preview)}`}
+        {anySealed
+          ? 'Overall reveals once you save 🙈'
+          : preview === null
+            ? 'Overall: unrated'
+            : `Overall: ${fmt(preview)}`}
       </p>
 
       {EDITORS.map((e) => {
@@ -131,14 +154,18 @@ export default function PlaceForm({
         return (
           <div className="field" key={e.key}>
             <label htmlFor={`f-${e.key}-note`}>{e.name}’s note</label>
-            <textarea
-              className="input"
-              id={`f-${e.key}-note`}
-              value={comments[e.key] ?? ''}
-              disabled={locked}
-              onChange={(ev) => setComments((c) => ({ ...c, [e.key]: ev.target.value }))}
-              placeholder={locked ? `Only ${e.name} can write this` : 'A line for the ledger…'}
-            />
+            {isSealed(e) ? (
+              <div className="input sealed-note">🙈 Hidden until you rate</div>
+            ) : (
+              <textarea
+                className="input"
+                id={`f-${e.key}-note`}
+                value={comments[e.key] ?? ''}
+                disabled={locked}
+                onChange={(ev) => setComments((c) => ({ ...c, [e.key]: ev.target.value }))}
+                placeholder={locked ? `Only ${e.name} can write this` : 'A line for the ledger…'}
+              />
+            )}
           </div>
         )
       })}

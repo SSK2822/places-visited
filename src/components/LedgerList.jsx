@@ -1,6 +1,6 @@
 import useInView from '../hooks/useInView'
 import CountUp from './CountUp'
-import { overall, fmt, ratingClass, latestComment, pendingEditors } from '../lib/utils'
+import { overall, fmt, ratingClass, latestComment, pendingEditors, fullyRated, scoreHidden } from '../lib/utils'
 import { EDITORS } from '../lib/firebase-config'
 
 // The reference frame staggered every row by index — fine for its 12 fixtures,
@@ -21,10 +21,13 @@ function onActivate(fn) {
 
 // `rank` is the position label (a number, or null → em-dash for an unrated
 // place shown in the "All" list); `index` drives only the reveal stagger.
-function RankedRow({ place, rank, index, onOpen }) {
+function RankedRow({ place, rank, index, myKey, onOpen }) {
   const [ref, inView] = useInView({ delay: revealDelay(index, 60) })
   const ov = overall(place)
-  const comment = latestComment(place)
+  const complete = fullyRated(place)
+  // Don't preview a note for a place that isn't fully rated — the partner's
+  // comment would give their verdict away before the reveal.
+  const comment = complete ? latestComment(place) : null
 
   return (
     <li
@@ -49,15 +52,26 @@ function RankedRow({ place, rank, index, onOpen }) {
         )}
       </div>
       <div className="scores">
-        {EDITORS.map((e) => (
-          <div className="score" key={e.key}>
-            <div className="score-lab">{e.label}</div>
-            <div className={`score-fig ${ratingClass(place[e.key])}`}>{fmt(place[e.key])}</div>
-          </div>
-        ))}
+        {EDITORS.map((e) => {
+          const hidden = scoreHidden(place, e.key, myKey)
+          return (
+            <div className="score" key={e.key}>
+              <div className="score-lab">{e.label}</div>
+              {hidden ? (
+                <div className="score-fig hidden-score" title="Hidden until you rate">🙈</div>
+              ) : (
+                <div className={`score-fig ${ratingClass(place[e.key])}`}>{fmt(place[e.key])}</div>
+              )}
+            </div>
+          )
+        })}
         <div className="score overall">
           <div className="score-lab">Overall</div>
-          <CountUp value={ov} start={inView} className={`score-fig ${ratingClass(ov)}`} />
+          {complete ? (
+            <CountUp value={ov} start={inView} className={`score-fig ${ratingClass(ov)}`} />
+          ) : (
+            <div className="score-fig zero">–</div>
+          )}
         </div>
       </div>
     </li>
@@ -67,7 +81,7 @@ function RankedRow({ place, rank, index, onOpen }) {
 // `waitingOn` set (a partner label) means the viewer has already scored this
 // place — it's not their action, so the row is muted and the "Rate it" button
 // is replaced with a passive "you're done" marker.
-function PendingRow({ place, index, onOpen, onRate, waitingOn }) {
+function PendingRow({ place, index, myKey, onOpen, onRate, waitingOn }) {
   const [ref, inView] = useInView({ delay: revealDelay(index, 55) })
   // Half-scored places live here too now, so show the score already in and who
   // the ledger is still waiting on — otherwise it looks like nobody has rated.
@@ -94,9 +108,11 @@ function PendingRow({ place, index, onOpen, onRate, waitingOn }) {
             {EDITORS.map((e) => (
               <span key={e.key}>
                 <span className="who">{e.label}</span>{' '}
-                {place[e.key] == null
-                  ? <span className="await">to rate</span>
-                  : <span className={ratingClass(place[e.key])}>{fmt(place[e.key])}</span>}
+                {scoreHidden(place, e.key, myKey)
+                  ? <span className="await">rated 🙈</span>
+                  : place[e.key] == null
+                    ? <span className="await">to rate</span>
+                    : <span className={ratingClass(place[e.key])}>{fmt(place[e.key])}</span>}
               </span>
             ))}
           </div>
@@ -135,7 +151,7 @@ export default function LedgerList({ tab, ranked, unrated, myKey, onOpen, onRate
           </p>
           <ol className="list">
             {unrated.map((p, i) => (
-              <PendingRow key={p.id} place={p} index={i} onOpen={onOpen} onRate={onRate} />
+              <PendingRow key={p.id} place={p} myKey={myKey} index={i} onOpen={onOpen} onRate={onRate} />
             ))}
           </ol>
         </>
@@ -160,7 +176,7 @@ export default function LedgerList({ tab, ranked, unrated, myKey, onOpen, onRate
             <p className="section-sub">{partner.name} already weighed in — no more stalling.</p>
             <ol className="list">
               {overdue.map((p, i) => (
-                <PendingRow key={p.id} place={p} index={i} onOpen={onOpen} onRate={onRate} />
+                <PendingRow key={p.id} place={p} myKey={myKey} index={i} onOpen={onOpen} onRate={onRate} />
               ))}
             </ol>
           </>
@@ -170,7 +186,7 @@ export default function LedgerList({ tab, ranked, unrated, myKey, onOpen, onRate
             <div className="section-head">Your turn · {queued.length}</div>
             <ol className="list">
               {queued.map((p, i) => (
-                <PendingRow key={p.id} place={p} index={i} onOpen={onOpen} onRate={onRate} />
+                <PendingRow key={p.id} place={p} myKey={myKey} index={i} onOpen={onOpen} onRate={onRate} />
               ))}
             </ol>
           </>
@@ -180,7 +196,7 @@ export default function LedgerList({ tab, ranked, unrated, myKey, onOpen, onRate
             <div className="section-head">Waiting on {partner?.name || 'the other'} · {theirs.length}</div>
             <ol className="list">
               {theirs.map((p, i) => (
-                <PendingRow key={p.id} place={p} index={i} onOpen={onOpen} waitingOn={partner?.label} />
+                <PendingRow key={p.id} place={p} myKey={myKey} index={i} onOpen={onOpen} waitingOn={partner?.label} />
               ))}
             </ol>
           </>
@@ -195,7 +211,7 @@ export default function LedgerList({ tab, ranked, unrated, myKey, onOpen, onRate
     return (
       <ol className="list">
         {top.map((p, i) => (
-          <RankedRow key={p.id} place={p} rank={i + 1} index={i} onOpen={onOpen} />
+          <RankedRow key={p.id} place={p} myKey={myKey} rank={i + 1} index={i} onOpen={onOpen} />
         ))}
       </ol>
     )
@@ -208,10 +224,10 @@ export default function LedgerList({ tab, ranked, unrated, myKey, onOpen, onRate
   return (
     <ol className="list">
       {ranked.map((p, i) => (
-        <RankedRow key={p.id} place={p} rank={i + 1} index={i} onOpen={onOpen} />
+        <RankedRow key={p.id} place={p} myKey={myKey} rank={i + 1} index={i} onOpen={onOpen} />
       ))}
       {unrated.map((p, i) => (
-        <RankedRow key={p.id} place={p} rank={null} index={ranked.length + i} onOpen={onOpen} />
+        <RankedRow key={p.id} place={p} myKey={myKey} rank={null} index={ranked.length + i} onOpen={onOpen} />
       ))}
     </ol>
   )

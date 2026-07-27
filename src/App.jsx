@@ -14,6 +14,7 @@ import DirtyBar from './components/DirtyBar'
 import Toast from './components/Toast'
 import { CUISINES, LSK_DATA, DEFAULT_CITY } from './lib/constants'
 import { overall, fmt, slugify, fullyRated } from './lib/utils'
+import RevealOverlay from './components/RevealOverlay'
 import { loadCfg, publishPlaces } from './lib/github'
 import { cloudEnabled, initCloud, canEdit, editorKeyFor, savePlaceCloud, deletePlaceCloud } from './lib/cloud'
 import { EDITORS } from './lib/firebase-config'
@@ -45,6 +46,9 @@ export default function App() {
   const [selectedId, setSelectedId] = useState(null)
   const [editingPlace, setEditingPlace] = useState(null) // null = adding a new place
   const [surprising, setSurprising] = useState(false)
+  // The completed place record to celebrate — set when a save fills in the
+  // second rating, so the reveal animation only fires for whoever closes the pair.
+  const [reveal, setReveal] = useState(null)
   const [showSettings, setShowSettings] = useState(false)
   const [toastMsg, setToastMsg] = useState('')
   const [user, setUser] = useState(null)
@@ -238,19 +242,32 @@ export default function App() {
       rec[`${e.key}CommentAt`] = text !== prevText ? now : (editingPlace?.[`${e.key}CommentAt`] ?? null)
     })
     const wasEditing = Boolean(editingPlace)
+    // A blind reveal: my rating just completed a pair the partner had already
+    // started, so I'm the first to see both scores side by side. The reveal
+    // takes the place of the usual toast.
+    const partner = EDITORS.find((e) => e.key !== myKey)
+    const completesPair = Boolean(
+      editingPlace &&
+      !fullyRated(editingPlace) &&
+      fullyRated(rec) &&
+      partner &&
+      editingPlace[partner.key] !== null &&
+      editingPlace[partner.key] !== undefined,
+    )
+    const done = (msg) => (completesPair ? setReveal(rec) : toast(msg))
     if (cloudEnabled) {
       savePlaceCloud(rec)
-        .then(() => toast(wasEditing ? 'Updated ✓' : 'Added ✓'))
+        .then(() => done(wasEditing ? 'Updated ✓' : 'Added ✓'))
         .catch((e) => {
           console.error('[places] save failed:', e)
           setCloudFault({ error: e, what: 'write' })
         })
     } else if (wasEditing) {
       updatePlaces(db.places.map((p) => (p.id === editingPlace.id ? rec : p)))
-      toast('Updated ✓')
+      done('Updated ✓')
     } else {
       updatePlaces([...db.places, rec])
-      toast('Added ✓ — publish when ready')
+      done('Added ✓ — publish when ready')
     }
     // Editing (e.g. rating from the To-rate queue) returns you to the same tab,
     // so you can keep working down the list; a rated place simply drops off it.
@@ -376,6 +393,7 @@ export default function App() {
           <PlaceDetail
             place={selected}
             rank={rankedAll.findIndex((p) => p.id === selected.id)}
+            myKey={myKey}
             onBack={() => setView('browse')}
             onEdit={openEdit}
           />
@@ -398,6 +416,8 @@ export default function App() {
       {surprising && (
         <SurpriseOverlay places={rankedAll} onClose={() => setSurprising(false)} />
       )}
+
+      {reveal && <RevealOverlay place={reveal} onClose={() => setReveal(null)} />}
 
       <DirtyBar
         show={dirty}

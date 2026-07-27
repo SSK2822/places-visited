@@ -205,6 +205,56 @@ body { margin: 0; background: #f5ead8; overflow-x: hidden; }
 .overall-preview { text-align: center; font-style: italic; font-size: 13px;
   color: color-mix(in srgb, var(--color-text) 55%, transparent); margin: 0 0 var(--space-4); font-feature-settings: "tnum"; }
 
+/* ---------- blind-rating game ---------- */
+.hidden-score { filter: saturate(0.85); }
+.reveal-hint { text-align: center; font-style: italic; font-size: 13px; margin: var(--space-3) 0 0;
+  color: var(--color-accent-700); }
+.dial-sealed .dial-read { font-family: var(--font-heading); font-size: 40px; line-height: 1; }
+.sealed-box { border: 1px dashed var(--color-accent); border-radius: var(--radius-md);
+  padding: var(--space-3); font-size: 13px; line-height: 1.5;
+  color: color-mix(in srgb, var(--color-text) 70%, transparent);
+  background: color-mix(in srgb, var(--color-accent) 5%, transparent); }
+.sealed-box b { color: var(--color-accent-700); font-weight: 600; }
+.sealed-note { display: flex; align-items: center; min-height: 90px; font-style: italic;
+  color: color-mix(in srgb, var(--color-text) 45%, transparent); }
+
+/* ---------- reveal overlay ---------- */
+.reveal-back { position: fixed; inset: 0; display: grid; place-items: center; z-index: 75; padding: 24px;
+  background: color-mix(in srgb, var(--color-neutral-900) 52%, transparent); opacity: 0; transition: opacity .3s ease;
+  -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); }
+.reveal-back.is-open { opacity: 1; }
+.reveal-stage { background: var(--color-bg); border: 1px solid var(--color-accent); border-radius: var(--radius-lg);
+  padding: 40px 44px; text-align: center; max-width: 460px; width: 100%; box-shadow: var(--shadow-lg);
+  transform: scale(.92); transition: transform .3s cubic-bezier(.2,.8,.2,1); }
+.reveal-back.is-open .reveal-stage { transform: scale(1); }
+.reveal-kicker { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--color-accent-700); }
+.reveal-name { font-family: var(--font-heading); font-size: 32px; line-height: 1.1; margin: 8px 0 var(--space-6); }
+.reveal-scores { display: flex; justify-content: center; gap: var(--space-4); }
+.reveal-card { flex: 1 1 0; max-width: 150px; border: 1px solid var(--color-divider); border-radius: var(--radius-md);
+  padding: var(--space-4) var(--space-3); }
+.reveal-card-lab { font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase;
+  color: color-mix(in srgb, var(--color-text) 52%, transparent); }
+.reveal-card-fig { font-family: var(--font-heading); font-size: 42px; line-height: 1; margin-top: 8px; font-feature-settings: "tnum"; }
+.reveal-card.shown .reveal-card-fig { animation: revealpop .5s cubic-bezier(.2,1.5,.4,1); }
+.reveal-overall { opacity: 0; transform: translateY(6px); transition: opacity .4s ease, transform .4s ease; margin-top: var(--space-4); }
+.reveal-overall.show { opacity: 1; transform: none; }
+.reveal-overall-lab { font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase;
+  color: color-mix(in srgb, var(--color-text) 52%, transparent); margin-right: 10px; }
+.reveal-overall-fig { font-family: var(--font-heading); font-size: 30px; font-feature-settings: "tnum";
+  border-bottom: 2px solid var(--color-accent); padding-bottom: 2px; }
+.reveal-verdict { opacity: 0; transform: scale(.9); margin-top: var(--space-6);
+  transition: opacity .4s ease, transform .45s cubic-bezier(.2,1.4,.4,1); }
+.reveal-verdict.show { opacity: 1; transform: none; }
+.reveal-verdict-title { font-family: var(--font-heading); font-size: 26px; line-height: 1.1; }
+.reveal-verdict-line { font-style: italic; font-size: 14px; margin-top: 6px;
+  color: color-mix(in srgb, var(--color-text) 65%, transparent); }
+.reveal-close { margin-top: var(--space-6); }
+@keyframes revealpop { 0% { transform: scale(.4); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
+@media (prefers-reduced-motion: reduce) {
+  .reveal-card.shown .reveal-card-fig { animation: none; }
+  .reveal-overall, .reveal-verdict { transition: none; }
+}
+
 /* ---------- surprise overlay ---------- */
 .pv-surprise-back { position: fixed; inset: 0; display: grid; place-items: center;
   background: color-mix(in srgb, var(--color-neutral-900) 46%, transparent); opacity: 0; transition: opacity .3s ease; z-index: 50; padding: 24px;
