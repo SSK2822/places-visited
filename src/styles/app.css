@@ -180,8 +180,10 @@ body { margin: 0; background: #f5ead8; overflow-x: hidden; }
 .dial-track.is-off { opacity: .4; pointer-events: none; }
 .dial-locked { font-style: italic; font-size: 12px; margin: 10px 0 0;
   color: color-mix(in srgb, var(--color-text) 50%, transparent); }
-.form-actions { display: flex; gap: var(--space-3); margin-top: var(--space-6); }
-.form-actions .danger { margin-left: auto; color: #a23b28; border-color: color-mix(in srgb, #a23b28 45%, transparent); }
+.form-actions { display: flex; gap: var(--space-3); margin-top: var(--space-6); justify-content: flex-end; }
+/* Save sits rightmost (last child) — the hand is already on the right after
+   the dials — with Delete shoved to the far left, out of that path. */
+.form-actions .danger { margin-right: auto; color: #a23b28; border-color: color-mix(in srgb, #a23b28 45%, transparent); }
 .form-actions .danger:hover { background: color-mix(in srgb, #a23b28 10%, transparent); }
 .overall-preview { text-align: center; font-style: italic; font-size: 13px;
   color: color-mix(in srgb, var(--color-text) 55%, transparent); margin: 0 0 var(--space-4); font-feature-settings: "tnum"; }

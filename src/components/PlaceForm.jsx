@@ -130,6 +130,14 @@ export default function PlaceForm({
       })}
 
       <div className="form-actions">
+        {place && (
+          <button className="btn btn-secondary danger" onClick={() => onDelete(place.id)}>
+            Delete
+          </button>
+        )}
+        <button className="btn btn-ghost" onClick={onCancel}>
+          Cancel
+        </button>
         <button
           className="btn btn-primary"
           disabled={!name.trim()}
@@ -137,14 +145,6 @@ export default function PlaceForm({
         >
           Save to the ledger
         </button>
-        <button className="btn btn-ghost" onClick={onCancel}>
-          Cancel
-        </button>
-        {place && (
-          <button className="btn btn-secondary danger" onClick={() => onDelete(place.id)}>
-            Delete
-          </button>
-        )}
       </div>
     </section>
   )
