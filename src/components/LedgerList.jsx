@@ -1,6 +1,6 @@
 import useInView from '../hooks/useInView'
 import CountUp from './CountUp'
-import { overall, fmt, ratingClass, latestComment } from '../lib/utils'
+import { overall, fmt, ratingClass, latestComment, pendingEditors } from '../lib/utils'
 import { EDITORS } from '../lib/firebase-config'
 
 // The reference frame staggered every row by index — fine for its 12 fixtures,
@@ -66,6 +66,11 @@ function RankedRow({ place, rank, index, onOpen }) {
 
 function PendingRow({ place, index, onOpen, onRate }) {
   const [ref, inView] = useInView({ delay: revealDelay(index, 55) })
+  // Half-scored places live here too now, so show the score already in and who
+  // the ledger is still waiting on — otherwise it looks like nobody has rated.
+  const waiting = pendingEditors(place)
+  const halfway = waiting.length && waiting.length < EDITORS.length
+
   return (
     <li
       ref={ref}
@@ -81,6 +86,18 @@ function PendingRow({ place, index, onOpen, onRate }) {
         <div className="r-meta">
           {place.cuisine} · {place.city}
         </div>
+        {halfway && (
+          <div className="r-status">
+            {EDITORS.map((e) => (
+              <span key={e.key}>
+                <span className="who">{e.label}</span>{' '}
+                {place[e.key] == null
+                  ? <span className="await">to rate</span>
+                  : <span className={ratingClass(place[e.key])}>{fmt(place[e.key])}</span>}
+              </span>
+            ))}
+          </div>
+        )}
       </div>
       <button
         className="rate-link"

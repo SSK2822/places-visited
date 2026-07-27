@@ -6,6 +6,17 @@ export const overall = (p) => {
   return r.length ? r.reduce((a, b) => a + b, 0) / r.length : null
 }
 
+// A place only counts as "rated" — ranked, out of the To-rate queue — once
+// BOTH editors have weighed in. A single verdict leaves it pending, waiting on
+// the other. This is the ranking predicate; `overall` still averages whatever
+// exists, for display.
+export const fullyRated = (p) =>
+  EDITORS.every((e) => p[e.key] !== null && p[e.key] !== undefined)
+
+// Which editors haven't scored a place yet — used to nudge in the To-rate list.
+export const pendingEditors = (p) =>
+  EDITORS.filter((e) => p[e.key] === null || p[e.key] === undefined)
+
 // Ratings step in quarters, so an overall average can land on eighths
 // (e.g. (1.25 + 1.5) / 2 = 1.375) — round to kill float noise, then
 // trim trailing zeros without forcing a fixed decimal count.

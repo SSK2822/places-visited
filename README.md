@@ -11,12 +11,15 @@ Live site: [https://ssk2822.github.io/places-visited/](https://ssk2822.github.io
 
 1. Tracks places with YK and Ac ratings from `-3` to `+3`, in quarter steps
 2. Calculates an overall score automatically, and ranks the ledger by it
-3. Splits the list into **Ranked** (scored) and **To rate** (been there, verdict pending)
-4. Supports search and cuisine chips
-5. Adds Google Maps quick links for each place
-6. Includes a "Surprise us" slot machine for indecisive food nights
-7. Lets you add and edit entries directly in the browser
-8. Works on desktop and mobile
+3. Counts a place as rated only once **both** editors have scored it — a
+   one-sided place stays in the To-rate queue, waiting on the other verdict
+4. Three tabs: **Top 10**, **All visited** (the whole filtered ledger), and
+   **To rate** (been there, verdict still pending)
+5. Supports search and cuisine chips
+6. Adds Google Maps quick links for each place
+7. Includes a "Surprise us" slot machine for indecisive food nights
+8. Lets you add and edit entries directly in the browser
+9. Works on desktop and mobile
 
 ## Tech stack
 

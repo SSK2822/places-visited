@@ -13,7 +13,7 @@ import AccountModal from './components/AccountModal'
 import DirtyBar from './components/DirtyBar'
 import Toast from './components/Toast'
 import { CUISINES, LSK_DATA, DEFAULT_CITY } from './lib/constants'
-import { overall, fmt, slugify } from './lib/utils'
+import { overall, fmt, slugify, fullyRated } from './lib/utils'
 import { loadCfg, publishPlaces } from './lib/github'
 import { cloudEnabled, initCloud, canEdit, editorKeyFor, savePlaceCloud, deletePlaceCloud } from './lib/cloud'
 import { EDITORS } from './lib/firebase-config'
@@ -131,9 +131,10 @@ export default function App() {
   )
 
   // The full ranking, unfiltered — the detail view's "No. N" and the Surprise
-  // pool both mean position in the whole ledger, not within a search.
+  // pool both mean position in the whole ledger, not within a search. Only
+  // both-rated places are ranked.
   const rankedAll = useMemo(
-    () => db.places.filter((p) => overall(p) !== null).sort(byRank),
+    () => db.places.filter(fullyRated).sort(byRank),
     [db.places],
   )
 
@@ -148,13 +149,15 @@ export default function App() {
     })
   }, [db.places, query, cuisine])
 
-  // Rated (best first) and unrated (A–Z) partitions of the filtered set.
+  // Both-rated (best first) and still-pending (A–Z) partitions of the filtered
+  // set. "Pending" now includes places one editor has scored but the other
+  // hasn't — they stay in the queue until both weigh in.
   const rankedFiltered = useMemo(
-    () => base.filter((p) => overall(p) !== null).sort(byRank),
+    () => base.filter(fullyRated).sort(byRank),
     [base],
   )
   const unratedFiltered = useMemo(
-    () => base.filter((p) => overall(p) === null).sort((a, b) => a.name.localeCompare(b.name)),
+    () => base.filter((p) => !fullyRated(p)).sort((a, b) => a.name.localeCompare(b.name)),
     [base],
   )
   const visibleCount = tab === 'top'
@@ -164,7 +167,8 @@ export default function App() {
       : rankedFiltered.length + unratedFiltered.length
 
   const stats = useMemo(() => {
-    const rated = db.places.filter((p) => overall(p) !== null)
+    // "Rated" everywhere means both editors have scored it (see fullyRated).
+    const rated = db.places.filter(fullyRated)
     // Top cuisine = highest average overall score, not most-visited.
     const cuisineScores = {}
     rated.forEach((p) => {

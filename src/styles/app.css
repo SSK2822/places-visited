@@ -116,6 +116,11 @@ body { margin: 0; background: #f5ead8; overflow-x: hidden; }
 .r-meta { font-size: 12px; letter-spacing: 0.02em; color: color-mix(in srgb, var(--color-text) 58%, transparent); font-feature-settings: "tnum"; }
 .r-note { font-style: italic; font-size: 14px; margin: 8px 0 0; color: color-mix(in srgb, var(--color-text) 78%, transparent); max-width: 44ch; }
 .r-note .who { font-style: normal; font-family: var(--font-heading); color: var(--color-accent-700); margin-right: 6px; }
+/* Half-scored place in the To-rate list: "YK +2 · Ac to rate". */
+.r-status { display: flex; flex-wrap: wrap; gap: 4px var(--space-3); margin-top: 6px;
+  font-size: 12px; font-feature-settings: "tnum"; }
+.r-status .who { font-family: var(--font-heading); color: var(--color-accent-700); margin-right: 4px; }
+.r-status .await { font-style: italic; color: color-mix(in srgb, var(--color-text) 42%, transparent); }
 .scores { display: flex; gap: var(--space-4); text-align: center; }
 .score-lab { font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 50%, transparent); }
 .score-fig { font-family: var(--font-heading); font-size: 22px; line-height: 1.2; font-feature-settings: "tnum"; }
