@@ -1,6 +1,6 @@
 {
-  "takenAt": "2026-07-27T09:00:04.189Z",
-  "count": 268,
+  "takenAt": "2026-07-27T10:43:44.772Z",
+  "count": 266,
   "rated": 122,
   "places": [
     {
@@ -563,15 +563,6 @@
     },
     {
       "ac": null,
-      "city": "New York",
-      "cuisine": "🍔 American",
-      "id": "chick-fil-a",
-      "name": "Chick-fil-A",
-      "notes": "",
-      "yk": null
-    },
-    {
-      "ac": null,
       "acComment": "",
       "acCommentAt": null,
       "city": "New York",
@@ -584,12 +575,15 @@
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍔 American",
       "id": "chicken-at-last",
       "name": "Chicken at Last",
-      "notes": "",
-      "yk": null
+      "yk": 1.25,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": 1.5,
@@ -599,7 +593,7 @@
       "cuisine": "🧋 Boba & Tea",
       "id": "chictea",
       "name": "Chictea",
-      "yk": null,
+      "yk": 2,
       "ykComment": "",
       "ykCommentAt": null
     },
@@ -611,7 +605,7 @@
       "cuisine": "☕ Coffee",
       "id": "chipichape-cafe",
       "name": "Chipichape Cafe",
-      "yk": null,
+      "yk": 1.25,
       "ykComment": "",
       "ykCommentAt": null
     },
@@ -623,7 +617,7 @@
       "cuisine": "🥢 Chinese & Taiwanese",
       "id": "chuan-tian-xia",
       "name": "Chuan Tian Xia",
-      "yk": null,
+      "yk": 2,
       "ykComment": "",
       "ykCommentAt": null
     },
@@ -680,7 +674,7 @@
       "cuisine": "☕ Coffee",
       "id": "culture-espresso",
       "name": "Culture Espresso",
-      "yk": null,
+      "yk": 2.25,
       "ykComment": "",
       "ykCommentAt": null
     },
@@ -692,7 +686,7 @@
       "cuisine": "🍛 Indian & Himalayan",
       "id": "darjeeling-kitchen-and-cafe",
       "name": "Darjeeling Kitchen and Cafe",
-      "yk": null,
+      "yk": 1.75,
       "ykComment": "",
       "ykCommentAt": null
     },
@@ -704,7 +698,7 @@
       "cuisine": "🧋 Boba & Tea",
       "id": "debutea",
       "name": "Debutea",
-      "yk": null,
+      "yk": 1.5,
       "ykComment": "",
       "ykCommentAt": null
     },
@@ -725,7 +719,7 @@
       "cuisine": "🍛 Indian & Himalayan",
       "id": "divya-kitchen",
       "name": "Divya Kitchen",
-      "yk": null,
+      "yk": 1.5,
       "ykComment": "",
       "ykCommentAt": null
     },
@@ -764,7 +758,7 @@
       "cuisine": "🍛 Indian & Himalayan",
       "id": "dosa-royale",
       "name": "Dosa Royale",
-      "yk": null,
+      "yk": 2,
       "ykComment": "",
       "ykCommentAt": null
     },
@@ -842,7 +836,7 @@
       "cuisine": "🍽️ Other",
       "id": "equal-measure",
       "name": "Equal Measure",
-      "yk": null,
+      "yk": 1.25,
       "ykComment": "",
       "ykCommentAt": null
     },
@@ -854,9 +848,9 @@
       "cuisine": "🥢 Chinese & Taiwanese",
       "id": "fei-long-spicy-hot-pot",
       "name": "Fei Long Spicy Hot Pot",
-      "yk": null,
-      "ykComment": "",
-      "ykCommentAt": null
+      "yk": -1,
+      "ykComment": "Meat was bad",
+      "ykCommentAt": 1785143112943
     },
     {
       "ac": null,
@@ -884,7 +878,7 @@
       "cuisine": "🥢 Chinese & Taiwanese",
       "id": "fish-with-you",
       "name": "Fish With You",
-      "yk": null,
+      "yk": 1.25,
       "ykComment": "",
       "ykCommentAt": null
     },
@@ -941,7 +935,7 @@
       "cuisine": "🥢 Chinese & Taiwanese",
       "id": "four-four-south-village",
       "name": "Four Four South Village",
-      "yk": null,
+      "yk": -1,
       "ykComment": "",
       "ykCommentAt": null
     },
@@ -1034,7 +1028,7 @@
       "cuisine": "🥢 Chinese & Taiwanese",
       "id": "growl-growl",
       "name": "Growl Growl",
-      "yk": null,
+      "yk": 1.25,
       "ykComment": "",
       "ykCommentAt": null
     },
@@ -1055,7 +1049,7 @@
       "cuisine": "🥢 Chinese & Taiwanese",
       "id": "hainan-chicken-house",
       "name": "Hainan Chicken House",
-      "yk": null,
+      "yk": -0.5,
       "ykComment": "",
       "ykCommentAt": null
     },
@@ -1097,7 +1091,7 @@
       "cuisine": "🧋 Boba & Tea",
       "id": "heytea-lab",
       "name": "HEYTEA Lab",
-      "yk": null,
+      "yk": 2,
       "ykComment": "",
       "ykCommentAt": null
     },
@@ -1118,7 +1112,7 @@
       "cuisine": "🧋 Boba & Tea",
       "id": "hong-cha",
       "name": "Hong Cha",
-      "yk": null,
+      "yk": 1.25,
       "ykComment": "",
       "ykCommentAt": null
     },
@@ -1148,7 +1142,7 @@
       "cuisine": "☕ Coffee",
       "id": "internet-coffee",
       "name": "Internet & Coffee",
-      "yk": null,
+      "yk": 0.75,
       "ykComment": "",
       "ykCommentAt": null
     },
@@ -1196,7 +1190,7 @@
       "cuisine": "🥢 Chinese & Taiwanese",
       "id": "joe-s-steam-rice-roll",
       "name": "Joe's Steam Rice Roll",
-      "yk": null,
+      "yk": 0.25,
       "ykComment": "",
       "ykCommentAt": null
     },
@@ -1238,7 +1232,7 @@
       "cuisine": "🥢 Chinese & Taiwanese",
       "id": "kai-feng-fu-dumpling-house",
       "name": "Kai Feng Fu Dumpling House",
-      "yk": null,
+      "yk": 0.25,
       "ykComment": "",
       "ykCommentAt": null
     },
@@ -1289,7 +1283,7 @@
       "cuisine": "🥢 Chinese & Taiwanese",
       "id": "king-s-kitchen",
       "name": "King's Kitchen",
-      "yk": null,
+      "yk": 2,
       "ykComment": "",
       "ykCommentAt": null
     },
@@ -1310,7 +1304,7 @@
       "cuisine": "🥐 Bakery",
       "id": "kora",
       "name": "Kora",
-      "yk": null,
+      "yk": 2,
       "ykComment": "",
       "ykCommentAt": null
     },
@@ -1352,7 +1346,7 @@
       "cuisine": "🥢 Chinese & Taiwanese",
       "id": "lao-ma-spicy",
       "name": "Lao Ma Spicy",
-      "yk": null,
+      "yk": 2.5,
       "ykComment": "",
       "ykCommentAt": null
     },
@@ -1364,7 +1358,7 @@
       "cuisine": "🍜 Thai & SE Asian",
       "id": "lemongrass",
       "name": "Lemongrass",
-      "yk": null,
+      "yk": 1.75,
       "ykComment": "",
       "ykCommentAt": null
     },
@@ -1394,7 +1388,7 @@
       "cuisine": "🍸 Bars",
       "id": "limo-bar",
       "name": "Limo Bar",
-      "yk": null,
+      "yk": 1.5,
       "ykComment": "",
       "ykCommentAt": null
     },
@@ -1433,19 +1427,7 @@
       "cuisine": "🥢 Chinese & Taiwanese",
       "id": "liu-liu-sheng-jian",
       "name": "Liu Liu Sheng Jian",
-      "yk": null,
-      "ykComment": "",
-      "ykCommentAt": null
-    },
-    {
-      "ac": 1.25,
-      "acComment": "",
-      "acCommentAt": null,
-      "city": "New York",
-      "cuisine": "☕ Coffee",
-      "id": "luckin-coffee",
-      "name": "Luckin Coffee",
-      "yk": null,
+      "yk": 2.25,
       "ykComment": "",
       "ykCommentAt": null
     },
@@ -1457,7 +1439,7 @@
       "cuisine": "🍽️ Other",
       "id": "luke-s-lobster",
       "name": "Luke's Lobster",
-      "yk": null,
+      "yk": 1.75,
       "ykComment": "",
       "ykCommentAt": null
     },
@@ -1478,7 +1460,7 @@
       "cuisine": "🥢 Chinese & Taiwanese",
       "id": "mala-project",
       "name": "MáLà Project",
-      "yk": null,
+      "yk": 2.75,
       "ykComment": "",
       "ykCommentAt": null
     },
@@ -1508,7 +1490,7 @@
       "cuisine": "🍦 Dessert",
       "id": "marvel",
       "name": "Marvel",
-      "yk": null,
+      "yk": 2,
       "ykComment": "",
       "ykCommentAt": null
     },
@@ -1604,7 +1586,7 @@
       "cuisine": "🧋 Boba & Tea",
       "id": "mixue",
       "name": "Mixue",
-      "yk": null,
+      "yk": 1.25,
       "ykComment": "",
       "ykCommentAt": null
     },
@@ -1616,7 +1598,7 @@
       "cuisine": "🥢 Chinese & Taiwanese",
       "id": "mountain-house",
       "name": "Mountain House",
-      "yk": null,
+      "yk": 2,
       "ykComment": "",
       "ykCommentAt": null
     },
@@ -1637,9 +1619,9 @@
       "cuisine": "🧋 Boba & Tea",
       "id": "n25-nitro-tea",
       "name": "N25 Nitro Tea",
-      "yk": null,
-      "ykComment": "",
-      "ykCommentAt": null
+      "yk": 1.75,
+      "ykComment": "Thanks Sophie for drinks",
+      "ykCommentAt": 1785143326761
     },
     {
       "ac": null,
@@ -1658,7 +1640,7 @@
       "cuisine": "🍛 Indian & Himalayan",
       "id": "namastay-boston",
       "name": "Namastay Boston",
-      "yk": null,
+      "yk": 1.5,
       "ykComment": "",
       "ykCommentAt": null
     },
@@ -1670,7 +1652,7 @@
       "cuisine": "🥢 Chinese & Taiwanese",
       "id": "nan-xiang-express",
       "name": "Nan Xiang Express",
-      "yk": null,
+      "yk": 2,
       "ykComment": "",
       "ykCommentAt": null
     },
@@ -1682,7 +1664,7 @@
       "cuisine": "🧋 Boba & Tea",
       "id": "nana-s-green-tea",
       "name": "Nana's Green Tea",
-      "yk": null,
+      "yk": 0.5,
       "ykComment": "",
       "ykCommentAt": null
     },
@@ -1724,7 +1706,7 @@
       "cuisine": "🍛 Indian & Himalayan",
       "id": "nishaan",
       "name": "Nishaan",
-      "yk": null,
+      "yk": 2,
       "ykComment": "",
       "ykCommentAt": null
     },
@@ -1814,7 +1796,7 @@
       "cuisine": "🥢 Chinese & Taiwanese",
       "id": "peppercorn-station",
       "name": "Peppercorn Station",
-      "yk": null,
+      "yk": 2.75,
       "ykComment": "",
       "ykCommentAt": null
     },
@@ -1835,7 +1817,7 @@
       "cuisine": "🍛 Indian & Himalayan",
       "id": "phayul",
       "name": "Phayul",
-      "yk": null,
+      "yk": 2,
       "ykComment": "",
       "ykCommentAt": null
     },
@@ -1907,7 +1889,7 @@
       "cuisine": "🧋 Boba & Tea",
       "id": "prince-tea-house",
       "name": "Prince Tea House",
-      "yk": null,
+      "yk": 2,
       "ykComment": "",
       "ykCommentAt": null
     },
@@ -1937,7 +1919,7 @@
       "cuisine": "🥙 Mediterranean & Middle Eastern",
       "id": "ravagh-persian-grill",
       "name": "Ravagh Persian Grill",
-      "yk": null,
+      "yk": 2.25,
       "ykComment": "",
       "ykCommentAt": null
     },
@@ -1976,7 +1958,7 @@
       "cuisine": "🥢 Chinese & Taiwanese",
       "id": "red-sorgum",
       "name": "Red Sorgum",
-      "yk": null,
+      "yk": 2,
       "ykComment": "",
       "ykCommentAt": null
     },
@@ -1997,7 +1979,7 @@
       "cuisine": "🥢 Chinese & Taiwanese",
       "id": "roast-28",
       "name": "Roast 28",
-      "yk": null,
+      "yk": 2,
       "ykComment": "",
       "ykCommentAt": null
     },
@@ -2054,9 +2036,9 @@
       "cuisine": "🍽️ Other",
       "id": "saltie-girl",
       "name": "Saltie Girl",
-      "yk": null,
-      "ykComment": "",
-      "ykCommentAt": null
+      "yk": 2.5,
+      "ykComment": "Boston highlight",
+      "ykCommentAt": 1785143434136
     },
     {
       "ac": null,
@@ -2093,7 +2075,7 @@
       "cuisine": "🍛 Indian & Himalayan",
       "id": "semma",
       "name": "Semma",
-      "yk": null,
+      "yk": 2.75,
       "ykComment": "",
       "ykCommentAt": null
     },
@@ -2150,7 +2132,7 @@
       "cuisine": "🍜 Thai & SE Asian",
       "id": "singapore-social",
       "name": "Singapore Social",
-      "yk": null,
+      "yk": 2.5,
       "ykComment": "",
       "ykCommentAt": null
     },
@@ -2180,7 +2162,7 @@
       "cuisine": "🍽️ Other",
       "id": "smoothie-quincy-market",
       "name": "Smoothie Quincy Market",
-      "yk": null,
+      "yk": 0.75,
       "ykComment": "",
       "ykCommentAt": null
     },
@@ -2192,7 +2174,7 @@
       "cuisine": "☕ Coffee",
       "id": "sole-cafe",
       "name": "Sole Cafe",
-      "yk": null,
+      "yk": 1.25,
       "ykComment": "",
       "ykCommentAt": null
     },
@@ -2249,7 +2231,7 @@
       "cuisine": "☕ Coffee",
       "id": "square-coffee",
       "name": "Square Coffee",
-      "yk": null,
+      "yk": -0.5,
       "ykComment": "",
       "ykCommentAt": null
     },
@@ -2381,7 +2363,7 @@
       "cuisine": "🍛 Indian & Himalayan",
       "id": "tava",
       "name": "Tava",
-      "yk": null,
+      "yk": 1.5,
       "ykComment": "",
       "ykCommentAt": null
     },
@@ -2423,7 +2405,7 @@
       "cuisine": "☕ Coffee",
       "id": "the-bean",
       "name": "The Bean",
-      "yk": null,
+      "yk": 0.75,
       "ykComment": "",
       "ykCommentAt": null
     },
@@ -2552,7 +2534,7 @@
       "cuisine": "🍽️ Other",
       "id": "union-oyster-house",
       "name": "Union Oyster House",
-      "yk": null,
+      "yk": 2,
       "ykComment": "",
       "ykCommentAt": null
     },
@@ -2591,7 +2573,7 @@
       "cuisine": "🍽️ Other",
       "id": "veselka",
       "name": "Veselka",
-      "yk": null,
+      "yk": 1.25,
       "ykComment": "Ukrainian",
       "ykCommentAt": null
     },
@@ -2639,7 +2621,7 @@
       "cuisine": "🥢 Chinese & Taiwanese",
       "id": "white-bear",
       "name": "White Bear",
-      "yk": null,
+      "yk": -1.25,
       "ykComment": "",
       "ykCommentAt": null
     },
@@ -2669,7 +2651,7 @@
       "cuisine": "🥢 Chinese & Taiwanese",
       "id": "wong-wong-noodle-soup",
       "name": "Wong Wong Noodle Soup",
-      "yk": null,
+      "yk": 0.25,
       "ykComment": "",
       "ykCommentAt": null
     },
@@ -2681,7 +2663,7 @@
       "cuisine": "🥢 Chinese & Taiwanese",
       "id": "wu-liang-yi",
       "name": "Wu Liang Yi",
-      "yk": null,
+      "yk": 1.5,
       "ykComment": "",
       "ykCommentAt": null
     },
@@ -2693,7 +2675,7 @@
       "cuisine": "🥢 Chinese & Taiwanese",
       "id": "xiang-hotpot",
       "name": "Xiang Hotpot",
-      "yk": null,
+      "yk": 1.25,
       "ykComment": "",
       "ykCommentAt": null
     },
@@ -2714,7 +2696,7 @@
       "cuisine": "🥢 Chinese & Taiwanese",
       "id": "young-fish",
       "name": "Young Fish",
-      "yk": null,
+      "yk": 1.25,
       "ykComment": "",
       "ykCommentAt": null
     },
@@ -2726,7 +2708,7 @@
       "cuisine": "🥢 Chinese & Taiwanese",
       "id": "yumpling",
       "name": "Yumpling",
-      "yk": null,
+      "yk": 1.25,
       "ykComment": "",
       "ykCommentAt": null
     },
