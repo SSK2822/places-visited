@@ -12,9 +12,10 @@ import SettingsModal from './components/SettingsModal'
 import AccountModal from './components/AccountModal'
 import DirtyBar from './components/DirtyBar'
 import Toast from './components/Toast'
-import { CUISINES, LSK_DATA, DEFAULT_CITY } from './lib/constants'
+import { CUISINES, LSK_DATA, LSK_SEEN, DEFAULT_CITY } from './lib/constants'
 import { overall, fmt, slugify, fullyRated } from './lib/utils'
 import RevealOverlay from './components/RevealOverlay'
+import NotificationsDialog from './components/NotificationsDialog'
 import { loadCfg, publishPlaces } from './lib/github'
 import { cloudEnabled, initCloud, canEdit, editorKeyFor, savePlaceCloud, deletePlaceCloud } from './lib/cloud'
 import { EDITORS } from './lib/firebase-config'
@@ -46,9 +47,13 @@ export default function App() {
   const [selectedId, setSelectedId] = useState(null)
   const [editingPlace, setEditingPlace] = useState(null) // null = adding a new place
   const [surprising, setSurprising] = useState(false)
-  // The completed place record to celebrate — set when a save fills in the
-  // second rating, so the reveal animation only fires for whoever closes the pair.
-  const [reveal, setReveal] = useState(null)
+  // The place currently celebrated in the reveal overlay — one you just
+  // completed, or one you tapped in the notifications bell.
+  const [revealNow, setRevealNow] = useState(null)
+  const [showNotifications, setShowNotifications] = useState(false)
+  // Completed pairs this editor has already seen revealed (persisted per
+  // editor). null until loaded — while null, we haven't decided whether to seed.
+  const [seenIds, setSeenIds] = useState(null)
   const [showSettings, setShowSettings] = useState(false)
   const [toastMsg, setToastMsg] = useState('')
   const [user, setUser] = useState(null)
@@ -200,6 +205,51 @@ export default function App() {
     if (view === 'detail' && !selected) setView('browse')
   }, [view, selected])
 
+  /* ---------- notifications (the reveal bell) ---------- */
+  // Load this editor's seen-set when their identity is known.
+  useEffect(() => {
+    if (!myKey) {
+      setSeenIds(null)
+      return
+    }
+    const raw = localStorage.getItem(`${LSK_SEEN}_${myKey}`)
+    if (raw !== null) setSeenIds(JSON.parse(raw))
+  }, [myKey])
+
+  // Seed once per editor: the first time we have data and nothing stored, mark
+  // everything already complete as seen, so old pairs never fill the bell.
+  useEffect(() => {
+    if (!myKey || !db.places.length) return
+    const key = `${LSK_SEEN}_${myKey}`
+    if (localStorage.getItem(key) !== null) return
+    const complete = db.places.filter(fullyRated).map((p) => p.id)
+    localStorage.setItem(key, JSON.stringify(complete))
+    setSeenIds(complete)
+  }, [myKey, db.places])
+
+  function markSeen(id) {
+    if (!myKey) return
+    const key = `${LSK_SEEN}_${myKey}`
+    const raw = localStorage.getItem(key)
+    const next = [...new Set([...(raw ? JSON.parse(raw) : []), id])]
+    localStorage.setItem(key, JSON.stringify(next))
+    setSeenIds(next)
+  }
+
+  // The bell's contents: completed pairs this editor hasn't revealed yet —
+  // the ones the partner closed while they were away, newest not distinguished.
+  const seenSet = useMemo(() => new Set(seenIds || []), [seenIds])
+  const inbox = useMemo(
+    () => (myKey && seenIds !== null ? db.places.filter((p) => fullyRated(p) && !seenSet.has(p.id)) : []),
+    [myKey, seenIds, seenSet, db.places],
+  )
+
+  function openReveal(place) {
+    markSeen(place.id)
+    setShowNotifications(false)
+    setRevealNow(place)
+  }
+
   /* ---------- actions ---------- */
   // In cloud mode, editing needs an approved Google account.
   function requireEditor() {
@@ -242,19 +292,12 @@ export default function App() {
       rec[`${e.key}CommentAt`] = text !== prevText ? now : (editingPlace?.[`${e.key}CommentAt`] ?? null)
     })
     const wasEditing = Boolean(editingPlace)
-    // A blind reveal: my rating just completed a pair the partner had already
-    // started, so I'm the first to see both scores side by side. The reveal
-    // takes the place of the usual toast.
-    const partner = EDITORS.find((e) => e.key !== myKey)
-    const completesPair = Boolean(
-      editingPlace &&
-      !fullyRated(editingPlace) &&
-      fullyRated(rec) &&
-      partner &&
-      editingPlace[partner.key] !== null &&
-      editingPlace[partner.key] !== undefined,
-    )
-    const done = (msg) => (completesPair ? setReveal(rec) : toast(msg))
+    // Completing the pair yourself gets the reveal straight away (your action,
+    // not a load-time interruption). Mark it seen now so it never also shows up
+    // in the bell, and skip the toast — the reveal is the feedback.
+    const completesPair = Boolean(editingPlace && !fullyRated(editingPlace) && fullyRated(rec))
+    if (completesPair) markSeen(rec.id)
+    const done = (msg) => (completesPair ? setRevealNow(rec) : toast(msg))
     if (cloudEnabled) {
       savePlaceCloud(rec)
         .then(() => done(wasEditing ? 'Updated ✓' : 'Added ✓'))
@@ -359,7 +402,11 @@ export default function App() {
       <div className="wrap">
         {view === 'browse' && (
           <section className="view">
-            <Masthead onAccount={() => setShowSettings(true)} />
+            <Masthead
+              onAccount={() => setShowSettings(true)}
+              notifyCount={inbox.length}
+              onBell={() => setShowNotifications(true)}
+            />
             <StatsLedger stats={stats} />
             <SurpriseCard onSurprise={surprise} />
             <LedgerControls
@@ -417,7 +464,17 @@ export default function App() {
         <SurpriseOverlay places={rankedAll} onClose={() => setSurprising(false)} />
       )}
 
-      {reveal && <RevealOverlay place={reveal} onClose={() => setReveal(null)} />}
+      <NotificationsDialog
+        show={showNotifications}
+        items={inbox}
+        partnerName={EDITORS.find((e) => e.key !== myKey)?.name || 'your partner'}
+        onPick={openReveal}
+        onClose={() => setShowNotifications(false)}
+      />
+
+      {revealNow && (
+        <RevealOverlay key={revealNow.id} place={revealNow} onClose={() => setRevealNow(null)} />
+      )}
 
       <DirtyBar
         show={dirty}

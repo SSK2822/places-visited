@@ -78,8 +78,24 @@ body { margin: 0; background: #f5ead8; overflow-x: hidden; }
 
 /* The masthead's utility rail — account / settings sit as quiet ghost links
    so they never compete with the two real actions below the stats. */
-.mast-rail { display: flex; justify-content: flex-end; gap: var(--space-2); margin-bottom: var(--space-2); }
+.mast-rail { display: flex; align-items: center; justify-content: flex-end; gap: var(--space-2); margin-bottom: var(--space-2); }
 .mast-rail .btn { font-size: 12px; }
+.bell { position: relative; font-size: 15px; padding: 4px 8px; }
+.bell-badge { position: absolute; top: -2px; right: -2px; min-width: 16px; height: 16px; padding: 0 4px;
+  display: inline-flex; align-items: center; justify-content: center; box-sizing: border-box;
+  font-family: var(--font-body); font-size: 10px; font-feature-settings: "tnum"; line-height: 1;
+  color: var(--color-bg); background: var(--color-accent); border-radius: 999px; }
+
+/* reveal-bell notification list */
+.notif-list { list-style: none; margin: var(--space-3) 0 0; padding: 0; display: flex; flex-direction: column; gap: var(--space-2); }
+.notif-item { width: 100%; display: flex; align-items: center; gap: var(--space-3); cursor: pointer;
+  text-align: left; background: transparent; border: 1px solid var(--color-divider); border-radius: var(--radius-md);
+  padding: var(--space-3); transition: background .2s ease, border-color .2s ease; }
+.notif-item:hover { background: color-mix(in srgb, var(--color-accent) 8%, transparent); border-color: var(--color-accent); }
+.notif-text { display: flex; flex-direction: column; gap: 2px; flex: 1; }
+.notif-name { font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: 17px; line-height: 1.1; }
+.notif-meta { font-size: 12px; color: color-mix(in srgb, var(--color-text) 55%, transparent); font-feature-settings: "tnum"; }
+.notif-cta { flex: none; font-size: 13px; color: var(--color-accent-700); }
 
 /* ---------- stats ledger ---------- */
 .stats { display: flex; justify-content: center; flex-wrap: wrap;

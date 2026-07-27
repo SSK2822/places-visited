@@ -1,10 +1,20 @@
 import { EDITORS } from '../lib/firebase-config'
 
-export default function Masthead({ onAccount }) {
+export default function Masthead({ onAccount, notifyCount = 0, onBell }) {
   const who = EDITORS.map((e) => e.label).join(' & ')
   return (
     <header className="mast">
       <div className="mast-rail">
+        {notifyCount > 0 && (
+          <button
+            className="btn btn-ghost bell"
+            onClick={onBell}
+            aria-label={`${notifyCount} new ${notifyCount === 1 ? 'reveal' : 'reveals'}`}
+          >
+            🔔
+            <span className="bell-badge">{notifyCount}</span>
+          </button>
+        )}
         <button className="btn btn-ghost" onClick={onAccount}>
           Account
         </button>
