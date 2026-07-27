@@ -41,8 +41,22 @@ export default function PlaceForm({
     ? previewValues.reduce((a, b) => a + b, 0) / previewValues.length
     : null
 
+  function save() {
+    if (!name.trim()) return
+    onSave({ name, cuisine, city, ratings, notRated, comments })
+  }
+
+  // Shift+Enter saves from anywhere on the form, including mid-note — matches
+  // the disabled state on the button (a blank name blocks both). preventDefault
+  // stops the plain-textarea default of also inserting a newline.
+  function onKeyDown(e) {
+    if (e.key !== 'Enter' || !e.shiftKey) return
+    e.preventDefault()
+    save()
+  }
+
   return (
-    <section className="view">
+    <section className="view" onKeyDown={onKeyDown}>
       <button className="back" onClick={onCancel}>
         ← Cancel
       </button>
@@ -138,14 +152,11 @@ export default function PlaceForm({
         <button className="btn btn-ghost" onClick={onCancel}>
           Cancel
         </button>
-        <button
-          className="btn btn-primary"
-          disabled={!name.trim()}
-          onClick={() => onSave({ name, cuisine, city, ratings, notRated, comments })}
-        >
+        <button className="btn btn-primary" disabled={!name.trim()} onClick={save}>
           Save to the ledger
         </button>
       </div>
+      <p className="save-hint">Shift + Enter to save</p>
     </section>
   )
 }

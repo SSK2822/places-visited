@@ -143,17 +143,33 @@ export default function LedgerList({ tab, ranked, unrated, myKey, onOpen, onRate
     }
 
     // Signed in: split into what's yours to do and what's on the other person.
+    // "Mine" (I haven't rated) splits further — a place the partner already
+    // scored is more urgent than one neither of us has touched, so it gets its
+    // own section above the regular queue instead of blending in.
     const partner = EDITORS.find((e) => e.key !== myKey)
     const mine = unrated.filter((p) => p[myKey] === null || p[myKey] === undefined)
     const theirs = unrated.filter((p) => p[myKey] !== null && p[myKey] !== undefined)
+    const overdue = partner ? mine.filter((p) => p[partner.key] !== null && p[partner.key] !== undefined) : []
+    const queued = partner ? mine.filter((p) => p[partner.key] === null || p[partner.key] === undefined) : mine
 
     return (
       <>
-        {mine.length > 0 && (
+        {overdue.length > 0 && (
           <>
-            <div className="section-head">Your turn · {mine.length}</div>
+            <div className="section-head urgent">Overdue · {overdue.length}</div>
+            <p className="section-sub">{partner.name} already weighed in — no more stalling.</p>
             <ol className="list">
-              {mine.map((p, i) => (
+              {overdue.map((p, i) => (
+                <PendingRow key={p.id} place={p} index={i} onOpen={onOpen} onRate={onRate} />
+              ))}
+            </ol>
+          </>
+        )}
+        {queued.length > 0 && (
+          <>
+            <div className="section-head">Your turn · {queued.length}</div>
+            <ol className="list">
+              {queued.map((p, i) => (
                 <PendingRow key={p.id} place={p} index={i} onOpen={onOpen} onRate={onRate} />
               ))}
             </ol>

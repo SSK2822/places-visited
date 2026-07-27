@@ -1,6 +1,6 @@
 const TABS = [
   ['top', 'Top 10'],
-  ['all', 'All visited'],
+  ['all', 'All rated'],
   ['torate', 'To rate'],
 ]
 
