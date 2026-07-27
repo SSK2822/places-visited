@@ -1,7 +1,7 @@
 {
-  "takenAt": "2026-07-26T19:09:38.034Z",
+  "takenAt": "2026-07-27T02:53:43.194Z",
   "count": 269,
-  "rated": 98,
+  "rated": 99,
   "places": [
     {
       "ac": null,
@@ -155,12 +155,15 @@
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍕 Pizza & Italian",
       "id": "astarita",
       "name": "Astarita",
-      "notes": "",
-      "yk": null
+      "yk": 0.25,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": 1.25,
