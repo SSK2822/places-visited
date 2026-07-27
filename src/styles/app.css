@@ -133,6 +133,11 @@ body { margin: 0; background: #f5ead8; overflow-x: hidden; }
 .rate-link { font-family: var(--font-body); font-size: 12px; letter-spacing: 0.04em; color: var(--color-accent-700);
   border: 1px solid var(--color-accent); background: transparent; border-radius: var(--radius-md); padding: 6px 14px; cursor: pointer; white-space: nowrap; }
 .rate-link:hover { background: color-mix(in srgb, var(--color-accent) 12%, transparent); }
+/* A place the viewer has already scored — passive, not a call to action. */
+.rate-done { font-family: var(--font-body); font-size: 12px; letter-spacing: 0.04em; white-space: nowrap;
+  color: var(--color-accent-2-700); }
+.row-waiting { opacity: 0.6; transition: opacity .2s ease; }
+.row-waiting:hover { opacity: 1; } /* full strength on hover — you can still edit */
 .pending-note { text-align: center; font-style: italic; font-size: 13px; color: color-mix(in srgb, var(--color-text) 55%, transparent); margin: 0 0 var(--space-4); }
 
 /* ---------- back link ---------- */

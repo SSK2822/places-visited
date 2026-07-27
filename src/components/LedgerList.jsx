@@ -64,7 +64,10 @@ function RankedRow({ place, rank, index, onOpen }) {
   )
 }
 
-function PendingRow({ place, index, onOpen, onRate }) {
+// `waitingOn` set (a partner label) means the viewer has already scored this
+// place — it's not their action, so the row is muted and the "Rate it" button
+// is replaced with a passive "you're done" marker.
+function PendingRow({ place, index, onOpen, onRate, waitingOn }) {
   const [ref, inView] = useInView({ delay: revealDelay(index, 55) })
   // Half-scored places live here too now, so show the score already in and who
   // the ledger is still waiting on — otherwise it looks like nobody has rated.
@@ -74,7 +77,7 @@ function PendingRow({ place, index, onOpen, onRate }) {
   return (
     <li
       ref={ref}
-      className={`row pending ${inView ? 'is-in' : ''}`}
+      className={`row pending ${waitingOn ? 'row-waiting' : ''} ${inView ? 'is-in' : ''}`}
       role="button"
       tabIndex={0}
       onClick={() => onOpen(place)}
@@ -99,34 +102,72 @@ function PendingRow({ place, index, onOpen, onRate }) {
           </div>
         )}
       </div>
-      <button
-        className="rate-link"
-        onClick={(e) => {
-          e.stopPropagation()
-          onRate(place)
-        }}
-      >
-        Rate it →
-      </button>
+      {waitingOn ? (
+        <span className="rate-done">You’re in&nbsp;✓</span>
+      ) : (
+        <button
+          className="rate-link"
+          onClick={(e) => {
+            e.stopPropagation()
+            onRate(place)
+          }}
+        >
+          Rate it →
+        </button>
+      )}
     </li>
   )
 }
 
-export default function LedgerList({ tab, ranked, unrated, onOpen, onRate }) {
+export default function LedgerList({ tab, ranked, unrated, myKey, onOpen, onRate }) {
   if (tab === 'torate') {
-    return (
-      <>
-        <p className="pending-note">
-          Been here, verdict still pending — give it a score when you’re ready.
-        </p>
-        {unrated.length ? (
+    if (!unrated.length) {
+      return <p className="pending-note">Nothing left to rate. Impressive.</p>
+    }
+
+    // Signed out (or not an editor): no personal "your turn", so keep one plain
+    // list — the row buttons prompt sign-in when tapped.
+    if (!myKey) {
+      return (
+        <>
+          <p className="pending-note">
+            Been here, verdict still pending — give it a score when you’re ready.
+          </p>
           <ol className="list">
             {unrated.map((p, i) => (
               <PendingRow key={p.id} place={p} index={i} onOpen={onOpen} onRate={onRate} />
             ))}
           </ol>
-        ) : (
-          <p className="pending-note">Nothing left to rate. Impressive.</p>
+        </>
+      )
+    }
+
+    // Signed in: split into what's yours to do and what's on the other person.
+    const partner = EDITORS.find((e) => e.key !== myKey)
+    const mine = unrated.filter((p) => p[myKey] === null || p[myKey] === undefined)
+    const theirs = unrated.filter((p) => p[myKey] !== null && p[myKey] !== undefined)
+
+    return (
+      <>
+        {mine.length > 0 && (
+          <>
+            <div className="section-head">Your turn · {mine.length}</div>
+            <ol className="list">
+              {mine.map((p, i) => (
+                <PendingRow key={p.id} place={p} index={i} onOpen={onOpen} onRate={onRate} />
+              ))}
+            </ol>
+          </>
+        )}
+        {theirs.length > 0 && (
+          <>
+            <div className="section-head">Waiting on {partner?.name || 'the other'} · {theirs.length}</div>
+            <ol className="list">
+              {theirs.map((p, i) => (
+                <PendingRow key={p.id} place={p} index={i} onOpen={onOpen} waitingOn={partner?.label} />
+              ))}
+            </ol>
+          </>
         )}
       </>
     )

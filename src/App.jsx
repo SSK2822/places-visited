@@ -360,6 +360,7 @@ export default function App() {
               tab={tab}
               ranked={rankedFiltered}
               unrated={unratedFiltered}
+              myKey={myKey}
               onOpen={openDetail}
               onRate={openEdit}
             />
