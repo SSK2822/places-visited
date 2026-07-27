@@ -187,8 +187,41 @@ body { margin: 0; background: #f5ead8; overflow-x: hidden; }
 .talk .what { font-style: italic; font-size: 16px; line-height: 1.5; }
 .talk .empty { font-style: italic; color: color-mix(in srgb, var(--color-text) 45%, transparent); }
 
+/* ---------- floating "Add a place" ---------- */
+/* Distinct from the outlined filter chips: floats, always reachable while you
+   scroll, and lifts on hover. Stroke + elevation, not a solid fill, so it stays
+   on-brand. */
+.fab { position: fixed; right: var(--space-6); bottom: var(--space-6); z-index: 45;
+  display: inline-flex; align-items: center; gap: 8px; cursor: pointer;
+  font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: 15px;
+  color: var(--color-accent-700); background: var(--color-bg);
+  border: 1px solid var(--color-accent); border-radius: 999px;
+  padding: 12px 20px; box-shadow: var(--shadow-md);
+  transition: transform .2s cubic-bezier(.2,.8,.2,1), box-shadow .2s ease, background .2s ease; }
+.fab:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg);
+  background: color-mix(in srgb, var(--color-accent) 8%, var(--color-bg)); }
+.fab:active { transform: translateY(0); box-shadow: var(--shadow-md); }
+.fab-plus { font-size: 20px; line-height: 1; margin-top: -2px; }
+@media (max-width: 560px) { .fab { right: var(--space-4); bottom: var(--space-4); padding: 11px 18px; } }
+
 /* ---------- add / rate form ---------- */
 .form-title { font-family: var(--font-heading); font-size: 34px; margin: 0 0 var(--space-6); }
+
+/* name-search dropdown — spot a place that's already in the ledger */
+.name-field { position: relative; }
+.name-suggest { position: absolute; z-index: 5; top: 100%; left: 0; right: 0; margin: 4px 0 0; padding: 4px;
+  list-style: none; background: var(--color-surface); border: 1px solid var(--color-divider);
+  border-radius: var(--radius-md); box-shadow: var(--shadow-md); max-height: 280px; overflow-y: auto; }
+.name-suggest-head { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase;
+  color: color-mix(in srgb, var(--color-text) 55%, transparent); padding: 6px 8px 4px; }
+.name-suggest-item { width: 100%; display: grid; grid-template-columns: 1fr auto; grid-template-rows: auto auto;
+  column-gap: var(--space-3); text-align: left; background: transparent; border: 0; cursor: pointer;
+  padding: 7px 8px; border-radius: var(--radius-sm); }
+.name-suggest-item:hover { background: color-mix(in srgb, var(--color-accent) 10%, transparent); }
+.ns-name { grid-column: 1; grid-row: 1; font-family: var(--font-heading); font-size: 16px; }
+.ns-meta { grid-column: 1; grid-row: 2; font-size: 11px; color: color-mix(in srgb, var(--color-text) 55%, transparent); }
+.ns-status { grid-column: 2; grid-row: 1 / span 2; align-self: center; font-family: var(--font-heading); font-size: 15px;
+  font-feature-settings: "tnum"; color: var(--color-accent-700); }
 .field { margin-bottom: var(--space-4); }
 .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4); }
 .dial { border-top: 1px solid var(--color-divider); padding-top: var(--space-4); margin-bottom: var(--space-4); }

@@ -8,7 +8,6 @@ export default function LedgerControls({
   query, setQuery,
   cuisine, setCuisine, chips,
   tab, setTab,
-  onAdd,
 }) {
   return (
     <>
@@ -45,11 +44,6 @@ export default function LedgerControls({
           ))}
         </div>
 
-        <div className="actions">
-          <button className="btn btn-primary" onClick={onAdd}>
-            Add a place
-          </button>
-        </div>
       </div>
 
       <div className="mode">

@@ -1,6 +1,6 @@
 import useInView from '../hooks/useInView'
 import CountUp from './CountUp'
-import { overall, fmt, ratingClass, latestComment, pendingEditors, fullyRated, scoreHidden } from '../lib/utils'
+import { overall, fmt, ratingClass, latestComment, pendingEditors, fullyRated, scoreHidden, fmtVisited } from '../lib/utils'
 import { EDITORS } from '../lib/firebase-config'
 
 // The reference frame staggered every row by index — fine for its 12 fixtures,
@@ -43,6 +43,7 @@ function RankedRow({ place, rank, index, myKey, onOpen }) {
         <h3 className="r-name">{place.name}</h3>
         <div className="r-meta">
           {place.cuisine} · {place.city}
+          {fmtVisited(place.visited) && <> · {fmtVisited(place.visited)}</>}
         </div>
         {comment && (
           <p className="r-note">

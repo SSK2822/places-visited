@@ -1,4 +1,4 @@
-import { overall, fmt, ratingClass, mapsUrl, fullyRated, scoreHidden } from '../lib/utils'
+import { overall, fmt, ratingClass, mapsUrl, fullyRated, scoreHidden, fmtVisited } from '../lib/utils'
 import { EDITORS } from '../lib/firebase-config'
 
 export default function PlaceDetail({ place, rank, myKey, onBack, onEdit }) {
@@ -19,7 +19,8 @@ export default function PlaceDetail({ place, rank, myKey, onBack, onEdit }) {
       </div>
       <h1 className="d-name">{place.name}</h1>
       <div className="d-meta">
-        {place.cuisine} · {place.city} ·{' '}
+        {place.cuisine} · {place.city}
+        {fmtVisited(place.visited) && <> · Visited {fmtVisited(place.visited)}</>} ·{' '}
         <a href={mapsUrl(place)} target="_blank" rel="noopener noreferrer">
           Open in Maps ↗
         </a>

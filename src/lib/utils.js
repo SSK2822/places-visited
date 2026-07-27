@@ -83,6 +83,16 @@ export function slugify(name, places, editingId = null) {
 export const mapsUrl = (p) =>
   `https://www.google.com/maps/search/${encodeURIComponent(p.name + ' ' + p.city)}`
 
+// A stored visit date ("YYYY-MM-DD") as a readable label. The "T00:00:00"
+// anchors it to local time so the day doesn't slip a date in western zones.
+export const fmtVisited = (v) => {
+  if (!v) return null
+  const d = new Date(`${v}T00:00:00`)
+  return Number.isNaN(d.getTime())
+    ? null
+    : d.toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' })
+}
+
 // The most recently written of the two per-editor comments, for the
 // ledger row's note line. Returns null when neither editor has left one.
 export function latestComment(place) {

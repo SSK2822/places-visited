@@ -1,23 +1,26 @@
 import { useEffect, useState } from 'react'
 import RatingDial from './RatingDial'
-import { fmt, scoreHidden } from '../lib/utils'
+import { fmt, scoreHidden, overall, fullyRated } from '../lib/utils'
 import { DEFAULT_CITY } from '../lib/constants'
 import { EDITORS } from '../lib/firebase-config'
 
 export default function PlaceForm({
-  place, defaultCuisine, cuisines, cities, myKey, onSave, onDelete, onCancel,
+  place, defaultCuisine, cuisines, cities, places = [], myKey, onSave, onDelete, onCancel, onPickExisting,
 }) {
   const [name, setName] = useState('')
   const [cuisine, setCuisine] = useState(defaultCuisine)
   const [city, setCity] = useState(DEFAULT_CITY)
+  const [visited, setVisited] = useState('')
   const [ratings, setRatings] = useState({})
   const [notRated, setNotRated] = useState({})
   const [comments, setComments] = useState({})
+  const [nameFocused, setNameFocused] = useState(false)
 
   useEffect(() => {
     setName(place?.name ?? '')
     setCuisine(place?.cuisine ?? defaultCuisine)
     setCity(place?.city ?? DEFAULT_CITY)
+    setVisited(place?.visited ?? '')
 
     const r = {}, nr = {}, c = {}
     EDITORS.forEach((e) => {
@@ -47,13 +50,22 @@ export default function PlaceForm({
   const isSealed = (e) => myKey !== null && myKey !== e.key && place && scoreHidden(place, e.key, myKey)
   const anySealed = EDITORS.some(isSealed)
 
+  // Only when adding: existing places whose name contains what you've typed, so
+  // you can spot — and jump to — a place that's already in the ledger instead of
+  // adding it twice.
+  const nameQuery = name.trim().toLowerCase()
+  const suggestions = !place && nameQuery.length >= 2
+    ? places.filter((p) => p.name.toLowerCase().includes(nameQuery)).slice(0, 6)
+    : []
+  const exactMatch = suggestions.some((p) => p.name.toLowerCase() === nameQuery)
+  const showSuggest = nameFocused && suggestions.length > 0
+
   function save() {
     if (!name.trim()) return
-    onSave({ name, cuisine, city, ratings, notRated, comments })
+    onSave({ name, cuisine, city, visited, ratings, notRated, comments })
   }
 
-  // Shift+Enter saves from anywhere on the form, including mid-note — matches
-  // the disabled state on the button (a blank name blocks both). preventDefault
+  // Shift+Enter saves from anywhere on the form, including mid-note. preventDefault
   // stops the plain-textarea default of also inserting a newline.
   function onKeyDown(e) {
     if (e.key !== 'Enter' || !e.shiftKey) return
@@ -68,18 +80,43 @@ export default function PlaceForm({
       </button>
       <h1 className="form-title">{place ? 'Edit place' : 'Add a place'}</h1>
 
+      <div className="field name-field">
+        <label htmlFor="f-name">Name</label>
+        <input
+          className="input"
+          id="f-name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          onFocus={() => setNameFocused(true)}
+          onBlur={() => setNameFocused(false)}
+          placeholder="Where did you go?"
+          autoComplete="off"
+          autoFocus={!place}
+        />
+        {showSuggest && (
+          <ul className="name-suggest" role="listbox">
+            <li className="name-suggest-head">
+              {exactMatch ? '⚠ Already in the ledger' : 'Already added?'}
+            </li>
+            {suggestions.map((p) => (
+              <li key={p.id}>
+                {/* onMouseDown fires before the input's blur, so the pick lands */}
+                <button
+                  type="button"
+                  className="name-suggest-item"
+                  onMouseDown={() => onPickExisting?.(p)}
+                >
+                  <span className="ns-name">{p.name}</span>
+                  <span className="ns-meta">{p.cuisine} · {p.city}</span>
+                  <span className="ns-status">{fullyRated(p) ? fmt(overall(p)) : 'to rate'}</span>
+                </button>
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
+
       <div className="grid-2">
-        <div className="field">
-          <label htmlFor="f-name">Name</label>
-          <input
-            className="input"
-            id="f-name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            placeholder="Where did you go?"
-            autoFocus={!place}
-          />
-        </div>
         <div className="field">
           <label htmlFor="f-city">City / neighborhood</label>
           <input
@@ -95,6 +132,17 @@ export default function PlaceForm({
               <option value={c} key={c} />
             ))}
           </datalist>
+        </div>
+        <div className="field">
+          <label htmlFor="f-visited">Visited on</label>
+          <input
+            className="input"
+            id="f-visited"
+            type="date"
+            value={visited}
+            max={new Date().toISOString().slice(0, 10)}
+            onChange={(e) => setVisited(e.target.value)}
+          />
         </div>
       </div>
 

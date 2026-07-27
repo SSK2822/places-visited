@@ -282,6 +282,7 @@ export default function App() {
       name: form.name.trim(),
       cuisine: form.cuisine,
       city: form.city.trim() || DEFAULT_CITY,
+      visited: form.visited || '',
     }
     const now = Date.now()
     EDITORS.forEach((e) => {
@@ -413,7 +414,6 @@ export default function App() {
               query={query} setQuery={setQuery}
               cuisine={cuisine} setCuisine={setCuisine} chips={cuisineChips}
               tab={tab} setTab={setTab}
-              onAdd={openAdd}
             />
             <p className="count-line">
               {tab === 'top'
@@ -452,13 +452,22 @@ export default function App() {
             defaultCuisine={cuisine || CUISINES[0]}
             cuisines={cuisineOptions}
             cities={cities}
+            places={db.places}
             myKey={myKey}
             onSave={savePlace}
             onDelete={deletePlace}
             onCancel={() => setView('browse')}
+            onPickExisting={openEdit}
           />
         )}
       </div>
+
+      {view === 'browse' && (
+        <button className="fab" onClick={openAdd} aria-label="Add a place">
+          <span className="fab-plus" aria-hidden="true">+</span>
+          Add a place
+        </button>
+      )}
 
       {surprising && (
         <SurpriseOverlay places={rankedAll} onClose={() => setSurprising(false)} />
