@@ -76,6 +76,21 @@ export async function deletePlaceCloud(id) {
   await fs.deleteDoc(fs.doc(db, 'places', id))
 }
 
+// One-time fill of the `visited` date on places that don't have one yet. Merge
+// writes only the `visited` field, so ratings and comments are untouched, and
+// the caller only passes ids that are actually blank — so it never overwrites a
+// date already set.
+export async function backfillVisited(date, ids) {
+  const { fs, db } = await fb()
+  const CHUNK = 400
+  for (let i = 0; i < ids.length; i += CHUNK) {
+    const batch = fs.writeBatch(db)
+    ids.slice(i, i + CHUNK).forEach((id) => batch.set(fs.doc(db, 'places', id), { visited: date }, { merge: true }))
+    await batch.commit()
+  }
+  return ids.length
+}
+
 // Restore from a backup file.
 //
 // The defining rule: a restore only ever *fills blanks*. It never overwrites a

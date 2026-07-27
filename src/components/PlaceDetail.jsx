@@ -19,12 +19,14 @@ export default function PlaceDetail({ place, rank, myKey, onBack, onEdit }) {
       </div>
       <h1 className="d-name">{place.name}</h1>
       <div className="d-meta">
-        {place.cuisine} · {place.city}
-        {fmtVisited(place.visited) && <> · Visited {fmtVisited(place.visited)}</>} ·{' '}
+        {place.cuisine} · {place.city} ·{' '}
         <a href={mapsUrl(place)} target="_blank" rel="noopener noreferrer">
           Open in Maps ↗
         </a>
       </div>
+      {fmtVisited(place.visited) && (
+        <div className="d-visited">🗓 Visited {fmtVisited(place.visited)}</div>
+      )}
 
       <div className="d-scores">
         {EDITORS.map((e) => {

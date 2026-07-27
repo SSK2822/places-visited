@@ -2,6 +2,7 @@ const TABS = [
   ['top', 'Top 10'],
   ['all', 'All rated'],
   ['torate', 'To rate'],
+  ['calendar', 'Calendar'],
 ]
 
 export default function LedgerControls({

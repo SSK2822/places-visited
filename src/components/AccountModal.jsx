@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react'
 import Dialog from './Dialog'
 import {
-  signInGoogle, signOutCloud, canEdit, editorKeyFor, seedPlaces, planRestore, applyRestore,
+  signInGoogle, signOutCloud, canEdit, editorKeyFor, seedPlaces, planRestore, applyRestore, backfillVisited,
 } from '../lib/cloud'
 import { normalizeBackup, describePlan } from '../lib/restore'
 import { EDITORS } from '../lib/firebase-config'
@@ -93,6 +93,27 @@ export default function AccountModal({ show, onClose, user, places, canSeed, onT
     }
   }
 
+  const undated = places.filter((p) => !p.visited)
+  async function handleBackfill() {
+    const today = new Date().toISOString().slice(0, 10)
+    if (!confirm(
+      `Set the visit date to today (${today}) on ${undated.length} places that don't have one?\n\n` +
+        'Only fills places with no date yet — anything already dated is left as is. ' +
+        'Ratings and comments are untouched.',
+    )) return
+    setBusy(true)
+    try {
+      const n = await backfillVisited(today, undated.map((p) => p.id))
+      onToast(`Dated ${n} places ✓`)
+      onClose()
+    } catch (e) {
+      console.error('[places] backfill failed:', e)
+      setSeedError(e.message)
+    } finally {
+      setBusy(false)
+    }
+  }
+
   function exportJson() {
     const a = document.createElement('a')
     const data = { updated: new Date().toISOString().slice(0, 10), places }
@@ -144,6 +165,18 @@ export default function AccountModal({ show, onClose, user, places, canSeed, onT
                 Only for a first-time, empty database — places.json carries no ratings.
               </p>
             </>
+          )}
+          {canEdit(user) && undated.length > 0 && (
+            <div className="restore">
+              <div className="section-head">Visit dates</div>
+              <p className="text-muted seed-warn">
+                {undated.length} {undated.length === 1 ? 'place has' : 'places have'} no visit date
+                yet. Set them all to today so the calendar has something to show.
+              </p>
+              <button className="btn btn-primary btn-block" disabled={busy} onClick={handleBackfill}>
+                {busy ? 'Dating…' : `Set ${undated.length} to today’s date`}
+              </button>
+            </div>
           )}
           {canEdit(user) && (
             <div className="restore">

@@ -3,6 +3,7 @@ import Masthead from './components/Masthead'
 import StatsLedger from './components/StatsLedger'
 import LedgerControls from './components/LedgerControls'
 import LedgerList from './components/LedgerList'
+import Calendar from './components/Calendar'
 import PlaceDetail from './components/PlaceDetail'
 import PlaceForm from './components/PlaceForm'
 import SurpriseCard from './components/SurpriseCard'
@@ -415,24 +416,30 @@ export default function App() {
               cuisine={cuisine} setCuisine={setCuisine} chips={cuisineChips}
               tab={tab} setTab={setTab}
             />
-            <p className="count-line">
-              {tab === 'top'
-                ? `Top ${visibleCount}${cuisine || query ? ' — filtered' : ''}`
-                : `${visibleCount} of ${db.places.length} places`}
-            </p>
-            <LedgerList
-              tab={tab}
-              ranked={rankedFiltered}
-              unrated={unratedFiltered}
-              myKey={myKey}
-              onOpen={openDetail}
-              onRate={openEdit}
-            />
-            <p className="pending-note" style={{ marginTop: 'var(--space-8)' }}>
-              Ratings run −3 (never again) to +3 (bookmarked for repeat visits). Overall is the
-              average of {EDITORS.map((e) => e.label).join(' and ')} — the diplomatic score.
-              {db.updated && ` Last updated ${db.updated}.`}
-            </p>
+            {tab === 'calendar' ? (
+              <Calendar places={base} onOpen={openDetail} />
+            ) : (
+              <>
+                <p className="count-line">
+                  {tab === 'top'
+                    ? `Top ${visibleCount}${cuisine || query ? ' — filtered' : ''}`
+                    : `${visibleCount} of ${db.places.length} places`}
+                </p>
+                <LedgerList
+                  tab={tab}
+                  ranked={rankedFiltered}
+                  unrated={unratedFiltered}
+                  myKey={myKey}
+                  onOpen={openDetail}
+                  onRate={openEdit}
+                />
+                <p className="pending-note" style={{ marginTop: 'var(--space-8)' }}>
+                  Ratings run −3 (never again) to +3 (bookmarked for repeat visits). Overall is the
+                  average of {EDITORS.map((e) => e.label).join(' and ')} — the diplomatic score.
+                  {db.updated && ` Last updated ${db.updated}.`}
+                </p>
+              </>
+            )}
           </section>
         )}
 
