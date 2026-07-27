@@ -417,7 +417,7 @@ export default function App() {
               tab={tab} setTab={setTab}
             />
             {tab === 'calendar' ? (
-              <Calendar places={base} onOpen={openDetail} />
+              <Calendar places={base} myKey={myKey} onOpen={openDetail} />
             ) : (
               <>
                 <p className="count-line">

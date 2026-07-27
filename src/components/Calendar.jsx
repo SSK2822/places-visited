@@ -1,5 +1,6 @@
 import { useMemo, useState } from 'react'
-import { overall, fmt, ratingClass, fmtVisited, fullyRated } from '../lib/utils'
+import { overall, fmt, ratingClass, fmtVisited, fullyRated, scoreHidden, latestComment } from '../lib/utils'
+import { EDITORS } from '../lib/firebase-config'
 
 const WEEKDAYS = ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa']
 const pad = (n) => String(n).padStart(2, '0')
@@ -7,7 +8,7 @@ const iso = (y, m, d) => `${y}-${pad(m + 1)}-${pad(d)}`
 
 // A month grid of visits. Days with a logged place are marked with a count and
 // are tappable; tapping lists what you ate that day. Prev/next walk the months.
-export default function Calendar({ places, onOpen }) {
+export default function Calendar({ places, myKey, onOpen }) {
   const today = new Date()
   const [ym, setYm] = useState({ y: today.getFullYear(), m: today.getMonth() })
   const [selected, setSelected] = useState(null)
@@ -82,7 +83,11 @@ export default function Calendar({ places, onOpen }) {
           </div>
           <ol className="list">
             {selectedPlaces.map((p) => {
-              const ov = fullyRated(p) ? overall(p) : null
+              const complete = fullyRated(p)
+              const ov = complete ? overall(p) : null
+              // Only preview a note once both have rated, so a partner's comment
+              // can't give their verdict away before the reveal.
+              const comment = complete ? latestComment(p) : null
               return (
                 <li
                   key={p.id}
@@ -101,8 +106,27 @@ export default function Calendar({ places, onOpen }) {
                   <div>
                     <h3 className="r-name">{p.name}</h3>
                     <div className="r-meta">{p.cuisine} · {p.city}</div>
+                    {comment && (
+                      <p className="r-note">
+                        <span className="who">{comment.name}:</span>
+                        {comment.text}
+                      </p>
+                    )}
                   </div>
                   <div className="scores">
+                    {EDITORS.map((e) => {
+                      const hidden = scoreHidden(p, e.key, myKey)
+                      return (
+                        <div className="score" key={e.key}>
+                          <div className="score-lab">{e.label}</div>
+                          {hidden ? (
+                            <div className="score-fig hidden-score" title="Hidden until you rate">🙈</div>
+                          ) : (
+                            <div className={`score-fig ${ratingClass(p[e.key])}`}>{fmt(p[e.key])}</div>
+                          )}
+                        </div>
+                      )
+                    })}
                     <div className="score overall">
                       <div className="score-lab">Overall</div>
                       <div className={`score-fig ${ratingClass(ov)}`}>{ov === null ? '–' : fmt(ov)}</div>
