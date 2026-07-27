@@ -1,7 +1,7 @@
 {
-  "takenAt": "2026-07-27T10:43:44.772Z",
-  "count": 266,
-  "rated": 122,
+  "takenAt": "2026-07-27T14:27:59.227Z",
+  "count": 254,
+  "rated": 254,
   "places": [
     {
       "ac": null,
@@ -623,48 +623,63 @@
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍸 Bars",
       "id": "conor-s-coat",
-      "name": "Conor's Coat",
-      "notes": "",
-      "yk": null
+      "name": "Conor's Goat",
+      "yk": 1.75,
+      "ykComment": "Guiness",
+      "ykCommentAt": 1785159847957
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍦 Dessert",
       "id": "corona-ice-king",
       "name": "Corona Ice King",
-      "notes": "",
-      "yk": null
+      "yk": 2.5,
+      "ykComment": "ohhh yeahhhhh",
+      "ykCommentAt": 1785159860534
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍔 American",
       "id": "crif-dogs",
       "name": "Crif Dogs",
-      "notes": "",
-      "yk": null
+      "yk": 2,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍔 American",
       "id": "crispy-burger",
       "name": "Crispy Burger",
-      "notes": "",
-      "yk": null
+      "yk": 1.75,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍦 Dessert",
       "id": "culture-an-american-yogurt-company",
       "name": "Culture An American Yogurt Company",
-      "notes": "",
-      "yk": null
+      "yk": 2.5,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": 1.75,
@@ -704,12 +719,15 @@
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🥐 Bakery",
       "id": "diljan-bakery",
       "name": "Diljān Bakery",
-      "notes": "",
-      "yk": null
+      "yk": -0.75,
+      "ykComment": "overhyped",
+      "ykCommentAt": 1785159919997
     },
     {
       "ac": 1.5,
@@ -725,30 +743,27 @@
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🥙 Mediterranean & Middle Eastern",
       "id": "djerdan-burek",
       "name": "Djerdan Burek",
-      "notes": "",
-      "yk": null
+      "yk": 1.25,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍔 American",
       "id": "doggy-day-afternoon",
       "name": "Doggy Day Afternoon",
-      "notes": "",
-      "yk": null
-    },
-    {
-      "ac": null,
-      "city": "New York",
-      "cuisine": "🍕 Pizza & Italian",
-      "id": "domino-s",
-      "name": "Domino's",
-      "notes": "",
-      "yk": null
+      "yk": 1.5,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": 1.75,
@@ -764,48 +779,63 @@
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍸 Bars",
       "id": "double-chicken-please",
       "name": "Double Chicken Please",
-      "notes": "",
-      "yk": null
+      "yk": 3,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍸 Bars",
       "id": "double-down-saloon",
       "name": "Double Down Saloon",
-      "notes": "",
-      "yk": null
+      "yk": 0.75,
+      "ykComment": "pooolllll",
+      "ykCommentAt": 1785159962803
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍸 Bars",
       "id": "dutch-kills",
       "name": "Dutch Kills",
-      "notes": "",
-      "yk": null
+      "yk": 1.25,
+      "ykComment": "underwhelmed",
+      "ykCommentAt": 1785160104845
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🥙 Mediterranean & Middle Eastern",
       "id": "eat-it",
       "name": "Eat It",
-      "notes": "",
-      "yk": null
+      "yk": 2.5,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🌮 Mexican & Latin",
       "id": "el-tenampa-deli-and-grocery",
       "name": "El Tenampa Deli and Grocery",
-      "notes": "",
-      "yk": null
+      "yk": 2.25,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": 1.75,
@@ -821,12 +851,15 @@
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🌮 Mexican & Latin",
       "id": "empanada-mama",
       "name": "Empanada Mama",
-      "notes": "",
-      "yk": null
+      "yk": 1.25,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": 1.25,
@@ -854,21 +887,27 @@
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍔 American",
       "id": "fields-good-chicken",
       "name": "Fields Good Chicken",
-      "notes": "",
-      "yk": null
+      "yk": 1,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍦 Dessert",
       "id": "figo",
       "name": "Figo",
-      "notes": "",
-      "yk": null
+      "yk": 2,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": 1.25,
@@ -884,48 +923,51 @@
     },
     {
       "ac": null,
-      "city": "New York",
-      "cuisine": "🍔 American",
-      "id": "five-guys",
-      "name": "Five Guys",
-      "notes": "",
-      "yk": null
-    },
-    {
-      "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍔 American",
       "id": "fluffies",
       "name": "Fluffies",
-      "notes": "",
-      "yk": null
+      "yk": 1.75,
+      "ykComment": "fireee pppppooooo",
+      "ykCommentAt": 1785160247041
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍸 Bars",
       "id": "focal-point",
       "name": "Focal Point",
-      "notes": "",
-      "yk": null
+      "yk": 2.25,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍕 Pizza & Italian",
       "id": "forma-pasta-factory",
       "name": "Forma Pasta Factory",
-      "notes": "",
-      "yk": null
+      "yk": 2.25,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍸 Bars",
       "id": "fort-hamilton-distillery",
       "name": "Fort Hamilton Distillery",
-      "notes": "",
-      "yk": null
+      "yk": 1.5,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": -1,
@@ -941,84 +983,111 @@
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New Haven",
       "cuisine": "🍕 Pizza & Italian",
       "id": "frank-pepe-s-pizza",
       "name": "Frank Pepe's Pizza",
-      "notes": "",
-      "yk": null
+      "yk": 1.75,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍕 Pizza & Italian",
       "id": "freddy-pizza",
       "name": "Freddy Pizza",
-      "notes": "",
-      "yk": null
+      "yk": 2,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🥐 Bakery",
       "id": "from-lucie",
       "name": "From Lucie",
-      "notes": "",
-      "yk": null
+      "yk": 2.25,
+      "ykComment": "noice sea slat cookie",
+      "ykCommentAt": 1785160387311
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "Boston",
       "cuisine": "🍕 Pizza & Italian",
       "id": "galleria-umberto",
       "name": "Galleria Umberto",
-      "notes": "",
-      "yk": null
+      "yk": 1.75,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍸 Bars",
       "id": "garrett",
       "name": "Garrett",
-      "notes": "",
-      "yk": null
+      "yk": 2.5,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍦 Dessert",
       "id": "gelateria-gentile",
       "name": "Gelateria Gentile",
-      "notes": "",
-      "yk": null
+      "yk": 2,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍔 American",
       "id": "gjelina",
       "name": "Gjelina",
-      "notes": "",
-      "yk": null
+      "yk": 1.25,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍦 Dessert",
       "id": "grace-street",
       "name": "Grace Street",
-      "notes": "",
-      "yk": null
+      "yk": 1.5,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍕 Pizza & Italian",
       "id": "gravesend-pizza",
       "name": "Gravesend Pizza",
-      "notes": "",
-      "yk": null
+      "yk": 2.5,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": 1.5,
@@ -1034,12 +1103,15 @@
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🥐 Bakery",
       "id": "h-h-bagels",
       "name": "H&H Bagels",
-      "notes": "",
-      "yk": null
+      "yk": -0.5,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": -0.5,
@@ -1055,21 +1127,27 @@
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍸 Bars",
       "id": "half-pint",
       "name": "Half Pint",
-      "notes": "",
-      "yk": null
+      "yk": 1.75,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍔 American",
       "id": "hamburger-america",
       "name": "Hamburger America",
-      "notes": "",
-      "yk": null
+      "yk": 2.25,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": 1.75,
@@ -1097,12 +1175,15 @@
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍸 Bars",
       "id": "honey-fitz",
       "name": "Honey Fitz",
-      "notes": "",
-      "yk": null
+      "yk": 2,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": 1.5,
@@ -1118,21 +1199,27 @@
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🥙 Mediterranean & Middle Eastern",
       "id": "hummus-kitchen",
       "name": "Hummus Kitchen",
-      "notes": "",
-      "yk": null
+      "yk": 1.75,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🥙 Mediterranean & Middle Eastern",
       "id": "ibn-hamido",
       "name": "IBN Hamido",
-      "notes": "",
-      "yk": null
+      "yk": 2.75,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": 1.5,
@@ -1148,39 +1235,51 @@
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🥙 Mediterranean & Middle Eastern",
       "id": "jack-s-wife-freda",
       "name": "Jack's Wife Freda",
-      "notes": "",
-      "yk": null
+      "yk": -0.75,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍕 Pizza & Italian",
       "id": "jax-pizza-joint",
       "name": "Jax Pizza Joint",
-      "notes": "",
-      "yk": null
+      "yk": 2.25,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🥙 Mediterranean & Middle Eastern",
       "id": "jen-s-halal",
       "name": "Jen's Halal",
-      "notes": "",
-      "yk": null
+      "yk": -1,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍸 Bars",
       "id": "jimmy-s-corner",
       "name": "Jimmy's Corner",
-      "notes": "",
-      "yk": null
+      "yk": 0.75,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": 1,
@@ -1196,12 +1295,15 @@
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍕 Pizza & Italian",
       "id": "john-s-pizzeria-of-times-square",
       "name": "John's Pizzeria of Times Square",
-      "notes": "",
-      "yk": null
+      "yk": 0.75,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": 0.75,
@@ -1217,12 +1319,15 @@
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍕 Pizza & Italian",
       "id": "juliana-s",
       "name": "Juliana's",
-      "notes": "",
-      "yk": null
+      "yk": 2.25,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": -0.5,
@@ -1238,30 +1343,39 @@
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "Boston",
       "cuisine": "🥐 Bakery",
       "id": "kanes-donut",
       "name": "Kanes Donut",
-      "notes": "",
-      "yk": null
+      "yk": 1.25,
+      "ykComment": "Boston cream let me down",
+      "ykCommentAt": 1785160508424
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍸 Bars",
       "id": "katana-kitten",
       "name": "Katana Kitten",
-      "notes": "",
-      "yk": null
+      "yk": 2.5,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍸 Bars",
       "id": "kelly-s-bar",
       "name": "Kelly's Bar",
-      "notes": "",
-      "yk": null
+      "yk": -3,
+      "ykComment": "poisoned",
+      "ykCommentAt": 1785160542578
     },
     {
       "ac": 2,
@@ -1289,12 +1403,15 @@
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍸 Bars",
       "id": "kingston-hall",
       "name": "Kingston Hall",
-      "notes": "",
-      "yk": null
+      "yk": 1.25,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": 1.5,
@@ -1310,12 +1427,15 @@
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍕 Pizza & Italian",
       "id": "koronets-pizza",
       "name": "Koronets Pizza",
-      "notes": "",
-      "yk": null
+      "yk": 2.5,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": 1.75,
@@ -1331,12 +1451,15 @@
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍕 Pizza & Italian",
       "id": "l-industrie",
       "name": "L'industrie",
-      "notes": "",
-      "yk": null
+      "yk": 3,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": 1.5,
@@ -1364,21 +1487,27 @@
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New Haven",
       "cuisine": "🍦 Dessert",
       "id": "libby-s-italian-pastry-shop",
       "name": "Libby's Italian Pastry Shop",
-      "notes": "",
-      "yk": null
+      "yk": 0.75,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍕 Pizza & Italian",
       "id": "lil-frankie-s",
       "name": "Lil Frankie's",
-      "notes": "",
-      "yk": null
+      "yk": 2.5,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": 0.5,
@@ -1394,30 +1523,39 @@
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍔 American",
       "id": "little-collin-s",
       "name": "Little Collin's",
-      "notes": "",
-      "yk": null
+      "yk": 0.25,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🥐 Bakery",
       "id": "little-flower",
       "name": "Little Flower",
-      "notes": "",
-      "yk": null
+      "yk": 1.5,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍔 American",
       "id": "little-ruby-s",
       "name": "Little Ruby's",
-      "notes": "",
-      "yk": null
+      "yk": 1.25,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": 2.25,
@@ -1444,15 +1582,6 @@
       "ykCommentAt": null
     },
     {
-      "ac": null,
-      "city": "New York",
-      "cuisine": "🥐 Bakery",
-      "id": "magnolia-bakery",
-      "name": "Magnolia Bakery",
-      "notes": "",
-      "yk": null
-    },
-    {
       "ac": 2,
       "acComment": "",
       "acCommentAt": null,
@@ -1466,21 +1595,27 @@
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍦 Dessert",
       "id": "mango-mango",
       "name": "Mango Mango",
-      "notes": "",
-      "yk": null
+      "yk": 1.5,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🥐 Bakery",
       "id": "martha-county-bakery",
       "name": "Martha County Bakery",
-      "notes": "",
-      "yk": null
+      "yk": 2,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": 1.75,
@@ -1496,75 +1631,87 @@
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍔 American",
       "id": "mason-s-pickle",
       "name": "Mason's Pickle",
-      "notes": "",
-      "yk": null
+      "yk": 1.75,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍦 Dessert",
       "id": "max-brenner",
       "name": "Max Brenner",
-      "notes": "",
-      "yk": null
+      "yk": 1,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍸 Bars",
       "id": "mc-loughlin",
       "name": "Mc Loughlin",
-      "notes": "",
-      "yk": null
+      "yk": 1.75,
+      "ykComment": "pool with Guinness",
+      "ykCommentAt": 1785160628562
     },
     {
       "ac": null,
-      "city": "New York",
-      "cuisine": "🍔 American",
-      "id": "mcdonald-s",
-      "name": "McDonald's",
-      "notes": "",
-      "yk": null
-    },
-    {
-      "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "Boston",
       "cuisine": "🍸 Bars",
       "id": "mighty-squirrel",
       "name": "Mighty Squirrel",
-      "notes": "",
-      "yk": null
+      "yk": 1.5,
+      "ykComment": "unique beers",
+      "ykCommentAt": 1785160642749
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "Boston",
       "cuisine": "🍦 Dessert",
       "id": "mike-s-pastry",
       "name": "Mike's Pastry",
-      "notes": "",
-      "yk": null
+      "yk": 1.25,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍦 Dessert",
       "id": "milk-bar",
       "name": "Milk Bar",
-      "notes": "",
-      "yk": null
+      "yk": 0.75,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍕 Pizza & Italian",
       "id": "milkflower",
       "name": "Milkflower",
-      "notes": "",
-      "yk": null
+      "yk": 1.75,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": 1.75,
@@ -1604,12 +1751,15 @@
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍦 Dessert",
       "id": "myaka",
       "name": "Myaka",
-      "notes": "",
-      "yk": null
+      "yk": 2.25,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": 1.25,
@@ -1625,12 +1775,15 @@
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍦 Dessert",
       "id": "nai-snow",
       "name": "Nai Snow",
-      "notes": "",
-      "yk": null
+      "yk": 2,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": 1.25,
@@ -1670,12 +1823,15 @@
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🌮 Mexican & Latin",
       "id": "nene-s-taqueria",
       "name": "Nene's Taqueria",
-      "notes": "",
-      "yk": null
+      "yk": 2.25,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": 1,
@@ -1691,12 +1847,15 @@
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🥙 Mediterranean & Middle Eastern",
       "id": "niko-s-souvlaki",
       "name": "Niko's Souvlaki",
-      "notes": "",
-      "yk": null
+      "yk": 2.75,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": 1,
@@ -1712,12 +1871,15 @@
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍕 Pizza & Italian",
       "id": "no-see-evil-pizza",
       "name": "No See Evil Pizza",
-      "notes": "",
-      "yk": null
+      "yk": 1.75,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": 2,
@@ -1745,48 +1907,39 @@
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🥐 Bakery",
       "id": "ohayo-bread-house",
       "name": "Ohayō Bread House",
-      "notes": "",
-      "yk": null
+      "yk": 1,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
-      "city": "New York",
-      "cuisine": "🍕 Pizza & Italian",
-      "id": "olive-garden",
-      "name": "Olive Garden",
-      "notes": "",
-      "yk": null
-    },
-    {
-      "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🥐 Bakery",
       "id": "oneg-bakery",
       "name": "Oneg Bakery",
-      "notes": "",
-      "yk": null
+      "yk": 2.5,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
-      "city": "New York",
-      "cuisine": "🍔 American",
-      "id": "panera-bread",
-      "name": "Panera Bread",
-      "notes": "",
-      "yk": null
-    },
-    {
-      "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍕 Pizza & Italian",
       "id": "pasta-rullo",
       "name": "Pasta Rullo",
-      "notes": "",
-      "yk": null
+      "yk": 2,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": 1.75,
@@ -1802,12 +1955,15 @@
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🥐 Bakery",
       "id": "peter-pan-donuts",
       "name": "Peter Pan Donuts",
-      "notes": "",
-      "yk": null
+      "yk": 2.5,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": 1.25,
@@ -1835,30 +1991,39 @@
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍔 American",
       "id": "pies-n-thighs",
       "name": "Pies 'n Thighs",
-      "notes": "",
-      "yk": null
+      "yk": 2.5,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍕 Pizza & Italian",
       "id": "pizzarte",
       "name": "Pizzarte",
-      "notes": "",
-      "yk": null
+      "yk": 2,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🥐 Bakery",
       "id": "pop-up-bagels",
       "name": "Pop Up Bagels",
-      "notes": "",
-      "yk": null
+      "yk": 1.75,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": 2.25,
@@ -1874,12 +2039,15 @@
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍕 Pizza & Italian",
       "id": "prince-street-pizza",
       "name": "Prince Street Pizza",
-      "notes": "",
-      "yk": null
+      "yk": 1.5,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": 2,
@@ -1895,21 +2063,15 @@
     },
     {
       "ac": null,
-      "city": "New York",
-      "cuisine": "🍔 American",
-      "id": "raising-cane-s",
-      "name": "Raising Cane's",
-      "notes": "",
-      "yk": null
-    },
-    {
-      "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍦 Dessert",
       "id": "ralph-s-italian-ice",
       "name": "Ralph's Italian Ice",
-      "notes": "",
-      "yk": null
+      "yk": 2.25,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": 2.25,
@@ -1925,30 +2087,39 @@
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍦 Dessert",
       "id": "ray-s-candy-store",
       "name": "Ray's Candy Store",
-      "notes": "",
-      "yk": null
+      "yk": 1.5,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🥐 Bakery",
       "id": "red-gate-bakery",
       "name": "Red Gate Bakery",
-      "notes": "",
-      "yk": null
+      "yk": -1,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍔 American",
       "id": "red-lobster",
       "name": "Red Lobster",
-      "notes": "",
-      "yk": null
+      "yk": 0.75,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": 1.5,
@@ -1964,12 +2135,15 @@
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍸 Bars",
       "id": "ripple-room",
       "name": "Ripple Room",
-      "notes": "",
-      "yk": null
+      "yk": 1.5,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": 1.25,
@@ -1985,48 +2159,63 @@
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍕 Pizza & Italian",
       "id": "rosario-s",
       "name": "Rosario's",
-      "notes": "",
-      "yk": null
+      "yk": 1.75,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍕 Pizza & Italian",
       "id": "s-s-pizza",
       "name": "S&S Pizza",
-      "notes": "",
-      "yk": null
+      "yk": 1.25,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍦 Dessert",
       "id": "saint-street-cakes",
       "name": "Saint Street Cakes",
-      "notes": "",
-      "yk": null
+      "yk": 1.5,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New Haven",
       "cuisine": "🍕 Pizza & Italian",
       "id": "sally-s-apizza",
       "name": "Sally's Apizza",
-      "notes": "",
-      "yk": null
+      "yk": 2.25,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍦 Dessert",
       "id": "salt-and-straw",
       "name": "Salt and Straw",
-      "notes": "",
-      "yk": null
+      "yk": 2.25,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": 2,
@@ -2042,30 +2231,39 @@
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🥙 Mediterranean & Middle Eastern",
       "id": "samis-kebab-house",
       "name": "Samis Kebab House",
-      "notes": "",
-      "yk": null
+      "yk": 2.75,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🌮 Mexican & Latin",
       "id": "savo",
       "name": "Savo",
-      "notes": "",
-      "yk": null
+      "yk": 2.25,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🥐 Bakery",
       "id": "schmackary-s",
       "name": "Schmackary's",
-      "notes": "",
-      "yk": null
+      "yk": 1.25,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": 2.25,
@@ -2081,48 +2279,51 @@
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍦 Dessert",
       "id": "seoul-sweets",
       "name": "Seoul Sweets",
-      "notes": "",
-      "yk": null
+      "yk": -1,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🥙 Mediterranean & Middle Eastern",
       "id": "shahadi",
       "name": "Shahadi",
-      "notes": "",
-      "yk": null
+      "yk": 1.5,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
-      "city": "New York",
-      "cuisine": "🍔 American",
-      "id": "shake-shack",
-      "name": "Shake Shack",
-      "notes": "",
-      "yk": null
-    },
-    {
-      "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🥙 Mediterranean & Middle Eastern",
       "id": "shuka",
       "name": "Shuka",
-      "notes": "",
-      "yk": null
+      "yk": 2.75,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍸 Bars",
       "id": "sing-sing",
       "name": "Sing Sing",
-      "notes": "",
-      "yk": null
+      "yk": 1.75,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": 1.75,
@@ -2138,21 +2339,27 @@
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🧋 Boba & Tea",
       "id": "sip-a-cup",
       "name": "Sip a Cup",
-      "notes": "",
-      "yk": null
+      "yk": 1.75,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍔 American",
       "id": "smasha",
       "name": "Smasha",
-      "notes": "",
-      "yk": null
+      "yk": 1.5,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": 0.75,
@@ -2180,48 +2387,63 @@
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🌮 Mexican & Latin",
       "id": "son-del-north",
       "name": "Son Del North",
-      "notes": "",
-      "yk": null
+      "yk": 1.75,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🌮 Mexican & Latin",
       "id": "sophie-s-cuban-cuisine",
       "name": "Sophie's Cuban Cuisine",
-      "notes": "",
-      "yk": null
+      "yk": 1.5,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🥙 Mediterranean & Middle Eastern",
       "id": "souvlaki-gr",
       "name": "Souvlaki GR",
-      "notes": "",
-      "yk": null
+      "yk": 1.75,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍦 Dessert",
       "id": "spot-dessert-bar",
       "name": "Spot Dessert Bar",
-      "notes": "",
-      "yk": null
+      "yk": 1.75,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍕 Pizza & Italian",
       "id": "spunto-nyc-thin-crust-pizza",
       "name": "Spunto NYC Thin Crust Pizza",
-      "notes": "",
-      "yk": null
+      "yk": 2,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": -0.25,
@@ -2237,21 +2459,15 @@
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍦 Dessert",
       "id": "steve-s-key-lime-pie",
       "name": "Steve's Key Lime Pie",
-      "notes": "",
-      "yk": null
-    },
-    {
-      "ac": null,
-      "city": "New York",
-      "cuisine": "🍔 American",
-      "id": "subway",
-      "name": "Subway",
-      "notes": "",
-      "yk": null
+      "yk": 2.75,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": 2,
@@ -2267,93 +2483,111 @@
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍔 American",
       "id": "sunset-park-diner",
       "name": "Sunset Park Diner",
-      "notes": "",
-      "yk": null
+      "yk": 1.25,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🥙 Mediterranean & Middle Eastern",
       "id": "svl",
       "name": "SVL",
-      "notes": "",
-      "yk": null
+      "yk": 2.5,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍦 Dessert",
       "id": "sweet-moment",
       "name": "Sweet Moment",
-      "notes": "",
-      "yk": null
+      "yk": 1.75,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍸 Bars",
       "id": "sweet-polly",
       "name": "Sweet Polly",
-      "notes": "",
-      "yk": null
+      "yk": 2.25,
+      "ykComment": "fancy with D&O, very innovative drinks",
+      "ykCommentAt": 1785161159242
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🧋 Boba & Tea",
       "id": "sweetea",
       "name": "Sweetea",
-      "notes": "",
-      "yk": null
+      "yk": 2,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍸 Bars",
       "id": "swift-hibernian-lounge",
       "name": "Swift Hibernian Lounge",
-      "notes": "",
-      "yk": null
+      "yk": 2.25,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
-      "city": "New York",
-      "cuisine": "🌮 Mexican & Latin",
-      "id": "taco-bell",
-      "name": "Taco Bell",
-      "notes": "",
-      "yk": null
-    },
-    {
-      "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🌮 Mexican & Latin",
       "id": "tacos-el-bronco",
       "name": "Tacos El Bronco",
-      "notes": "",
-      "yk": null
+      "yk": 2.25,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍸 Bars",
       "id": "talea",
       "name": "Talea",
-      "notes": "",
-      "yk": null
+      "yk": 1.75,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🧋 Boba & Tea",
       "id": "tanning-lemon-tea",
       "name": "Tanning Lemon Tea",
-      "notes": "",
-      "yk": null
+      "yk": 2,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": 1.25,
@@ -2369,12 +2603,15 @@
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🧋 Boba & Tea",
       "id": "tea-maker-s",
       "name": "Tea Maker's",
-      "notes": "",
-      "yk": null
+      "yk": 2,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": 2.5,
@@ -2390,12 +2627,15 @@
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🧋 Boba & Tea",
       "id": "teapulse",
       "name": "TeaPulse",
-      "notes": "",
-      "yk": null
+      "yk": 2.25,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": 0.5,
@@ -2411,120 +2651,159 @@
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🥐 Bakery",
       "id": "the-bearded-baker",
       "name": "The Bearded Baker",
-      "notes": "",
-      "yk": null
+      "yk": 2.5,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍸 Bars",
       "id": "the-ditty",
       "name": "The Ditty",
-      "notes": "",
-      "yk": null
+      "yk": 1.75,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "Boston",
       "cuisine": "🍔 American",
       "id": "the-friendly-toast",
       "name": "The Friendly Toast",
-      "notes": "",
-      "yk": null
+      "yk": 2.25,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍔 American",
       "id": "the-good-fork",
       "name": "The Good Fork",
-      "notes": "",
-      "yk": null
+      "yk": -0.75,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🥙 Mediterranean & Middle Eastern",
       "id": "the-gyro-project",
       "name": "The Gyro Project",
-      "notes": "",
-      "yk": null
+      "yk": 2,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🥙 Mediterranean & Middle Eastern",
       "id": "the-halal-city-food-truck",
       "name": "The Halal City Food Truck",
-      "notes": "",
-      "yk": null
+      "yk": 1.75,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "Boston",
       "cuisine": "🍸 Bars",
       "id": "the-hub-pub",
       "name": "The Hub Pub",
-      "notes": "",
-      "yk": null
+      "yk": 1.75,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍸 Bars",
       "id": "the-penny-farthing",
       "name": "The Penny Farthing",
-      "notes": "",
-      "yk": null
+      "yk": 2.25,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍸 Bars",
       "id": "the-shannon-pot",
       "name": "The Shannon Pot",
-      "notes": "",
-      "yk": null
+      "yk": 1.5,
+      "ykComment": "vibe near the high line",
+      "ykCommentAt": 1785161320908
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🧋 Boba & Tea",
       "id": "tp-tea",
       "name": "TP Tea",
-      "notes": "",
-      "yk": null
+      "yk": 1.75,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍕 Pizza & Italian",
       "id": "two-boots-pizzeria",
       "name": "Two Boots Pizzeria",
-      "notes": "",
-      "yk": null
+      "yk": -0.5,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍕 Pizza & Italian",
       "id": "una-pizza-napoletana",
       "name": "Una Pizza Napoletana",
-      "notes": "",
-      "yk": null
+      "yk": 2.5,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍔 American",
       "id": "uncle-ray-s-chicken",
       "name": "Uncle Ray's Chicken",
-      "notes": "",
-      "yk": null
+      "yk": 2.5,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": 1.5,
@@ -2540,30 +2819,39 @@
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍕 Pizza & Italian",
       "id": "upside-pizza",
       "name": "Upside Pizza",
-      "notes": "",
-      "yk": null
+      "yk": 1.75,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍦 Dessert",
       "id": "venchi",
       "name": "Venchi",
-      "notes": "",
-      "yk": null
+      "yk": 2,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍔 American",
       "id": "vernon-grill",
       "name": "Vernon Grill",
-      "notes": "",
-      "yk": null
+      "yk": 1.25,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": 1,
@@ -2579,39 +2867,39 @@
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍕 Pizza & Italian",
       "id": "vesta-trattoria",
       "name": "Vesta Trattoria",
-      "notes": "",
-      "yk": null
+      "yk": 1,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍔 American",
       "id": "vinegar-hill-house",
       "name": "Vinegar Hill House",
-      "notes": "",
-      "yk": null
+      "yk": 2.5,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🧋 Boba & Tea",
       "id": "vivly-tea",
-      "name": "Vivly Tea",
-      "notes": "",
-      "yk": null
-    },
-    {
-      "ac": null,
-      "city": "New York",
-      "cuisine": "🍔 American",
-      "id": "wetzel-s-pretzels",
-      "name": "Wetzel's Pretzels",
-      "notes": "",
-      "yk": null
+      "name": "Vivi Tea",
+      "yk": 2,
+      "ykComment": "fire popcorn chick",
+      "ykCommentAt": 1785161419667
     },
     {
       "ac": -2,
@@ -2627,21 +2915,15 @@
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍸 Bars",
       "id": "wildflower",
       "name": "Wildflower",
-      "notes": "",
-      "yk": null
-    },
-    {
-      "ac": null,
-      "city": "New York",
-      "cuisine": "🍔 American",
-      "id": "wingstop",
-      "name": "Wingstop",
-      "notes": "",
-      "yk": null
+      "yk": 1.75,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": 0.75,
@@ -2681,12 +2963,15 @@
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🥐 Bakery",
       "id": "xin-fa-bakery",
       "name": "Xin Fa Bakery",
-      "notes": "",
-      "yk": null
+      "yk": 1.5,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": 1.25,
@@ -2726,12 +3011,15 @@
     },
     {
       "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
       "city": "New York",
       "cuisine": "🥙 Mediterranean & Middle Eastern",
       "id": "zizi",
       "name": "Zizi",
-      "notes": "",
-      "yk": null
+      "yk": 1,
+      "ykComment": "",
+      "ykCommentAt": null
     }
   ]
 }
