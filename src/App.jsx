@@ -228,11 +228,11 @@ export default function App() {
     setSeenIds(complete)
   }, [myKey, db.places])
 
-  function markSeen(id) {
-    if (!myKey) return
+  function markSeen(...ids) {
+    if (!myKey || !ids.length) return
     const key = `${LSK_SEEN}_${myKey}`
     const raw = localStorage.getItem(key)
-    const next = [...new Set([...(raw ? JSON.parse(raw) : []), id])]
+    const next = [...new Set([...(raw ? JSON.parse(raw) : []), ...ids])]
     localStorage.setItem(key, JSON.stringify(next))
     setSeenIds(next)
   }
@@ -249,6 +249,15 @@ export default function App() {
     markSeen(place.id)
     setShowNotifications(false)
     setRevealNow(place)
+  }
+
+  function markAllSeen() {
+    if (!inbox.length) return
+    if (!confirm(
+      `Mark all ${inbox.length} as read?\n\nYou won't see the reveal animation for these — ` +
+        'the scores just show up in the ledger as usual.',
+    )) return
+    markSeen(...inbox.map((p) => p.id))
   }
 
   /* ---------- actions ---------- */
@@ -485,6 +494,7 @@ export default function App() {
         items={inbox}
         partnerName={EDITORS.find((e) => e.key !== myKey)?.name || 'your partner'}
         onPick={openReveal}
+        onMarkAll={markAllSeen}
         onClose={() => setShowNotifications(false)}
       />
 

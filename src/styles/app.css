@@ -417,6 +417,12 @@ body { margin: 0; background: #f5ead8; overflow-x: hidden; }
 .dialog-head { display: flex; align-items: center; gap: var(--space-2); }
 .dialog p { font-size: 14px; }
 .dialog .field:last-child { margin-bottom: 0; }
+/* Cap the dialog to the viewport and let its body scroll — a long list (the
+   notification backlog) was overflowing off-screen with no way to reach the
+   bottom. The head and actions stay put; only the body scrolls. */
+.dialog { max-height: calc(100dvh - var(--space-8)); }
+.dialog-head, .dialog-actions { flex-shrink: 0; }
+.dialog-body { overflow-y: auto; min-height: 0; margin: 0 calc(-1 * var(--space-2)); padding: 0 var(--space-2); }
 
 @media (max-width: 560px) {
   .wrap { padding: var(--space-6) var(--space-4); }

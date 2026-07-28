@@ -3,11 +3,18 @@ import Dialog from './Dialog'
 // The reveal bell's contents: a digest of pairs the partner completed while you
 // were away. Deliberately no scores here — the numbers stay sealed until you
 // tap an item and watch the reveal, so the surprise survives the batching.
-export default function NotificationsDialog({ show, items, partnerName, onPick, onClose }) {
+export default function NotificationsDialog({ show, items, partnerName, onPick, onMarkAll, onClose }) {
   const actions = (
-    <button className="btn btn-secondary" onClick={onClose}>
-      Close
-    </button>
+    <>
+      {items.length > 0 && (
+        <button className="btn btn-ghost" style={{ marginRight: 'auto' }} onClick={onMarkAll}>
+          Mark all read
+        </button>
+      )}
+      <button className="btn btn-secondary" onClick={onClose}>
+        Close
+      </button>
+    </>
   )
   return (
     <Dialog show={show} title="While you were away" onClose={onClose} actions={actions}>
