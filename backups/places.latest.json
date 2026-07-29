@@ -1,7 +1,7 @@
 {
-  "takenAt": "2026-07-28T09:37:14.584Z",
-  "count": 263,
-  "rated": 263,
+  "takenAt": "2026-07-29T09:38:13.418Z",
+  "count": 264,
+  "rated": 264,
   "places": [
     {
       "ac": -1,
@@ -128,6 +128,19 @@
       "visited": "",
       "yk": 0.25,
       "ykComment": "avg",
+      "ykCommentAt": null
+    },
+    {
+      "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
+      "city": "New York",
+      "cuisine": "🍕 Pizza & Italian",
+      "id": "angelo-s-coal-oven-pizzeria",
+      "name": "Angelo's Coal Oven Pizzeria",
+      "visited": "2026-07-28",
+      "yk": 2.5,
+      "ykComment": "",
       "ykCommentAt": null
     },
     {
@@ -1751,7 +1764,7 @@
       "ykCommentAt": null
     },
     {
-      "ac": null,
+      "ac": 1.75,
       "acComment": "",
       "acCommentAt": null,
       "city": "New York",
