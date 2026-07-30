@@ -1,5 +1,5 @@
 {
-  "takenAt": "2026-07-29T09:38:13.418Z",
+  "takenAt": "2026-07-30T09:31:15.794Z",
   "count": 264,
   "rated": 264,
   "places": [
@@ -131,9 +131,9 @@
       "ykCommentAt": null
     },
     {
-      "ac": null,
-      "acComment": "",
-      "acCommentAt": null,
+      "ac": 1.75,
+      "acComment": "Good solid simple pizza",
+      "acCommentAt": 1785326693802,
       "city": "New York",
       "cuisine": "🍕 Pizza & Italian",
       "id": "angelo-s-coal-oven-pizzeria",
