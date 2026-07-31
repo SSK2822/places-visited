@@ -1,7 +1,7 @@
 {
-  "takenAt": "2026-07-30T09:31:15.794Z",
-  "count": 264,
-  "rated": 264,
+  "takenAt": "2026-07-31T09:45:53.171Z",
+  "count": 265,
+  "rated": 265,
   "places": [
     {
       "ac": -1,
@@ -1811,6 +1811,19 @@
       "id": "marvel",
       "name": "Marvel",
       "yk": 2,
+      "ykComment": "",
+      "ykCommentAt": null
+    },
+    {
+      "ac": 1.5,
+      "acComment": "",
+      "acCommentAt": null,
+      "city": "New York",
+      "cuisine": "🍜 Thai & SE Asian",
+      "id": "masalawala-sons",
+      "name": "Masalawala & Sons",
+      "visited": "2026-07-30",
+      "yk": null,
       "ykComment": "",
       "ykCommentAt": null
     },
