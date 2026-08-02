@@ -1,7 +1,7 @@
 {
-  "takenAt": "2026-08-01T09:06:34.531Z",
-  "count": 266,
-  "rated": 266,
+  "takenAt": "2026-08-02T09:09:22.406Z",
+  "count": 274,
+  "rated": 274,
   "places": [
     {
       "ac": -1,
@@ -580,6 +580,19 @@
       "acComment": "",
       "acCommentAt": null,
       "city": "New York",
+      "cuisine": "🍦 Dessert",
+      "id": "caffe-panna",
+      "name": "Caffè Panna",
+      "visited": "2026-08-01",
+      "yk": null,
+      "ykComment": "",
+      "ykCommentAt": null
+    },
+    {
+      "ac": 1.5,
+      "acComment": "",
+      "acCommentAt": null,
+      "city": "New York",
       "cuisine": "🍕 Pizza & Italian",
       "id": "campania",
       "name": "Campania",
@@ -685,6 +698,19 @@
       "id": "chictea",
       "name": "Chictea",
       "yk": 2,
+      "ykComment": "",
+      "ykCommentAt": null
+    },
+    {
+      "ac": 1.75,
+      "acComment": "",
+      "acCommentAt": null,
+      "city": "New York",
+      "cuisine": "🍱 Korean & Japanese",
+      "id": "chiko",
+      "name": "Chiko",
+      "visited": "2026-08-01",
+      "yk": null,
       "ykComment": "",
       "ykCommentAt": null
     },
@@ -1311,6 +1337,19 @@
       "ykCommentAt": null
     },
     {
+      "ac": 1.75,
+      "acComment": "",
+      "acCommentAt": null,
+      "city": "New York",
+      "cuisine": "🍔 American",
+      "id": "hometown-industry-city",
+      "name": "Hometown - Industry City",
+      "visited": "2026-07-31",
+      "yk": 2,
+      "ykComment": "Surprisingly good Mac and cheese and baked beans",
+      "ykCommentAt": 1785602200614
+    },
+    {
       "ac": 1.5,
       "acComment": "",
       "acCommentAt": null,
@@ -1461,6 +1500,19 @@
       "yk": 0.5,
       "ykComment": "",
       "ykCommentAt": null
+    },
+    {
+      "ac": 1.25,
+      "acComment": "",
+      "acCommentAt": null,
+      "city": "New York",
+      "cuisine": "🍸 Bars",
+      "id": "judy-s",
+      "name": "Judy's",
+      "visited": "2026-07-31",
+      "yk": 0.25,
+      "ykComment": "Michelado be good everything else bad",
+      "ykCommentAt": 1785602244045
     },
     {
       "ac": 1.75,
@@ -1836,9 +1888,9 @@
       "id": "masalawala-sons",
       "name": "Masalawala & Sons",
       "visited": "2026-07-30",
-      "yk": null,
-      "ykComment": "",
-      "ykCommentAt": null
+      "yk": 1.75,
+      "ykComment": "I believe in them",
+      "ykCommentAt": 1785602271277
     },
     {
       "ac": 1.25,
@@ -1930,6 +1982,19 @@
       "yk": 1.75,
       "ykComment": "",
       "ykCommentAt": null
+    },
+    {
+      "ac": 1.5,
+      "acComment": "",
+      "acCommentAt": null,
+      "city": "New York",
+      "cuisine": "🍸 Bars",
+      "id": "minnie-s-bar",
+      "name": "Minnie's Bar",
+      "visited": "2026-07-31",
+      "yk": 2,
+      "ykComment": "Noiceeeeee",
+      "ykCommentAt": 1785602290775
     },
     {
       "ac": 1.75,
@@ -2164,6 +2229,19 @@
       "name": "Pasta Rullo",
       "visited": "2026-07-27",
       "yk": 2,
+      "ykComment": "",
+      "ykCommentAt": null
+    },
+    {
+      "ac": 1.5,
+      "acComment": "",
+      "acCommentAt": null,
+      "city": "New York",
+      "cuisine": "🍕 Pizza & Italian",
+      "id": "paulie-gee-s-slice-shop",
+      "name": "Paulie Gee's Slice Shop",
+      "visited": "2026-08-01",
+      "yk": null,
       "ykComment": "",
       "ykCommentAt": null
     },
@@ -2679,6 +2757,19 @@
       "acComment": "",
       "acCommentAt": null,
       "city": "New York",
+      "cuisine": "🧋 Boba & Tea",
+      "id": "solely-tea",
+      "name": "Solely tea",
+      "visited": "2026-07-25",
+      "yk": -2.25,
+      "ykComment": "Ineffective",
+      "ykCommentAt": 1785602432798
+    },
+    {
+      "ac": 1.25,
+      "acComment": "",
+      "acCommentAt": null,
+      "city": "New York",
       "cuisine": "🌮 Mexican & Latin",
       "id": "son-del-north",
       "name": "Son Del North",
@@ -2864,6 +2955,19 @@
       "name": "Tacos El Bronco",
       "visited": "2026-07-27",
       "yk": 2.25,
+      "ykComment": "",
+      "ykCommentAt": null
+    },
+    {
+      "ac": 1.75,
+      "acComment": "",
+      "acCommentAt": null,
+      "city": "New York",
+      "cuisine": "🍱 Korean & Japanese",
+      "id": "taku-sando",
+      "name": "Taku Sando",
+      "visited": "2026-08-01",
+      "yk": null,
       "ykComment": "",
       "ykCommentAt": null
     },
