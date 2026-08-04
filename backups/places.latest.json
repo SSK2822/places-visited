@@ -1,7 +1,7 @@
 {
-  "takenAt": "2026-08-03T10:43:09.368Z",
-  "count": 274,
-  "rated": 274,
+  "takenAt": "2026-08-04T09:38:53.451Z",
+  "count": 276,
+  "rated": 276,
   "places": [
     {
       "ac": -1,
@@ -584,7 +584,7 @@
       "id": "caffe-panna",
       "name": "Caffè Panna",
       "visited": "2026-08-01",
-      "yk": null,
+      "yk": 1.5,
       "ykComment": "",
       "ykCommentAt": null
     },
@@ -706,11 +706,11 @@
       "acComment": "",
       "acCommentAt": null,
       "city": "New York",
-      "cuisine": "🍱 Korean & Japanese",
+      "cuisine": "🥢 Chinese & Taiwanese",
       "id": "chiko",
       "name": "Chiko",
       "visited": "2026-08-01",
-      "yk": null,
+      "yk": 2.75,
       "ykComment": "",
       "ykCommentAt": null
     },
@@ -723,6 +723,19 @@
       "id": "chipichape-cafe",
       "name": "Chipichape Cafe",
       "yk": 1.25,
+      "ykComment": "",
+      "ykCommentAt": null
+    },
+    {
+      "ac": 1.5,
+      "acComment": "",
+      "acCommentAt": null,
+      "city": "New York",
+      "cuisine": "🧋 Boba & Tea",
+      "id": "choji",
+      "name": "CHOJI",
+      "visited": "2026-08-02",
+      "yk": 1.5,
       "ykComment": "",
       "ykCommentAt": null
     },
@@ -1919,6 +1932,19 @@
       "ykCommentAt": null
     },
     {
+      "ac": 1.25,
+      "acComment": "",
+      "acCommentAt": null,
+      "city": "New York",
+      "cuisine": "🥙 Mediterranean & Middle Eastern",
+      "id": "mazzat",
+      "name": "Mazzat",
+      "visited": "2026-08-02",
+      "yk": 1.75,
+      "ykComment": "",
+      "ykCommentAt": null
+    },
+    {
       "ac": 0.75,
       "acComment": "",
       "acCommentAt": null,
@@ -2241,7 +2267,7 @@
       "id": "paulie-gee-s-slice-shop",
       "name": "Paulie Gee's Slice Shop",
       "visited": "2026-08-01",
-      "yk": null,
+      "yk": 1.75,
       "ykComment": "",
       "ykCommentAt": null
     },
@@ -2967,7 +2993,7 @@
       "id": "taku-sando",
       "name": "Taku Sando",
       "visited": "2026-08-01",
-      "yk": null,
+      "yk": 2,
       "ykComment": "",
       "ykCommentAt": null
     },
