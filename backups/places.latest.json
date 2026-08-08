@@ -1,7 +1,7 @@
 {
-  "takenAt": "2026-08-07T08:14:45.341Z",
-  "count": 276,
-  "rated": 276,
+  "takenAt": "2026-08-08T07:50:23.090Z",
+  "count": 278,
+  "rated": 278,
   "places": [
     {
       "ac": -1,
@@ -303,6 +303,19 @@
       "name": "Bang Cookies",
       "visited": "",
       "yk": 1.25,
+      "ykComment": "",
+      "ykCommentAt": null
+    },
+    {
+      "ac": 2,
+      "acComment": "",
+      "acCommentAt": null,
+      "city": "New York",
+      "cuisine": "🍜 Thai & SE Asian",
+      "id": "bangkok-degree",
+      "name": "Bangkok Degree",
+      "visited": "2026-08-06",
+      "yk": 2.5,
       "ykComment": "",
       "ykCommentAt": null
     },
@@ -2343,6 +2356,19 @@
       "name": "Pig & Khao",
       "visited": "2026-07-25",
       "yk": 2,
+      "ykComment": "",
+      "ykCommentAt": null
+    },
+    {
+      "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
+      "city": "New York",
+      "cuisine": "🍦 Dessert",
+      "id": "pinkberry",
+      "name": "Pinkberry",
+      "visited": "2026-08-06",
+      "yk": 1.75,
       "ykComment": "",
       "ykCommentAt": null
     },
