@@ -1,7 +1,7 @@
 {
-  "takenAt": "2026-08-09T07:54:12.181Z",
-  "count": 282,
-  "rated": 282,
+  "takenAt": "2026-08-10T08:27:35.643Z",
+  "count": 284,
+  "rated": 284,
   "places": [
     {
       "ac": -1,
@@ -1067,6 +1067,19 @@
       "id": "equal-measure",
       "name": "Equal Measure",
       "yk": 1.25,
+      "ykComment": "",
+      "ykCommentAt": null
+    },
+    {
+      "ac": 1.75,
+      "acComment": "",
+      "acCommentAt": null,
+      "city": "New York",
+      "cuisine": "🍸 Bars",
+      "id": "farm-one",
+      "name": "Farm.One",
+      "visited": "2026-08-09",
+      "yk": null,
       "ykComment": "",
       "ykCommentAt": null
     },
@@ -2421,6 +2434,19 @@
       "name": "Pinkberry",
       "visited": "2026-08-06",
       "yk": 1.75,
+      "ykComment": "",
+      "ykCommentAt": null
+    },
+    {
+      "ac": 2,
+      "acComment": "",
+      "acCommentAt": null,
+      "city": "New York",
+      "cuisine": "🍕 Pizza & Italian",
+      "id": "pizza-party-brooklyn",
+      "name": "Pizza Party Brooklyn",
+      "visited": "2026-08-09",
+      "yk": null,
       "ykComment": "",
       "ykCommentAt": null
     },
