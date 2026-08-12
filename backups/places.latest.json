@@ -1,7 +1,7 @@
 {
-  "takenAt": "2026-08-11T08:09:51.541Z",
-  "count": 284,
-  "rated": 284,
+  "takenAt": "2026-08-12T08:18:02.881Z",
+  "count": 285,
+  "rated": 285,
   "places": [
     {
       "ac": -1,
@@ -597,7 +597,7 @@
       "id": "by-antidote",
       "name": "by Antidote",
       "visited": "2026-08-08",
-      "yk": null,
+      "yk": 2,
       "ykComment": "",
       "ykCommentAt": null
     },
@@ -901,7 +901,7 @@
       "id": "deniz",
       "name": "Deniz",
       "visited": "2026-08-07",
-      "yk": null,
+      "yk": 1.25,
       "ykComment": "",
       "ykCommentAt": null
     },
@@ -1079,7 +1079,7 @@
       "id": "farm-one",
       "name": "Farm.One",
       "visited": "2026-08-09",
-      "yk": null,
+      "yk": 2.5,
       "ykComment": "",
       "ykCommentAt": null
     },
@@ -1232,7 +1232,7 @@
       "id": "fresh-kills-bar",
       "name": "Fresh Kills Bar",
       "visited": "2026-08-07",
-      "yk": null,
+      "yk": 2.75,
       "ykComment": "",
       "ykCommentAt": null
     },
@@ -2269,7 +2269,7 @@
       "id": "nuar",
       "name": "nuar",
       "visited": "2026-08-08",
-      "yk": null,
+      "yk": 2,
       "ykComment": "",
       "ykCommentAt": null
     },
@@ -2446,7 +2446,7 @@
       "id": "pizza-party-brooklyn",
       "name": "Pizza Party Brooklyn",
       "visited": "2026-08-09",
-      "yk": null,
+      "yk": 2.75,
       "ykComment": "",
       "ykCommentAt": null
     },
@@ -3277,6 +3277,19 @@
       "name": "The Halal City Food Truck",
       "visited": "2026-07-27",
       "yk": 1.75,
+      "ykComment": "",
+      "ykCommentAt": null
+    },
+    {
+      "ac": 1.25,
+      "acComment": "",
+      "acCommentAt": null,
+      "city": "New York",
+      "cuisine": "🥢 Chinese & Taiwanese",
+      "id": "the-handpulled-noodle-hell-s-kitchen",
+      "name": "The Handpulled Noodle | Hell’s Kitchen",
+      "visited": "2026-08-10",
+      "yk": 0.25,
       "ykComment": "",
       "ykCommentAt": null
     },
