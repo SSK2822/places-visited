@@ -1,7 +1,7 @@
 {
-  "takenAt": "2026-08-16T07:31:42.270Z",
-  "count": 285,
-  "rated": 285,
+  "takenAt": "2026-08-17T07:53:56.809Z",
+  "count": 291,
+  "rated": 291,
   "places": [
     {
       "ac": -1,
@@ -431,6 +431,19 @@
       "yk": 1.25,
       "ykComment": "Great guy Alex",
       "ykCommentAt": 1785123688168
+    },
+    {
+      "ac": 2,
+      "acComment": "",
+      "acCommentAt": null,
+      "city": "New York",
+      "cuisine": "🍦 Dessert",
+      "id": "birdie-s",
+      "name": "Birdie’s",
+      "visited": "2026-08-15",
+      "yk": null,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": 1.5,
@@ -1059,6 +1072,19 @@
       "ykCommentAt": null
     },
     {
+      "ac": 2,
+      "acComment": "",
+      "acCommentAt": null,
+      "city": "New York",
+      "cuisine": "🍜 Thai & SE Asian",
+      "id": "empyrean-indian-kitchen-bar",
+      "name": "Empyrean Indian Kitchen & Bar",
+      "visited": "2026-08-14",
+      "yk": null,
+      "ykComment": "",
+      "ykCommentAt": null
+    },
+    {
       "ac": 1.25,
       "acComment": "",
       "acCommentAt": null,
@@ -1156,6 +1182,19 @@
       "name": "Focal Point",
       "visited": "",
       "yk": 2.25,
+      "ykComment": "",
+      "ykCommentAt": null
+    },
+    {
+      "ac": 1.75,
+      "acComment": "",
+      "acCommentAt": null,
+      "city": "New York",
+      "cuisine": "🍱 Korean & Japanese",
+      "id": "folk",
+      "name": "FOLK",
+      "visited": "2026-08-15",
+      "yk": null,
       "ykComment": "",
       "ykCommentAt": null
     },
@@ -1866,6 +1905,19 @@
       "id": "liu-liu-sheng-jian",
       "name": "Liu Liu Sheng Jian",
       "yk": 2.25,
+      "ykComment": "",
+      "ykCommentAt": null
+    },
+    {
+      "ac": 2,
+      "acComment": "",
+      "acCommentAt": null,
+      "city": "New York",
+      "cuisine": "🍕 Pizza & Italian",
+      "id": "luigi-s-pizza",
+      "name": "Luigi's Pizza",
+      "visited": "2026-08-15",
+      "yk": null,
       "ykComment": "",
       "ykCommentAt": null
     },
@@ -2757,6 +2809,19 @@
       "ykCommentAt": null
     },
     {
+      "ac": 1.5,
+      "acComment": "",
+      "acCommentAt": null,
+      "city": "New York",
+      "cuisine": "🍸 Bars",
+      "id": "sea-witch",
+      "name": "Sea Witch",
+      "visited": "2026-08-15",
+      "yk": null,
+      "ykComment": "",
+      "ykCommentAt": null
+    },
+    {
       "ac": 2.25,
       "acComment": "",
       "acCommentAt": null,
@@ -2905,6 +2970,19 @@
       "name": "Son Del North",
       "visited": "2026-07-27",
       "yk": 1.75,
+      "ykComment": "",
+      "ykCommentAt": null
+    },
+    {
+      "ac": 1.25,
+      "acComment": "",
+      "acCommentAt": null,
+      "city": "New York",
+      "cuisine": "🍜 Thai & SE Asian",
+      "id": "soothr",
+      "name": "Soothr",
+      "visited": "2026-08-15",
+      "yk": null,
       "ykComment": "",
       "ykCommentAt": null
     },
