@@ -27,6 +27,9 @@ export function scoreHidden(place, key, myKey) {
   return place[key] !== null && place[key] !== undefined // partner's, and they've weighed in
 }
 
+// How far apart the two verdicts are. Only meaningful for a fully-rated place.
+export const ratingGap = (p) => Math.abs(p.yk - p.ac)
+
 // The playful verdict shown at the reveal, from how the two scores compare.
 export function verdict(yk, ac) {
   const d = Math.abs(yk - ac)

@@ -1,10 +1,19 @@
 import { EDITORS } from '../lib/firebase-config'
 
-export default function Masthead({ onAccount, notifyCount = 0, onBell }) {
+export default function Masthead({ onAccount, notifyCount = 0, onBell, theme, onToggleTheme }) {
   const who = EDITORS.map((e) => e.label).join(' & ')
+  const dark = theme === 'dark'
   return (
     <header className="mast">
       <div className="mast-rail">
+        <button
+          className="btn btn-ghost theme-toggle"
+          onClick={onToggleTheme}
+          aria-label={dark ? 'Switch to light mode' : 'Switch to dark mode'}
+          title={dark ? 'Light mode' : 'Dark mode'}
+        >
+          {dark ? '☀' : '☾'}
+        </button>
         {notifyCount > 0 && (
           <button
             className="btn btn-ghost bell"

@@ -4,6 +4,7 @@ import StatsLedger from './components/StatsLedger'
 import LedgerControls from './components/LedgerControls'
 import LedgerList from './components/LedgerList'
 import Calendar from './components/Calendar'
+import Compare from './components/Compare'
 import PlaceDetail from './components/PlaceDetail'
 import PlaceForm from './components/PlaceForm'
 import SurpriseCard from './components/SurpriseCard'
@@ -13,7 +14,7 @@ import SettingsModal from './components/SettingsModal'
 import AccountModal from './components/AccountModal'
 import DirtyBar from './components/DirtyBar'
 import Toast from './components/Toast'
-import { CUISINES, LSK_DATA, LSK_SEEN, DEFAULT_CITY } from './lib/constants'
+import { CUISINES, LSK_DATA, LSK_SEEN, LSK_THEME, DEFAULT_CITY } from './lib/constants'
 import { overall, fmt, slugify, fullyRated } from './lib/utils'
 import RevealOverlay from './components/RevealOverlay'
 import NotificationsDialog from './components/NotificationsDialog'
@@ -52,6 +53,11 @@ export default function App() {
   // completed, or one you tapped in the notifications bell.
   const [revealNow, setRevealNow] = useState(null)
   const [showNotifications, setShowNotifications] = useState(false)
+  // Seeded from what the pre-paint boot script in index.html already decided,
+  // so the toggle's state always matches what's on screen.
+  const [theme, setTheme] = useState(
+    () => document.documentElement.getAttribute('data-theme') || 'light',
+  )
   // Completed pairs this editor has already seen revealed (persisted per
   // editor). null until loaded — while null, we haven't decided whether to seed.
   const [seenIds, setSeenIds] = useState(null)
@@ -66,6 +72,16 @@ export default function App() {
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [view, selectedId])
+
+  useEffect(() => {
+    if (theme === 'dark') document.documentElement.setAttribute('data-theme', 'dark')
+    else document.documentElement.removeAttribute('data-theme')
+    try {
+      localStorage.setItem(LSK_THEME, theme)
+    } catch {
+      /* private mode — the theme just won't persist */
+    }
+  }, [theme])
 
   /* ---------- data loading ---------- */
   useEffect(() => {
@@ -417,6 +433,8 @@ export default function App() {
               onAccount={() => setShowSettings(true)}
               notifyCount={inbox.length}
               onBell={() => setShowNotifications(true)}
+              theme={theme}
+              onToggleTheme={() => setTheme((t) => (t === 'dark' ? 'light' : 'dark'))}
             />
             <StatsLedger stats={stats} />
             <SurpriseCard onSurprise={surprise} />
@@ -427,6 +445,8 @@ export default function App() {
             />
             {tab === 'calendar' ? (
               <Calendar places={base} myKey={myKey} onOpen={openDetail} />
+            ) : tab === 'compare' ? (
+              <Compare places={base} onOpen={openDetail} />
             ) : (
               <>
                 <p className="count-line">

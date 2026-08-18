@@ -3,6 +3,7 @@ const TABS = [
   ['all', 'All rated'],
   ['torate', 'To rate'],
   ['calendar', 'Calendar'],
+  ['compare', 'Compare'],
 ]
 
 export default function LedgerControls({

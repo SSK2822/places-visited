@@ -2,12 +2,84 @@
    the tokens in classical.css — no hard-coded hexes, fonts or raw px where a
    token exists. Ported from the design project's frames/classical.html. */
 
+/* ---------- app-level tokens ----------
+   Additions the vendored sheet doesn't carry: the warm page ground, the danger
+   red, and a dedicated scrim (the overlay veil must stay dark in BOTH themes,
+   so it can't ride on the neutral ramp, which inverts below). */
+:root {
+  color-scheme: light;
+  --color-ground: #f5ead8;
+  --color-blob: #e7cf9a80;
+  --color-danger: #a23b28;
+  --color-scrim: #2d2b2b;
+}
+
+/* ---------- dark theme ----------
+   The accent and neutral ramps INVERT here: in the light theme step 700 is a
+   dark gold that reads against a pale ground, so in the dark theme step 700
+   must be a pale gold that reads against a dark one. Keeping that relationship
+   means every existing `var(--color-accent-700)` keeps working untouched —
+   the semantic ("strong accent text on the ground") holds in both. */
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --color-ground: #14120d;
+  --color-blob: #6b5a2e40;
+  --color-bg: #1d1a14;
+  --color-surface: #262219;
+  --color-text: #ece7dc;
+  --color-accent: #d6a45c;
+  --color-accent-2: #cf9f5f;
+  --color-divider: color-mix(in srgb, #ece7dc 18%, transparent);
+  --color-danger: #e08b76;
+  --color-scrim: #080705;
+
+  /* neutrals — 100 stays "subtle fill", 900 stays "strongest", both re-anchored
+     to a dark ground */
+  --color-neutral-100: #221f18;
+  --color-neutral-200: #2b271f;
+  --color-neutral-300: #3a352b;
+  --color-neutral-400: #6d6658;
+  --color-neutral-500: #8b8374;
+  --color-neutral-600: #a49b8b;
+  --color-neutral-700: #c0b7a6;
+  --color-neutral-800: #d8cfbe;
+  --color-neutral-900: #ece7dc;
+
+  --color-accent-100: #33260f;
+  --color-accent-200: #4a3715;
+  --color-accent-300: #6b4f1e;
+  --color-accent-400: #916b2a;
+  --color-accent-500: #b98a3f;
+  --color-accent-600: #d1a259;
+  --color-accent-700: #e5bd7e;
+  --color-accent-800: #f2d5a6;
+  --color-accent-900: #fae8cd;
+
+  --color-accent-2-100: #33260f;
+  --color-accent-2-200: #4a3715;
+  --color-accent-2-300: #6b4f1e;
+  --color-accent-2-400: #8d6b2c;
+  --color-accent-2-500: #b28a45;
+  --color-accent-2-600: #c9a361;
+  --color-accent-2-700: #dcbc85;
+  --color-accent-2-800: #ecd4ab;
+  --color-accent-2-900: #f7e7cf;
+
+  /* elevation on a dark ground is ambient darkness, not an ink tint */
+  --shadow-sm: 0 1px 2px rgb(0 0 0 / 0.45);
+  --shadow-md: 0 3px 12px rgb(0 0 0 / 0.5);
+  --shadow-lg: 0 14px 36px rgb(0 0 0 / 0.6);
+}
+
 html, body { height: 100%; }
-/* Cream ground borrowed from Organic for warmth; html painted too so no
-   white line shows at the mobile overscroll / scroll pane edge. */
-html { background: #f5ead8; }
-body { margin: 0; background: #f5ead8; overflow-x: hidden; }
+/* Warm ground; html painted too so no white line shows at the mobile
+   overscroll / scroll pane edge. */
+html { background: var(--color-ground); }
+body { background: var(--color-ground); overflow-x: hidden; }
 * { -webkit-tap-highlight-color: transparent; }
+/* The vendored sheet paints body from --color-bg (the card surface); the app's
+   ground is its own token, so re-assert it after that rule loads. */
+body { color: var(--color-text); }
 
 /* ---------- ambient flavour blobs ---------- */
 .flavour { position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
@@ -15,7 +87,7 @@ body { margin: 0; background: #f5ead8; overflow-x: hidden; }
 .flavour .b1 { width: 460px; height: 460px; top: -160px; right: -120px;
   background: radial-gradient(circle at 30% 30%, color-mix(in srgb, var(--color-accent) 26%, transparent), transparent 70%); }
 .flavour .b2 { width: 380px; height: 380px; top: 40%; left: -150px;
-  background: radial-gradient(circle at 40% 40%, #e7cf9a80, transparent 70%); }
+  background: radial-gradient(circle at 40% 40%, var(--color-blob), transparent 70%); }
 .flavour .b3 { width: 300px; height: 300px; bottom: -120px; right: 8%;
   background: radial-gradient(circle at 50% 50%, color-mix(in srgb, var(--color-accent) 18%, transparent), transparent 70%); }
 
@@ -80,6 +152,7 @@ body { margin: 0; background: #f5ead8; overflow-x: hidden; }
    so they never compete with the two real actions below the stats. */
 .mast-rail { display: flex; align-items: center; justify-content: flex-end; gap: var(--space-2); margin-bottom: var(--space-2); }
 .mast-rail .btn { font-size: 12px; }
+.theme-toggle { font-size: 15px; padding: 4px 8px; line-height: 1; }
 .bell { position: relative; font-size: 15px; padding: 4px 8px; }
 .bell-badge { position: absolute; top: -2px; right: -2px; min-width: 16px; height: 16px; padding: 0 4px;
   display: inline-flex; align-items: center; justify-content: center; box-sizing: border-box;
@@ -123,7 +196,9 @@ body { margin: 0; background: #f5ead8; overflow-x: hidden; }
      overflows — so it's centred on a phone but still scrollable from the start
      if the tabs ever outgrow the width. */
   .mode .seg { flex: none; margin-inline: auto; }
-  .mode .seg-opt { padding: 7px 10px; white-space: nowrap; }
+  /* Five tabs have to clear a 375px phone without a horizontal scroll, or the
+     last one (a whole feature) hides off-edge. */
+  .mode .seg-opt { padding: 7px 7px; font-size: 12px; white-space: nowrap; }
 }
 .count-line { text-align: center; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
   color: color-mix(in srgb, var(--color-text) 45%, transparent); font-feature-settings: "tnum"; margin: 0 0 var(--space-3); }
@@ -151,7 +226,7 @@ body { margin: 0; background: #f5ead8; overflow-x: hidden; }
 .score-lab { font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 50%, transparent); }
 .score-fig { font-family: var(--font-heading); font-size: 22px; line-height: 1.2; font-feature-settings: "tnum"; }
 .score.overall .score-fig { border-bottom: 2px solid var(--color-accent); padding-bottom: 2px; }
-.pos { color: var(--color-accent-2-700); } .neg { color: #a23b28; } .zero { color: var(--color-neutral-600); }
+.pos { color: var(--color-accent-2-700); } .neg { color: var(--color-danger); } .zero { color: var(--color-neutral-600); }
 
 .row.pending { align-items: center; }
 .row.pending .rank { color: var(--color-neutral-400); }
@@ -172,6 +247,17 @@ body { margin: 0; background: #f5ead8; overflow-x: hidden; }
   padding: 8px 0; margin-bottom: var(--space-4); }
 .back:hover { color: var(--color-accent); }
 
+/* ---------- compare ---------- */
+.cmp-stats { margin-top: 0; }
+.cmp-headline { text-align: center; font-size: 15px; line-height: 1.5; margin: 0 0 var(--space-2); }
+.cmp-headline b { font-family: var(--font-heading); font-weight: var(--font-heading-weight);
+  font-size: 20px; display: block; margin-bottom: 4px; }
+.cmp-means { text-align: center; font-style: italic; font-size: 13px; margin: 0 0 var(--space-6);
+  color: color-mix(in srgb, var(--color-text) 58%, transparent); font-feature-settings: "tnum"; }
+.cmp-gap { color: var(--color-accent-700); font-feature-settings: "tnum"; }
+.cmp-gap.is-zero { color: color-mix(in srgb, var(--color-text) 55%, transparent); }
+.cmp .list + .section-head { margin-top: var(--space-8); }
+
 /* ---------- calendar ---------- */
 .cal { margin-top: var(--space-3); }
 .cal-head { display: flex; align-items: center; justify-content: center; gap: var(--space-4); margin-bottom: var(--space-4); }
@@ -183,7 +269,7 @@ body { margin: 0; background: #f5ead8; overflow-x: hidden; }
 .cal-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; }
 .cal-weekdays { margin-bottom: 6px; }
 .cal-wd { text-align: center; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase;
-  color: color-mix(in srgb, var(--color-text) 45%, transparent); padding: 4px 0; }
+  color: color-mix(in srgb, var(--color-text) 58%, transparent); padding: 4px 0; }
 .cal-cell { position: relative; aspect-ratio: 1; border: 1px solid var(--color-divider); border-radius: var(--radius-md);
   background: transparent; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px;
   font-family: var(--font-heading); font-size: 15px; color: var(--color-text); cursor: default;
@@ -290,8 +376,8 @@ body { margin: 0; background: #f5ead8; overflow-x: hidden; }
 .form-actions { display: flex; gap: var(--space-3); margin-top: var(--space-6); justify-content: flex-end; }
 /* Save sits rightmost (last child) — the hand is already on the right after
    the dials — with Delete shoved to the far left, out of that path. */
-.form-actions .danger { margin-right: auto; color: #a23b28; border-color: color-mix(in srgb, #a23b28 45%, transparent); }
-.form-actions .danger:hover { background: color-mix(in srgb, #a23b28 10%, transparent); }
+.form-actions .danger { margin-right: auto; color: var(--color-danger); border-color: color-mix(in srgb, var(--color-danger) 45%, transparent); }
+.form-actions .danger:hover { background: color-mix(in srgb, var(--color-danger) 10%, transparent); }
 .save-hint { text-align: right; font-size: 11px; font-style: italic; margin: 6px 0 0;
   color: color-mix(in srgb, var(--color-text) 42%, transparent); }
 .overall-preview { text-align: center; font-style: italic; font-size: 13px;
@@ -312,7 +398,7 @@ body { margin: 0; background: #f5ead8; overflow-x: hidden; }
 
 /* ---------- reveal overlay ---------- */
 .reveal-back { position: fixed; inset: 0; display: grid; place-items: center; z-index: 75; padding: 24px;
-  background: color-mix(in srgb, var(--color-neutral-900) 52%, transparent); opacity: 0; transition: opacity .3s ease;
+  background: color-mix(in srgb, var(--color-scrim) 52%, transparent); opacity: 0; transition: opacity .3s ease;
   -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); }
 .reveal-back.is-open { opacity: 1; }
 .reveal-stage { background: var(--color-bg); border: 1px solid var(--color-accent); border-radius: var(--radius-lg);
@@ -349,7 +435,7 @@ body { margin: 0; background: #f5ead8; overflow-x: hidden; }
 
 /* ---------- surprise overlay ---------- */
 .pv-surprise-back { position: fixed; inset: 0; display: grid; place-items: center;
-  background: color-mix(in srgb, var(--color-neutral-900) 46%, transparent); opacity: 0; transition: opacity .3s ease; z-index: 50; padding: 24px;
+  background: color-mix(in srgb, var(--color-scrim) 46%, transparent); opacity: 0; transition: opacity .3s ease; z-index: 50; padding: 24px;
   -webkit-backdrop-filter: blur(3px); backdrop-filter: blur(3px); }
 .pv-surprise-back.is-open { opacity: 1; }
 .pv-surprise-stage { background: var(--color-bg); border: 1px solid var(--color-accent); border-radius: var(--radius-md);
@@ -369,8 +455,8 @@ body { margin: 0; background: #f5ead8; overflow-x: hidden; }
 .cloud-error-detail {
   font-family: ui-monospace, Menlo, monospace; font-size: 12px; line-height: 1.5;
   text-align: left; white-space: pre-wrap; word-break: break-word;
-  color: #a23b28; background: var(--color-neutral-100);
-  border: 1px solid var(--color-divider); border-left: 2px solid #a23b28;
+  color: var(--color-danger); background: var(--color-neutral-100);
+  border: 1px solid var(--color-divider); border-left: 2px solid var(--color-danger);
   border-radius: var(--radius-md); padding: var(--space-3); margin: var(--space-4) 0;
 }
 .seed-warn {
@@ -378,8 +464,8 @@ body { margin: 0; background: #f5ead8; overflow-x: hidden; }
   color: color-mix(in srgb, var(--color-text) 55%, transparent);
 }
 .seed-error {
-  font-size: 12px; line-height: 1.5; margin: var(--space-3) 0 0; color: #a23b28;
-  border-left: 2px solid #a23b28; padding-left: var(--space-3);
+  font-size: 12px; line-height: 1.5; margin: var(--space-3) 0 0; color: var(--color-danger);
+  border-left: 2px solid var(--color-danger); padding-left: var(--space-3);
 }
 .restore { border-top: 1px solid var(--color-divider); margin-top: var(--space-4); }
 .restore .section-head { margin: var(--space-4) 0 var(--space-2); }
@@ -412,7 +498,9 @@ body { margin: 0; background: #f5ead8; overflow-x: hidden; }
    *behind* the ledger, with the chips drawing over the card. Layer everything
    fixed on one scale: flavour 0 · wrap 1 · dirty-bar 40 · surprise 50 ·
    dialog 70 · toast 80 (a toast must stay legible over an open dialog). */
-.dialog-backdrop { z-index: 70; }
+/* The vendored backdrop veils with --color-neutral-900, which inverts to a pale
+   tone in dark mode — repoint it at the scrim so it stays dark in both. */
+.dialog-backdrop { z-index: 70; background: color-mix(in srgb, var(--color-scrim) 50%, transparent); }
 .dialog-close { margin-left: auto; }
 .dialog-head { display: flex; align-items: center; gap: var(--space-2); }
 .dialog p { font-size: 14px; }
