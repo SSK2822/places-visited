@@ -1,7 +1,7 @@
 {
-  "takenAt": "2026-08-19T07:38:29.610Z",
-  "count": 293,
-  "rated": 293,
+  "takenAt": "2026-08-20T07:41:07.468Z",
+  "count": 294,
+  "rated": 294,
   "places": [
     {
       "ac": -1,
@@ -3574,6 +3574,19 @@
       "name": "Vesta Trattoria",
       "visited": "2026-07-27",
       "yk": 1,
+      "ykComment": "",
+      "ykCommentAt": null
+    },
+    {
+      "ac": 1.25,
+      "acComment": "Chicken souvlaki > gyro",
+      "acCommentAt": 1787143483391,
+      "city": "New York",
+      "cuisine": "🥙 Mediterranean & Middle Eastern",
+      "id": "village-taverna",
+      "name": "Village Taverna",
+      "visited": "2026-08-18",
+      "yk": 2.25,
       "ykComment": "",
       "ykCommentAt": null
     },
