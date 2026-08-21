@@ -1,7 +1,7 @@
 {
-  "takenAt": "2026-08-20T07:41:07.468Z",
-  "count": 294,
-  "rated": 294,
+  "takenAt": "2026-08-21T07:42:54.312Z",
+  "count": 295,
+  "rated": 295,
   "places": [
     {
       "ac": -1,
@@ -930,6 +930,19 @@
       "yk": -0.75,
       "ykComment": "overhyped",
       "ykCommentAt": 1785159919997
+    },
+    {
+      "ac": 2.25,
+      "acComment": "",
+      "acCommentAt": null,
+      "city": "New York",
+      "cuisine": "🍜 Thai & SE Asian",
+      "id": "district-saigon",
+      "name": "District Saigon",
+      "visited": "2026-08-19",
+      "yk": 2,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": 1.5,
