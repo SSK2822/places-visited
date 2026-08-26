@@ -1,7 +1,7 @@
 {
-  "takenAt": "2026-08-25T07:43:55.185Z",
-  "count": 310,
-  "rated": 310,
+  "takenAt": "2026-08-26T11:16:59.616Z",
+  "count": 312,
+  "rated": 312,
   "places": [
     {
       "ac": -1,
@@ -1592,6 +1592,19 @@
       "name": "IBN Hamido",
       "visited": "2026-07-27",
       "yk": 2.75,
+      "ykComment": "",
+      "ykCommentAt": null
+    },
+    {
+      "ac": 1,
+      "acComment": "Ordered the wrong everything 🥲 but at the least the food was fine",
+      "acCommentAt": 1787676927731,
+      "city": "New York",
+      "cuisine": "🍸 Bars",
+      "id": "ida-s-nearabout",
+      "name": "Ida's Nearabout",
+      "visited": "2026-08-24",
+      "yk": null,
       "ykComment": "",
       "ykCommentAt": null
     },
@@ -3870,6 +3883,19 @@
       "id": "wu-liang-yi",
       "name": "Wu Liang Yi",
       "yk": 1.5,
+      "ykComment": "",
+      "ykCommentAt": null
+    },
+    {
+      "ac": 1.25,
+      "acComment": "No good beers on draft >:(",
+      "acCommentAt": 1787676972105,
+      "city": "New York",
+      "cuisine": "🍸 Bars",
+      "id": "wylie-s-astoria",
+      "name": "Wylie's Astoria",
+      "visited": "2026-08-24",
+      "yk": null,
       "ykComment": "",
       "ykCommentAt": null
     },
