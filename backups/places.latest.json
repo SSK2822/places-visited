@@ -1,7 +1,7 @@
 {
-  "takenAt": "2026-08-27T18:07:27.117Z",
-  "count": 312,
-  "rated": 312,
+  "takenAt": "2026-08-28T19:17:19.503Z",
+  "count": 314,
+  "rated": 314,
   "places": [
     {
       "ac": -1,
@@ -2081,6 +2081,19 @@
       "acComment": "",
       "acCommentAt": null,
       "city": "New York",
+      "cuisine": "🍕 Pizza & Italian",
+      "id": "macoletta",
+      "name": "Macoletta",
+      "visited": "2026-08-24",
+      "yk": null,
+      "ykComment": "",
+      "ykCommentAt": null
+    },
+    {
+      "ac": -0.5,
+      "acComment": "",
+      "acCommentAt": null,
+      "city": "New York",
       "cuisine": "🍱 Korean & Japanese",
       "id": "maharaja-sweets",
       "name": "Maharaja Sweets",
@@ -3921,6 +3934,19 @@
       "name": "Xin Fa Bakery",
       "visited": "2026-07-27",
       "yk": 1.5,
+      "ykComment": "",
+      "ykCommentAt": null
+    },
+    {
+      "ac": 1.75,
+      "acComment": "",
+      "acCommentAt": null,
+      "city": "New York",
+      "cuisine": "🍔 American",
+      "id": "yard-house",
+      "name": "Yard House",
+      "visited": "2026-08-27",
+      "yk": null,
       "ykComment": "",
       "ykCommentAt": null
     },
