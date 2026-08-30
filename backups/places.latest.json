@@ -1,7 +1,7 @@
 {
-  "takenAt": "2026-08-29T12:59:06.489Z",
-  "count": 314,
-  "rated": 314,
+  "takenAt": "2026-08-30T12:38:20.427Z",
+  "count": 319,
+  "rated": 319,
   "places": [
     {
       "ac": -1,
@@ -1913,6 +1913,19 @@
       "ykCommentAt": null
     },
     {
+      "ac": 1.5,
+      "acComment": "",
+      "acCommentAt": null,
+      "city": "New York",
+      "cuisine": "🍦 Dessert",
+      "id": "l-albero-dei-gelati",
+      "name": "L'Albero Dei Gelati",
+      "visited": "2026-08-29",
+      "yk": null,
+      "ykComment": "",
+      "ykCommentAt": null
+    },
+    {
       "ac": 2,
       "acComment": "",
       "acCommentAt": null,
@@ -2094,7 +2107,7 @@
       "acComment": "",
       "acCommentAt": null,
       "city": "New York",
-      "cuisine": "🍱 Korean & Japanese",
+      "cuisine": "🍛 Indian & Himalayan",
       "id": "maharaja-sweets",
       "name": "Maharaja Sweets",
       "visited": "2026-08-23",
@@ -2571,6 +2584,19 @@
       "ykCommentAt": null
     },
     {
+      "ac": 1.25,
+      "acComment": "",
+      "acCommentAt": null,
+      "city": "New York",
+      "cuisine": "🍛 Indian & Himalayan",
+      "id": "omar-s-indian-fine-cuisine",
+      "name": "OMAR'S INDIAN FINE CUISINE",
+      "visited": "2026-08-29",
+      "yk": null,
+      "ykComment": "",
+      "ykCommentAt": null
+    },
+    {
       "ac": 1.75,
       "acComment": "",
       "acCommentAt": null,
@@ -2783,6 +2809,19 @@
       "id": "prince-tea-house",
       "name": "Prince Tea House",
       "yk": 2,
+      "ykComment": "",
+      "ykCommentAt": null
+    },
+    {
+      "ac": 1.5,
+      "acComment": "",
+      "acCommentAt": null,
+      "city": "New York",
+      "cuisine": "🍕 Pizza & Italian",
+      "id": "psta-new-york",
+      "name": "psta. New York",
+      "visited": "2026-08-28",
+      "yk": null,
       "ykComment": "",
       "ykCommentAt": null
     },
@@ -3115,6 +3154,19 @@
       "name": "Sip a Cup",
       "visited": "2026-07-27",
       "yk": 1.75,
+      "ykComment": "",
+      "ykCommentAt": null
+    },
+    {
+      "ac": 0.75,
+      "acComment": "",
+      "acCommentAt": null,
+      "city": "New York",
+      "cuisine": "🥢 Chinese & Taiwanese",
+      "id": "sky-pavilion",
+      "name": "Sky Pavilion 川雲涧",
+      "visited": "2026-08-26",
+      "yk": null,
       "ykComment": "",
       "ykCommentAt": null
     },
@@ -3946,6 +3998,19 @@
       "id": "yard-house",
       "name": "Yard House",
       "visited": "2026-08-27",
+      "yk": null,
+      "ykComment": "",
+      "ykCommentAt": null
+    },
+    {
+      "ac": 2,
+      "acComment": "",
+      "acCommentAt": null,
+      "city": "New York",
+      "cuisine": "🧋 Boba & Tea",
+      "id": "yaya-tea",
+      "name": "Yaya Tea",
+      "visited": "2026-08-29",
       "yk": null,
       "ykComment": "",
       "ykCommentAt": null
