@@ -1,7 +1,7 @@
 {
-  "takenAt": "2026-08-30T12:38:20.427Z",
-  "count": 319,
-  "rated": 319,
+  "takenAt": "2026-08-31T14:53:16.952Z",
+  "count": 320,
+  "rated": 320,
   "places": [
     {
       "ac": -1,
@@ -1604,7 +1604,7 @@
       "id": "ida-s-nearabout",
       "name": "Ida's Nearabout",
       "visited": "2026-08-24",
-      "yk": null,
+      "yk": 2,
       "ykComment": "",
       "ykCommentAt": null
     },
@@ -1921,7 +1921,7 @@
       "id": "l-albero-dei-gelati",
       "name": "L'Albero Dei Gelati",
       "visited": "2026-08-29",
-      "yk": null,
+      "yk": 2.5,
       "ykComment": "",
       "ykCommentAt": null
     },
@@ -2098,9 +2098,9 @@
       "id": "macoletta",
       "name": "Macoletta",
       "visited": "2026-08-24",
-      "yk": null,
-      "ykComment": "",
-      "ykCommentAt": null
+      "yk": 0.25,
+      "ykComment": "For the salad",
+      "ykCommentAt": 1788120285454
     },
     {
       "ac": -0.5,
@@ -2592,7 +2592,7 @@
       "id": "omar-s-indian-fine-cuisine",
       "name": "OMAR'S INDIAN FINE CUISINE",
       "visited": "2026-08-29",
-      "yk": null,
+      "yk": 1,
       "ykComment": "",
       "ykCommentAt": null
     },
@@ -2821,7 +2821,7 @@
       "id": "psta-new-york",
       "name": "psta. New York",
       "visited": "2026-08-28",
-      "yk": null,
+      "yk": 2,
       "ykComment": "",
       "ykCommentAt": null
     },
@@ -2975,6 +2975,19 @@
       "name": "Saint Street Cakes",
       "visited": "2026-07-27",
       "yk": 1.5,
+      "ykComment": "",
+      "ykCommentAt": null
+    },
+    {
+      "ac": 2,
+      "acComment": "",
+      "acCommentAt": null,
+      "city": "New York",
+      "cuisine": "🍜 Thai & SE Asian",
+      "id": "saitong-thai",
+      "name": "SaiTong Thai",
+      "visited": "2026-08-30",
+      "yk": null,
       "ykComment": "",
       "ykCommentAt": null
     },
@@ -3166,7 +3179,7 @@
       "id": "sky-pavilion",
       "name": "Sky Pavilion 川雲涧",
       "visited": "2026-08-26",
-      "yk": null,
+      "yk": 1.25,
       "ykComment": "",
       "ykCommentAt": null
     },
@@ -3960,7 +3973,7 @@
       "id": "wylie-s-astoria",
       "name": "Wylie's Astoria",
       "visited": "2026-08-24",
-      "yk": null,
+      "yk": 1.5,
       "ykComment": "",
       "ykCommentAt": null
     },
@@ -3998,7 +4011,7 @@
       "id": "yard-house",
       "name": "Yard House",
       "visited": "2026-08-27",
-      "yk": null,
+      "yk": 1.5,
       "ykComment": "",
       "ykCommentAt": null
     },
@@ -4011,7 +4024,7 @@
       "id": "yaya-tea",
       "name": "Yaya Tea",
       "visited": "2026-08-29",
-      "yk": null,
+      "yk": 2.25,
       "ykComment": "",
       "ykCommentAt": null
     },
