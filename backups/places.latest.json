@@ -1,7 +1,7 @@
 {
-  "takenAt": "2026-09-03T11:58:09.853Z",
-  "count": 320,
-  "rated": 320,
+  "takenAt": "2026-09-04T11:59:51.027Z",
+  "count": 323,
+  "rated": 323,
   "places": [
     {
       "ac": -1,
@@ -76,6 +76,19 @@
       "name": "Aida's Parkside",
       "visited": "",
       "yk": 0.75,
+      "ykComment": "",
+      "ykCommentAt": null
+    },
+    {
+      "ac": 1.25,
+      "acComment": "",
+      "acCommentAt": null,
+      "city": "New York",
+      "cuisine": "🍕 Pizza & Italian",
+      "id": "alvo-pizza",
+      "name": "Alvo Pizza",
+      "visited": "2026-09-02",
+      "yk": null,
       "ykComment": "",
       "ykCommentAt": null
     },
@@ -572,6 +585,19 @@
       "name": "Brooklyn Kebab House",
       "visited": "",
       "yk": 1,
+      "ykComment": "",
+      "ykCommentAt": null
+    },
+    {
+      "ac": 1.5,
+      "acComment": "",
+      "acCommentAt": null,
+      "city": "New York",
+      "cuisine": "🍸 Bars",
+      "id": "brooklyn-social",
+      "name": "Brooklyn Social",
+      "visited": "",
+      "yk": null,
       "ykComment": "",
       "ykCommentAt": null
     },
@@ -2936,6 +2962,19 @@
       "name": "Rosario's",
       "visited": "2026-07-27",
       "yk": 1.75,
+      "ykComment": "",
+      "ykCommentAt": null
+    },
+    {
+      "ac": -1,
+      "acComment": "",
+      "acCommentAt": null,
+      "city": "New York",
+      "cuisine": "🍜 Thai & SE Asian",
+      "id": "rua-thai-thai-restaurant-brooklyn",
+      "name": "RUA Thai - Thai Restaurant Brooklyn",
+      "visited": "2026-09-02",
+      "yk": null,
       "ykComment": "",
       "ykCommentAt": null
     },
