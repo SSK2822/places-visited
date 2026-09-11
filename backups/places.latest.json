@@ -1,7 +1,7 @@
 {
-  "takenAt": "2026-09-10T12:05:03.874Z",
-  "count": 337,
-  "rated": 337,
+  "takenAt": "2026-09-11T12:03:28.063Z",
+  "count": 340,
+  "rated": 340,
   "places": [
     {
       "ac": -1,
@@ -574,6 +574,19 @@
       "yk": 2,
       "ykComment": "Great pancakes",
       "ykCommentAt": 1785190873387
+    },
+    {
+      "ac": 1.75,
+      "acComment": "",
+      "acCommentAt": null,
+      "city": "New York",
+      "cuisine": "🍦 Dessert",
+      "id": "brooklyn-farmacy-soda-fountain",
+      "name": "Brooklyn Farmacy & Soda Fountain",
+      "visited": "2026-09-09",
+      "yk": null,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": 1.5,
@@ -1397,6 +1410,19 @@
       "acComment": "",
       "acCommentAt": null,
       "city": "New York",
+      "cuisine": "🍕 Pizza & Italian",
+      "id": "frenzie-wine-pizza",
+      "name": "Frenzie Wine & Pizza",
+      "visited": "2026-09-09",
+      "yk": null,
+      "ykComment": "",
+      "ykCommentAt": null
+    },
+    {
+      "ac": 2,
+      "acComment": "",
+      "acCommentAt": null,
+      "city": "New York",
       "cuisine": "🍸 Bars",
       "id": "fresh-kills-bar",
       "name": "Fresh Kills Bar",
@@ -1899,6 +1925,19 @@
       "id": "khaosan",
       "name": "Khaosan",
       "yk": 2.25,
+      "ykComment": "",
+      "ykCommentAt": null
+    },
+    {
+      "ac": 1.75,
+      "acComment": "",
+      "acCommentAt": null,
+      "city": "New York",
+      "cuisine": "🍱 Korean & Japanese",
+      "id": "kimura",
+      "name": "Kimura",
+      "visited": "2026-09-05",
+      "yk": null,
       "ykComment": "",
       "ykCommentAt": null
     },
@@ -2569,7 +2608,7 @@
       "cuisine": "🍔 American",
       "id": "nathan-s-famous",
       "name": "Nathan's Famous",
-      "visited": "2026-09-05",
+      "visited": "2026-09-06",
       "yk": null,
       "ykComment": "",
       "ykCommentAt": null
