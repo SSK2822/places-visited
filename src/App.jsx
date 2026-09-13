@@ -7,7 +7,6 @@ import Calendar from './components/Calendar'
 import Compare from './components/Compare'
 import PlaceDetail from './components/PlaceDetail'
 import PlaceForm from './components/PlaceForm'
-import SurpriseCard from './components/SurpriseCard'
 import SurpriseOverlay from './components/SurpriseOverlay'
 import CloudError from './components/CloudError'
 import SettingsModal from './components/SettingsModal'
@@ -191,11 +190,12 @@ export default function App() {
     () => base.filter((p) => !fullyRated(p)).sort((a, b) => a.name.localeCompare(b.name)),
     [base],
   )
-  // Surprise draws from everything the active filters match (cuisine + search),
-  // not just the slice the current tab shows — so "Pizza & Italian" on the Top
-  // 10 tab still picks from every pizza place. Fully-rated only: the overlay
-  // lands on an overall score, which would leak a half-rated partner's verdict.
-  const surprisePool = rankedFiltered
+  // Surprise picks from the top 10 of whatever the filters match: the top 10
+  // overall with "All", the top 10 of a cuisine when one is chosen (or all of
+  // them, if it has fewer). Independent of the tab, so it's the same pool on
+  // To rate as on Top 10. Fully-rated only: the overlay lands on an overall
+  // score, which would leak a half-rated partner's verdict.
+  const surprisePool = useMemo(() => rankedFiltered.slice(0, 10), [rankedFiltered])
   const visibleCount = tab === 'top'
     ? Math.min(10, rankedFiltered.length)
     : tab === 'torate'
@@ -465,12 +465,10 @@ export default function App() {
               onBell={() => setShowNotifications(true)}
               theme={theme}
               onToggleTheme={() => setTheme((t) => (t === 'dark' ? 'light' : 'dark'))}
+              onSurprise={surprise}
+              surpriseScope={[cuisine && cuisineLabel(cuisine), query.trim() && `“${query.trim()}”`].filter(Boolean).join(' · ')}
             />
             <StatsLedger stats={stats} />
-            <SurpriseCard
-              onSurprise={surprise}
-              scope={[cuisine && cuisineLabel(cuisine), query.trim() && `“${query.trim()}”`].filter(Boolean).join(' · ')}
-            />
             <LedgerControls
               query={query} setQuery={setQuery}
               cuisine={cuisine} setCuisine={setCuisine} chips={cuisineChips}

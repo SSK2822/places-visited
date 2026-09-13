@@ -29,6 +29,8 @@ export const firebaseConfig = {
 // Google accounts allowed to edit places, and which rating/comment
 // field each one owns. Keep the email list in sync with firestore.rules.
 export const EDITORS = [
-  { email: 'shreyash.kawle@gmail.com', key: 'yk', label: 'YK', name: 'Yash' },
-  { email: 'amandaychen1@gmail.com', key: 'ac', label: 'Ac', name: 'Amanda' },
+  // `label` is what every score column, note and heading displays. The `key`
+  // stays 'yk'/'ac' — it's the Firestore field name, so it must not change.
+  { email: 'shreyash.kawle@gmail.com', key: 'yk', label: 'Yash', name: 'Yash' },
+  { email: 'amandaychen1@gmail.com', key: 'ac', label: 'Amanda', name: 'Amanda' },
 ]

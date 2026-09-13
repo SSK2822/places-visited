@@ -148,7 +148,7 @@ export default function AccountModal({ show, onClose, user, places, canSeed, onT
           </p>
           {canEdit(user) ? (
             <p className="text-muted">
-              You can add places and set {myEditor?.name}’s ({myEditor?.label}) rating and
+              You can add places and set {myEditor?.name}’s rating and
               comment on each one. Changes sync live to everyone.
             </p>
           ) : (

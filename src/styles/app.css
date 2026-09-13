@@ -105,54 +105,28 @@ body { color: var(--color-text); }
 .rule-orn::before, .rule-orn::after { content: ""; height: 1px; width: 90px; background: var(--color-divider); }
 .rule-orn i { font-style: normal; font-size: 12px; letter-spacing: 0.3em; }
 
-/* Surprise, as its own feature card: a bordered box that lifts on hover so the
-   one playful moment reads as a thing you do, not a header. Drawn with stroke
-   and a whisper of elevation, per the system — no solid accent fill. */
-.surprise-card {
-  display: flex; align-items: center; gap: var(--space-4); width: 100%; text-align: left;
-  margin: 0 0 var(--space-6); padding: var(--space-4) var(--space-4);
-  background: var(--color-bg); cursor: pointer;
-  border: 1px solid var(--color-accent); border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-sm);
-  transition: box-shadow .25s ease, transform .25s cubic-bezier(.2, .8, .2, 1),
-    background .25s ease;
-}
-.surprise-card:hover {
-  background: color-mix(in srgb, var(--color-accent) 6%, var(--color-bg));
-  box-shadow: var(--shadow-md); transform: translateY(-2px);
-}
-.surprise-card:active { transform: translateY(0); box-shadow: var(--shadow-sm); }
-.surprise-card-orn {
-  flex: none; font-size: 26px; line-height: 1; color: var(--color-accent);
-  transition: transform .35s cubic-bezier(.2, .8, .2, 1);
-}
-.surprise-card:hover .surprise-card-orn { transform: rotate(14deg) scale(1.08); }
-.surprise-card-text { display: flex; flex-direction: column; gap: 3px; flex: 1; }
-.surprise-card-title {
-  font-family: var(--font-heading); font-weight: var(--font-heading-weight);
-  font-size: 22px; line-height: 1.1; color: var(--color-text);
-}
-.surprise-card-scope { font-style: normal; font-weight: 600; color: var(--color-accent-700); }
-.surprise-card-sub {
-  font-size: 13px; font-style: italic;
-  color: color-mix(in srgb, var(--color-text) 60%, transparent);
-}
-.surprise-card-arrow {
-  flex: none; font-size: 20px; color: var(--color-accent-700);
-  transition: transform .25s cubic-bezier(.2, .8, .2, 1);
-}
-.surprise-card:hover .surprise-card-arrow { transform: translateX(4px); }
-@media (prefers-reduced-motion: reduce) {
-  .surprise-card, .surprise-card-orn, .surprise-card-arrow { transition: none; }
-  .surprise-card:hover { transform: none; }
-  .surprise-card:hover .surprise-card-orn { transform: none; }
-  .surprise-card:hover .surprise-card-arrow { transform: none; }
-}
-
-/* The masthead's utility rail — account / settings sit as quiet ghost links
-   so they never compete with the two real actions below the stats. */
-.mast-rail { display: flex; align-items: center; justify-content: flex-end; gap: var(--space-2); margin-bottom: var(--space-2); }
+/* The masthead's utility rail: Surprise pinned left, theme / bell / account
+   right. */
+.mast-rail { display: flex; align-items: center; justify-content: space-between; gap: var(--space-2); margin-bottom: var(--space-2); }
+.mast-rail-end { display: flex; align-items: center; gap: var(--space-2); margin-left: auto; }
 .mast-rail .btn { font-size: 12px; }
+
+/* Surprise as a compact pill: outlined in the accent (stroke, not fill, per the
+   system) so it reads as the one playful action without owning the page. */
+.surprise-pill { gap: 6px; min-width: 0; border: 1px solid var(--color-accent); border-radius: 999px;
+  padding: 6px 14px; color: var(--color-accent-700); background: transparent;
+  transition: background .2s ease, transform .2s cubic-bezier(.2, .8, .2, 1); }
+.surprise-pill:hover { background: color-mix(in srgb, var(--color-accent) 10%, transparent); }
+.surprise-pill:active { transform: scale(.97); }
+.surprise-pill-orn { font-size: 14px; line-height: 1; color: var(--color-accent);
+  transition: transform .35s cubic-bezier(.2, .8, .2, 1); }
+.surprise-pill:hover .surprise-pill-orn { transform: rotate(14deg) scale(1.1); }
+.surprise-pill-scope { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 16ch;
+  color: color-mix(in srgb, var(--color-text) 60%, transparent); }
+@media (prefers-reduced-motion: reduce) {
+  .surprise-pill, .surprise-pill-orn { transition: none; }
+  .surprise-pill:hover .surprise-pill-orn { transform: none; }
+}
 .theme-toggle { font-size: 15px; padding: 4px 8px; line-height: 1; }
 .bell { position: relative; font-size: 15px; padding: 4px 8px; }
 .bell-badge { position: absolute; top: -2px; right: -2px; min-width: 16px; height: 16px; padding: 0 4px;
@@ -342,7 +316,8 @@ body { color: var(--color-text); }
 .section-sub { font-style: italic; font-size: 12px; margin: 0 0 var(--space-3);
   color: color-mix(in srgb, var(--color-text) 55%, transparent); }
 .talk { list-style: none; margin: 0 0 var(--space-6); padding: 0; display: flex; flex-direction: column; gap: var(--space-4); }
-.talk li { display: grid; grid-template-columns: 60px 1fr; gap: var(--space-4); align-items: baseline; }
+/* Sized for full first names now that the labels aren't initials. */
+.talk li { display: grid; grid-template-columns: 5.5em 1fr; gap: var(--space-4); align-items: baseline; }
 .talk .who { font-family: var(--font-heading); font-size: 18px; color: var(--color-accent-700); }
 .talk .what { font-style: italic; font-size: 16px; line-height: 1.5; }
 .talk .empty { font-style: italic; color: color-mix(in srgb, var(--color-text) 45%, transparent); }

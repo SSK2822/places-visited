@@ -15,9 +15,9 @@ export default function SurpriseOverlay({ places, onClose }) {
   useEffect(() => {
     const pool = poolRef.current
     if (!pool.length) return
-    // Drawn from the top of the ranking — "surprise us" should still land
-    // somewhere you'd actually want to eat.
-    const winner = pool[Math.floor(Math.random() * Math.min(pool.length, 8))]
+    // The caller already narrowed the pool to the top of the ranking, so every
+    // place that flashes past is one it can actually land on.
+    const winner = pool[Math.floor(Math.random() * pool.length)]
 
     const raf = requestAnimationFrame(() => setOpen(true))
     let timer
