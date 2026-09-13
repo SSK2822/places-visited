@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import Masthead from './components/Masthead'
 import StatsLedger from './components/StatsLedger'
-import LedgerControls from './components/LedgerControls'
+import LedgerControls, { TABS } from './components/LedgerControls'
 import LedgerList from './components/LedgerList'
 import Calendar from './components/Calendar'
 import Compare from './components/Compare'
@@ -15,7 +15,7 @@ import AccountModal from './components/AccountModal'
 import DirtyBar from './components/DirtyBar'
 import Toast from './components/Toast'
 import { CUISINES, LSK_DATA, LSK_SEEN, LSK_THEME, DEFAULT_CITY } from './lib/constants'
-import { overall, fmt, slugify, fullyRated } from './lib/utils'
+import { overall, fmt, slugify, fullyRated, cuisineLabel } from './lib/utils'
 import RevealOverlay from './components/RevealOverlay'
 import NotificationsDialog from './components/NotificationsDialog'
 import { loadCfg, publishPlaces } from './lib/github'
@@ -23,6 +23,8 @@ import { cloudEnabled, initCloud, canEdit, editorKeyFor, savePlaceCloud, deleteP
 import { EDITORS } from './lib/firebase-config'
 
 const EMPTY_DB = { updated: '', places: [] }
+
+const TAB_LABELS = Object.fromEntries(TABS)
 
 // Ranked = rated places, best first; the ledger's spine.
 const byRank = (a, b) => (overall(b) - overall(a)) || a.name.localeCompare(b.name)
@@ -47,6 +49,9 @@ export default function App() {
 
   const [view, setView] = useState('browse')
   const [selectedId, setSelectedId] = useState(null)
+  // The detail view's browsing context: the ids of the list it was opened
+  // from, where we are in it, that tab's name, and which way we last stepped.
+  const [nav, setNav] = useState(null)
   const [editingPlace, setEditingPlace] = useState(null) // null = adding a new place
   const [surprising, setSurprising] = useState(false)
   // The place currently celebrated in the reveal overlay — one you just
@@ -156,9 +161,9 @@ export default function App() {
     [cuisineChips],
   )
 
-  // The full ranking, unfiltered — the detail view's "No. N" and the Surprise
-  // pool both mean position in the whole ledger, not within a search. Only
-  // both-rated places are ranked.
+  // The full ranking, unfiltered — the detail view's overall and category ranks
+  // mean position in the whole ledger, not within a search. Only both-rated
+  // places are ranked.
   const rankedAll = useMemo(
     () => db.places.filter(fullyRated).sort(byRank),
     [db.places],
@@ -186,6 +191,11 @@ export default function App() {
     () => base.filter((p) => !fullyRated(p)).sort((a, b) => a.name.localeCompare(b.name)),
     [base],
   )
+  // Surprise draws from everything the active filters match (cuisine + search),
+  // not just the slice the current tab shows — so "Pizza & Italian" on the Top
+  // 10 tab still picks from every pizza place. Fully-rated only: the overlay
+  // lands on an overall score, which would leak a half-rated partner's verdict.
+  const surprisePool = rankedFiltered
   const visibleCount = tab === 'top'
     ? Math.min(10, rankedFiltered.length)
     : tab === 'torate'
@@ -211,7 +221,7 @@ export default function App() {
       rated: rated.length,
       unrated: db.places.length - rated.length,
       // Strip the leading emoji — the ledger sets this in Cormorant.
-      topCuisine: top ? top[0].split(' ').slice(1).join(' ') : '–',
+      topCuisine: top ? cuisineLabel(top[0]) : '–',
     }
   }, [db.places])
 
@@ -285,9 +295,27 @@ export default function App() {
     return false
   }
 
-  function openDetail(place) {
+  // `sequence` is the list exactly as the tab showed it, so the detail view's
+  // prev/next walks that order. It's snapshotted as ids at open time: stepping
+  // stays predictable even when rating a place would reorder the live list,
+  // while each place is still looked up live so edits show through.
+  function openDetail(place, sequence) {
+    const ids = sequence ? [...new Set(sequence.map((p) => p.id))] : [place.id]
+    setNav({ ids, index: Math.max(0, ids.indexOf(place.id)), label: TAB_LABELS[tab], dir: null })
     setSelectedId(place.id)
     setView('detail')
+  }
+
+  // Step to the neighbouring place, skipping any deleted since the snapshot.
+  function stepDetail(delta) {
+    if (!nav) return
+    for (let i = nav.index + delta; i >= 0 && i < nav.ids.length; i += delta) {
+      if (db.places.some((p) => p.id === nav.ids[i])) {
+        setNav({ ...nav, index: i, dir: delta > 0 ? 'next' : 'prev' })
+        setSelectedId(nav.ids[i])
+        return
+      }
+    }
   }
 
   function openAdd() {
@@ -363,7 +391,9 @@ export default function App() {
   }
 
   function surprise() {
-    if (!rankedAll.length) return toast('Nothing rated yet — no pick to make')
+    if (!surprisePool.length) {
+      return toast(cuisine || query.trim() ? 'Nothing rated in this filter yet' : 'Nothing rated yet — no pick to make')
+    }
     setSurprising(true)
   }
 
@@ -437,7 +467,10 @@ export default function App() {
               onToggleTheme={() => setTheme((t) => (t === 'dark' ? 'light' : 'dark'))}
             />
             <StatsLedger stats={stats} />
-            <SurpriseCard onSurprise={surprise} />
+            <SurpriseCard
+              onSurprise={surprise}
+              scope={[cuisine && cuisineLabel(cuisine), query.trim() && `“${query.trim()}”`].filter(Boolean).join(' · ')}
+            />
             <LedgerControls
               query={query} setQuery={setQuery}
               cuisine={cuisine} setCuisine={setCuisine} chips={cuisineChips}
@@ -474,9 +507,23 @@ export default function App() {
 
         {view === 'detail' && selected && (
           <PlaceDetail
+            key={selected.id}
             place={selected}
             rank={rankedAll.findIndex((p) => p.id === selected.id)}
+            categoryRank={rankedAll
+              .filter((p) => p.cuisine === selected.cuisine)
+              .findIndex((p) => p.id === selected.id)}
             myKey={myKey}
+            nav={nav && {
+              position: nav.index + 1,
+              total: nav.ids.length,
+              label: nav.label,
+              dir: nav.dir,
+              hasPrev: nav.ids.slice(0, nav.index).some((id) => db.places.some((p) => p.id === id)),
+              hasNext: nav.ids.slice(nav.index + 1).some((id) => db.places.some((p) => p.id === id)),
+            }}
+            onPrev={() => stepDetail(-1)}
+            onNext={() => stepDetail(1)}
             onBack={() => setView('browse')}
             onEdit={openEdit}
           />
@@ -506,7 +553,7 @@ export default function App() {
       )}
 
       {surprising && (
-        <SurpriseOverlay places={rankedAll} onClose={() => setSurprising(false)} />
+        <SurpriseOverlay places={surprisePool} onClose={() => setSurprising(false)} />
       )}
 
       <NotificationsDialog

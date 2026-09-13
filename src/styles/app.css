@@ -132,6 +132,7 @@ body { color: var(--color-text); }
   font-family: var(--font-heading); font-weight: var(--font-heading-weight);
   font-size: 22px; line-height: 1.1; color: var(--color-text);
 }
+.surprise-card-scope { font-style: normal; font-weight: 600; color: var(--color-accent-700); }
 .surprise-card-sub {
   font-size: 13px; font-style: italic;
   color: color-mix(in srgb, var(--color-text) 60%, transparent);
@@ -218,6 +219,9 @@ body { color: var(--color-text); }
 .r-note { font-style: italic; font-size: 14px; margin: 8px 0 0; color: color-mix(in srgb, var(--color-text) 78%, transparent); max-width: 44ch; }
 .r-note .who { font-style: normal; font-family: var(--font-heading); color: var(--color-accent-700); margin-right: 6px; }
 /* Half-scored place in the To-rate list: "YK +2 · Ac to rate". */
+.r-visited { font-size: 12px; margin-top: 4px; font-feature-settings: "tnum";
+  color: color-mix(in srgb, var(--color-text) 62%, transparent); }
+.r-visited.is-none { font-style: italic; color: color-mix(in srgb, var(--color-text) 55%, transparent); }
 .r-status { display: flex; flex-wrap: wrap; gap: 4px var(--space-3); margin-top: 6px;
   font-size: 12px; font-feature-settings: "tnum"; }
 .r-status .who { font-family: var(--font-heading); color: var(--color-accent-700); margin-right: 4px; }
@@ -246,6 +250,33 @@ body { color: var(--color-text); }
   font-family: var(--font-body); font-size: 13px; letter-spacing: 0.04em; color: var(--color-accent-700);
   padding: 8px 0; margin-bottom: var(--space-4); }
 .back:hover { color: var(--color-accent); }
+
+/* ---------- detail browsing (prev / next) ---------- */
+.d-topbar { display: flex; align-items: center; justify-content: space-between; gap: var(--space-3);
+  margin-bottom: var(--space-4); }
+.d-topbar .back { margin-bottom: 0; }
+.d-pager { display: inline-flex; align-items: center; gap: var(--space-2); flex: none; }
+.d-step { width: 36px; height: 36px; display: inline-flex; align-items: center; justify-content: center;
+  border: 1px solid var(--color-divider); border-radius: var(--radius-md); background: transparent;
+  color: var(--color-accent-700); font-size: 20px; line-height: 1; cursor: pointer;
+  transition: background .2s ease, border-color .2s ease; }
+.d-step:hover:not(:disabled) { background: color-mix(in srgb, var(--color-accent) 10%, transparent); border-color: var(--color-accent); }
+.d-step:disabled { opacity: .35; cursor: default; }
+.d-pos { font-size: 12px; letter-spacing: 0.04em; font-feature-settings: "tnum"; white-space: nowrap;
+  color: color-mix(in srgb, var(--color-text) 65%, transparent); }
+/* pan-y keeps vertical scroll native while horizontal drags reach the swipe
+   handler; pinch-zoom stays allowed for accessibility */
+.d-swipe { touch-action: pan-y pinch-zoom; }
+.d-body { will-change: transform; }
+.view.from-right { animation: slidefromright .32s cubic-bezier(.2,.8,.2,1); }
+.view.from-left { animation: slidefromleft .32s cubic-bezier(.2,.8,.2,1); }
+@keyframes slidefromright { from { opacity: 0; transform: translateX(36px); } to { opacity: 1; transform: none; } }
+@keyframes slidefromleft { from { opacity: 0; transform: translateX(-36px); } to { opacity: 1; transform: none; } }
+/* The swipe hint only means something where there's a finger to swipe with. */
+.d-swipe-hint { display: none; text-align: center; font-style: italic; font-size: 12px; margin: var(--space-6) 0 0;
+  color: color-mix(in srgb, var(--color-text) 55%, transparent); }
+@media (hover: none) and (pointer: coarse) { .d-swipe-hint { display: block; } }
+@media (prefers-reduced-motion: reduce) { .view.from-right, .view.from-left { animation: none; } }
 
 /* ---------- compare ---------- */
 .cmp-stats { margin-top: 0; }
@@ -529,6 +560,11 @@ body { color: var(--color-text); }
      "natural landing spot" on a phone, so center it instead. Delete stays far
      left (order 1); Cancel drops to the end. The keyboard-only Shift+Enter
      hint is dropped too — there's no physical keyboard to press it on. */
+  /* the pager has to share the row with "Back"; the tab name is the first cut */
+  .d-pos-label { display: none; }
+  .d-topbar .back { font-size: 12px; }
+  .d-kicker-sep { display: none; }
+  .d-kicker-cat { display: block; margin-top: 4px; }
   .form-actions { justify-content: center; }
   .form-actions .danger { order: 1; margin-right: 0; }
   .form-actions .btn-primary { order: 2; }

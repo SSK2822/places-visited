@@ -88,6 +88,9 @@ export default function Compare({ places, onOpen }) {
   const agreed = byGap.slice(0, TOP_N)
   const clashed = [...byGap].reverse().slice(0, TOP_N)
   const headline = summaryVerdict(stats.avg)
+  // Agree then clash, as displayed. A place can only land in both when fewer
+  // than 20 are rated; the detail view de-dupes, so it's visited once.
+  const openInSeq = (p) => onOpen(p, [...agreed, ...clashed])
 
   return (
     <div className="cmp">
@@ -128,7 +131,7 @@ export default function Compare({ places, onOpen }) {
       <p className="section-sub">Same wavelength, same verdict.</p>
       <ol className="list">
         {agreed.map((p, i) => (
-          <GapRow key={p.id} place={p} index={i} onOpen={onOpen} />
+          <GapRow key={p.id} place={p} index={i} onOpen={openInSeq} />
         ))}
       </ol>
 
@@ -136,7 +139,7 @@ export default function Compare({ places, onOpen }) {
       <p className="section-sub">One of you has some explaining to do.</p>
       <ol className="list">
         {clashed.map((p, i) => (
-          <GapRow key={p.id} place={p} index={i} onOpen={onOpen} />
+          <GapRow key={p.id} place={p} index={i} onOpen={openInSeq} />
         ))}
       </ol>
     </div>

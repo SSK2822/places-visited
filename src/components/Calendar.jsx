@@ -94,11 +94,11 @@ export default function Calendar({ places, myKey, onOpen }) {
                   className="row is-in"
                   role="button"
                   tabIndex={0}
-                  onClick={() => onOpen(p)}
+                  onClick={() => onOpen(p, selectedPlaces)}
                   onKeyDown={(e) => {
                     if (e.key === 'Enter' || e.key === ' ') {
                       e.preventDefault()
-                      onOpen(p)
+                      onOpen(p, selectedPlaces)
                     }
                   }}
                 >

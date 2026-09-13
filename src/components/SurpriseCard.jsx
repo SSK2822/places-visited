@@ -1,12 +1,18 @@
 // Surprise, as its own feature rather than a line in the masthead: a bordered
 // card that lifts on hover, so the one playful moment reads as a thing you do.
-export default function SurpriseCard({ onSurprise }) {
+// `scope` names the active filter, so a pick from "Pizza & Italian" only is
+// never a mystery.
+export default function SurpriseCard({ onSurprise, scope }) {
   return (
     <button className="surprise-card" onClick={onSurprise}>
       <span className="surprise-card-orn" aria-hidden="true">❦</span>
       <span className="surprise-card-text">
         <span className="surprise-card-title">Surprise us</span>
-        <span className="surprise-card-sub">Can’t decide? Let the ledger pick tonight’s spot.</span>
+        <span className="surprise-card-sub">
+          {scope
+            ? <>Picking from <b className="surprise-card-scope">{scope}</b> — let the ledger decide.</>
+            : 'Can’t decide? Let the ledger pick tonight’s spot.'}
+        </span>
       </span>
       <span className="surprise-card-arrow" aria-hidden="true">→</span>
     </button>

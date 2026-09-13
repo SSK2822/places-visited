@@ -104,6 +104,11 @@ function PendingRow({ place, index, myKey, onOpen, onRate, waitingOn }) {
         <div className="r-meta">
           {place.cuisine} · {place.city}
         </div>
+        {/* Its own line, not appended to the meta — on a phone this column is
+            narrow and a long cuisine name plus a date would wrap mid-phrase. */}
+        <div className={`r-visited ${place.visited ? '' : 'is-none'}`}>
+          Visited: {fmtVisited(place.visited) || 'none'}
+        </div>
         {halfway && (
           <div className="r-status">
             {EDITORS.map((e) => (
@@ -136,7 +141,10 @@ function PendingRow({ place, index, myKey, onOpen, onRate, waitingOn }) {
   )
 }
 
-export default function LedgerList({ tab, ranked, unrated, myKey, onOpen, onRate }) {
+// Every open hands the detail view the sequence exactly as this tab displays
+// it, so prev/next in the detail walks the same order the list showed —
+// sections, filter and all — rather than an order recomputed elsewhere.
+export default function LedgerList({ tab, ranked, unrated, myKey, onOpen: openIn, onRate }) {
   if (tab === 'torate') {
     if (!unrated.length) {
       return <p className="pending-note">Nothing left to rate. Impressive.</p>
@@ -145,6 +153,7 @@ export default function LedgerList({ tab, ranked, unrated, myKey, onOpen, onRate
     // Signed out (or not an editor): no personal "your turn", so keep one plain
     // list — the row buttons prompt sign-in when tapped.
     if (!myKey) {
+      const onOpen = (p) => openIn(p, unrated)
       return (
         <>
           <p className="pending-note">
@@ -168,6 +177,7 @@ export default function LedgerList({ tab, ranked, unrated, myKey, onOpen, onRate
     const theirs = unrated.filter((p) => p[myKey] !== null && p[myKey] !== undefined)
     const overdue = partner ? mine.filter((p) => p[partner.key] !== null && p[partner.key] !== undefined) : []
     const queued = partner ? mine.filter((p) => p[partner.key] === null || p[partner.key] === undefined) : mine
+    const onOpen = (p) => openIn(p, [...overdue, ...queued, ...theirs])
 
     return (
       <>
@@ -208,6 +218,7 @@ export default function LedgerList({ tab, ranked, unrated, myKey, onOpen, onRate
 
   if (tab === 'top') {
     const top = ranked.slice(0, 10)
+    const onOpen = (p) => openIn(p, top)
     if (!top.length) return <p className="pending-note">No rated places yet — start scoring.</p>
     return (
       <ol className="list">
@@ -222,6 +233,7 @@ export default function LedgerList({ tab, ranked, unrated, myKey, onOpen, onRate
   if (!ranked.length && !unrated.length) {
     return <p className="pending-note">Nothing matches — try another cuisine.</p>
   }
+  const onOpen = (p) => openIn(p, [...ranked, ...unrated])
   return (
     <ol className="list">
       {ranked.map((p, i) => (

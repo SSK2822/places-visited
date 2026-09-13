@@ -1,4 +1,4 @@
-const TABS = [
+export const TABS = [
   ['top', 'Top 10'],
   ['all', 'All rated'],
   ['torate', 'To rate'],

@@ -83,6 +83,11 @@ export function slugify(name, places, editingId = null) {
   return out
 }
 
+// A cuisine without its leading emoji ("🍕 Pizza & Italian" → "Pizza & Italian").
+// Strips only leading non-letter characters, so a custom cuisine typed without
+// an emoji keeps its first word instead of losing it.
+export const cuisineLabel = (c = '') => c.replace(/^[^\p{L}\p{N}]+/u, '')
+
 export const mapsUrl = (p) =>
   `https://www.google.com/maps/search/${encodeURIComponent(p.name + ' ' + p.city)}`
 
