@@ -1,7 +1,7 @@
 {
-  "takenAt": "2026-09-13T12:34:32.178Z",
-  "count": 340,
-  "rated": 340,
+  "takenAt": "2026-09-14T13:42:41.378Z",
+  "count": 346,
+  "rated": 346,
   "places": [
     {
       "ac": -1,
@@ -36,7 +36,7 @@
       "id": "2a",
       "name": "2A",
       "visited": "2026-09-04",
-      "yk": null,
+      "yk": 1.25,
       "ykComment": "",
       "ykCommentAt": null
     },
@@ -101,7 +101,7 @@
       "id": "alvo-pizza",
       "name": "Alvo Pizza",
       "visited": "2026-09-02",
-      "yk": null,
+      "yk": 1.5,
       "ykComment": "",
       "ykCommentAt": null
     },
@@ -518,7 +518,7 @@
       "cuisine": "🍸 Bars",
       "id": "blue-gold-tavern",
       "name": "Blue & Gold Tavern",
-      "visited": "",
+      "visited": "2025-12-05",
       "yk": 3,
       "ykComment": "",
       "ykCommentAt": null
@@ -584,7 +584,7 @@
       "id": "brooklyn-farmacy-soda-fountain",
       "name": "Brooklyn Farmacy & Soda Fountain",
       "visited": "2026-09-09",
-      "yk": null,
+      "yk": 2,
       "ykComment": "",
       "ykCommentAt": null
     },
@@ -623,9 +623,9 @@
       "id": "brooklyn-social",
       "name": "Brooklyn Social",
       "visited": "2026-09-02",
-      "yk": null,
-      "ykComment": "",
-      "ykCommentAt": null
+      "yk": 2.25,
+      "ykComment": "pool place nice",
+      "ykCommentAt": 1789332702834
     },
     {
       "ac": -0.5,
@@ -701,7 +701,7 @@
       "id": "cafe-china",
       "name": "Café China",
       "visited": "2026-09-03",
-      "yk": null,
+      "yk": 2.25,
       "ykComment": "",
       "ykCommentAt": null
     },
@@ -714,7 +714,7 @@
       "id": "cafe-nube",
       "name": "Cafe Nube",
       "visited": "2026-09-04",
-      "yk": null,
+      "yk": 2,
       "ykComment": "",
       "ykCommentAt": null
     },
@@ -757,6 +757,19 @@
       "ykCommentAt": 1785139985524
     },
     {
+      "ac": 2.25,
+      "acComment": "",
+      "acCommentAt": null,
+      "city": "New York",
+      "cuisine": "🍕 Pizza & Italian",
+      "id": "casa-della-mozzarella",
+      "name": "Casa Della Mozzarella",
+      "visited": "2026-09-12",
+      "yk": 2.5,
+      "ykComment": "",
+      "ykCommentAt": null
+    },
+    {
       "ac": 0.75,
       "acComment": "",
       "acCommentAt": null,
@@ -778,7 +791,7 @@
       "id": "cello-s-pizzeria",
       "name": "Cello's Pizzeria",
       "visited": "2026-09-05",
-      "yk": null,
+      "yk": 2,
       "ykComment": "",
       "ykCommentAt": null
     },
@@ -1132,7 +1145,7 @@
       "cuisine": "🍸 Bars",
       "id": "double-chicken-please",
       "name": "Double Chicken Please",
-      "visited": "",
+      "visited": "2026-03-27",
       "yk": 3,
       "ykComment": "",
       "ykCommentAt": null
@@ -1414,7 +1427,7 @@
       "id": "frenzie-wine-pizza",
       "name": "Frenzie Wine & Pizza",
       "visited": "2026-09-09",
-      "yk": null,
+      "yk": 2.75,
       "ykComment": "",
       "ykCommentAt": null
     },
@@ -1899,7 +1912,7 @@
       "id": "keg-lantern-red-hook",
       "name": "Keg & Lantern Red Hook",
       "visited": "2026-09-05",
-      "yk": null,
+      "yk": 1.75,
       "ykComment": "",
       "ykCommentAt": null
     },
@@ -1937,7 +1950,7 @@
       "id": "kimura",
       "name": "Kimura",
       "visited": "2026-09-05",
-      "yk": null,
+      "yk": 1.5,
       "ykComment": "",
       "ykCommentAt": null
     },
@@ -2064,7 +2077,7 @@
       "id": "l-b-spumoni-gardens",
       "name": "L&B Spumoni Gardens",
       "visited": "2026-09-06",
-      "yk": null,
+      "yk": 1.75,
       "ykComment": "",
       "ykCommentAt": null
     },
@@ -2244,6 +2257,19 @@
       "yk": 0.25,
       "ykComment": "For the salad",
       "ykCommentAt": 1788120285454
+    },
+    {
+      "ac": 2,
+      "acComment": "",
+      "acCommentAt": null,
+      "city": "New York",
+      "cuisine": "🥐 Bakery",
+      "id": "madonia-bakery",
+      "name": "Madonia Bakery",
+      "visited": "2026-09-12",
+      "yk": 2,
+      "ykComment": "",
+      "ykCommentAt": null
     },
     {
       "ac": -0.5,
@@ -2518,6 +2544,19 @@
       "acComment": "",
       "acCommentAt": null,
       "city": "New York",
+      "cuisine": "🍱 Korean & Japanese",
+      "id": "ms-yoo",
+      "name": "Ms. Yoo",
+      "visited": "2026-09-12",
+      "yk": 1.75,
+      "ykComment": "",
+      "ykCommentAt": null
+    },
+    {
+      "ac": 1.75,
+      "acComment": "",
+      "acCommentAt": null,
+      "city": "New York",
       "cuisine": "🍦 Dessert",
       "id": "myaka",
       "name": "Myaka",
@@ -2535,7 +2574,7 @@
       "id": "mythos-fit",
       "name": "Mythos FIT",
       "visited": "2026-09-07",
-      "yk": null,
+      "yk": 2.25,
       "ykComment": "",
       "ykCommentAt": null
     },
@@ -2609,7 +2648,7 @@
       "id": "nathan-s-famous",
       "name": "Nathan's Famous",
       "visited": "2026-09-06",
-      "yk": null,
+      "yk": 1.5,
       "ykComment": "",
       "ykCommentAt": null
     },
@@ -2635,7 +2674,7 @@
       "id": "neuhaus-chocolates",
       "name": "Neuhaus Chocolates",
       "visited": "2026-09-07",
-      "yk": null,
+      "yk": 1,
       "ykComment": "",
       "ykCommentAt": null
     },
@@ -2838,7 +2877,7 @@
       "id": "pete-s-clam-stop",
       "name": "Pete’s Clam Stop",
       "visited": "2026-09-06",
-      "yk": null,
+      "yk": -0.5,
       "ykComment": "",
       "ykCommentAt": null
     },
@@ -2983,6 +3022,19 @@
       "ykCommentAt": null
     },
     {
+      "ac": 1.5,
+      "acComment": "",
+      "acCommentAt": null,
+      "city": "New York",
+      "cuisine": "☕ Coffee",
+      "id": "prince-coffee-house-new-york",
+      "name": "Prince Coffee House New York",
+      "visited": "2026-09-12",
+      "yk": 0.25,
+      "ykComment": "",
+      "ykCommentAt": null
+    },
+    {
       "ac": 1.75,
       "acComment": "",
       "acCommentAt": null,
@@ -3118,7 +3170,7 @@
       "id": "rita-s-italian-ice-frozen-custard",
       "name": "Rita's Italian Ice & Frozen Custard",
       "visited": "2026-09-06",
-      "yk": null,
+      "yk": 2.25,
       "ykComment": "",
       "ykCommentAt": null
     },
@@ -3143,7 +3195,7 @@
       "id": "rokstar-chicken-noho",
       "name": "Rokstar Chicken Noho",
       "visited": "2026-09-07",
-      "yk": null,
+      "yk": 2,
       "ykComment": "",
       "ykCommentAt": null
     },
@@ -3169,7 +3221,7 @@
       "id": "rua-thai-thai-restaurant-brooklyn",
       "name": "RUA Thai - Thai Restaurant Brooklyn",
       "visited": "2026-09-02",
-      "yk": null,
+      "yk": -0.75,
       "ykComment": "",
       "ykCommentAt": null
     },
@@ -3221,7 +3273,7 @@
       "id": "saitong-thai",
       "name": "SaiTong Thai",
       "visited": "2026-08-30",
-      "yk": null,
+      "yk": 1.75,
       "ykComment": "",
       "ykCommentAt": null
     },
@@ -3413,7 +3465,7 @@
       "id": "skinny-louie",
       "name": "Skinny Louie",
       "visited": "2026-09-07",
-      "yk": null,
+      "yk": 1.75,
       "ykComment": "",
       "ykCommentAt": null
     },
@@ -3603,9 +3655,9 @@
       "city": "New York",
       "cuisine": "🍸 Bars",
       "id": "strong-rope-brewery-red-hook",
-      "name": "Strong Rope Brewery Red Hook",
+      "name": "Red Hook Cidery",
       "visited": "2026-09-05",
-      "yk": null,
+      "yk": 1.75,
       "ykComment": "",
       "ykCommentAt": null
     },
@@ -3996,6 +4048,19 @@
       "ykCommentAt": null
     },
     {
+      "ac": 2,
+      "acComment": "",
+      "acCommentAt": null,
+      "city": "New York",
+      "cuisine": "🍸 Bars",
+      "id": "tin-s",
+      "name": "TIN’s",
+      "visited": "2026-09-12",
+      "yk": 2.5,
+      "ykComment": "Hsu fucked up hahaha",
+      "ykCommentAt": 1789332959121
+    },
+    {
       "ac": 1,
       "acComment": "",
       "acCommentAt": null,
@@ -4322,6 +4387,19 @@
       "name": "Zabb PuTawn",
       "yk": 1.25,
       "ykComment": "Overpriced for qty",
+      "ykCommentAt": null
+    },
+    {
+      "ac": 1.5,
+      "acComment": "",
+      "acCommentAt": null,
+      "city": "New York",
+      "cuisine": "🍕 Pizza & Italian",
+      "id": "zero-otto-nove-bronx",
+      "name": "Zero Otto Nove Bronx",
+      "visited": "2026-09-12",
+      "yk": 1.5,
+      "ykComment": "",
       "ykCommentAt": null
     },
     {
