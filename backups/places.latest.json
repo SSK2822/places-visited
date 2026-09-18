@@ -1,7 +1,7 @@
 {
-  "takenAt": "2026-09-17T12:27:01.344Z",
-  "count": 346,
-  "rated": 346,
+  "takenAt": "2026-09-18T12:06:10.855Z",
+  "count": 352,
+  "rated": 352,
   "places": [
     {
       "ac": -1,
@@ -1190,6 +1190,19 @@
       "ykCommentAt": null
     },
     {
+      "ac": 1.75,
+      "acComment": "",
+      "acCommentAt": null,
+      "city": "New York",
+      "cuisine": "🌮 Mexican & Latin",
+      "id": "el-lado-taco",
+      "name": "El Lado Taco",
+      "visited": "2026-09-17",
+      "yk": null,
+      "ykComment": "",
+      "ykCommentAt": null
+    },
+    {
       "ac": 2,
       "acComment": "",
       "acCommentAt": null,
@@ -1790,6 +1803,19 @@
       "ykCommentAt": null
     },
     {
+      "ac": 0.25,
+      "acComment": "",
+      "acCommentAt": null,
+      "city": "New York",
+      "cuisine": "🥐 Bakery",
+      "id": "jhoanes-bakery-coffee",
+      "name": "Jhoanes Bakery & Coffee",
+      "visited": "2026-09-15",
+      "yk": null,
+      "ykComment": "",
+      "ykCommentAt": null
+    },
+    {
       "ac": 1,
       "acComment": "",
       "acCommentAt": null,
@@ -2107,6 +2133,19 @@
       "ykCommentAt": null
     },
     {
+      "ac": 1.75,
+      "acComment": "",
+      "acCommentAt": null,
+      "city": "New York",
+      "cuisine": "🍸 Bars",
+      "id": "las-catrinas-mexican-bar-eatery",
+      "name": "Las Catrinas mexican bar & eatery",
+      "visited": "",
+      "yk": null,
+      "ykComment": "",
+      "ykCommentAt": null
+    },
+    {
       "ac": 0.75,
       "acComment": "Lemongrass was not good but crab Rangoon was (?)",
       "acCommentAt": 1784227407186,
@@ -2306,6 +2345,19 @@
       "name": "Malai",
       "visited": "2026-07-27",
       "yk": 2.5,
+      "ykComment": "",
+      "ykCommentAt": null
+    },
+    {
+      "ac": 0.75,
+      "acComment": "",
+      "acCommentAt": null,
+      "city": "New York",
+      "cuisine": "🥐 Bakery",
+      "id": "malu-bakery",
+      "name": "Malu Bakery",
+      "visited": "2026-09-16",
+      "yk": null,
       "ykComment": "",
       "ykCommentAt": null
     },
@@ -2691,6 +2743,19 @@
       "ykCommentAt": null
     },
     {
+      "ac": 1.25,
+      "acComment": "",
+      "acCommentAt": null,
+      "city": "New York",
+      "cuisine": "🌮 Mexican & Latin",
+      "id": "new-york-pao-de-queijo",
+      "name": "New York Pao De Queijo",
+      "visited": "2026-09-15",
+      "yk": null,
+      "ykComment": "",
+      "ykCommentAt": null
+    },
+    {
       "ac": 2.25,
       "acComment": "",
       "acCommentAt": null,
@@ -3019,6 +3084,19 @@
       "name": "Pranakhon",
       "yk": 2.25,
       "ykComment": "James double date",
+      "ykCommentAt": null
+    },
+    {
+      "ac": 0.25,
+      "acComment": "",
+      "acCommentAt": null,
+      "city": "New York",
+      "cuisine": "🍱 Korean & Japanese",
+      "id": "prime-no-7",
+      "name": "Prime No 7",
+      "visited": "2026-09-16",
+      "yk": null,
+      "ykComment": "",
       "ykCommentAt": null
     },
     {
