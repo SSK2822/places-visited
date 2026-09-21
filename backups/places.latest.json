@@ -1,7 +1,7 @@
 {
-  "takenAt": "2026-09-20T12:03:48.229Z",
-  "count": 352,
-  "rated": 352,
+  "takenAt": "2026-09-21T13:41:30.915Z",
+  "count": 353,
+  "rated": 353,
   "places": [
     {
       "ac": -1,
@@ -757,6 +757,19 @@
       "ykCommentAt": 1785139985524
     },
     {
+      "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
+      "city": "New York",
+      "cuisine": "🍱 Korean & Japanese",
+      "id": "caravan-chicken",
+      "name": "Caravan Chicken",
+      "visited": "2026-09-15",
+      "yk": 2.25,
+      "ykComment": "",
+      "ykCommentAt": null
+    },
+    {
       "ac": 2.25,
       "acComment": "",
       "acCommentAt": null,
@@ -1198,7 +1211,7 @@
       "id": "el-lado-taco",
       "name": "El Lado Taco",
       "visited": "2026-09-17",
-      "yk": null,
+      "yk": 2.25,
       "ykComment": "",
       "ykCommentAt": null
     },
@@ -1811,7 +1824,7 @@
       "id": "jhoanes-bakery-coffee",
       "name": "Jhoanes Bakery & Coffee",
       "visited": "2026-09-15",
-      "yk": null,
+      "yk": 0.5,
       "ykComment": "",
       "ykCommentAt": null
     },
@@ -2141,7 +2154,7 @@
       "id": "las-catrinas-mexican-bar-eatery",
       "name": "Las Catrinas mexican bar & eatery",
       "visited": "",
-      "yk": null,
+      "yk": 2,
       "ykComment": "",
       "ykCommentAt": null
     },
@@ -2357,7 +2370,7 @@
       "id": "malu-bakery",
       "name": "Malu Bakery",
       "visited": "2026-09-16",
-      "yk": null,
+      "yk": 1.75,
       "ykComment": "",
       "ykCommentAt": null
     },
@@ -2751,7 +2764,7 @@
       "id": "new-york-pao-de-queijo",
       "name": "New York Pao De Queijo",
       "visited": "2026-09-15",
-      "yk": null,
+      "yk": 1.5,
       "ykComment": "",
       "ykCommentAt": null
     },
@@ -3095,7 +3108,7 @@
       "id": "prime-no-7",
       "name": "Prime No 7",
       "visited": "2026-09-16",
-      "yk": null,
+      "yk": 0.5,
       "ykComment": "",
       "ykCommentAt": null
     },
