@@ -1,5 +1,5 @@
 {
-  "takenAt": "2026-09-22T12:24:56.742Z",
+  "takenAt": "2026-09-23T12:36:05.780Z",
   "count": 353,
   "rated": 353,
   "places": [
@@ -757,7 +757,7 @@
       "ykCommentAt": 1785139985524
     },
     {
-      "ac": null,
+      "ac": 2,
       "acComment": "",
       "acCommentAt": null,
       "city": "New York",
@@ -2430,7 +2430,7 @@
       "acComment": "",
       "acCommentAt": null,
       "city": "New York",
-      "cuisine": "🍜 Thai & SE Asian",
+      "cuisine": "🍛 Indian & Himalayan",
       "id": "masalawala-sons",
       "name": "Masalawala & Sons",
       "visited": "2026-07-30",
