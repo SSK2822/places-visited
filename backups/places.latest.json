@@ -1,7 +1,7 @@
 {
-  "takenAt": "2026-09-27T12:49:43.960Z",
-  "count": 353,
-  "rated": 353,
+  "takenAt": "2026-09-28T15:00:41.636Z",
+  "count": 354,
+  "rated": 354,
   "places": [
     {
       "ac": -1,
@@ -1773,6 +1773,19 @@
       "id": "internet-coffee",
       "name": "Internet & Coffee",
       "yk": 0.75,
+      "ykComment": "",
+      "ykCommentAt": null
+    },
+    {
+      "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
+      "city": "New York",
+      "cuisine": "🍱 Korean & Japanese",
+      "id": "izakaya-mew",
+      "name": "Izakaya MEW",
+      "visited": "2026-09-27",
+      "yk": 2,
       "ykComment": "",
       "ykCommentAt": null
     },
