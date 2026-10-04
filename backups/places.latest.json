@@ -1,7 +1,7 @@
 {
-  "takenAt": "2026-10-03T12:16:39.788Z",
-  "count": 354,
-  "rated": 354,
+  "takenAt": "2026-10-04T13:04:07.154Z",
+  "count": 358,
+  "rated": 358,
   "places": [
     {
       "ac": -1,
@@ -545,6 +545,19 @@
       "id": "bohemian-hall-beer-garden",
       "name": "Bohemian Hall & Beer Garden",
       "visited": "2026-08-22",
+      "yk": 1.75,
+      "ykComment": "",
+      "ykCommentAt": null
+    },
+    {
+      "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
+      "city": "New York",
+      "cuisine": "🍛 Indian & Himalayan",
+      "id": "bombay-7th-ave-grill",
+      "name": "Bombay 7th Ave grill",
+      "visited": "2026-10-02",
       "yk": 1.75,
       "ykComment": "",
       "ykCommentAt": null
@@ -1651,6 +1664,19 @@
       "ykCommentAt": null
     },
     {
+      "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
+      "city": "New York",
+      "cuisine": "🍸 Bars",
+      "id": "hello-hello",
+      "name": "Hello hello",
+      "visited": "2026-10-01",
+      "yk": 2,
+      "ykComment": "",
+      "ykCommentAt": null
+    },
+    {
       "ac": 1.75,
       "acComment": "",
       "acCommentAt": null,
@@ -2143,6 +2169,19 @@
       "name": "L'industrie",
       "visited": "2026-07-27",
       "yk": 3,
+      "ykComment": "",
+      "ykCommentAt": null
+    },
+    {
+      "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
+      "city": "New York",
+      "cuisine": "🥢 Chinese & Taiwanese",
+      "id": "lala-chicken",
+      "name": "Lala chicken",
+      "visited": "2026-10-01",
+      "yk": 1.5,
       "ykComment": "",
       "ykCommentAt": null
     },
@@ -3300,6 +3339,19 @@
       "name": "Rokstar Chicken Noho",
       "visited": "2026-09-07",
       "yk": 2,
+      "ykComment": "",
+      "ykCommentAt": null
+    },
+    {
+      "ac": null,
+      "acComment": "",
+      "acCommentAt": null,
+      "city": "New York",
+      "cuisine": "🍕 Pizza & Italian",
+      "id": "rolos",
+      "name": "Rolos",
+      "visited": "2026-10-02",
+      "yk": 2.5,
       "ykComment": "",
       "ykCommentAt": null
     },
