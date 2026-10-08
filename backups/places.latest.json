@@ -1,7 +1,7 @@
 {
-  "takenAt": "2026-10-07T14:15:47.094Z",
-  "count": 358,
-  "rated": 358,
+  "takenAt": "2026-10-08T14:24:54.463Z",
+  "count": 361,
+  "rated": 361,
   "places": [
     {
       "ac": -1,
@@ -80,6 +80,19 @@
       "ykCommentAt": null
     },
     {
+      "ac": 2,
+      "acComment": "",
+      "acCommentAt": null,
+      "city": "New York",
+      "cuisine": "🍸 Bars",
+      "id": "aftermath-nyc",
+      "name": "Aftermath NYC",
+      "visited": "2026-10-02",
+      "yk": null,
+      "ykComment": "",
+      "ykCommentAt": null
+    },
+    {
       "ac": 0.75,
       "acComment": "",
       "acCommentAt": null,
@@ -106,13 +119,14 @@
       "ykCommentAt": null
     },
     {
-      "ac": 1.25,
+      "ac": 1.5,
       "acComment": "",
       "acCommentAt": null,
       "city": "New York",
       "cuisine": "🍜 Thai & SE Asian",
       "id": "am-thai-bistro",
       "name": "Am Thai Bistro",
+      "visited": "",
       "yk": 1.5,
       "ykComment": "take out was pretty good",
       "ykCommentAt": null
@@ -550,7 +564,7 @@
       "ykCommentAt": null
     },
     {
-      "ac": null,
+      "ac": 1.75,
       "acComment": "",
       "acCommentAt": null,
       "city": "New York",
@@ -1664,9 +1678,9 @@
       "ykCommentAt": null
     },
     {
-      "ac": null,
-      "acComment": "",
-      "acCommentAt": null,
+      "ac": 2,
+      "acComment": "Biased review",
+      "acCommentAt": 1791400325111,
       "city": "New York",
       "cuisine": "🍸 Bars",
       "id": "hello-hello",
@@ -1803,7 +1817,7 @@
       "ykCommentAt": null
     },
     {
-      "ac": null,
+      "ac": 1.25,
       "acComment": "",
       "acCommentAt": null,
       "city": "New York",
@@ -2173,7 +2187,7 @@
       "ykCommentAt": null
     },
     {
-      "ac": null,
+      "ac": 1.75,
       "acComment": "",
       "acCommentAt": null,
       "city": "New York",
@@ -3343,7 +3357,7 @@
       "ykCommentAt": null
     },
     {
-      "ac": null,
+      "ac": 2.25,
       "acComment": "",
       "acCommentAt": null,
       "city": "New York",
@@ -3507,6 +3521,19 @@
       "name": "Schmackary's",
       "visited": "2026-07-27",
       "yk": 1.25,
+      "ykComment": "",
+      "ykCommentAt": null
+    },
+    {
+      "ac": 2.25,
+      "acComment": "",
+      "acCommentAt": null,
+      "city": "New York",
+      "cuisine": "🍸 Bars",
+      "id": "schmuck",
+      "name": "schmuck.",
+      "visited": "2026-10-04",
+      "yk": null,
       "ykComment": "",
       "ykCommentAt": null
     },
@@ -4057,6 +4084,19 @@
       "name": "The Bearded Baker",
       "visited": "2026-07-27",
       "yk": 2.5,
+      "ykComment": "",
+      "ykCommentAt": null
+    },
+    {
+      "ac": 1.5,
+      "acComment": "Fact: Yash hates root beer floats",
+      "acCommentAt": 1791400439592,
+      "city": "New York",
+      "cuisine": "🍦 Dessert",
+      "id": "the-chocolate-room",
+      "name": "The Chocolate Room",
+      "visited": "2026-10-10",
+      "yk": null,
       "ykComment": "",
       "ykCommentAt": null
     },
