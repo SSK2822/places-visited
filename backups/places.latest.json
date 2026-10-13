@@ -1,7 +1,7 @@
 {
-  "takenAt": "2026-10-12T16:32:37.400Z",
-  "count": 361,
-  "rated": 361,
+  "takenAt": "2026-10-13T14:50:28.093Z",
+  "count": 364,
+  "rated": 364,
   "places": [
     {
       "ac": -1,
@@ -356,6 +356,19 @@
       "name": "Bangkok Degree",
       "visited": "2026-08-06",
       "yk": 2.5,
+      "ykComment": "",
+      "ykCommentAt": null
+    },
+    {
+      "ac": 2,
+      "acComment": "",
+      "acCommentAt": null,
+      "city": "New York",
+      "cuisine": "🍸 Bars",
+      "id": "bar-snack",
+      "name": "Bar Snack",
+      "visited": "2026-10-10",
+      "yk": null,
       "ykComment": "",
       "ykCommentAt": null
     },
@@ -4244,6 +4257,19 @@
       "ykCommentAt": null
     },
     {
+      "ac": 1.75,
+      "acComment": "",
+      "acCommentAt": null,
+      "city": "New York",
+      "cuisine": "🍔 American",
+      "id": "tin-cup-cafe",
+      "name": "Tin cup cafe",
+      "visited": "2026-10-10",
+      "yk": null,
+      "ykComment": "",
+      "ykCommentAt": null
+    },
+    {
       "ac": 2,
       "acComment": "",
       "acCommentAt": null,
@@ -4266,6 +4292,19 @@
       "name": "TP Tea",
       "visited": "2026-07-27",
       "yk": 1.75,
+      "ykComment": "",
+      "ykCommentAt": null
+    },
+    {
+      "ac": 2,
+      "acComment": "",
+      "acCommentAt": null,
+      "city": "New York",
+      "cuisine": "🥢 Chinese & Taiwanese",
+      "id": "twilight-lounge",
+      "name": "Twilight Lounge 朝暮",
+      "visited": "2026-10-10",
+      "yk": null,
       "ykComment": "",
       "ykCommentAt": null
     },
